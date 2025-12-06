@@ -1,0 +1,79 @@
+---
+created: 2025-01-01
+---
+Books I read in [[2025]].
+
+# Fiction
+- [[(2023) The City and its Uncertain Walls]]
+- [[(1983) La Place]]
+- [[(2024) Perfection]]
+- [[(2005) La Possibilité d'une île]]
+- [[(1953) Go Tell It on the Mountain]]
+- [[(1991) Searoad]]
+- [[(1971) The Lathe of Heaven]]
+- [[(1929) The Sound and The Fury]]
+- [[(2021) Five Decembers]]
+- [[(1989) Remains of the Day]]
+- [[(1976) Will You Please be Quiet, Please?]]
+- [[(1976) Swag]]
+- [[(1965) Stoner]]
+- [[(2022) Septology]]
+- [[(1974) 52 Pickup]]
+- [[(1976) Le Jour de Congé]]
+- [[(2025) People Like Us]]
+- [[(1982) The Names]]
+- [[(1963) Run River]]
+- [[(2001) Atonement]]
+- [[(1962) The Man in the High Castle]]
+- [[(1978) La Rue des Boutiques Obscures]]
+- [[(1977) Unknown Man No. 89]]
+- [[(1960) Rabbit, Run]]
+- [[(2015) Solenoid]]
+- [[(1905) House of Mirth]]
+- [[(1969) Portnoy's Complaint]]
+- [[(1959) The Poorhouse Fair]]
+- [[(1952) The Old Man and the Sea]]
+- [[(1963) The Ice Palace]]
+- [[(1929) A Farewell to Arms]]
+- [[(1959) Goodbye Columbus (and 5 short stories)]]
+- [[(2023) Yellowface 1]]
+- [[(2002) Days of Abandonment]]
+- [[(2013) My Struggle; Book 1]]
+- [[(1985) White Noise]]
+- [[(1956) Seize the Day]]
+- [[(2020) Boulder]]
+- [[(1956) Giovanni's Room]]
+
+# Non-Fiction
+- [[(2023) Recoding America]]
+- [[(2025) Why Nothing Works]]
+- [[(2025) Abundance]]
+- [[(2024) Nuclear War; A Scenario]]
+- [[(1992) The End of History and the Last Man]]
+- [[(2009) Capitalist Realism]]
+- [[(2025) Coming Clean]]
+- [[(2011) Freedom Betrayed]]
+- [[(2024) On Settler Colonialism]]
+- [[(1979) The Culture of Narcissism]]
+- [[(2022) The Mexican Economy - Enrique Cardenas]]
+- [[(1973) Competition and Entrepreneurship]]
+- [[(2022) The Right]]
+- [[(2024) The Anxious Generation]]
+- [[(2025) Unforgiving Places]]
+- [[(2009) Raymond Carver; A Writer's Life]]
+- [[(2006) Eat Pray Love]]
+- [[(2025) All the Way to the River]]
+
+# Short Stories
+- [[(1887) A Study in Scarlet]]
+- From: [[(2005) The Best of the Best Science Fiction]]
+	- [[(1983) Blood Music]]
+	- [[(1984) A Cabin on the Coast]]
+	- [[(1984) Salvador]]
+
+# Dropped
+
+Books I didn't finish for some reason. Life is finite.
+
+- [[(2024) America América]]
+- [[(1973) Crash]]
