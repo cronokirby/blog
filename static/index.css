@@ -1,12 +1,192 @@
 html {
 	color: white;
 	background-color: black;
-	font-family: "Iosevka Nerd Font Mono", monospace;
-	font-size: 16pt;
+	font-family: "Iosevka Aile CK Web", sans-serif;
+	font-size: 12pt;
 }
 
 body {
-	max-width: 80ch;
+	max-width: 60ch;
 	margin: 0 auto;
 	padding: 1rem;
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-Extended.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-Italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-ExtendedItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-ExtendedBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-ExtendedBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaAileCK-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaAileCK-Extended.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaAileCK-Italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaAileCK-ExtendedItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaAileCK-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaAileCK-ExtendedSemiBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaAileCK-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 500;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaAileCK-ExtendedSemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaAileCK-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaAileCK-ExtendedBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaAileCK-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka Aile CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaAileCK-ExtendedBoldItalic.woff2') format('woff2');
 }
