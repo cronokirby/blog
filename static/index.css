@@ -62,6 +62,9 @@ h1, h2, h3, h4, h5, h6 {
 	--text-primary: #161616;
 	--text-secondary: #525252;
 	--text-placeholder: #a8a8a8;
+	--link-primary: #0f62fe;
+	--link-primary-hover: #0043ce;
+	--link-visited: #8a3ffc;
 }
 
 html {
@@ -154,6 +157,19 @@ blockquote {
 	background-color: var(--layer-01);
 	padding: 0.5rem;
 	font-size: 0.9rem;
+}
+
+a {
+  color: var(--link-primary);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-primary-hover);
 }
 
 @font-face {
