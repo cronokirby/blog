@@ -43,6 +43,7 @@ Books I read in [[2025]].
 - [[(1956) Seize the Day]]
 - [[(2020) Boulder]]
 - [[(1956) Giovanni's Room]]
+- [[(1946) Nightmare Alley]]
 
 # Non-Fiction
 - [[(2023) Recoding America]]
