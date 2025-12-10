@@ -82,12 +82,12 @@ pre {
   margin: 0.5rem 0rem;
 }
 
-p {
-	text-indent: 1.5rem;
+p + p, p + blockquote {
+  margin-top: 1rem;
 }
 
-li p {
-	text-indent: 0rem;
+p + ul, p + ol, ol + p, ul + p {
+  margin-top: 0.25rem;
 }
 
 code {
