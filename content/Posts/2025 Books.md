@@ -44,6 +44,7 @@ Books I read in [[2025]].
 - [[(2020) Boulder]]
 - [[(1956) Giovanni's Room]]
 - [[(1946) Nightmare Alley]]
+- [[(2025) Flesh]]
 
 # Non-Fiction
 - [[(2023) Recoding America]]
