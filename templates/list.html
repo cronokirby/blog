@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/index.css">
+<title>cronokirby - {{ title }}</title>
+<body>
+<h1 class="list-title">{{ title }}</h1>
+<ul class="link-list">
+{% for item in items %}
+  <li class="entry">
+    <div class="entry-header">
+      <a class="entry-title" href="{{ item.link }}">{{ item.title }}</a>
+      <span class="entry-date">{{ item.date }}</span>
+    </div>
+    <ul class="item-tags">
+    {% for tag in item.tags %}
+    <li><a href="/tag/{{ tag }}/index.html">#{{ tag }}</a></li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+</body>
+</html>

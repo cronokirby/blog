@@ -117,7 +117,7 @@ h2 {
 	counter-reset: h3;
 }
 
-h1:not(:is(header *))::before {
+h1:not(:is(header *)):not(.list-title)::before {
 	counter-increment: h1;
 	content: counter(h1) " ";
 }
@@ -219,6 +219,37 @@ header {
 .published::before {
 	content: "Published ";
 	color: var(--text-secondary);
+}
+
+/* Remove all list markers */
+.link-list,
+.item-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Spacing between entries */
+.link-list .entry {
+  margin-bottom: 1.5rem;
+}
+
+/* Title left, date right */
+.link-list .entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Tags in one line */
+.item-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.entry-title {
+	font-weight: 500;
 }
 
 @font-face {
