@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 html {
 	color: var(--text-primary);
 	background-color: var(--background);
-	font-family: "Iosevka Aile CK Web", sans-serif;
+	font-family: "EB Garamond", "Iosevka Aile CK Web", sans-serif;
 	font-size: 14pt;
 	max-width: 60ch;
 	margin: 0 auto;
