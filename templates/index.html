@@ -34,5 +34,15 @@
 {% endif %}
 </header>
 {{ body }}
+{% if backlinks %}
+<h1>Backlinks</h1>
+<ul class="backlinks">
+{% for item in backlinks %}
+  <li class="backlink">
+    <a href="{{ item.link }}">{{ item.title }}</a>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
 </body>
 </html>
