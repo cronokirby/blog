@@ -6,7 +6,15 @@
 <link rel="icon" href="/static/icon.png">
 <title>cronokirby - {{ title }}</title>
 <body>
-<h1 class="list-title">{{ title }}</h1>
+<header>
+  <div class="icon-bar">
+    <a href="/">
+      <img src="/static/icon.png" class="avatar" />
+    </a>
+    <img src="/static/dark_mode.svg" />
+  </div>
+  <h1 class="list-title">{{ title }}</h1>
+</header>
 <ul class="link-list">
 {% for item in items %}
   <li class="entry">
