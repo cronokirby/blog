@@ -49,7 +49,7 @@ and the associated point $X := x \cdot G$ is the corresponding public key.
 
 Key generation here is quite simple:
 
-1. Sample $x \xleftarrow{\\$} \mathbb{F}_q$.
+1. Sample $x \xleftarrow{R} \mathbb{F}_q$.
 2. Return $(x, x \cdot G)$.
 
 Now, just generating a key to use yourself isn't all that interesting.
@@ -94,7 +94,7 @@ You can then sum up these "shares" of the public key, getting $X := \sum_i X_i$.
 
 More formally, the protocol would be:
 
-1. Each $P_i$ generates $x_i \xleftarrow{\\$} \mathbb{F}_q$.
+1. Each $P_i$ generates $x_i \xleftarrow{R} \mathbb{F}_q$.
 2. Each $P_i$ sets $X_i \gets x_i \cdot G$.
 3. $\star$ Each $P_i$ sends $X_i$ to every other party.
 4. $\bullet$ Each $P_i$ waits to receive $X_j$ from every other $P_j$.

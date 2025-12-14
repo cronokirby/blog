@@ -213,6 +213,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
+	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
 
@@ -250,6 +251,33 @@ header {
 
 .entry-title {
 	font-weight: 500;
+}
+
+.katex-wrapper {
+  font-size: 0.8em; /* 80% of your page's base font size */
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover; /* ensures image fills the circle without stretching */
+}
+
+.icon-bar {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+  justify-content: space-between; /* pushes first left, last right */
+  margin-bottom: 1em;
+}
+
+.icon-bar > * {
+  display: block; /* ensure flex children behave predictably */
+}
+
+.icon-bar img {
+  margin: 0;             /* stop auto centering */
+  width: 2em;            /* or whatever size you want */
+  height: 2em;
 }
 
 @font-face {
