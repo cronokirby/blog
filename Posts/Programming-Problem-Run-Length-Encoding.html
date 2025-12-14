@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Programming Problem: Run-Length Encoding</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous"><title>cronokirby - Programming Problem: Run-Length Encoding</title>
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2021-02-05">2021-02-05</time>
+
+<h1>Programming Problem: Run-Length Encoding</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/haskell/index.html">
+    #haskell
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming/index.html">
+    #programming
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is just a quick post about a programming problem that's
+been circulating around <a href=https://twitter.com/Al_Grigor/status/1357028887209902088>on twitter recently</a>:</p><!--more-->
+<p>
+<img src=../Images/173ebea3256fe4993b80ea3f39432a9eaaae69011eea635183c0887b6662c841.png alt= /></p>
+<p>Essentially, this problem asks us to convert from the standard encoding of a list:</p>
+<pre><code>[a, a, a, a, b, b, b, c, c, a]</code></pre>
+<p>to the run-length encoding of that same list:</p>
+<pre><code>[(a, 4), (b, 3), (c, 2), (a, 1)]</code></pre>
+<p>Mathematically, this is just the conversion between two different representations
+of the free monoid on some set. This allows us to combine different elements
+of a set <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{a, b, c\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">}</span></span></span></span></span> by putting them one after the other in a list:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∙</mo><mi>b</mi><mo>∙</mo><mi>c</mi><mo>=</mo><mi>a</mi><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">a \bullet b \bullet c = abc</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∙</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∙</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">ab</span><span class="mord mathnormal">c</span></span></span></span></span></span>
+<p>Using the terser notation <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∙</mo><mi>a</mi><mo>=</mo><mi>a</mi><mi>a</mi><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">a \bullet a = aa = a^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∙</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">aa</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>, a list like:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mi>a</mi><mi>a</mi><mi>a</mi><mi>b</mi><mi>b</mi><mi>b</mi><mi>c</mi><mi>c</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">aaaabbbcca</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">aaaabbb</span><span class="mord mathnormal">cc</span><span class="mord mathnormal">a</span></span></span></span></span></span>
+<p>becomes:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>a</mi><mn>4</mn></msup><msup><mi>b</mi><mn>3</mn></msup><msup><mi>c</mi><mn>2</mn></msup><mi>a</mi></mrow><annotation encoding="application/x-tex">a^4 b^3 c^2 a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal">a</span></span></span></span></span></span>
+<p>which is the same principle behind run-length encoding. If you think about it,
+in Haskell, a list like:</p>
+<pre><code>[a, a, a, a, b, b, b, c, c, a]</code></pre>
+<p>is equivalent to the concatenation of a list for each element:</p>
+<pre><code>[a] <> [a] <> [a] <> [a] <> [b] <> [b] <> [b] <> [c] <> [c] <> [a]</code></pre>
+<p>This is exactly why in which a list lets us turn any type into a Monoid.
+It gives us a free way to concatenate elements of our type.</p>
+<p>This equation can be exploited through the function <code>foldMap</code>:</p>
+<pre><code>foldMap :: Monoid m => (a -> m) -> [a] -> m</code></pre>
+<p>Essentially, given a list:</p>
+<pre><code>[a, a, a, b, b]</code></pre>
+<p>and a function <code>f :: A -> M</code>, we first convert the list like we did previously:</p>
+<pre><code>[a] <> [a] <> [a] <> [b] <> [b]</code></pre>
+<p>And now we replace each use of <code>[]</code> with <code>f</code>:</p>
+<pre><code>f a <> f a <> f a <> f b <> f b</code></pre>
+<p>Since <code>M</code> is a monoid, we know what to do with all of these <code><></code> operations.</p>
+<p>This decomposition makes it clear that <code>foldMap (\x -> [x])</code> is going to
+leave our list untouched.</p>
+<p>In order to convert to the run-length encoding, all we need to do is</p>
+<ul><li>Make our run-length encoding a Monoid</li><li>Create a function <code>a -> RunLength a</code>, analogous to <code>\x -> [x]</code></li></ul>
+<h1>The code</h1>
+<p>First, let's define our <code>RunLength a</code>, representing a list
+<code>[a]</code>, but with less redundancy:</p>
+<pre><code>import Data.Sequence (Seq (Empty, (:<|), (:|>)))
+import qualified Data.Sequence as Seq
+
+newtype RunLength a = RunLength (Seq.Seq (Int, a))
+  deriving (Eq, Show)</code></pre>
+<p>The run length encoding is just a sequence of <code>(element, count)</code> pairs.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+I've used the <code>Seq</code> data structure instead of <code>[]</code> here, because we'll be needing
+to access both ends of this collection efficiently.</p>
+<p>The patterns <code>first :<| rest</code>, and <code>rest :|> last</code> can be used to do this.
+With lists, only the first pattern is efficient.</p></blockquote>
+<p>This is just an alternate representation of <code>[a]</code>, and it's easy to convert back:</p>
+<pre><code>runLengthToList :: RunLength a -> [a]
+runLengthToList (RunLength runs) = foldMap (uncurry replicate) runs</code></pre>
+<p>The idea is to convert each <code>(3, a)</code> pair into a list <code>[a, a, a]</code>,
+with the right amount of elements. Thankfully, we have:</p>
+<pre><code>replicate :: Int -> a -> [a]</code></pre>
+<p>which does exactly what we want, and <code>uncurry</code> lets us change its signature
+to <code>uncurry replicate :: (Int, a) -> [a]</code></p>
+<p>Finally, <code>foldMap</code> is the function we saw earlier, and will concatenate
+each of these runs together.</p>
+<p>We can also convert a single element to a run-length list:</p>
+<pre><code>singleton :: a -> RunLength a
+singleton a = RunLength (Seq.singleton (1, a))</code></pre>
+<p>A single element is just a run of length 1.</p>
+<p>Now, let's create a monoid instance for <code>RunLength a</code>:</p>
+<pre><code>instance Eq a => Semigroup (RunLength a) where
+  RunLength (as :|> (countA, a)) <> RunLength ((countB, b) :<| bs)
+    | a == b = RunLength ((as :|> (countA + countB, a)) <> bs)
+  RunLength as <> RunLength bs = RunLength (as <> bs)
+
+instance Eq a => Monoid (RunLength a) where
+  mempty = RunLength Empty</code></pre>
+<p>Now, the empty list acts as the identity for concatenation. Usually,
+given something like:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup><msup><mi>a</mi><mn>3</mn></msup><mo>∙</mo><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">b^4a^3 \bullet b^2c^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∙</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<p>we can simply concatenate both run lists:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>4</mn></msup><msup><mi>a</mi><mn>3</mn></msup><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">b^4a^3b^2c^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<p>This is reflected in our fallback case for <code><></code>. The only special case is
+when we see the same element on both sides:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mn>3</mn></msup><msup><mi>a</mi><mn>2</mn></msup><mo>∙</mo><msup><mi>a</mi><mn>3</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">b^3a^2 \bullet a^3c^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∙</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<p>In which case we need to create a single element joining both sides:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>b</mi><mn>3</mn></msup><msup><mi>a</mi><mn>5</mn></msup><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">b^3 a^5 c^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></span>
+<p>This is reflected in our first rule, which checks if the last
+element of one list matches the first of the other, in which case
+it replaces both elements with a single one, with the correct
+count.</p>
+<p>Having defined a Monoid instance, we can now finish
+off the problem with our coup-de-grâce:</p>
+<pre><code>runLengthFromList :: Eq a => [a] -> RunLength a
+runLengthFromList = foldMap singleton</code></pre>
+<p>As promised, all the work is done by the Monoid instance for <code>RunLength a</code>,
+and our <code>singleton :: a -> RunLength a</code> function.</p>
+<h1>Conclusion</h1>
+<p>The observation that lists are essentially the free monoid on some type
+is key to eeking out the elegance of our solution. Of course,
+this solution is longer than some one-liners you might come up with;
+it makes me feel a lot cooler though :)</p>
+<p>The full code is available <a href=https://gist.github.com/cronokirby/dfd58d1c7f345a23265846d657335957>here</a>.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

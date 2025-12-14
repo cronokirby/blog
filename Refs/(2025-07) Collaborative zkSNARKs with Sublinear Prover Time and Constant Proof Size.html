@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - (2025-07) Collaborative zkSNARKs with Sublinear Prover Time and Constant Proof Size</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2025-12-14">2025-12-14</time>
+
+<h1><a href="https://eprint.iacr.org/2025/1388">(2025-07) Collaborative zkSNARKs with Sublinear Prover Time and Constant Proof Size</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Zhiyong Fang]]</li>
+
+  <li>[[Sanjam Garg]]</li>
+
+  <li>[[Bhaskar Roberts]]</li>
+
+  <li>[[Wenxuan Wu]]</li>
+
+  <li>[[Yupeng Zhang]]</li>
+
+</ul>
+
+
+<div class="published">2025-07-30</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Collaborative zkSNARKs, proposed by Ozdemir and Boneh in 2022, allow a prover to delegate the generation of zkSNARK proofs to multiple servers, without compromising the confidentiality of the secret witness. They enable the use of zkSNARK techniques on computational limited devices in critical applications such as blockchains. However, the running time of each server is at least as slow as computing the proof on a single server. Garg et al. attempted to improve the efficiency in their scheme named zkSaaS using packed secret sharing, but the scheme still requires a powerful central server with linear computation, communication and memory usage.</p>
+<pre><code>In this paper, we propose a new collaborative zkSNARK scheme with $O(\frac{C}{n}\log\frac{C}{n})$ prover time and $O(1)$ proof size with $n$ servers for a circuit of size $C$. An adversary compromising less than $\frac{n}{4}$ servers cannot learn any information about the witness. The core of our technique lies in a new zkSNARK scheme for the Plonkish constraint system that is friendly to packed secret sharing. We utilize bivariate polynomials to avoid a large Fast Fourier Transform on the entire witness, which was the major bottleneck in prior work. We also construct permutation constraints based on logarithmic derivatives and univariate sumcheck to avoid the computation of prefix products. Finally, we build a bivariate polynomial commitment scheme that can be computed directly on packed secret shares. 
+Experimental results show that for a circuit of size $2^{20}$, with 128 servers, our scheme can accelerate the proof generation by 36.2$\times$ compared to running the zkSNARK on a single server. The prover time of our system is 25.9$\times$ faster than the prior work of zkSaaS. The proof size of our scheme is only 960 Bytes.</code></pre></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

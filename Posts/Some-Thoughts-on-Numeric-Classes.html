@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Some Thoughts on Numeric Classes</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous"><title>cronokirby - Some Thoughts on Numeric Classes</title>
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2021-02-28">2021-02-28</time>
+
+<h1>Some Thoughts on Numeric Classes</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/haskell/index.html">
+    #haskell
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/math/index.html">
+    #math
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is just a quick post, crystallizing some of the ideas I've had recently
+about organizing numeric classes in Haskell.</p><!--more-->
+<p>These classes are the usual way of overloading the familiar arithmetic
+operators (<code>+, -, *</code> and their buddies) for various types. Personally,
+I think that they could benefit from a bit of spring cleaning.</p>
+<h1>Haskell's Hierarchy</h1>
+<p>Here's an overview of Haskell's hierarchy of typeclasses:
+
+<img src=../Images/ef2c9cbf9ee5963dda585761310334d2a521725fe027355f23983be1d8996cc4.png alt= /></p>
+<p>You can see the different typeclasses involved, and the dependencies
+linking all of them together.</p>
+<h2>Eq</h2>
+<p>The first class is <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Eq.html><code>Eq</code></a>,
+giving us decideable equality for a type:</p>
+<pre><code>class Eq a where
+  (==) :: a -> a -> a</code></pre>
+<p>Naturally, this defines the <code>==</code> operator we all know and love. This
+must be an equivalence relation, satisfying:</p>
+<pre><code>x == x
+x == y -> y == x
+x == y, y = z -> x = z</code></pre>
+<h2>Ord</h2>
+<p>Then you have <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Ord.html><code>Ord</code></a>,
+which augments <code>Eq</code> with comparisons:</p>
+<pre><code>class Eq a => Ord a where
+  compare :: a -> a -> Ordering</code></pre>
+<p>(I've simplified things a bit here)</p>
+<p>And the <code>Ordering</code> type is a simple enumeration:</p>
+<pre><code>data Ordering = LT | EQ | GT</code></pre>
+<p>It's clear that <code>Ord</code> should entail <code>Eq</code>, since we can just check whether
+compare returns <code>EQ</code> for equality.</p>
+<p>Using <code>compare</code>, the standard comparison operators <code><, >, <=, >=</code> can all be provided.
+While <code>Ord</code> doesn't specify any laws itself, it's common to assume that <code><=</code> is
+a partial order, satisfying:</p>
+<pre><code>x <= x
+x <= y, y <= z -> x <= z</code></pre>
+<h2>Semigroup</h2>
+<p>Now we get to the "algebraic" classes.</p>
+<p>The first of these is <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Semigroup.html><code>Semigroup</code></a>:</p>
+<pre><code>class Semigroup a where
+  (<>) :: a -> a -> a</code></pre>
+<p>The only thing we assume about this operator is its associtivity:</p>
+<pre><code>a <> (b <> c) = (a <> b) <> c</code></pre>
+<h2>Monoid</h2>
+<p><a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Monoid.html><code>Monoid</code></a>
+augments the <code>Semigroup</code> class with an identity element:</p>
+<pre><code>class Semigroup  a => Monoid a where
+  mempty :: a</code></pre>
+<p>This element satisfies:</p>
+<pre><code>x <> mempty = x
+mempty <> x = x</code></pre>
+<h2>Enum</h2>
+<p>Next, we have the <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#t:Enum><code>Enum</code></a> class:</p>
+<pre><code>class Enum a where
+  toEnum :: Int -> a
+  fromEnum :: a -> Int</code></pre>
+<p>The main purpose of this class is to provide semantics for the
+<code>[a..b]</code> syntax. Otherwise, this is more of a pragmatic class, instead of
+one with some underlying algebraic idea.</p>
+<h2>Num</h2>
+<p>And now we have the infamous <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#t:Num><code>Num</code></a> class:</p>
+<pre><code>class Num a where
+  (+) :: a -> a -> a
+  (*) :: a -> a -> a
+  negate :: a -> a
+  abs :: a -> a
+  signum :: a -> a
+  fromInteger :: Integer -> a</code></pre>
+<p>This is a big amalgamation of everything you'd expect numbers to be, and
+then some more. The main purpose of this is to interpret the operators
+mentioned here, including <code>-</code> as well, and to interpret numeric literals,
+like <code>3</code>, or <code>420</code>, using the <code>fromInteger</code> method.</p>
+<p>In my opinion, this class is pretty ugly, and perhaps my central motivation
+in wanting to think about some ways to reform this hierarchy.</p>
+<h2>Real</h2>
+<p>Now, you have another ad-hoc class, called <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#t:Num><code>Real</code></a>:</p>
+<pre><code>class (Num a, Ord a) => Real a where
+  toRational :: a -> Rational</code></pre>
+<p>I confess that I've never used this class all that much. Ostensibly,
+its purpose is just to provide a means to convert some type into
+rational numbers, which provides a direct means for comparision,
+hence the <code>Ord</code> instance.</p>
+<p>If we can think of elements of a type as being rational numbers, it'd make
+sense to also stipulate that they're numbers, using the inferred operations.
+The <code>Num</code> requirement makes sense, under this interpretation.</p>
+<h2>Integral</h2>
+<p>Finally, we have the <a href=https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#t:Integral><code>Integral</code></a>
+class:</p>
+<pre><code>class (Real a, Enum a) => Integral a where
+  quotRem :: a -> a -> (a, a)
+  toInteger :: a -> Integer</code></pre>
+<p>(Simplifying a bit here, but these form a complete definition).</p>
+<p>Basically, this is for types that are equivalent to integers, and we have the
+corresponding division operations we expect to have for integers:
+<code>mod, div</code> et alii.</p>
+<h1>Interlude: Two Worlds</h1>
+<p>So far, we've seen a basic overview of the numeric hierarchy. For the most part,
+it gets the job done. We can calculate useful things, while also being somewhat
+generic over the numeric types we use. This allows Haskell to have a principled
+approach towards providing standard arithmetic for the various integer types,
+like <code>Word</code>, <code>Int</code>, <code>Int64</code>, etc.</p>
+<p>That being said, I think there are a few thorns with the organization of these classes. Analyzing the structure of the hierarchy a bit more can help illuminate
+these issues.</p>
+<h2>The Mathematical Classes</h2>
+<p>There are a few classes that are inspired by Math. For example, <code>Semigroup</code>
+and <code>Monoid</code> are chiefly mathematical concepts. Formally, a Semigroup is
+a set <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span></span></span></span></span> equipped with an operation <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⋅</mo></mrow><annotation encoding="application/x-tex">\cdot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord">⋅</span></span></span></span></span>, satisfying:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mo>⋅</mo><mo stretchy="false">(</mo><mi>y</mi><mo>⋅</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>x</mi><mo>⋅</mo><mi>y</mi><mo stretchy="false">)</mo><mo>⋅</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x \cdot (y \cdot z) = (x \cdot y) \cdot z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span></span></span>
+<p>A Monoid is a Semigroup with an element <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">e</span></span></span></span></span>, serving as the identity element:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable columnspacing="0em" rowspacing="0.25em" columnalign="right left"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>x</mi><mo>⋅</mo><mi>e</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle displaystyle="true" scriptlevel="0"><mrow><mi>e</mi><mo>⋅</mo><mi>x</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>x</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+x \cdot e &amp;= x \cr
+e \cdot x &amp;= x
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">e</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">x</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span></span></span></span></span></span></span></span>
+<p>The <code>Eq</code> class is also inspired by Math. The <code>==</code> operator is modeled
+over an <em>Equivalence Relation</em>, which is really just a mathematical definition
+of the familiar notion of equality.</p>
+<p>While <code>Ord</code>, technically speaking, doesn't specify any laws, we can model
+the <code>Ord</code> typeclass after a <em>Partial Order</em>. This is a set <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span></span></span></span></span>, equipped
+with a relation <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≤</span></span></span></span></span>, satisfying:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable columnalign="right left" columnspacing="0em" rowspacing="0.25em"><mtr><mtd><mstyle displaystyle="true" scriptlevel="0"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>x</mi><mo>≤</mo><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle displaystyle="true" scriptlevel="0"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>x</mi><mo>≤</mo><mi>y</mi><mo separator="true">,</mo><mi>y</mi><mo>≤</mo><mi>z</mi><mspace width="0.2778em"/><mo>⟹</mo><mspace width="0.2778em"/><mi>x</mi><mo>≤</mo><mi>z</mi></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+&amp;x \leq x \cr
+&amp;x \leq y, y \leq z \implies x \leq z
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-1.25em;height:3em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.75em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.75em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">x</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⟹</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord mathnormal" style="margin-right:0.044em;">z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.25em;"><span></span></span></span></span></span></span></span></span></span></span></span></span>
+<p>The common thread here is that each of these classes correspond to some kind
+of mathematical object, with corresponding laws.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+Just because some class is inspired by a mathematical definition doesn't mean
+that this definition is the right class to use. There are plenty of mathematical
+definitions that don't mesh well with programming, that don't fit a situation,
+or that are simply not that good to begin with.</p>
+<p>The value in mathematical inspiration, in my view, lies not in using math
+for its own sake, but having a well defined conception of what a class
+should be, along with laws constraining its behavior.</p></blockquote>
+<h2>The Pragmatic Classes</h2>
+<p>The remaining classes we've seen are more loosely defined, and fall
+into what I call the "pragmatic classes". The chief example here is
+<code>Num</code>. These classes, as I see them, are about defining useful operations,
+caring more about having a vector to provide operators, over
+representing some kind of principled abstraction.</p>
+<p>Very often, these are conceived of as providing a general class of types
+that "behave like" some other concrete type. For example,
+<code>Real</code> represents types that are essentially like the <code>Rational</code> type.</p>
+<p>The disadvantage in this kind of class is that the operations involved
+are often lawless, and sometimes instances have to cheat. Many <code>Num</code>
+instances have to bend some of the rules a bit, since not all operations
+make sense for that type. This happens because the Num abstraction is
+an ad-hoc generalization of the well-known integer type, and not a
+more principled collection of operations and laws.</p>
+<h1>A Proposed Hierarchy</h1>
+<p>I don't think I've found the perfect solution to making a hierarchy
+of numerical classes, nor do I think such a solution can be found,
+but I do have a few ideas on making things a bit better.</p>
+<p>Here's an alternative hierarchy of classes:</p>
+<p>
+<img src=../Images/e82ea230911ca7e5ec1ff3053fb308a28750bd45837492ce3299ac88736c8dd4.png alt= /></p>
+<h2>Semigroup, Monoid</h2>
+<p>These are the same classes that we're used to, inspired
+by the same mathematical objects:</p>
+<pre><code>class Semigroup a where
+  (<>) :: a -> a -> a
+
+class Semigroup a => Monoid a where
+  mempty :: a</code></pre>
+<h2>Group</h2>
+<p>Mathematically, a Group is a Monoid, where each element <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span></span>
+has an inverse <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">a^{-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></span>, satisfying:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mo>⋅</mo><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>e</mi><mo>=</mo><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">a \cdot a^{-1} = e = a^{-1} \cdot a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="margin-right:0.05em;top:-3.113em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span></span></span>
+<p>This leads to the following type-class:</p>
+<pre><code>class Monoid a => Group a where
+  negate :: a -> a</code></pre>
+<h2>Additive</h2>
+<p>Mathematically, this models an <em>Abelian Group</em>, which is just a group,
+but where the group operation is commutative, i.e.:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mo>⋅</mo><mi>b</mi><mo>=</mo><mi>b</mi><mo>⋅</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">a \cdot b = b \cdot a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span></span></span>
+<p>It's common to use <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">+</span></span></span></span></span> for the group operation instead.</p>
+<p>This gives us the following typeclass:</p>
+<pre><code>class Group a => Additive a where
+  (+) :: a -> a -> a</code></pre>
+<p>This class serves to introduce the <code>+</code> operator, which has to be commutative.
+The additional rule is that <code>+</code> and <code><></code> have to coincide.</p>
+<p>We can also define:</p>
+<pre><code>(-) :: Additive a => a -> a -> a
+a - b = a + negate b</code></pre>
+<h2>Ring</h2>
+<p>Mathematically, a Ring is an Abelian Group, equipped with multiplication as well,
+satisfying:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi><mi>b</mi><mo>+</mo><mi>a</mi><mi>c</mi><mo stretchy="false">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false">)</mo><mi>a</mi><mo>=</mo><mi>b</mi><mi>a</mi><mo>+</mo><mi>c</mi><mi>a</mi><mn>1</mn><mi>a</mi><mo>=</mo><mi>a</mi><mo>=</mo><mi>a</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">a(b + c) = ab + ac
+(b + c)a = ba + ca
+1a = a = a1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7778em;"></span><span class="mord mathnormal">ab</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7778em;"></span><span class="mord mathnormal">ba</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord">1</span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">a</span><span class="mord">1</span></span></span></span></span></span>
+<p>This gives us the following typeclass:</p>
+<pre><code>class Additive a => Ring a where
+  (*) :: a -> a -> a
+  one :: a</code></pre>
+<p>satisfying the associated laws.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+We don't necessarily assume that <code>*</code> is commutative here. You could add in an
+additional typeclass encoding this assumption.</p>
+<p>In a dependently typed language, we might also be carrying out proofs of these properties,
+in addition to the operations themselves.</p></blockquote>
+<h3>Choosing Instances</h3>
+<p>Given some Ring, we have a Monoid instance, matching up with addition <code>+</code>. We might
+also want to use multiplication instead, leading us to define the following wrapper:</p>
+<pre><code>newtype Multiply m = Multiply m
+
+instance Ring m => Semigroup (Multiply m) where
+  (<>) = (*)
+
+instance Ring m => Monoid (Multiply m) where
+  mempty = one</code></pre>
+<p>We can use this wrapper to select the right version of Monoid, which is useful.</p>
+<h2>Num</h2>
+<p>Now we move on from the nice mathematical classes, to the more pragamatic classes.</p>
+<p>First, we have <code>Num</code>. Having already defined many ring operations, we're left with just:</p>
+<pre><code>class Ring a => Num a where
+  fromInteger :: Integer -> a</code></pre>
+<p>Note that we've taken the liberty of removing <code>abs</code> and <code>signum</code>, which aren't particularly
+principled to begin with. If these are crucial, I would recommend either sticking them
+in the <code>Integral</code> class, or creating an extra class after <code>Num</code>, to contain them.</p>
+<p>We use the <code>Num</code> class to interpret numeric literals.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+It might also be interesting to have a set of numeric classes for bounded conversions,
+since Integers might be much too large for a given type. For example,
+converting <code>Integer</code> to <code>Int64</code> is going to fail for large numbers. Addressing
+this issue would be a good idea.</p></blockquote>
+<h2>Enum</h2>
+<p>This remains unchanged, although now we have an <code>Ord</code> requirement.
+This makes sense in my view, since you can use the enumeration indices to compare two
+elements, and this always makes sense.</p>
+<h2>Real</h2>
+<p>For <code>Real</code>, the idea is unchanged. We have a class that represents the ability
+to convert to rational numbers.</p>
+<h2>Integral</h2>
+<p>This works the same way as it did previously, with conversions back to integers,
+and the corresponding division operations defined therein.</p>
+<h3>Roundtripping</h3>
+<p>Given that <code>Integral</code> implies <code>Num</code>, it might be a good idea to add an additional law,
+specifying that the behavior of the newly added division operators can be derived
+through first converting to <code>Integer</code>, performing the operation there,
+and then converting back to the original type.</p>
+<h1>Conclusion</h1>
+<p>I'm not entirely satisfied with the tail end of the hierarchy, and I wonder
+if a better approach to the so-called "pragmatic classes" might exist.</p>
+<p>Another big hole I've left is conversions that might possibly fail. For example,
+converting large integer types into smaller integer types.</p>
+<p>That being said, I'm pretty happy with the algebraic side of things, and I really
+think that the addition of Groups would be quite useful, given how
+much love Monoids have seen so far.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

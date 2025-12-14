@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - From Interfaces to Traits</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2019-08-17">2019-08-17</time>
+
+<h1>From Interfaces to Traits</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/programming-languages/index.html">
+    #programming-languages
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/software-architecture/index.html">
+    #software-architecture
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is a post about how different languages
+handle the concept of <em>interfaces</em>. We'll go over the classical
+<em>OO</em> way of handling them, with <em>Java</em>, to the more recent
+approaches of languages like <em>Rust</em>, as well as others in between.</p><!--more-->
+<h1>Why do we want interfaces?</h1>
+<p>The problem interfaces address is <em>polymorphism</em>.
+Polymorphic code can work with different types of things
+in a flexible way. In practice this means functions
+that can accept different types, and work differently based on those
+types.</p>
+<p>For example, we might have a function that can print out results
+to a file or directly to the terminal.</p>
+<p>Polymorphism lets us write more reusable code. One function
+can operate on many types without having to be rewritten for each of them.</p>
+<p>Functions that use only an interface, instead of all the implementation
+details of a type, are easier to understand. For example, instead of
+depending on all of a file's operations, we only care about using it as another
+output stream. This allows our functions to worry
+about less things, and get closer to having a <em>single responsibility</em>.</p>
+<h1>Classical Interfaces</h1>
+<p>Interfaces in Java are a variant of <em>inheritance</em>, so
+let's look over how that works first.</p>
+<h2>Inheritance</h2>
+<p>Java has <em>classes</em>, and these have <em>methods</em>.
+For example:</p>
+<pre><code>class Rectangle {
+  private int height;
+  private int width;
+
+  public Rectangle(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+
+  public int area() {
+    return height * width;
+  }
+}</code></pre>
+<p>This is a class, with two <em>fields</em>, a <em>constructor</em>, and a method
+that makes use of both of those fields.</p>
+<p>We can create a new <em>instance</em> of this class, and call its methods
+as follows:</p>
+<pre><code>var rectangle = new Rectangle(3, 4);
+System.out.println(rectangle.area());</code></pre>
+<p>This program prints out <code>12</code>, because we call this rectangle's methods using
+the data contained in its fields.</p>
+<p>We can also make new classes which inherit from another;
+for example:</p>
+<pre><code>class Square extends Rectangle {
+  public Square(width) {
+    super(width, width);
+  }
+}</code></pre>
+<p>This class can be used like this:</p>
+<pre><code>var square = new Square(3);
+System.out.println(square.area());</code></pre>
+<p>This program prints out <code>9</code>.</p>
+<p>The <code>Square</code> class inherits all the methods and their implementations
+from its parent class <code>Rectangle</code>, and can use its parent's constructor.
+This means that it already has all of <code>Rectangle</code>'s methods and their
+implementations from the start.</p>
+<p>Classes can also change the implementation of certain methods. This
+is called <em>overriding</em> in Java.</p>
+<pre><code>  @Override
+  public int height() {
+    // new behavior
+  }</code></pre>
+<h2>Abstract Classes</h2>
+<p>Java also has a feature called <em>abstract classes</em>.</p>
+<p>Abstract classes have one big difference from normal classes:
+they can choose not to provide an implementation for a given method.</p>
+<p>For example:</p>
+<pre><code>abstract class Shape {
+  abstract int height();
+
+  int heightSquared() {
+    var h = height();
+    return h * h;
+  }
+}</code></pre>
+<p>We've left the <code>height</code> method abstract. We can't actually create
+instances of the <code>Shape</code> class. Instead, we need to extend the class
+with another, and then we can create instances of that <em>subclass</em>.</p>
+<h2>Interfaces</h2>
+<p>Now that we've seen classes, and then abstract classes, we
+can move on to interfaces, as implemented in Java.</p>
+<p>An interface is essentially an abstract class, where
+all the methods are abstract.</p>
+<p>For example:</p>
+<pre><code>interface ShapeLike {
+  int area();
+}</code></pre>
+<p>We can then have different classes that implement this interface:</p>
+<pre><code>class Rectangle implements ShapeLike {
+  int area() {
+    return width * height;
+  }
+}
+
+class Square implements ShapeLike {
+  int area() {
+    return width * width;
+  }
+}</code></pre>
+<p>This can be used for polymorphism, by declaring a function that accepts
+an interface instead of a specific type:</p>
+<pre><code>class ShapeUtils {
+   static int areaSquared(ShapeLike shape) {
+     var a = shape.area();
+     return a * a;
+   }
+}</code></pre>
+<p>(We make a class with a <em>static</em> method because Java doesn't like free functions).</p>
+<p>One key thing to notice here is that each class has to explicitly
+declare that it implements a given interface. There's no way to make
+an old class implement a new interface.</p>
+<p>Java has many other ways of implementing polymorphism through
+inheritence, from subclassing to abstract classes to interfaces.
+All of these have allow a function to accept a given
+type without knowing whether that argument is of that exact type,
+or a given subtype. When accepting an interface, a function can only use
+the methods that interface provides, and is oblivious to the other details the
+various classes implementing that interface may have.</p>
+<h1>Middle Ground: Go</h1>
+<p>The main difference between <em>Go</em> and Java is that in Go, implementing
+an interface is implicit, whereas in Java, this is explicit.</p>
+<p>Continuing with our geometry examples, in Go we might have code
+that looks like this:</p>
+<pre><code>package main
+
+import "fmt"
+
+type Shape interface {
+  area() int
+}
+
+type Square struct {
+  width int
+}
+
+func (s Square) area() int {
+  return s.width * s.width
+}
+
+func main() {
+  var s Shape
+  s = Square{width: 3}
+  fmt.Println(s.area())
+}</code></pre>
+<p>(This is actually a complete Go program that can be run, and prints out <code>9</code>)</p>
+<p>The first part of this program declares a new interface type, named <code>Shape</code>.
+This interface is defined by the method <code>area</code>. With the way interfaces
+work in Go, any type that has a method named <code>area</code> with the right type signature
+can be used as that interface. Later on in the program, we assign a value
+of type <code>Square</code> to a variable of type <code>Shape</code>. This is allowed because
+<code>Square</code> has a method with the right name and types.</p>
+<p>One downside of Java's interfaces is that old types cannot implement
+new interfaces. If we notice a behavior we want to abstract over,
+we can't make it work with existing types. Because Go has implicit interfaces,
+if we notice that multiple types already have a given method, we can abstract
+over that. We can create a function that accepts any type that has a given set
+of methods by using interfaces.</p>
+<h1>Rust's Traits</h1>
+<p>Rust's version of interfaces is called <em>traits</em>. These
+traits function quite similarly to <em>Haskell</em>'s <em>typeclasses</em>.</p>
+<p>The main difference between Rust and the other two examples
+we've seen so far is that in Rust, traits are implemented
+explicitly, but can be implemented for existing types.</p>
+<p>Let's look at an example:</p>
+<pre><code>trait Shape {
+  fn area(&self) -> i32;
+}
+
+struct Square {
+  width: i32
+}
+
+impl Shape for Square {
+   fn area(&self) -> i32 {
+     width * width
+   }
+}</code></pre>
+<p>We've seen a similar example a few times. This is very similar
+to the Go version, except that instead of implementing
+an <code>area</code> method in the struct (which we can do in Rust), and
+then having the interface implementation be implicit, we have
+to explicitly implement that interface.</p>
+<p>One advantage of explicit implementation is that the Rust
+compiler can warn us if we incorrectly implement an interface.
+In Java a similar thing happens as well.</p>
+<p>Because the implementation block is separate from the declaration
+of the type itself, we can implement a trait for a type that already
+exists. This is very useful, because we can identify abstractions at any time.</p>
+<p>There are two "guidelines" of sorts that constrain this a little bit.
+We should try and put a trait implementation either</p>
+<ul><li>In the same file as the declaration of a <em>trait</em></li><li>In the same file as the declaration of a <em>type</em></li></ul>
+<p>For existing types, we have to put the implementation next
+to the trait, since we don't have access to the original file.</p>
+<p>For types we think up after having created the interface, we can
+implement that interface next to the type.</p>
+<h1>Interface Matrix</h1>
+<p>We can divide up the design space we've gone over so far like so:</p>
+<table>
+<tr>
+<th>Language</th>
+<th>Existing Types</th>
+<th>Explicit</th>
+</tr>
+<tr>
+<th>Java</th>
+<th>No</th>
+<th>Yes</th>
+</tr>
+<tr>
+<th>Go</th>
+<th>Yes</th>
+<th>No</th>
+</tr>
+<tr>
+<th>Rust</th>
+<th>Yes</th>
+<th>Yes</th>
+</tr>
+</table>
+<p>I don't know of a language with some kind of interface construct
+which doesn't work with existing types, but has implicit implementation.
+I think that this may not even be possible. If the implementation is
+implicit, then it will pick up the methods that already
+exist for certain types.</p>
+<h1>My Opinions</h1>
+<p>Now we come to the meat of the post: why I think Rust's position
+in the design space is the best.</p>
+<h3>Traits work with existing types</h3>
+<p>This is the most important aspect of traits in my view.</p>
+<p>By being able to implement new traits for old types,
+you can discover and work on abstractions independently
+of other types. This allows you to work much more flexibly
+with other people's code, since you can implement
+your own abstraction layer without having to write a
+bunch of wrapper types.</p>
+<h3>Traits are still explicit</h3>
+<p>In general, I prefer explicit behavior to implicit
+behavior.</p>
+<p>One advantage of trait implementations being explicit
+is that it's easy to tell that a type implements a trait
+correctly. In Rust, if your implementation uses the wrong
+name or method type, then you'll catch it then and there.
+In Go, you'll only catch this once you try and assign
+this type to a given interface.</p>
+<p>The two guidelines for where trait implementations
+should lie keeps things much more orderly. It's very easy
+to know what existing types a trait decided to provide
+implementations for, since they all have to be located
+next to the trait itself.</p>
+<h1>Summary</h1>
+<p>Different languages have different ways of implementing
+interface-like concepts. The main axes in the design space
+are explicit vs implicit implementation, and working
+with existing types or not.</p>
+<p>Rust's position of working with existing types in an explicit
+way is the best, in my opinion.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Poline</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2019-08-31">2019-08-31</time>
+
+<h1>Poline</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/concurrency/index.html">
+    #concurrency
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming-languages/index.html">
+    #programming-languages
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/rust/index.html">
+    #rust
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is a post about <a href=https://github.com/cronokirby/poline>Poline</a>, a tiny
+programming language I wrote recently. The main "gimmick" of Poline is
+a feature called <em>Green Threads</em>. In fact, Poline doesn't have many other
+features besides them.</p><!--more-->
+<h1>Green what?</h1>
+<p><a href=https://en.wikipedia.org/wiki/Green_threads>Green Threads</a> are a way of
+managing concurrency. The core idea is to have many lightweight threads
+scheduled over fewer OS threads. These tiny threads are then managed by
+the runtime itself, instead of the OS.</p>
+<h2>Cooperative Scheduling</h2>
+<p>Languages like Go, as well as Poline, do cooperative scheduling for their
+threads. The runtime knows when a given thread is performing a blocking
+operation, and can "preempt" that thread in order to run others. For example,
+when a thread is reading from a TCP socket, the runtime can switch off to other
+threads if no data has arrived yet.</p>
+<h2>Messaging</h2>
+<p>Having independent threads is nice in and of itself, especially when combined
+with preemption, but threads also want to communicate with eachother.</p>
+<p>In languages like Go, threads must communicate through explicit interfaces
+called <em>channels</em>. A channel first needs to be created and then given to
+both threads before they can communicate to eachother across it. In Go,
+multiple threads can be sending messages on a channel, and multiple threads
+can be pulling messages from that channel.</p>
+<p>Other languages, such as Erlang and Poline itself, instead allow communication
+between threads directly. In Poline, creating a new thread also gives us a
+handle, which we can use to send messages to that thread. The thread itself can
+wait until it receives messages sent directly to it.</p>
+<h2>Motivation</h2>
+<p>My main motivation in writing Poline was to learn how to implement Green
+Threading. The impetus was actually a tweet, describing Green Threading as a good interview question.
+I wondered how I might implement that feature myself, and decided to tinker with
+tiny language. Poline doesn't have many features specifically because I wanted
+to focus on this aspect.</p>
+<h1>The language itself</h1>
+<p>Before I go into the implementation of Poline, let's take a look at its syntax.</p>
+<p>A Poline program consists of a series of function declarations.
+Here's an example of one of these declarations:</p>
+<pre><code>fn example(arg1, arg2) {
+}</code></pre>
+<p>Each function has a name, and then takes a list of named arguments.</p>
+<p>The function called <code>main</code>, is the entry point for a program.</p>
+<h2>String literals</h2>
+<p>The only type of literal in Poline is the string, which works
+the same as other languages:</p>
+<pre><code>"example string"</code></pre>
+<p>The only things a variable can contain in Poline are strings, and thread
+handles, as we'll see later.</p>
+<h2>Printing</h2>
+<p>Poline has a statement for printing:</p>
+<pre><code>fn example(arg) {
+    print arg;
+    print "literal";
+}</code></pre>
+<p>Both variables, and string literals can be printed. Every statement
+in poline ends with a semicolon. Every function consists of a series
+of statements.</p>
+<h2>Calling functions</h2>
+<p>Another type of statement is the function call:</p>
+<pre><code>fn print(arg) {
+    print arg;
+}
+
+fn main() {
+    print("foo");
+}</code></pre>
+<p>This works as you'd expect. Extra arguments are ignored, and missing arguments
+are filled in with empty strings.</p>
+<h2>Creating threads</h2>
+<p>Now we come to the real interesting parts of Poline.</p>
+<p>We can create a new thread from a function call:</p>
+<pre><code>fn print(arg) {
+    print arg;
+}
+
+fn main() {
+    spawn print("a") as p;
+}</code></pre>
+<p>Here, the variable <code>p</code> contains the handle for the thread we've spawned.
+The thread will run the function it was called with.</p>
+<h2>Communicating between threads</h2>
+<p>Here's an example program that shows how messaging works:</p>
+<pre><code>fn print_recv() {
+    recv arg;
+    print arg;
+}
+
+fn main() {
+    spawn print_recv() as p;
+    send "foo" to p;
+}</code></pre>
+<p>After spawning a new thread, we have a handle we can access stored in <code>p</code>.
+We send the string literal <code>"foo"</code> to <code>p</code>. We could have sent a variable
+instead of a string literal too.</p>
+<p>In the thread <code>p</code>, we first receive a message, creating a variable named
+<code>arg</code>, and then we print the contents of that variable.</p>
+<h3>Preemption</h3>
+<p>We'll go into the details of this later, but whenever a thread uses <code>recv</code>,
+it gets preempted until a message is available. When <code>p</code> calls <code>recv</code> without
+a message to fulfill that request, it gets preempted, letting another
+thread run. Once a message is sent to <code>p</code>, it can be considered again.</p>
+<p>Poline is actually deterministic, because it doesn't yet have multithreading.
+In this case, <code>p</code> will always start running after the main thread finishes,
+because the main thread has no blocking <code>recv</code> calls that preempt it off.</p>
+<h1>Implementation</h1>
+<p>I decided to implement Poline in <em>Rust</em>, mainly because I'm familiar with
+the language, and because it has good ways of representing ASTs.</p>
+<p>The interpretation pipeline looks like this:</p>
+<pre><code>Lexing -> Parsing -> Simplifying -> Interpreting</code></pre>
+<p>The lexing phase separates the raw text into tokens,
+making it easier to parser. The parser converts this newly created
+series of tokens into an AST representing the program. The simplifier
+makes the code easier for the interpreter, by doing things like removing
+variable names. And the interpreter is the work horse here, actually
+executing the code.</p>
+<p>I've taken some care in making the code easier to understand, so I encourage
+you to check out the <a href=https://github.com/cronokirby/poline>source</a>
+itself for more details about the implementation.</p>
+<h2>Lexing</h2>
+<p>The <a href=https://github.com/cronokirby/poline/blob/master/src/parser.rs#L62>lexer</a>
+takes the raw text of the program, and converts that into
+a series of tokens.</p>
+<p>For example, this program:</p>
+<pre><code>fn main() {
+    print "foo";
+}</code></pre>
+<p>gets lexed into:</p>
+<pre><code>Function Name("main") ( ) { Print String("foo") ; }</code></pre>
+<p>Dealing with a sequence of tokens instead of raw text makes the parser's job much easier.</p>
+<p>The language is simple enough that the lexer can work with just one character of lookahead.
+Essentially, our lexer only needs the following operations from our source of
+text:</p>
+<pre><code>// pseudo code
+fn next(Source) -> Option<char>
+fn peek(Source) -> Option<char></code></pre>
+<p>The first function, <code>next</code>, will return <code>None</code> if we're at the end of our
+source, and will otherwise return the next available character, and then advance
+that source. For example, given <code>"12"</code> as our source, the first call to next
+will return <code>Some('1')</code>, the next will return <code>Some('2')</code>, and subsequent calls
+will return <code>None</code>.</p>
+<p>The difference between <code>peek</code>, and <code>next</code> is that the former doesn't advance the
+source. Given <code>"12"</code> as our input, calls to <code>peek</code> will always return <code>Some(1)</code>,
+until we call <code>next</code> to move the input forward.</p>
+<p>The lexer works by repeatedly calling <code>next</code>, and then emitting tokens based on
+what it says. The one situation where <code>peek</code> is needed is parsing names.
+The lexer keeps interpreting the characters as part of the name until a
+non-alpha-numeric character is reached with <code>peek</code>.</p>
+<p>To handle keywords, the lexer first lexes out a name, and then checks if
+that name corresponds to one of the built-in keywords. This lets <code>printer</code>
+lex as <code>Name("printer")</code> and not <code>print Name("er")</code>.</p>
+<h2>Parsing</h2>
+<p>The
+<a href=https://github.com/cronokirby/poline/blob/master/src/parser.rs#L219>parser</a>
+takes the series of tokens produced by the previous stage, and converts them
+into a single representation of the program as a <a href=https://github.com/cronokirby/poline/blob/master/src/parser.rs#L192>syntax tree</a>.</p>
+<p>For example, the following program:</p>
+<pre><code>fn main() {
+    print "main";
+    spawn main() as p;
+}</code></pre>
+<p>Produces the following tree:</p>
+<pre><code>// Slightly simplified rust
+Syntax {
+    functions: [
+        FunctionDeclaration {
+            name: "main",
+            arg_names: [],
+            body: [
+                Statement::Print(Argument::Str("main"))
+                Statement::Spawn("p", FunctionCall {
+                    name: "main",
+                    args: []
+                })
+            ]
+        }
+    ]
+}</code></pre>
+<p>This tree represents the program as presented by the user. The parsing stage
+excludes programs that make no syntactic sense, e.g.</p>
+<pre><code>fn main() main() {
+    print print ; ; "foo"
+}</code></pre>
+<p>But it can't do anything for programs that work syntactically, but not logically.</p>
+<p>The parser is written as a hand-crafted
+<a href=https://en.wikipedia.org/wiki/Recursive_descent_parser>recursive descent
+parser</a>,
+but going into how those work is a bit outside the scope of this post.</p>
+<h1>Simplification</h1>
+<p>To illustrate what
+<a href=https://github.com/cronokirby/poline/blob/master/src/simplifier.rs#L355>simplification</a>
+does, let's take the example program from previously:</p>
+<pre><code>fn main() {
+    print "main";
+    spawn main() as p;
+}</code></pre>
+<p>This simplifies into:</p>
+<pre><code>Program {
+    strings: ["main"],
+    main_function: 0,
+    functions: [FunctionDeclaration {
+       arg_count: 0,
+       body: [
+          Statement::Print(Argument::Str(0)),
+          Statement::Spawn(FunctionCall {
+              name: 0,
+              args: []
+          })
+       ]
+    }]
+}</code></pre>
+<p>The first thing to notice is the extra information in addition to the syntax
+tree. We've moved all of the string literals in our program into an external
+table, and we have an index for the main function. The main work done by
+simplification is to remove literal strings and names from our syntax tree.
+Instead of referring to functions by their name, we refer to them by their
+index. We now refer to string literals in the AST by their position in the table.
+Variables are referred to by their position on their stack.</p>
+<h2>Stack indices</h2>
+<p>For variables, we refer to them by stack position. For example:</p>
+<pre><code>fn foo(x, y) {
+    print x;
+    print y;
+}</code></pre>
+<p>will simplify into:</p>
+<pre><code>FunctionDeclaration {
+    arg_count: 2,
+    body: [
+        Statement::Print(Argument::Name(0)),
+        Statement::Print(Argument::Name(1))
+    ]
+}</code></pre>
+<p>Instead of printing <code>x</code>, we now print <code>0</code>, since we're printing the variable
+with index <code>0</code> on the stack. We'll use a stack to contain the contents of our
+variables, so all the interpreter needs to do is lookup that position on the stack.</p>
+<h2>Shadowing</h2>
+<p>You might have noticed previously that our spawn statement now takes a single argument
+instead of two. This is because we refer to variables by their index on the
+stack instead of their name. But spawn always introduces a new variable, even if
+the name shadows an existing one. Because of this, there's no point having that
+second argument, since we always know that spawn pushes to the end of the stack.</p>
+<h1>Interpreter</h1>
+<p>The <a href=https://github.com/cronokirby/poline/blob/master/src/interpreter.rs#L387>interpreter</a>
+takes the AST produced in the previous steps, and actually runs the code
+contained inside.</p>
+<h2>Testing</h2>
+<p>The main way I tested the interpreter was by comparing expected print outputs to
+what the interpreter actually spit out. In order to test these outputs without
+looking at a terminal, I used a trait for the effects the interpreter needed:</p>
+<pre><code>pub trait ProgramIO {
+    fn print(&mut self, message: &str);
+}</code></pre>
+<p>Instead of printing out directly, the interpreter would instead call this
+method. When testing, we pass an implementation of this trait that appends
+printed messages to a vector. We can inspect this in order to test the interpeter.</p>
+<h2>State</h2>
+<p>The state the interpreter maintains looks something like this:</p>
+<pre><code>current_thread
+threads [
+    mailbox
+    calls [
+        function
+        statement_index
+        stack
+    ]
+]</code></pre>
+<p>Each thread has a mailbox to contain the messages it receives. The <code>send</code>
+statement results in a new variable being pushed there.</p>
+<p>We also have a sequence of function calls. Everytime a thread calls a function,
+it pushes some new state to the end of these calls. Whenever we reach the end of
+a function, we pop that state of from our stack of calls. We also have a stack
+containing the variables used in a function. We make sure to keep track of the
+function we're executing, along with the index of the statement we're at in that
+function, so that we can resume execution after preempting this thread.</p>
+<h2>Structure</h2>
+<p>The way the interpeter works is by finding the next statement to execute,
+and then changing the state around it based on that statement.</p>
+<p>We first look for a statement in the current thread. If a thread becomes
+blocked, then the subsequent thread becomes the current thread. If a thread
+finishes executing, then we mark that thread's slot as dead, so that we can
+reuse that space.</p>
+<p>All the magic of green threading happens in this statement searching and current
+thread switching.</p>
+<h1>Further Reading</h1>
+<p>This was a high level overview of how the interpreter for poline works. If you
+want a more detailed look, I'd recommend looking at the
+<a href=https://github.com/cronokirby/poline/>source code</a> itself.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

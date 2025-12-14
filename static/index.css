@@ -1,0 +1,426 @@
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.45;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* https://carbondesignsystem.com/elements/color/tokens/ */
+:root {
+	--background-L: #ffffff;
+	--layer-01-L: #f4f4f4;
+	--text-primary-L: #161616;
+	--text-secondary-L: #525252;
+	--text-placeholder-L: #a8a8a8;
+	--link-primary-L: #0f62fe;
+	--link-primary-hover-L: #0043ce;
+	--link-visited-L: #8a3ffc;
+
+	--background-D: #161616;
+	--layer-01-D: #262626;
+	--text-primary-D: #f4f4f4;
+	--text-secondary-D: #c6c6c6;
+	--text-placeholder-D: #6f6f6f;
+	--link-primary-D: #78a9ff;
+	--link-primary-hover-D: #a6c8ff;
+	--link-visited-D: #be95ff;
+
+	--background: var(--background-L);
+	--layer-01: var(--layer-01-L);
+	--text-primary: var(--text-primary-L);
+	--text-secondary: var(--text-secondary-L);
+	--text-placeholder: var(--text-placeholder-L);
+	--link-primary: var(--link-primary-L);
+	--link-primary-hover: var(--link-primary-hover-L);
+	--link-visited: var(--link-visited-L);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+		--background: var(--background-D);
+		--layer-01: var(--layer-01-D);
+		--text-primary: var(--text-primary-D);
+		--text-secondary: var(--text-secondary-D);
+		--text-placeholder: var(--text-placeholder-D);
+		--link-primary: var(--link-primary-D);
+		--link-primary-hover: var(--link-primary-hover-D);
+		--link-visited: var(--link-visited-D);
+  }
+}
+
+:root[data-theme="light"] {
+	--background: var(--background-L);
+	--layer-01: var(--layer-01-L);
+	--text-primary: var(--text-primary-L);
+	--text-secondary: var(--text-secondary-L);
+	--text-placeholder: var(--text-placeholder-L);
+	--link-primary: var(--link-primary-L);
+	--link-primary-hover: var(--link-primary-hover-L);
+	--link-visited: var(--link-visited-L);
+}
+
+:root[data-theme="dark"] {
+		--background: var(--background-D);
+		--layer-01: var(--layer-01-D);
+		--text-primary: var(--text-primary-D);
+		--text-secondary: var(--text-secondary-D);
+		--text-placeholder: var(--text-placeholder-D);
+		--link-primary: var(--link-primary-D);
+		--link-primary-hover: var(--link-primary-hover-D);
+		--link-visited: var(--link-visited-D);
+}
+
+button {
+	color: var(--text-primary);
+	background-color: var(--background);
+	border: 0px;
+}
+
+button:hover {
+	color: var(--link-primary-hover);
+}
+
+html {
+	color: var(--text-primary);
+	background-color: var(--background);
+	font-family: "EB Garamond", serif;
+	font-size: 16pt;
+	max-width: 60ch;
+	margin: 0 auto;
+	text-align: left;
+}
+
+pre {
+	background-color: var(--layer-01);
+  overflow: auto;     /* or scroll */
+  max-width: 100%;    /* prevents horizontal page overflow */
+  padding: 0.2rem;
+  margin: 0.5rem 0rem;
+}
+
+p + p, p + blockquote {
+  margin-top: 1rem;
+}
+
+p + ul, p + ol, ol + p, ul + p {
+  margin-top: 0.25rem;
+}
+
+code {
+	font-family: "Iosevka CK Web", monospace;
+}
+
+body {
+	counter-reset: h1;
+}
+
+header h1 {
+	line-height: 1.0;
+	font-size: 1.4rem;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+}
+
+h1:not(:is(header *)) {
+	counter-reset: h2;	
+}
+
+h2 {
+	counter-reset: h3;
+}
+
+h1:not(:is(header *)):not(.list-title)::before {
+	counter-increment: h1;
+	content: counter(h1) " ";
+}
+
+h2::before {
+	counter-increment: h2;
+	content: counter(h1) "." counter(h2) " ";
+}
+
+h3::before {
+	counter-increment: h3;
+	content: counter(h1) "." counter(h2) "." counter(h3) " ";
+}
+
+h1:not(:is(header *))::before, h2::before, h3::before {
+	color: var(--text-secondary);
+}
+
+h1:not(:is(header *)), h2, h3, h4, h5, h6 {
+	margin-top: 1.1rem;
+	margin-bottom: 0.4rem;
+}
+
+h1:not(:is(header *)) {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.0rem;
+	font-weight: 700;
+}
+
+h4, h5, h6 {
+	font-size: 1.0rem;
+	font-weight: 500;
+}
+
+blockquote {
+	background-color: var(--layer-01);
+	padding: 0.5rem;
+	font-size: 0.9rem;
+}
+
+a {
+  color: var(--link-primary);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-primary-hover);
+}
+
+.authors::before {
+	content: "By ";
+	color: var(--text-secondary);
+}
+
+.authors, .tags {
+  list-style: none;   /* no bullets */
+  margin: 0;
+  padding: 0;
+}
+
+.authors li, .tags li {
+	display: inline;
+}
+
+.authors li::after {
+  content: ", ";       /* add comma after each item */
+}
+
+.authors li:last-child::after {
+  content: "";        /* remove comma after the last one */
+}
+
+.tag + .tag {
+	padding-left: 0.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;   /* modern, recommended */
+  word-wrap: break-word;       /* legacy alias */
+}
+
+header {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.published::before {
+	content: "Published ";
+	color: var(--text-secondary);
+}
+
+/* Remove all list markers */
+.link-list,
+.item-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Spacing between entries */
+.link-list .entry {
+  margin-bottom: 1.5rem;
+}
+
+/* Title left, date right */
+.link-list .entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Tags in one line */
+.item-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.entry-title {
+	font-weight: 500;
+}
+
+.katex-wrapper {
+  font-size: 0.8em; /* 80% of your page's base font size */
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover; /* ensures image fills the circle without stretching */
+}
+
+.icon-bar {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+  justify-content: space-between; /* pushes first left, last right */
+  margin-bottom: 1em;
+}
+
+.icon-bar > * {
+  display: block; /* ensure flex children behave predictably */
+}
+
+.icon-bar img {
+  margin: 0;             /* stop auto centering */
+  width: 2em;            /* or whatever size you want */
+  height: 2em;
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-Extended.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-Italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 400;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-ExtendedItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: normal;
+	src: url('/static/fonts/IosevkaCK-ExtendedBold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: normal;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Iosevka CK Web';
+	font-display: swap;
+	font-weight: 700;
+	font-stretch: expanded;
+	font-style: italic;
+	src: url('/static/fonts/IosevkaCK-ExtendedBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/static/fonts/EBGaramond.woff2') format('woff2');
+}

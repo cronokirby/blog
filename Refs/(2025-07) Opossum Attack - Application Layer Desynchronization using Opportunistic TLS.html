@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - (2025-07) Opossum Attack - Application Layer Desynchronization using Opportunistic TLS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2025-12-14">2025-12-14</time>
+
+<h1><a href="https://eprint.iacr.org/2025/1260">(2025-07) Opossum Attack - Application Layer Desynchronization using Opportunistic TLS</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Robert Merget]]</li>
+
+  <li>[[Nurullah Erinola]]</li>
+
+  <li>[[Marcel Maehren]]</li>
+
+  <li>[[Lukas Knittel]]</li>
+
+  <li>[[Sven Hebrok]]</li>
+
+  <li>[[Marcus Brinkmann]]</li>
+
+  <li>[[Juraj Somorovsky]]</li>
+
+  <li>[[Jörg Schwenk]]</li>
+
+</ul>
+
+
+<div class="published">2025-07-08</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Many protocols, like HTTP, FTP, POP3, and SMTP, were origi-
+nally designed as synchronous plaintext protocols -- commands
+and data are sent in the clear, and the client waits for the response
+to a pending request before sending the next one. Later, two main
+solutions were introduced to retrofit these protocols with TLS
+protection. (1) Implicit TLS: Designate a new, well-known TCP
+port for each protocol-over-TLS, and start with TLS immediately.
+(2) Opportunistic TLS: Keep the original well-known port and start
+with the plaintext protocol, then switch to TLS in response to a
+command like STARTTLS.
+In this work, we present a novel weakness in the way TLS is
+integrated into popular application layer protocols through implicit
+and opportunistic TLS. This weakness breaks authentication, even
+in modern TLS implementations if both implicit TLS and oppor-
+tunistic TLS are supported at the same time. This authentication
+flaw can then be utilized to influence the exchanged messages after
+the TLS handshake from a pure MitM position.In contrast to previ-
+ous attacks on opportunistic TLS, this attack class does not rely on
+bugs in the implementations and only requires one of the peers to
+support opportunistic TLS.
+We analyze popular application layer protocols that support
+opportunistic TLS regarding their vulnerability to the attack. To
+demonstrate the practical impact of the attack, we analyze exploita-
+tion techniques for HTTP (RFC 2817) in detail, and show four
+different exploit directions. To estimate the impact of the attack on
+deployed servers, we conducted a series of IPv4-wide scans over
+multiple protocols and ports to check for support of opportunistic
+TLS. We found that support for opportunistic TLS is still widespread
+for many application protocols, with over 3 million servers support-
+ing both, implicit and opportunistic TLS at the same time. In the
+case of HTTP, we found 20,121 servers that support opportunistic
+HTTP across 35 ports, with 2,268 of these servers also supporting
+HTTPS and 539 using the same domain names for implicit HTTPS,
+presenting an exploitable scenario.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

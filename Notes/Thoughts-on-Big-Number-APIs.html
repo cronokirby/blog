@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Thoughts on Big Number APIs</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous"><title>cronokirby - Thoughts on Big Number APIs</title>
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2021-01-28">2021-01-28</time>
+
+<h1>Thoughts on Big Number APIs</h1>
+
+
+
+
+</header>
+
+<p>Big numbers are useful for general purpose applications,
+but also necessary for certain cryptographic protocols,
+notably <strong>RSA</strong>.</p>
+<h1>General Purpose Numbers</h1>
+<p>For general purpose numbers, you want to be able to represent arbitrary
+integers in <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">Z</mi></mrow><annotation encoding="application/x-tex">\mathbb{Z}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">Z</span></span></span></span></span>. This is usually done by storing a collection
+of unsigned integers, usually <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn></mrow><annotation encoding="application/x-tex">64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span></span> or <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>32</mn></mrow><annotation encoding="application/x-tex">32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord">2</span></span></span></span></span> bits (called <em>limbs</em>)
+, along with a sign.</p>
+<p>The API allows you to convert normal numbers into this general integer type,
+and to perform arithmetic operations without restrictions.</p>
+<p>A usual convention is the the representation of integers is <em>normalized</em>,
+so that there aren't any redundant zeros stored above the most significant
+limb of our numbers. Just how the number <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0034</mn></mrow><annotation encoding="application/x-tex">0034</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">3</span><span class="mord">4</span></span></span></span></span> is normalized to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>34</mn></mrow><annotation encoding="application/x-tex">34</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord">4</span></span></span></span></span> instead.</p>
+<p>Many programming languages have such integers, notably
+Python, Go <sup><a href="#fn-3">1</a></sup>, and Haskell <sup><a href="#fn-4">2</a></sup></p>
+<h1>Constant-Time Numbers</h1>
+<p>The problem with this implementation is that operations can take
+a variable amount of time, depending on the value of some integer.
+Since the number of limbs taken up by an integer depends roughly
+on its value, and operations can take time varying in the number of limbs,
+this can potentially leak information about the value of an integer.</p>
+<p>This might leak information about a private key, for example,
+which is something you want to avoid.</p>
+<p>To address this, the execution time of operations can only depend
+on <em>publicly available information</em>. In most situations, this is possible
+in theory, since the bounds of some secret value are known in advance.
+For example, an RSA private key would have a size bounded by
+the modulus, which is publicly known.</p>
+<p>This has lead to actual problems in practice, see <sup><a href="#fn-5">3</a></sup>,
+<sup><a href="#fn-6">4</a></sup>, and <sup><a href="#fn-7">5</a></sup>.</p>
+<h2>Blinding</h2>
+<p>Some sensitive operations work by
+first generating some random mask, combining it with
+a the sensitive integer, performing the operation, and the extracting
+out the random mask, somehow. This mask needs to be applied in a way
+that's compatible with the operation, and such that the inclusion
+of the mask correctly prevents leaking information about the sensitive value.</p>
+<p>This is an approach used by BoringSSL <sup><a href="#fn-8">6</a></sup>,
+for example, in the <code>inverse_blinded</code> function.</p>
+<h3>Pros:</h3>
+<ul><li>Simple way to patch specific easier timing attacks</li></ul>
+<h3>Cons:</h3>
+<ul><li>In practice, this will leave blindspots, since many operations are variable time</li><li>This technique is not applicable to all operations</li><li>Requires a source of entropy for many operations, especially if applied more generally</li><li>The masking can cause some operations to randomly fail (see <code>inverse_blinded</code>)</li></ul>
+<h2>Mixed Time Integers</h2>
+<p>This approach amends an existing big integer type to support
+constant time operation. This can be done by flagging down
+the type, enabling constant time algorithms on certain code types,
+or by using some kind of capping method.</p>
+<p>It's still possible to use this type as a "normal" big integer type,
+with variable time operation.</p>
+<p>This is one of the main propositions to amend Go's
+big numbers to support constant time operation. See
+<sup><a href="#fn-1">7</a></sup>.</p>
+<h3>Pros:</h3>
+<ul><li>It's possible to amend an existing library to support constant time operation in this way</li></ul>
+<h3>Cons:</h3>
+<ul><li>It's possible to forget to enable the more secure mode of operation</li><li>The API is easier to misuse given that both modes of operation are possible</li><li>Having branching logic around the mode of operation is prone to errors</li></ul>
+<h2>Rigidly Capped Integers</h2>
+<p>The idea here is that each integer has a "cap" or "announced length",
+which should be large enough to contain that integer. This length is usually
+in bits, and essentially translates to a number of limbs.</p>
+<p>Operations will now be variable based on the announced length, which
+should not be sensitive information.</p>
+<p>This mode is "rigid", because whenever an operation exceeds the announced
+length, some kind of error is issued. This is usually an implementation
+error for that cryptographic protocol, since the bounds of operation should
+be known in advance.</p>
+<p>This is the mode of operation proposed for Go's standard library <sup><a href="#fn-1">7</a></sup>
+(as a concrete mode for mixed time integers).</p>
+<h3>Pros:</h3>
+<ul><li>Correctness is straightforward</li><li>There's usually an obvious cap to use, such as a modulus</li></ul>
+<h3>Cons:</h3>
+<ul><li>Care needs to be taken to make sure that overflowing over the cap never happens</li><li>Can't work as a general purpose integer type</li></ul>
+<h2>Flexibly Capped Integers</h2>
+<p>This is the same idea as the last version, except in terms of cap overflow.
+The idea is that we can have operations that create a new cap based on the
+maximum possible size allowable for that operation. For example,
+multiplication of two integers with caps <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">c_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.5806em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-left:0em;top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-left:0em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> can yield
+an integer of cap <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_1 + c_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.7333em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.5806em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>. Taking modular operations with a cap
+of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span> can yield integers with a cap of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span>.</p>
+<p>Since all of these caps are public information, having variable
+time operation, even creating new caps, so long as they depend only
+on the cap size, and not the <em>value</em> of any given integer, should
+not leak information about any values, only about caps.</p>
+<p>This is done in BearSSL <sup><a href="#fn-2">8</a></sup>.</p>
+<h3>Pros:</h3>
+<ul><li>Operation is more flexible wrt overflow</li><li>Can work as a general purpose type</li></ul>
+<h3>Cons:</h3>
+<ul><li>Correctness is more complex compared to the rigid approach</li><li>Either a lot of space is wasted, or specialized operations for things like multiplication are required</li></ul>
+<h2>Modular Integers</h2>
+<p>Integers as proposed thus far can be arbitrarily sized, and negative. In practice,
+one often needs big integers not for general purpose computation,
+but for arithmetic modulo some <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span></span></span></span></span>.</p>
+<p>Instead of having a capacity stored with the integer, you instead
+store the big integer <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span></span></span></span></span> (via a pointer, or some other means).
+Then, all operations on these integers are done modulo <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span></span></span></span></span>.</p>
+<p>The time for different operations can be variable in the <em>size</em>
+of the modulus, but not the exact values.</p>
+<p>There exists a package providing this
+in Dedis's kyber library <sup><a href="#fn-9">9</a></sup></p>
+<h3>Pros:</h3>
+<ul><li>Eliminate complexity required for general purpose operation (negatives, uncapped, etc.)</li><li>Reduce boilerplate for the case of modular arithmetic, which is common</li></ul>
+<h3>Cons:</h3>
+<ul><li>Can't be used as a general purpose type</li></ul>
+<h1>References</h1>
+<p><sup><a href="#fn-1">7</a></sup></p>
+<p><sup><a href="#fn-2">8</a></sup></p>
+<p><sup><a href="#fn-3">1</a></sup></p>
+<p><sup><a href="#fn-4">2</a></sup></p>
+<p><sup><a href="#fn-5">3</a></sup></p>
+<p><sup><a href="#fn-6">4</a></sup></p>
+<p><sup><a href="#fn-7">5</a></sup></p>
+<p><sup><a href="#fn-8">6</a></sup></p>
+<p><sup><a href="#fn-9">9</a></sup></p><section class="footnotes">
+<ol>
+<li id="fn-3">
+<p><a href=https://golang.org/pkg/math/big/>[3] big - The Go Programming Language</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-4">
+<p><a href=https://hackage.haskell.org/package/integer-gmp-0.5.1.0/docs/GHC-Integer.html>[4] GHC.Integer</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-5">
+<p><a href=https://eprint.iacr.org/2016/224.pdf>[5] Yarom, Yuval, Daniel Genkin, and Nadia Heninger. "CacheBleed: A Timing Attack on OpenSSL Constant Time RSA"</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-6">
+<p><a href=https://www.usenix.org/system/files/sec20-weiser.pdf>[6] Weiser, Samuel, Lukas Bodner, David Schrammel, and Raphael Spreitzer. "Big Numbers -- Big Troubles: Systematically Analyzing Nonce Leakage in (EC)DSA Implementations"</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-7">
+<p><a href=https://github.com/openssl/openssl/issues/6640>[7] OpenSSL - BIGNUM code is not constant-time due to bn_correct_top</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-8">
+<p><a href=https://boringssl.googlesource.com/boringssl/+/HEAD/include/openssl/bn.h>[8] BoringSSL - include/openssl/bn.h</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-1">
+<p><a href=https://github.com/golang/go/issues/20654>[1] math/big: support for constant-time arithmetic</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-2">
+<p><a href=https://www.bearssl.org/bigint.html>[2] BearSSL - Big Integer Design</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+<li id="fn-9">
+<p><a href=https://github.com/dedis/kyber/blob/master/group/mod/int.go>[9] Dedis - Kyber - kyber/int.go</a></p><section class="footnotes">
+<ol>
+</ol>
+</section>
+</li>
+</ol>
+</section>
+
+
+</body>
+</html>

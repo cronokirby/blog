@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Writing a Toy Shell in C</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2022-03-11">2022-03-11</time>
+
+<h1>Writing a Toy Shell in C</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/c/index.html">
+    #c
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming-language/index.html">
+    #programming-language
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/systems/index.html">
+    #systems
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<blockquote>
+<p>[!warning] <strong>TODO:</strong>
+Write an introduction about recently writing a toy shell</p></blockquote><!--more-->
+<blockquote>
+<p>[!warning] <strong>TODO:</strong>
+Caveat by saying this isn't a full overview of writing a shell, but
+rather just a fun overview of what I've done.</p></blockquote>
+<h1>What is a shell</h1>
+<p>At the end of the day, the purpose of a computer is to run programs. Right
+now, you're reading this in your web browser, which is just a very
+large and complicated programs. While nowadays many programs have graphical
+interfaces, and get started by using a desktop shortcut, we can also
+start programs using a command line interface, from our terminal.</p>
+<p>Inside of a terminal, you're presented with a prompt, and can start programs
+to do different things. For example, I can start my web browser from
+the terminal:</p>
+<pre><code>>> firefox</code></pre>
+<p>I can also run simpler programs, like creating an empty file:</p>
+<pre><code>>> touch foo.txt</code></pre>
+<p>What's happening under the hood is that the terminal is running a single
+program, called a <em>shell</em>, which processes these commands. The shell
+reads in commands, parses them, and executes them. Most often, these commands
+ask the shell to start other programs. Naturally, after that program
+is finished executing, we want to go back to the shell. We may also
+want that program to run in the background, and continue working in our shell.
+The shell needs to take care of this orchestration, launching programs
+in such a way that the shell sticks around to continue processing our commands.</p>
+<p>The shell also redirects the output of the programs it launches in a certain way.
+Usually, we want the shell to print out whatever the program prints out.
+For example, if you list all the files in a directory, you want
+to see the result:</p>
+<pre><code>>> ls
+a.txt b.txt c.txt</code></pre>
+<p>Sometimes, you want to redirect the output of a program to a file, which
+we can easily do inside of the shell as well:</p>
+<pre><code>>> ls > files.txt</code></pre>
+<p>So, in summary, a shell is just a program with a simple command-line
+interface, and which lets us launch other programs, through a simple
+command language.</p>
+<h1>Bash</h1>
+<blockquote>
+<p>[!warning] <strong>TODO:</strong>
+Explain what the bash language is</p></blockquote>
+<blockquote>
+<p>[!warning] <strong>TODO:</strong>
+Explain what subset of bash was implemented.</p></blockquote>
+<h1>Architecture</h1>
+<blockquote>
+<p>[!warning] <strong>TODO:</strong>
+Explain the general architecture.</p></blockquote>
+<h2>Lexer</h2>
+<h2>Parser</h2>
+<h2>Compiler</h2>
+<h2>Interpreter</h2>
+<h1>Producing Effects</h1>
+<h1>Conclusion</h1><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

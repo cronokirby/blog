@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Always use offsetof</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2020-10-19">2020-10-19</time>
+
+<h1>Always use offsetof</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/c/index.html">
+    #c
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>If you want to find out how many bytes a certain portion of a struct uses,
+you might be tempted to do some arithmetic with <code>sizeof</code>, but this will
+yield unpredictable results!</p><!--more-->
+<p>I was recently bitten by this. For context I had something like:</p>
+<pre><code>struct metadata {
+  ...
+  int* next;
+}</code></pre>
+<p>I needed to know how much space the start of the struct, up to the <code>next</code> member,
+occupied, in order to do some pointer shenanigans. I had to
+bump a <code>void*</code> referencing what I knew to be the <code>next</code> field of the struct up
+to the top of that struct. (Yeah, this is kind of evil, but I had to do it,
+custom allocators require some amount of evil).</p>
+<p>So I thought, ok, I take the size of the whole struct, <code>sizeof(struct metadata)</code>,
+and then I remove the size of the last member <code>sizeof(int*)</code> now this bit
+me right in the ass in the form of a segfaulting program, because this
+calculation was incorrect. It doesn't take padding into account!</p>
+<p>Because the underlying architecture really doesn't like accessing memory
+that isn't aligned to specific boundaries, a C compiler will liberally add
+some extra space in a struct to make sure that when it pushes it onto the stack,
+or whatever, that the next thing is aligned well. Because of this, it's possible
+that the location of the member you want to access is not <code>sizeof(t_member)</code>
+bytes behind the end of the struct.</p>
+<p>As an example, consider:</p>
+<pre><code>#include <stdio.h>
+
+typedef struct foo {
+  int m1;
+  char m2;
+  char m3;
+} foo;
+
+int main() {
+  printf("sizeof(foo): %d\n", sizeof(foo));
+  printf("sizeof(int): %d\n", sizeof(char));
+  struct foo x;
+  printf("&x: %x\n", &x);
+  printf("&x.m3: %x\n", &x.m3);
+}</code></pre>
+<p>This prints:</p>
+<pre><code>sizeof(foo): 8
+sizeof(int): 1
+&x: ef57890
+&x.m3: ef57895</code></pre>
+<p>Notice how the <code>sizeof(foo) - sizeof(int)</code> calculation yields an offset of
+<code>7</code>, whereas if we look at the differences between the pointers / addresses,
+we see an offset starting at <code>5</code>!</p>
+<p>The solution is to use <code>offsetof(struct foo, m3)</code> here, which does the correct thing.
+(<code>#include <stddef.h></code> to use it). Not only is the right thing done, but
+it's also clear <em>what</em> you're trying to do in the first place, which is
+another nice benefit.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

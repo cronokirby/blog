@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Porting Ludus to the Web</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2021-10-02">2021-10-02</time>
+
+<h1>Porting Ludus to the Web</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/emulation/index.html">
+    #emulation
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/rust/index.html">
+    #rust
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/wasm/index.html">
+    #wasm
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>Recently, I ported my NES emulator, <a href=https://github.com/cronokirby/ludus>Ludus</a> to
+run in the browser, using WASM. You can play around with it <a href=https://ludus-web.cronokirby.com>here</a>.
+This post is a brief overview of the interesting aspects in creating this port.</p>
+<h1>Ludus</h1>
+<p><a href=https://github.com/cronokirby/ludus>Ludus</a> was an NES emulator that I wrote 3 years ago, back in
+2018. I was starting my BSc at EPFL then, so it's a bit fitting to revisit the project now that
+I'm starting my MSc. I implemented it in Rust back then, so I was always curious as to how easy
+it would be to port it the browser using WASM. It turns out that Rust has a pretty mature ecosystem
+around WASM, so this was easier than I expected. Additionally, I also made a few good choices
+when designing my emulator, which made it easier to port.</p>
+<h2>Interface and Implementation</h2>
+<p>Instead of writing my emulator as a single application that includes both the emulation
+logic, and a GUI for playing the game, I separated it out into two packages:
+<a href=https://github.com/cronokirby/ludus>one package</a> provides the emulation logic, and
+<a href=https://github.com/cronokirby/ludus-emu>another package</a> provides a GUI using the first package.</p>
+<p>The first package only contains the logic for emulation, but the NES generates images and sound,
+so we need a way to provide these to whatever application is using our emulator.
+I ended up doing this by creating two traits, for these two types of output:</p>
+<pre><code>trait VideoDevice {
+    fn blit_pixels(&mut self, pixels: &PixelBuffer)
+}
+
+trait AudioDevice {
+    fn push_sample(&mut self, sample: f32)
+}</code></pre>
+<p>You create an instance of the emulator by providing an implementation for each of these traits,
+and then the emulation can feed in new data to those implementations, whenever
+the console generates a new frame, or a new audio sample.</p>
+<p>It was pretty straightforward to use these interfaces to provide
+a GUI using SDL2, which is what my original emulator did. In fact,
+I first had a concrete GUI, and then decided to cleave everything
+using this nice interface.</p>
+<p>This turned out to be a pretty good idea, since it made it possible
+to port the emulator to the web, without having to compile all of SDL2,
+which would have had much worse performance.</p>
+<h2>WASM</h2>
+<p>In summary, <a href=https://webassembly.org/>WASM</a>, or WebAssembly, is a portable
+binary format, which browsers know how to execute. We can compile
+our emulator, written in Rust, to WASM, and then execute it in the browser.
+This allows us to write a GUI wrapper for the emulator running in the browser,
+by compiling all of our logic into a WASM blob.</p>
+<h1>Bundling</h1>
+<p>There used to be a time where you would simply write out your web page
+directly as an HTML file, and upload that directly to your web server.
+These days are long gone, and now we have a plethora of build tools that
+process raw code into optimized HTML bundles for the web. In our case,
+such a build tool is desirable, since it can automatically compile
+our Rust code into WASM, allowing us to easily mix in any extra emulator
+wrapping logic we have in Rust with the other JavaScript and HTML
+code we need for our web-page.</p>
+<p>The first component of bundling, in our case, is a tool to compile
+the Rust into WASM. I ended up using
+<a href=https://github.com/rustwasm/wasm-pack>wasm-pack</a>. This provides
+a convient wrapper around Rust's functionality for compiling into WASM.</p>
+<p>Then, I needed a build tool for the web things, like
+JavaScript and HTMl. I went with <a href=https://parceljs.org/>parcel</a>
+here, because I had used it in the past, and I liked it's no-frills
+model of having default configurations for everything.
+Unfortunately, parcel didn't support Rust and WASM out of the box,
+at least not with wasm-pack, so I had to use <a href=https://github.com/wasm-tool/parcel-plugin-wasm.rs>a plugin</a>
+adding that functionality.</p>
+<p>I also ended up fiddling quite a bit to get my CI pipeline working
+in <a href=https://vercel.com/>Vercel</a>, that way I could deploy the project
+whenever I pushed code to my Github repository, but that's a story
+for another day.</p>
+<h1>Interfacing with the browser</h1>
+<p>Even though we've managed to compile our emulator to run in
+the browser, we still need to actually push the pictures and sound
+that it produces somewhere on the web page, so that we can you know,
+play games. We'll also need to gather input, but that's pretty simple,
+by listening to keyboard input.</p>
+<h2>Video</h2>
+<p>The primary output of our emulator are the frames making up the video
+of our game. The adequate venue for displaying these frames are a
+<a href=https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API>canvas element</a>.</p>
+<p>Our emulator expects a Rust strict implementing our <code>VideoDevice</code> trait.
+Because of this, it's easier to put the code for pushing pour pixels
+to the canvas on the Rust side of things. Thankfully,
+we can do this with <a href=https://github.com/rustwasm/wasm-bindgen>wasm-bindgen</a>.
+This allows us to interact with browser APIs from inside of Rust,
+compiling to WASM.</p>
+<p>This allows us to push image data to the canvas from our Rust code
+wrapping the emulator:</p>
+<pre><code>fn render_to(&mut self, ctx: &CanvasRenderingContext2d) -> Result<(), JsValue> {
+    let data = ImageData::new_with_u8_clamped_array_and_sh(
+        Clamped(&mut self.buf),
+        NES_WIDTH as u32,
+        NES_HEIGHT as u32,
+    )?;
+    ctx.put_image_data(&data, 0.0, 0.0)
+}</code></pre>
+<h2>Sound</h2>
+<p>While video was pretty straightforward, sound is a bit trickier, because
+we have to deal with latency. Our emulator is generating about
+around 40'000 audio samples per second. If we can't consume them fast
+enough, we'll end up building more and more latency,
+and our audio ends up completely out of sync. If we consume them too fast,
+then we end up with terrible audio clipping.</p>
+<p>The tolerance for mistakes is much lower with audio as compared to video,
+and the APIs for web-audio are also not that stellar either.</p>
+<p>At first, I was trying to handle the audio on the JavaScript side,
+by passing around a buffer of samples across the WASM barrier, but
+I was having quite a few issues with audio latency.</p>
+<p>I ended up resolving these issues by handling the audio channels
+inside of Rust itself, and also implementing logic to deal with audio
+jitter, by potentially running the emulator a bit more to generate
+extra samples. I got this idea from reading
+the source code of another emulator: <a href=https://github.com/koute/pinky/>pinky</a>.</p>
+<h1>Further Work</h1>
+<p>I've gotten the emulator to be <a href=https://ludus-web.cronokirby.com>playable on the web</a>,
+with the same features as with my
+original <a href=https://github.com/cronokirby/ludus-emu>native application</a>,
+but there are still features that I'd like to add to the application.</p>
+<p>First, there are some basic quality-of-life features that would be needed,
+like rebinding the controls to different keys, or allowing
+Gamepads to be used instead of the keyboard.</p>
+<p>You could also implement video effects, like a CRT filter,
+or a smoothing feature.</p>
+<p>There are also other emulator features which would be nice to have,
+but would require support from the underlying emulator crate.
+These include save-states, fast-forward, debugging tools,
+and other similar features.</p>
+<p>But, for now, I'm happy to set an endpoint here, and move on
+to other projects, for the time-being.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

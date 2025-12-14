@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Making an IO</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2021-01-10">2021-01-10</time>
+
+<h1>Making an IO</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/compiler/index.html">
+    #compiler
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/haskell/index.html">
+    #haskell
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>Recently I've been wrapping up my work on
+<a href=https://github.com/cronokirby/haskell>a compiler</a> for a subset of Haskell.
+While my subset doesn't (yet) have any support for <code>IO</code>, I've been thinking
+about how to implement it.</p><!--more-->
+<p>There's actually some interesting design choices involved,
+and I've understood a lot more about how <code>IO</code> <em>actually works</em>
+by trying to see how I'd go about implementing it in my own compiler.</p>
+<p>Now, this is not really an attempt on explaining monads, or <code>IO</code>.
+This post is just a progression of ideas around implementing
+something like <code>IO</code>. The <a href=http://wiki.haskell.org/IO_inside>IO inside</a>
+article might be a good introduction before diving into this post.</p>
+<h1>Why IO is necessary</h1>
+<p>One reason <code>IO</code> exists in Haskell is to have side effects. Or, at least,
+to be able to describe programs with side-effects.
+For example, you can write:</p>
+<pre><code>main :: IO ()
+main = do
+  line <- getLine
+  putStrLn line</code></pre>
+<p>to make a little program that gets a string from the user, and then prints
+it right back out. Both of these bits of code actually have <em>side-effects</em>
+when executed: they interact with the outside world.</p>
+<p>In other languages, like Python, you'd just write this function like any other:</p>
+<pre><code>def main():
+  line = input()
+  print(line)</code></pre>
+<p>This is just a normal function, and calling other functions might execute side effects.
+This would also work even in some other Functional languages, like OCaml,
+where you can just do side effects, without really worrying about them.</p>
+<p>This works out just fine, because most languages are somewhat imperative,
+and functions are more like <em>procedures</em>. You read them from top to bottom,
+each line being a statement that has some kind of effect on the state of the world.</p>
+<p>With this order well defined, it's easy to reason about the side effects in the program.
+The order in which side effects happen is the same as the order of of statements in our
+program.</p>
+<h2>Laziness</h2>
+<p>Haskell throws a wrench into this whole process, because it doesn't have a strict order
+of evaluation. Let's imagine that Haskell functions could transparently have side effects
+outside of <code>IO</code>. Our <code>getLine</code> and <code>putStrLn</code> functions would become:</p>
+<pre><code>getLine :: () -> String
+
+putStrLn :: String -> ()</code></pre>
+<p>Then a program like:</p>
+<pre><code>main =
+  let line = getLine ()
+  in putStrLn line</code></pre>
+<p>should ostensibly work, since we're forced to evaluate the function that gives
+us input before evaluating <code>putStrLn</code>, so both side effects should happen. The problem
+is that this is a fragile setup. For example, take this slight modification:</p>
+<pre><code>main =
+  let line = getLine ()
+      _ = putStrLn line
+  in ()</code></pre>
+<p>This program now ignores the result of <code>putStrLn line</code>. Because of this,
+this side effects doesn't have to run, since we don't need to evaluate
+this expression!</p>
+<p>We can also get side effects running out of order:</p>
+<pre><code>main =
+  let a = (putStrLn "A" >> readLn)
+      b = (putStrLn "B" >> readLn)
+  in b + a</code></pre>
+<p>Now, <code>+</code> is (most likely) going to force <code>b</code> before <code>a</code>,
+which has us printing out:</p>
+<pre><code>B
+A</code></pre>
+<p>which is different than the order suggested by our program, if it were strict.</p>
+<p>Herein lies the problem with side effects in Haskell: since we use lazy evaluation,
+it's difficult to reason about the exact order and presence of side effects.</p>
+<p>We need to introduce <code>IO</code> in order to provide an explicit way of sequencing
+effects together, ensuring that all effects happen, and happen in the right order.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+<code>IO</code> also has another purpose, which is tagged certain values as being
+<em>computations with side-effects</em>. This is a useful mechanism in and of itself,
+and would still be nice to have in a strict language.</p>
+<p>But laziness forces us to have some kind of tagging mechanism, because we need
+to enforce ordering between effectful computations.</p></blockquote>
+<h1>IO as an opaque type</h1>
+<p>From the perspective of the user of Haskell, or someone specifying
+the language, <code>IO</code> can be seen as an opaque type. You have some
+type <code>data IO a</code> defined somehow, along with some primitive actions like:</p>
+<pre><code>getLine :: IO String
+
+putStrLn :: String -> IO ()</code></pre>
+<p>You also need to make <code>IO</code> a <em>Monad</em>, allowing us to lift values
+to make an action with no effects, and to sequence actions together:</p>
+<pre><code>return :: a -> IO a
+
+(>>=) :: IO a -> (a -> IO b) -> IO b</code></pre>
+<p>From the perspective of the compiler, these are all <em>builtin functions</em>. They
+have no implementation. Instead, the compiler has to recognize that these
+exist, and insert special code handling them.</p>
+<p>From the perspective of all stages before you start translating Haskell code down
+to lower level code, you can work with all of these functions without inspecting their
+implementation. For example, all the type-checker needs to know about these functions
+are their types. The implementations don't matter for code that uses them.</p>
+<p>By having an opaque type and implementation, we also prvent any kind of preemptive
+optimization before we've implemented IO in a way that's not going to be susceptible
+to being broken, which is another nice aspect of this approach.</p>
+<h1>Hacking into STG</h1>
+<p>At some point, we do need to replace these stub functions with actual implementations.</p>
+<p>A good point to do this is at the <em>STG</em> stage. You can think of STG as a kind
+of low-level functional IR, which is used as an intermediate stage between Haskell
+and something like C.</p>
+<p>I won't go into complete depth into <em>STG</em>, as I plan on explaining it much further
+in some other posts, but just think of it like a version of Haskell, where you explicitly
+keep track of metadata like "which variables are free in this function",
+and you can't have nested expressions when calling functions.</p>
+<p>As an example, something like:</p>
+<pre><code>f x (1 + y) (3 + z)</code></pre>
+<p>Would become:</p>
+<pre><code>let $0 = {y} \ -> 1 + y
+    $1 = {z} \ -> 2 + z
+in f {x, $0, $1}</code></pre>
+<p>We've removed currying, with explicit multiple arguments, and we've also
+created let bindings for each argument that wasn't already simple. Let bindings
+are explicitly lambdas, and also have to mark every single free variable they use.
+This is because they will become <em>closures</em>, and we need to know to save
+these free variables when creating that closure.</p>
+<p>Anyways, the important thing about STG is that it has a clear semantics in terms
+of what kind of machine code it generates. For example, that above snippet would
+become something like this:</p>
+<pre><code>Allocate a closure for $0
+Allocate a closure for $1
+Push x, $0, $1 onto the argument stack
+Enter the code for f</code></pre>
+<p>We don't evaluate any of the bindings at all, beacuse we want laziness. Instead,
+the mechanism to force evaluation of values is the humble <em>case expression</em>.
+If we have something like:</p>
+<pre><code>let x = {x} \ -> Cons 3 x
+in case x of
+  Nil -> 0
+  Cons y _ -> y</code></pre>
+<p>Then this would roughly correspond to:</p>
+<pre><code>Allocate a closure for x
+(yes, this closure references itself)
+Evaluate x
+When done, inspect the result:
+ If Nil ...
+ If Cons ...</code></pre>
+<p>This is actually done by pushing a continuation onto a stack, and
+then the code for <code>x</code> will jump to that continuation after producing a value.
+Of course, the arguments to the constructor <code>Cons</code> are themselves thunks,
+so this expression wouldn't enter an infinite loop, which is what we expect.</p>
+<p>The point is that if you want to force evaluation of something, you need to use <code>case</code>.
+What we can do to implement <code>IO</code> is to just create a special case construct that
+deals with <code>IO</code>, and have <code>IO</code> actions just be normal values. For the builtin
+actions that have side effects, we'd end up generating code that <em>actually does them</em>,
+when evaluated. So, for example:</p>
+<pre><code>putStrLn = {} \s -> #builtin(putStrLn) {s}</code></pre>
+<p>could be the STG implementation of this function, and then when we compile
+our STG down to C, we replace <code>#builtin(putStrLn) {s}</code> with <code>puts(s);</code>.
+Or, something like that, at least.</p>
+<p>The important part comes with <code>return</code> and <code>>>=</code>.</p>
+<p>Now, for return, we can actually just use something like <code>id</code>, since
+<code>IO a</code> is really just <code>a</code>:</p>
+<pre><code>return = {} \a -> a</code></pre>
+<p>The fun part is the implementation of <code>>>=</code>:</p>
+<pre><code>(>>=) = {} \m f ->
+  case(io) m of
+    a -> f a</code></pre>
+<p>The idea is that if we have an action of type <code>IO a</code>, and a function <code>a -> IO b</code>,
+the action is really just a value of type <code>a</code>, that has side effects when we evaluate it.
+What we want to do is force the evaluation of that action,
+before then starting the evaluation of <code>f</code> using the argument we've just found.</p>
+<p>In STG, at least the way I've done it, you have a special <code>case</code> construct for each
+different kind of value you're working with. So, you have one case construct
+for boxed integers, another for boxed strings, one for constructors, etc.
+This makes compiling the STG down to C much simpler.</p>
+<p>You'd have a separate case construct for IO, which also lets the optimizer know <em>not</em>
+to touch this, and try to pull any funny business, like optimizing things to:</p>
+<pre><code>(>>=) = {} \ m f -> f m</code></pre>
+<p>Now, this would "work" in terms of the types lining up, but semantically, this is a <em>very</em>
+different function. We no longer force the evaluation
+of <code>m</code> before entering the code for <code>f</code>. If <code>f</code> has some side effects,
+before evaluating its argument, then we'll have the side effects for <code>f</code> <em>after</em>
+those of <code>m</code>, which is exactly what we want to avoid by using <code>>>=</code>!</p>
+<p>Having a special case construct for IO avoids having this kind of optimization ruin the semantics.</p>
+<p>Let's illustrate the workings of this a bit more with a more complicated sequence.</p>
+<p>If you had:</p>
+<pre><code>main = do
+  putStrLn "1"
+  putStrLn "2"
+  putStrLn "3"</code></pre>
+<p>then this would desugar to:</p>
+<pre><code>main = putStrLn "1" >>= \_ -> putStrLn "2" >>= \_ -> putStrLn "3"</code></pre>
+<p>And the STG for this could be:</p>
+<pre><code>f2 = {} \ _ -> putStrLn "3"
+
+f1 = {} \ _ ->
+  let $2 = {} \ -> putStrLn "2"
+  in (>>=) {$2, f2}
+
+main =
+  let $1 = {} \ -> putStrLn "1"
+  in (>>=) {$1, f1}</code></pre>
+<p><code>f1</code> and <code>f2</code> can be lifted to the top level, since they have no bound arguments.</p>
+<p>Operationally, what we do is create a thunk for <code>$1</code>, and then push
+<code>$1</code> and <code>f1</code> as arguments to <code>>>=</code>. The code for <code>>>=</code> with these arguments
+looks like:</p>
+<pre><code>case(io) $1 of
+  a -> f1 a</code></pre>
+<p>So, we first evaluate <code>$1</code>, printing out <code>1</code>, and then enter <code>f1</code>.</p>
+<p><code>f1</code> creates a thunk for <code>$2</code>, and then pushes this along with <code>f2</code>
+on the argument stack, and then enters <code>>>=</code>. Then we have code
+that looks like:</p>
+<pre><code>case(io) $2 of
+  a -> f2 a</code></pre>
+<p>So we have to evaluate <code>$2</code>, printing out <code>2</code>, and then entering <code>f3</code>.
+<code>f3</code> has the side effect of printing out <code>3</code>.</p>
+<p>So, even though we create thunks for different actions, becuase they were all chained
+together with <code>>>=</code>, the order of side effects in our program is well defined!</p>
+<h1>Lifting things up</h1>
+<p>Now, this is a very ad hoc approach to doing things, and relies on our knowledge of
+how STG is desugared down to C, as well as our optimizer <em>knowing</em> about our IO
+shenanigans and not touching them.</p>
+<p>Haskell has a more general approach, that relies on higher-level
+semantics, instead of lower level implementation details. The problem
+<code>IO a ~ a</code> is that if you have a top level binding, like:</p>
+<pre><code>readInt :: IO a</code></pre>
+<p>then if this is just:</p>
+<pre><code>readInt :: a</code></pre>
+<p>you have a problem, because this is semantically a single value. What we want
+is for each usage to fully evaluate the expression again. In a strict language,
+you explicit mark that this is a function taking an argument:</p>
+<pre><code>readInt :: () -> a</code></pre>
+<p>Semantically, now it means that each invocation of <code>readInt</code> has to evaluate
+its body again, and run the side effects.</p>
+<p>So, <code>IO a ~ () -> a</code>, at least.</p>
+<p>Now, another problem is that there's nothing chaining IO actions together, even if I did:</p>
+<pre><code>m >>= f = \s -> case m s of
+  a -> f a</code></pre>
+<p>nothing stops me from replacing this with:</p>
+<pre><code>m >>= f = \s -> f (m s)</code></pre>
+<p>Which is semantically different, at least if this makes it down to STG, because
+now we're not forcing <code>m ()</code> before entering <code>f</code>, which is a problem for ordering side effects.
+So, we need to make it so that you have to deconstruct the result in order to get an <code>a</code>.</p>
+<p>Let's do <code>IO a ~ () -> ((), a)</code>. Now you have to do:</p>
+<pre><code>m >>= f = \s -> case m s of
+  (s', a) -> (f a) s'</code></pre>
+<p>Now, we need to deconstruct the tuple first, in order to get our <code>a</code> out. This
+forces evaluation of <code>m</code>, at least up to creating the tuple, which is enough to
+get the side effects.</p>
+<p>Even if we used let bindings, like:</p>
+<pre><code>m >>= f = \s ->
+  let (s', a) = m s
+  in (f a) s'</code></pre>
+<p>then this would still desugar to using a <code>case</code> expression around <code>m s</code>,
+so we're fine.</p>
+<p>Another problem is that <code>()</code> is too visible to the compiler, and it might realize that <code>s</code>
+is always going to be <code>()</code>, and decide to insert it at certain places, and that's a no-no.</p>
+<p>We need to replace this "token" we're passing around with an opaque value the compiler knows
+not to touch. This is usually called something like:</p>
+<pre><code>data RealWorld</code></pre>
+<p>Finally, we can have a definition of <code>IO</code> as an actual data type:</p>
+<pre><code>newtype IO a = IO (RealWorld -> (RealWorld, a))</code></pre>
+<p>Of course, the compiler still needs to provide a few builtin functions that conform
+to this interface, and provide us with the basic side effects, like file IO,
+that we can compose up to larger actions.</p>
+<h1>Avoiding thunks</h1>
+<p>Now, in GHC, you won't actually see this definition, for two reasons.</p>
+<p>The first is that <code>IO</code> is actually a special case of the <code>ST</code> monad,
+so the token type is <code>State# RealWorld</code>, but the idea is the same. You have
+an opaque token that the compiler can't insert willy nilly.</p>
+<p>The second optimization is that we use <em>unboxed tuples</em> instead:</p>
+<pre><code>newtype IO a = IO (State# RealWorld -> (# State# RealWorld, a #))</code></pre>
+<p>Now, this is in the realm of GHC specific optimizations, but the idea is that previously
+we evaluated our actions right up to the point where it produced a tuple pointing
+to two thunks, but we didn't evaluate those thunks.</p>
+<p>If you had something like:</p>
+<pre><code>(+) <$> readInt <*> readInt</code></pre>
+<p>You'd end up with a thunk for <code>x + y</code>, having done none of the arithmetic.
+This is kind of a waste of space, since you gain nothing out of lazily evaluating
+the produced values, since you have to evaluate everything right up to what you return
+anyways.</p>
+<p>Using unboxed tuples avoids this laziness, and also provides a slightly more efficient
+mechanism to return values, at least with how GHC compiles STG down to assembly.</p>
+<h1>Conclusion</h1>
+<p>Anyways, this post mainly served to gather my thoughts around this topic, and
+hopefully provide a bit more insight into how you might go about implementing
+this kind of thing yourself. Perhaps I should make a more complete extension
+chapter in my Haskell-in-Haskell series talking about this in much more detail.</p>
+<p>For now though, I think this is a rough but somewhat complete introduction to
+a couple implementation ideas.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - (Haskell in Haskell) 1. Setup</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2020-11-23">2020-11-23</time>
+
+<h1>(Haskell in Haskell) 1. Setup</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/compiler/index.html">
+    #compiler
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/haskell/index.html">
+    #haskell
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming-languages/index.html">
+    #programming-languages
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is the first "real" post in the <a href=/series/haskell-in-haskell/>Haskell in Haskell</a>
+series.</p>
+<p>In this post we'll go over setting up a basic project in Haskell.
+We'll be building our compiler on top of this foundation in the next posts.</p><!--more-->
+<p>(The code for this part is available <a href=https://github.com/cronokirby/haskell-in-haskell/tree/part-1>here</a>)</p>
+<p>By the end of this series, we'll have written a Haskell program that reads in Haskell source code,
+and then spits out C code.</p>
+<p>We could write all of our code in a big Haskell file, compile that, and then call it a day, but
+this isn't a manageable solution. This is why we want to make a <em>project</em>,
+which will allow us to easily combine multiple source files into a single program.</p>
+<h1>Haskell Tools</h1>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+If you're already familiar with setting up Haskell projects, and already have a development
+environment set up, feel free to skim over this section, or skip it entirely.</p></blockquote>
+<p>Haskell, unlike other languages, doesn't come with "out of the box" support for building projects;
+at least, not adequate support for what we'd like to do. We're going to need
+some additional tooling to help us.</p>
+<h2>Compiler</h2>
+<p>I've been saying "Haskell", when talking about the compiler, but what I really mean is
+<a href=https://www.haskell.org/ghc/>GHC</a>. In theory, there's a Haskell specification, so you
+could use a different compiler. In practice, GHC is so good, and so entrenched,
+that nobody bothers to use anything different. Almost every single project depends
+on details specific to how GHC works, including its numerous extensions, so you couldn't even use
+another compiler if you wanted to.</p>
+<p>We could've limited ourselves to a small subset of Haskell, so that our compiler
+could process <em>itself</em>, but this is too much of a limitation.
+We'll be making use of GHC's features to make our work easier.</p>
+<h2>Build Tools</h2>
+<p>Next, we need a build tool, outside of the compiler itself, that allows
+us to manage the source files in our project. This tool will also be responsible
+for collecting the libraries that our project depends on, making sure the versions are compatible.
+We won't be relying on very many libraries. We just need a handful, belonging to the "standard
+canon" of Haskell anyway.</p>
+<p>At the time of writing, there are basically two build tools for Haskell,
+<a href=https://www.haskell.org/cabal/>Cabal</a>,
+and <a href=https://docs.haskellstack.org/en/stable/README/>Stack</a>.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+<a href=https://nixos.org/>Nix</a> is also a possibility for managing dependencies and doing builds,
+but goes far beyond the simple needs we have for this project.</p></blockquote>
+<p>The difference between Cabal and Stack is mainly historical. In practice, they're more
+or less the same nowadays. The main difference between the two is that Cabal
+will use <a href=https://hackage.haskell.org/>Hackage</a> as its source of packages, while
+Stack will use <a href=https://www.stackage.org/>Stackage</a>. Stackage pulls its packages
+from Hackage, but a group of maintainers make sure that the packages build together.
+This delays the accessibility of packages, but provides more stability for programmers.</p>
+<p>If you're familiar with Linux distributions, Hackage is a bit like <em>Arch</em>, with community
+provided packages, and minimal vetting, whereas Stackage is a bit like <em>Ubuntu</em>, where you
+have maintainers curating the versions of packages in the repository, and providing
+stable LTS releases.</p>
+<p>Back in the day, Cabal would install packages globally, unless you explicitly created
+a Sandbox for each project. Stack was created to address this concern, as well as to use
+<em>Stackage</em> which was seen as providing advantages over using Hackage directly.
+Stack only installed packages <em>locally</em> for each project, allowing different projects you have
+to use different versions of packages. Eventually, Cabal created the <code>new-build</code>, <code>new-run</code>, etc.
+commands to provide this behavior. Since these commands are now the default, Cabal essentially
+acts like Stack nowadays.</p>
+<p>All this to say that these tools are basically equivalent, but if you like having the
+LTS snapshots that Stackage provides, you may want to use Stack.</p>
+<p>For our purposes, we'll be using Cabal. In practice involving Stack involves installing
+Cabal <em>anyways</em>, and ultimately Cabal works very well nowadays, and I <em>personally</em> find
+Stack to be somewhat superfluous.</p>
+<h2>ghcup</h2>
+<p>We know that we'll be needing a compiler (GHC), and a build tool (Cabal), but
+what's the easiest way to install them? On Linux and macOS, at least, the
+answer is probably <a href=https://www.haskell.org/ghcup/>ghcup</a>.</p>
+<p>This isn't just an installer for GHC and Cabal, but rather a tool that you install
+once, and that then lets you <em>update</em> your version of GHC and Cabal as often as you want.
+This way you can just run this setup process a single time, and then have
+an easy way to follow the new releases of GHC as they come out.</p>
+<p>The website for ghcup has very simple installation instructions for Linux and macOS,
+which just involve fetching and running a bash script. Unfortunately, for Windows
+this tool doesn't seem to be available, but the website also provides
+instructions towards setting up the <a href=https://www.haskell.org/platform/>Haskell Platform</a>,
+which seems to be the preferred method of installation here.</p>
+<p>Regardless, if you'd like to install GHC and Cabal through other means, go right ahead.
+As long as you have recent versions of both of these tools, there shouldn't be any
+problems following along with this project.</p>
+<h1>Cabal Project</h1>
+<p>All right, now that we have the tools of our craft, it's time to start putting
+them to good use!</p>
+<p>The first thing we want to do is to create a project using Cabal.
+A project will allow us to easily work across multiple source files,
+and use a handful of useful libraries in our program. Furthermore,
+by providing this series through a project, it should hopefully work
+in the future, because the dependencies will be pinned to specific versions
+known to work. Even if the packages release new versions, the ones we use for
+this series will still be there.</p>
+<p>First thing's first, create a directory for your project. Inside of this directory,
+run:</p>
+<pre><code>cabal init</code></pre>
+<p>This will create a project in that directory, sgenerating some files automatically.
+You can go ahead and delete <code>CHANGELOG.md</code>, if you'd like. The <code>.cabal</code>
+file contains information about our project. This includes where our source
+files are, what libraries we depend on, etc.</p>
+<p>After removing some of the superfluous comments, and other irrelevant stuff, you should
+have something like:</p>
+<pre><code>cabal-version:       >=1.10
+
+name:                haskell-in-haskell
+version:             0.1.0.0
+author:              <Your Name>
+maintainer:          <Your Email>
+build-type:          Simple
+
+executable haskell-in-haskell
+  main-is:             Main.hs
+  build-depends:       base >=4.13 && <5
+  default-language:    Haskell2010</code></pre>
+<p>Most of this is pretty straightforward metadata. We then have an <em>executable</em> named
+<code>haskell-in-haskell</code>. When we run <code>cabal build</code> this builds that executable, with the same name.
+Running <code>cabal install</code> will build the executable, and then put it in your path, so you can
+run <code>haskell-in-haskell</code> in your terminal to access the compiler you've written.</p>
+<p>Finally, we can do <code>cabal run</code>, or <code>cabal run haskell-in-haskell</code> to run this program.
+After running this command, you should see a bunch of stuff as Cabal builds it for the first time, and
+then, finally:</p>
+<pre><code>Hello, Haskell!</code></pre>
+<p>Hello Haskell indeed.</p>
+<p>In the <em>executable</em> section. You can see that we've specified the libraries
+we're depending on. In this case, just the standard library, and a main source file for
+our program: <code>Main.hs</code>.</p>
+<p>Looking at <code>Main.hs</code>, we see:</p>
+<pre><code>module Main where
+
+main :: IO ()
+main = putStrLn "Hello, Haskell!"</code></pre>
+<p>The <code>main</code> function in this file is what gets run by our executable, which explains
+why we got that nice message earlier. If you modify the message printed here,
+and run the command again, you'll see the output changed to match.</p>
+<h1>Library</h1>
+<p>So, right now we do have a <em>program</em>, but it doesn't do much besides print a
+little message. We're going to eventually turn this program into a full fledged
+compiler. We could do this by adding more and more code to <code>Main.hs</code>, but this
+isn't exactly very pretty nor modular. We could add more source files
+to our <code>executable</code> section, telling Cabal to use them to build our program as well.
+This would work, but a more common practice is to create a separate <code>library</code> section,
+exporting a package containing the main functions your program needs,
+and then using that library inside of a small <code>Main.hs</code> to create an actual program.</p>
+<p>The idea behind this separation is that it makes it easier to expose the functionality
+behind a program to other Haskell users, since you can provide a library doing the
+same thing as your command line program. Furthermore, by forcing yourself to write
+code in the form of a library, you have to think a bit more about modularity and
+good code structure.</p>
+<p>Let's go ahead and add a library section to our Cabal file:</p>
+<pre><code>library
+  build-depends:       base >=4.13 && <5
+                     , containers >=0.6 && <0.7
+                     , mtl >=2.2 && <2.3
+  default-language:    Haskell2010
+  exposed-modules:     Example
+  ghc-options:         -Wall
+  hs-source-dirs:      src</code></pre>
+<p>We've included some other libraries besides the standard library this time.
+<code>containers</code> will provide us with a <code>Map</code>, and a <code>Set</code> data structure, which are going
+to be very useful at different points in the compiler. <code>mtl</code>, or "Monad Transformer Library"
+provides us with, well, <strong>Monad Transformers</strong>. You don't need to understand
+Transformers in all of their glory to follow this project. What we'll be doing is setting
+up little "computational contexts" at different points in the compiler, mainly to throw
+exceptions, but also to read from some store of information we've gathered previously,
+or to keep track of a little bit of state as we do our compiler work.</p>
+<p><code>hs-source-dirs</code> says that we'll have our source files in the <code>src</code> directory. We
+also have a single module exported by our library: <code>Example</code>. Because <code>src</code> is our source
+directory, Cabal expects to find this module in <code>src/Example.hs</code>. Let's go ahead and
+add some simple code there:</p>
+<pre><code>module Example (example) where
+
+example :: String
+example = "This is an example"</code></pre>
+<p>This module does nothing more than export the string <code>example</code>. With this, our
+library is "complete", even thought it doesn't really do anything yet. Later we'll
+expand this library section until it has a complete compiler!</p>
+<h2>Connecting Library to Executable</h2>
+<p>Now we want to connect our library with our executable, so that our main function
+can use this <code>example</code> value. Later on, our main function will be calling
+the functionality of our compiler, so it makes sense to get started on this
+right away.</p>
+<p>We need to modify our Cabal file's executable section to depend on our library:</p>
+<pre><code>executable haskell-in-haskell
+  main-is:             Main.hs
+  build-depends:       base >=4.13 && <4.14
+                     , haskell-in-haskell
+                     , pretty-simple >=4.0 && <4.1
+  default-language:    Haskell2010</code></pre>
+<p>We've added a dependency on <code>haskell-in-haskell</code>, the library we've just
+created, as well as a dependency on <code>pretty-simple</code>. This is a library
+that allows us to pretty print data structures without
+any extra code! This is very useful, because we want to allow
+users of our compiler to stop it midway, and print out the intermediate results.
+This library allows us to print those data structures in a nice way,
+without having to add the boilerplate for formatting them.</p>
+<p>We don't need this dependency right away, but we might as well set this up, so
+that we won't even need to touch the Cabal file in the next parts of this series.</p>
+<p>We can now use the library in <code>Main.hs</code>:</p>
+<pre><code>module Main where
+
+import Example (example)
+
+main :: IO ()
+main = putStrLn example</code></pre>
+<p>Running the whole project with <code>cabal run haskell-in-haskell</code>, you should now see:</p>
+<pre><code>This is an example</code></pre>
+<h1>Custom Prelude</h1>
+<p>So far, we've set a basic project up, but none of the code we have is actually
+<em>useful</em>. We're going to scrap all of this toy code with actual compiler
+stuff soon enough.</p>
+<p>We are going to add one piece of <em>useful</em> code in this part: a <strong>Custom Prelude</strong>!</p>
+<p>The Haskell Prelude consists of a subset of the standard library that
+is imported into every file, and available by default in the REPL. So
+if you fire up <code>ghci</code>, and type out <code>sum [1, 2, 3]</code>, this works because <code>sum</code>
+is in the module <code>Prelude</code>.</p>
+<p>A custom Prelude allows us to provide our <em>own module</em>
+to replace the standard one. This is a piece of code that we can write now, at the beginning
+of the project, and never really touch again.</p>
+<h2>Why a Custom Prelude</h2>
+<p>"Why are we even bothering to replace the standard Prelude?", you might ask.
+Ultimately, this is a subjective concern, but I personally feel like
+some of the advantages of using a custom Prelude are very useful for this project.</p>
+<p>Haskell's Prelude hasn't changed much over the years. Because
+of this, it has accumulated some cruft to it. One of the biggest problems
+is the pervasive use of <code>String</code> over <code>Text</code>. <code>String</code> provides a linked list
+of characters (literally <code>type String = [Char]</code>), but <code>Text</code> provides a much
+more efficient byte-array based representation. Basically, you should always
+use <code>Text</code> if you can.</p>
+<p>Unfortunately, because Haskell's Prelude makes this choice a bit of a pain, in practice
+you end up having to go through <code>String</code> to do a lot of things.
+In fact, for this project, we'll be using <code>String</code> throughout, rather than <code>Text</code>,
+because this is ultimately simpler, and avoids a good amount of boilerplate. Furthermore,
+we're not working on a production compiler, and we're cutting corners in plenty
+of places already. This project is about learning a simple, but complete approach
+to implementing a reasonable subset of Haskell, so I feel ok papering over things like this.</p>
+<p>Many commonly used functions are also missing from the standard Prelude.
+For example, <code>foldl</code> has the wrong strictness, and performs
+much worse compared to the strict <code>foldl'</code>. Unfortunately <code>foldl</code> is in the Prelude,
+while you need to import <code>foldl'</code> from <code>Data.List</code>. This kind of thing is pervasive,
+and the line between what does and doesn't get included seems quite arbitrary at times.</p>
+<p>There are plenty of libraries that provide alternative Preludes:
+<a href=https://hackage.haskell.org/package/protolude>Protolude</a>,
+<a href=https://hackage.haskell.org/package/relude>Relude</a>,
+among many others.
+For this project, I've decided to just write our own, with a handful of extra functions.</p>
+<p>In practice, I'd recommend you find an alternative Prelude you like, as a library,
+and then just stick with that (<code>Relude</code> would be my personal choice). For this project,
+I don't want to depends on the idiosyncracies of any particular Prelude though.
+Choosing one would work, but it might alienate people not familiar with how it works.</p>
+<p>Instead, I'm just introducing a few simple operators that make code much more readable, and consistent,
+in my opinion, and a few utility functions that we use
+often enough to warrant being in our Prelude.</p>
+<h1>Creating Ourlude</h1>
+<p>So, we'll be creating a file <code>src/Ourlude.hs</code> to contain our custom Prelude. Let's
+go ahead and add this to our Cabal file:</p>
+<pre><code>library
+  ...
+  exposed-modules:     Ourlude
+                     , Example</code></pre>
+<p>And now let's create the <code>src/Ourlude.hs</code> file:</p>
+<pre><code>module Ourlude
+  ( module Prelude,
+    (|>),
+    (<|),
+    (>>>),
+    (<<<),
+    foldMapM,
+    mapLeft,
+    first, second
+  )
+where
+
+import Data.Bifunctor (first, second)</code></pre>
+<p>The first thing of note is that we're exporting the entire standard Prelude!
+As much as I've ragged on about it, ultimately, all our custom Prelude does is add
+a few things to the standard Prelude.</p>
+<h2>What we're including</h2>
+<p><code>first</code> and <code>second</code> come from <code>Data.Bifunctor</code>.</p>
+<p>What they do is map over the first and second parts of what's called
+a "Bifunctor":</p>
+<pre><code>first :: Bifunctor f => (a -> a') -> f a b -> f a' b
+second :: Bifunctor f => (b -> b') -> f a b -> f a b'</code></pre>
+<p>You can think of a Bifunctor as being like a Functor, but with
+two slots you can map over, instead of just a single one.
+Examples include <code>Either a b</code>, and tuples <code>(a, b)</code>. Concretely,
+we'll be using <code>first</code> and <code>second</code> for their effect on tuples.
+In this case, the functions work like this:</p>
+<pre><code>first f (a, b) = (f a, b)
+second f (a, b) = (a, f b)</code></pre>
+<p>These are just used often enough throughout the compiler to warrant
+including.</p>
+<p>We'll be implementing the rest of the functions ourselves, so make sure to add
+them to <code>Ourlude.hs</code> if you're following along.</p>
+<p>First we have: <code>foldMapM</code>:</p>
+<pre><code>foldMapM :: (Monad m, Monoid b) => (a -> m b) -> [a] -> m b
+foldMapM f = mapM f >>> fmap mconcat</code></pre>
+<p>This might seem a bit weird to include, but it's actually surprisingly useful.
+First, remember <code>foldMap</code>:</p>
+<pre><code>foldMap :: Monoid b => (a -> b) -> [a] -> b</code></pre>
+<p>This function takes a list <code>[x1, x2, ..., xN]</code> and gives us <code>f x1 <> f x2 <> ... <> f xN</code>,
+where <code><></code> is the monoidal operation. For example, you could use this to
+show a bunch of integers, and then concatenate the digits:</p>
+<pre><code>foldMap show [1, 2, 3]</code></pre>
+<p>This is useful in a compiler, because very often you're traversing lists of stuff, and producing
+some kind of output that you want to merge together. For example, if you want to find
+the set of names used in an list of expressions, you'd use <code>foldMap</code>, given a function
+that finds the set of names used in a <em>single</em> expression.</p>
+<p><code>foldMapM</code> is useful, because you're doing this kind of traversal <em>inside of a monadic context</em>.
+For example, while squashing this output, you might need to throw an error, or lookup
+some information that you have access to in this context.</p>
+<h2>Forward Composition</h2>
+<p>The remaining functions come as an ensemble really:</p>
+<pre><code>infixl 1 |>
+(|>) :: a -> (a -> b) -> b
+x |> f = f x
+{-# INLINE (|>) #-}
+
+infixr 0 <|
+(<|) :: (a -> b) -> a -> b
+(<|) = ($)
+{-# INLINE (<|) #-}
+
+infixr 9 <<<
+(<<<) :: (b -> c) -> (a -> b) -> (a -> c)
+g <<< f = g . f
+{-# INLINE (<<<) #-}
+
+infixl 9 >>>
+(>>>) :: (a -> b) -> (b -> c) -> (a -> c)
+f >>> g = g . f
+{-# INLINE (>>>) #-}</code></pre>
+<p>Two of these operations should be well known to you. <code><<<</code> is actually <code>.</code>
+in disguise, and <code><|</code> is <code>$</code> as well. The reason I include these is strictly
+for consistenty with the other two.</p>
+<p>The other two provide <em>forward composition</em>. So <code>f >>> g</code> is nothing other than
+<code>g <<< f</code>, which is <code>g . f</code>, in more familiar terms. Similarly
+<code>x |> f</code> is just <code>f $ x</code>, and just <code>f x</code>, really. (The advantage of <code>$</code> comes with multiple functions,
+or complicated expressions like <code>f $ 2 + 2</code>).</p>
+<p>The reason I include forward composition operators is because I find forward composition
+<em>better in most cases</em>, compared to backwards composition. What I mean by "forward", is
+that if we take an expression like <code>f (g (x))</code>, i.e. <code>f $ g $ x</code>, or <code>f <| g <| x</code>, we
+have <code>x</code>
+first "entering" <code>g</code>, and then "entering" <code>f</code>. So the data moves
+from right to left, which is <em>backwards</em> relative to the left to right order
+you're reading this text in.</p>
+<p>By contrast <code>x |> g |> f</code> has the data moving <em>forwards</em>, or left to right.</p>
+<p>Similarly <code>\x -> f (g x)</code> becomes <code>f <<< g</code>, or <code>g >>> f</code>, and the same remarks apply.</p>
+<p>I think forward composition is better in most cases, simply because it matches the standard reading
+order. For example, take this expression:</p>
+<pre><code>Matrix . map stripHead . filter isDefault $ rows</code></pre>
+<p>Now, when I read this, I have to first move my attention all the way to the end of the line,
+and then crane going backwards from right to left, in order to see how <code>rows</code> is transformed
+into the final result.</p>
+<p>This wouldn't look all that strange to many Haskellers,
+since we're so used to reading things in this order. But if you use <code><|</code>, as
+we will, this <em>does</em> look a bit odd:</p>
+<pre><code>Matrix <| map stripHead <| filter isDefault <| rows</code></pre>
+<p>It looks odd, because <strong>it is</strong>. You're taking a piece of data, and transforming it,
+but you're doing so by describing transformations in the opposite order in
+which they happen. It's much more natural (at least in English) to say</p>
+<p>"take the rows, then filter using isDefault, then map stripHead, then wrap that in Matrix"</p>
+<p>versus</p>
+<p>"wrap in Matrix before mapping with striphead, before filtering using isDefault, over the rows"</p>
+<p>Let's have some catharsis:</p>
+<pre><code>rows |> filter isDefault |> map stripHead |> Matrix</code></pre>
+<p>This looks much more straightforward to me, and matches the natural reading order.</p>
+<p>That's not to say that the other direction isn't useful. It is, just not for longer
+chains like this. Where the other direction is useful is when it reminds us of "normal"
+function application.</p>
+<p>For example,
+a large expression like this clearly benefits from using <code>|></code></p>
+<pre><code>transpose (swap index (transpose pats))
+
+pats |> transpose |> swap index |> transpose</code></pre>
+<p>On the other hand:</p>
+<pre><code>\stuff -> map fst (filter okay stuff)</code></pre>
+<p>doesn't have enough nested computation to warranted using <code>|></code>, it's readable as is.</p>
+<p>If wanted to eta-reduce this, i.e. remove the lambda, it makes sense to do it like this:</p>
+<pre><code>map fst <<< filter okay</code></pre>
+<p>Here <code>f <<< g</code> is supposed to be immediately evocative of <code>f (g x)</code>. In general,
+I prefer using <code><<<</code> when I'm trying to draw a parallel with direct application.</p>
+<p><code><|</code>, is used in the same way as <code>$</code>, as a kind of syntactic trick:</p>
+<pre><code>Matrix <| rows1 ++ rows2
+
+return <| case x of
+
+map <| \case
+
+runMonadM <| do
+
+...</code></pre>
+<p>What we're doing here is making use of the low precedence of <code><|</code> to neatly avoid wrapping
+things in parentheses. This is especially important in front of block expressions, because
+wrapping a block in parentheses is a bit awkward:</p>
+<pre><code>f (case x of
+  Nothing -> 0
+  Just y -> y
+)</code></pre>
+<h1>Making Ourlude Default</h1>
+<p>So, now we have a module <code>Ourlude</code>, which contains the functions we want in
+our custom Prelude, but we haven't actually made it <em>the Prelude</em>. In fact,
+<code>Prelude</code> is still imported by default in every file, and this will conflict
+with <code>Ourlude</code> when we try to import it as well.</p>
+<p>To amend this, we need to set things up so that <code>Prelude</code> is <em>not imported</em>
+by default. Then we can manually import <code>Ourlude</code> in every file, and things
+will work out.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+You can also make it so that <code>Ourlude</code> gets imported by default in every file,
+but it's quite a bit simpler to just import it manually. The extra line of boilerplate
+in every file really doesn't amount to much. The explicitness makes the build
+much simpler.</p></blockquote>
+<p>Thankfully, Haskell provides an extension to make the Prelude not implicitly
+imported, called, well <code>NoImplicitPrelude</code>. We could add:</p>
+<pre><code>{-# LANGUAGE NoImplicitPrelude #-}</code></pre>
+<p>at the top of every file, but it's easier to just add this as a default extension
+in our Cabal file. This makes it so that it's included as an extension in every file.</p>
+<pre><code>executable haskell-in-haskell
+  ...
+  default-extensions:  NoImplicitPrelude
+
+library
+  ...
+  default-extensions:  NoImplicitPrelude
+  ...</code></pre>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+While you're at it, you can also delete <code>Example.hs</code>, and then remove <code>Example</code>
+from <code>exposed-modules</code> in the library section. We won't be using it anymore.</p></blockquote>
+<p>Now, this breaks all of our code, because we assumed the Prelude was imported before.</p>
+<p>We need to import the <code>Prelude</code> in <code>Ourlude.hs</code>, to be able to reexport things:</p>
+<pre><code>-- ...
+import Prelude
+-- ...</code></pre>
+<p>Let's change <code>Main.hs</code> to import <code>Ourlude</code> now:</p>
+<pre><code>module Main where
+
+import Ourlude
+
+main :: IO ()
+main = putStrLn <| "Hello Again!"</code></pre>
+<p>Here we use the <code><|</code> operator from our custom Prelude, just as a little
+check that everything's working right.</p>
+<p>Let's go ahead and fire <code>cabal run haskell-in-haskell</code> again. You should see:</p>
+<pre><code>Hello Again!</code></pre>
+<h1>Conclusion</h1>
+<p>And that's all for this part!</p>
+<p>Even though we're not really doing any compiler stuff yet, we've gotten a project
+set up, and a lot of the boilerplate necessary for the project out of the way.</p>
+<p>The code for this part is available <a href=https://github.com/cronokirby/haskell-in-haskell/tree/part-1>here</a>.</p>
+<p>Stay tuned for
+<a href=/posts/2020/12/haskell-in-haskell-2/>the next part</a>
+of this series, where we'll finally get into compiler goodness,
+by writing our own lexer for Haskell, and all of its whitespace trickery!</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

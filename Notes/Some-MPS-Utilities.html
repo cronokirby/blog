@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Some MPS Utilities</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous"><title>cronokirby - Some MPS Utilities</title>
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2023-02-23">2023-02-23</time>
+
+<h1>Some MPS Utilities</h1>
+
+
+
+
+</header>
+
+<p>Recently I've been working on a <a href=https://eprint.iacr.org/2023/187>new framework</a>---named "MPS", for "Modular Protocol Security"---for proving the security of cryptographic protocols.</p>
+<p>I intend on applying this framework to a threshold ECDSA protocol of mine,
+<a href=https://github.com/cronokirby/cait-sith>cait-sith</a>.
+In the spirit of open science, and because I think more examples of
+how to use MPS could be useful, I think it's easier to just put
+these proofs up on my website as I work on them.</p>
+<p>Eventually I'll write a full paper and all that jazz about cait-sith,
+but I think having some preliminary analysis out there doesn't need to
+wait until I run networked benchmarks and stuff like that.</p>
+<p>Anyhow, this first note in the "series" is just about some general
+utilities for synchronous communication, and a general background
+page I can link to for the other notes.</p>
+<h1>Synchronous Communication</h1>
+<p>It's simpler to work in a synchronous communication model,
+which assumes that message delivery happens immediately.
+Also, this lets us focus on the ECDSA part of things, rather
+than the sending messages aspect.</p>
+<p>The two main modes of message sending we have in cait-sith
+are sending a message to everybody, and sending a message privately.
+We'll model these forms of communication using an ideal functionality
+(which, in MPS, is just an asynchronous game).</p><div class="flex-initial">
+$$
+\boxed{
+\normalsize{
+\begin{aligned}
+&\colorbox{#FBCFE8}{\large
+  $F[\text{SyncComm}]$
+}\cr
+\cr
+&\begin{aligned}
+&m_{i \to j, w} \gets \bot\cr
+\cr
+&\underline{\Rsh_i(P, [m_j], w):}\cr
+&\enspace \texttt{for } i \neq j \in P:\cr
+&\quad \texttt{if } m_{i \to j, w} = \bot:\cr
+&\quad\enspace m_{i \to j, w} \gets m_j\cr
+\cr
+&\underline{\Lsh_i(P, w):}\cr
+&\enspace \texttt{wait } \forall i \neq j \in P.\ m_{j \to i, w} \neq \bot\cr
+&\enspace \texttt{return } [m_{j \to i, w} \mid j \in P]\cr
+\cr
+&\underline{\text{Stop}():}\cr
+&\enspace \texttt{die }\cr
+\cr
+&\underline{\textcolor{#ef4444}{\text{sent}}(i, j, w):}\cr
+&\enspace \texttt{return } m_{i \to j, w} \neq \bot\cr
+\end{aligned}
+&\begin{aligned}
+\end{aligned}
+\cr
+\end{aligned}
+}
+}
+$$
+</div>
+<div>
+<p style="text-align: left">
+$m_{i \to j, w}$ means that every pair of parties $i \neq j$ has an empty message slot
+for every future waitpoint $w$, when $i$ wants to send a message to $j$.
+</p>
+<p style="text-align: left">
+The $\Rsh_i$ function lets $i$ send a bunch of messages to different
+parties in the set $P$ they provide.
+</p>
+<p style="text-align: left">
+$\Lsh_i$ is the counterpart, allowing us to receive messages.
+We request to receive from a set of parties $P$ at a given waitpoint, and then receive all those messages, once they're ready.
+</p>
+<p style="text-align: left">
+Any party can immediately stop the protocol at will, by aborting.
+</p>
+<p style="text-align: left">
+The adversary is also able to see which messages have been sent,
+but not their contents.
+The red color suggest that this function is for the adversary's
+eyes only.
+</p>
+</div>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i, j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0572em;">j</span></span></span></span></span> come from the same bounded set, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span></span>, the number of parties.
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span></span></span></span></span> is, in theory, coming from an unbounded set <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">N</mi></mrow><annotation encoding="application/x-tex">\mathbb{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">N</span></span></span></span></span>.
+In practice this is shorthand for creating the appropriate message
+slot <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mrow><mi>i</mi><mo>→</mo><mi>j</mi><mo separator="true">,</mo><mi>w</mi></mrow></msub></mrow><annotation encoding="application/x-tex">m_{i \to j, w}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.2861em;height:0.7167em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="margin-left:0em;top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">→</span><span class="mord mathnormal mtight" style="margin-right:0.0572em;">j</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.0269em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span> on demand, as soon as a given waitpoint <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span></span></span></span></span>
+is actually used in <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>↰</mo><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\Lsh_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8422em;vertical-align:-0.15em;"></span><span class="mrel"><span class="mrel amsrm">↰</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="margin-left:0em;top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> or <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>↱</mo><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\Rsh_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8422em;vertical-align:-0.15em;"></span><span class="mrel"><span class="mrel amsrm">↱</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>.
+This is just a technical detail which doesn't change the semantics.</p></blockquote>
+<p>One common short hand we use is <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>↱</mo><mi>i</mi></msub><mo stretchy="false">(</mo><mo>⋆</mo><mo separator="true">,</mo><mi>m</mi><mo separator="true">,</mo><mi>w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Rsh_i(\star, m, w)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8422em;vertical-align:-0.15em;"></span><span class="mrel"><span class="mrel amsrm">↱</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="margin-left:0em;top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">⋆</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mclose">)</span></span></span></span></span>, shorthand for <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>↱</mo><mi>i</mi></msub><mo stretchy="false">(</mo><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mo stretchy="false">[</mo><mi>m</mi><mo separator="true">,</mo><mi>m</mi><mo separator="true">,</mo><mo>…</mo><mo stretchy="false">]</mo><mo separator="true">,</mo><mi>w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">{\Rsh_i([n], [m, m, \ldots], w)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord"><span class="mrel"><span class="mrel amsrm">↱</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">([</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">[</span><span class="mord mathnormal">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mclose">)</span></span></span></span></span></span>,
+indicating that the same message should be sent to all parties.
+(The functionality for sending ignores )</p>
+<p>For receiving, often honest parties will just receive from everyone,
+with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>↰</mo><mi>i</mi></msub><mo stretchy="false">(</mo><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo separator="true">,</mo><mi>w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">{\Lsh_i([n], w)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mrel"><span class="mrel amsrm">↰</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="margin-left:0em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">([</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mclose">)</span></span></span></span></span></span>.</p>
+<p>Malicious parties, however, are free to send different
+messages to different parties, even when the protocol specifies
+that the party should be using <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>↱</mo><mi>i</mi></msub><mo stretchy="false">(</mo><mo>⋆</mo><mo separator="true">,</mo><mo>…</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">{\Rsh_i(\star, \ldots)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord"><span class="mrel"><span class="mrel amsrm">↱</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mopen">(</span><span class="mord">⋆</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mclose">)</span></span></span></span></span></span> instead,
+so we need to allow the more general behavior.</p>
+<p>One thing we should mention is the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="monospace">die</mtext></mrow><annotation encoding="application/x-tex">\texttt{die}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6111em;"></span><span class="mord text"><span class="mord texttt">die</span></span></span></span></span></span> keyword.
+Basically, we augment packages with the ability to be "dead".
+If you call a function in a package that's dead, it responds
+with a dummy message indicating that, and then you become dead as well.
+You can think of this like a kind of exception mechanism,
+where as soon as some package in a larger system dies,
+the entire system does.</p>
+<p>Of course, honest parties will not abort unless something bad happens,
+and if everybody is honest, nothing bad should ever happen.
+It's important to note that malicious parties can cause aborts at will.
+We don't attempt to analyze identifiable aborts in this model.</p>
+<p>We also add some convenient syntax around aborts, namely:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mtext mathvariant="monospace">abort</mtext><mtext> </mtext><mtext mathvariant="monospace">if</mtext><mtext> </mtext></mrow><mo stretchy="false">⟨</mo><mtext>cond</mtext><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">\texttt{abort if } \langle \text{cond} \rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord text"><span class="mord texttt">abort if </span></span><span class="mopen">⟨</span><span class="mord text"><span class="mord">c</span><span class="mord">o</span><span class="mord">n</span><span class="mord">d</span></span><span class="mclose">⟩</span></span></span></span></span></span>
+<p>which will trigger an abort, by calling <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Abort</mtext></mrow><annotation encoding="application/x-tex">\text{Abort}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">A</span><span class="mord">b</span><span class="mord">o</span><span class="mord">r</span><span class="mord">t</span></span></span></span></span></span>, if some
+condition holds.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

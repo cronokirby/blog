@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Cryptography without Security</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous"><title>cronokirby - Cryptography without Security</title>
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2023-02-19">2023-02-19</time>
+
+<h1>Cryptography without Security</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/foundations/index.html">
+    #foundations
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>The typical presentation of theoretical cryptography has one central goal:
+defining what it means for cryptographic objects to be "secure".
+I think this goal is misguided.</p><!--more-->
+<p>In theoretical cryptography, you usually start by defining what
+"security" should mean, then you go about trying to prove that
+various constructions are secure.
+Sometimes, you can succeed perfectly, like with the one-time pad,
+but other times, you need to rely on assumptions, like with every
+other encryption scheme.
+Most often you then argue that more complicated schemes
+are <em>conditionally secure</em>, by reducing their security to that of other
+schemes, or basic assumptions.</p>
+<p>I don't think this focus on <em>security</em> is very useful.</p>
+<p>My perspective is that theoretical cryptography should instead
+focus on <em>reductions</em>, in fact, we should even embrace
+the use of many cryptographic models, in order to prove
+both positive and negative results about reductions.</p>
+<p>This reduction-centric perspective defers thinking about
+"security" as much as necessary.
+In any given model of cryptography, you'll have assumptions
+about what things are secure, and then your web of reductions
+will let you draw implications from that.
+This web even exists independently of what you're willing to assume.
+In that way, the reduction perspective subsumes the security
+perspective, since we have more information,
+and can even consider competing models of what security should mean.</p>
+<p>The above paragraphs basically summarize the point I'm trying to make,
+but I doubt you'll be convinced by just the few things I've said so far,
+so in the rest of this post I'll be elaborating and explaining this
+perspective in more detail.</p>
+<h1>Cryptography is about Security?</h1>
+<p>Let's start by examining the most common perspective that presentations
+of theoretical cryptography share.
+I don't actually have any statistics for this, but it is common
+across various theoretical tomes like Goldreich's <a href=https://www.wisdom.weizmann.ac.il/~oded/foc.html>series of books</a>,
+<a href=https://toc.cryptobook.us/>Boneh & Shoup</a>, etc.</p>
+<p>This modern perspective is about trying to define what
+it means for various cryptographic schemes to be secure.
+You want to have encryption schemes producing ciphertexts
+that are hard to decrypt, signature schemes
+producing signatures that are hard to forge, and so on.</p>
+<p>The goal of theoretical cryptography, is then about:</p>
+<ul><li>how to characterize the desirable properties of cryptographic schemes,</li><li>how to define what it means for those properties to hold.</li></ul>
+<p>I think we've developed good tools for the former,
+namely the notion of security games, in particular,
+in the form of state-separable proofs.</p>
+<p>It's the latter that this blog post is about.
+Given a security game describing the properties
+a scheme should have, you can then define what it means
+for that scheme to be <em>secure</em>.
+This should guarantee that the properties
+of the scheme will hold, regardless of how the scheme is attacked.</p>
+<p>This definition arises in a very natural way.</p>
+<p>First, you characterize what properties a scheme should have by defining
+a <em>game</em>, that an <em>adversary</em> (some arbitrary algorithm / computer / whatever)
+can interact with.
+The scheme's properties should be such that the game is hopefully
+not winnable.</p>
+<p>For example, a game for signatures could involve an adversary
+trying to forge a signature on some message,
+winning if they succeed:
+a good signature scheme should not allow an adversary to win!</p>
+<p>The first definition of secure that arises from this is something like:
+"a game is secure if no adversary can <em>ever</em> win".
+One issue with this definition is that it's much too restrictive.
+The two main ways it's restrictive are that:</p>
+<ul><li>The adversary cannot win, even with a small probability. For example, you could have a game where an adversary has to guess a value in <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><msup><mo stretchy="false">}</mo><mn>2000</mn></msup></mrow><annotation encoding="application/x-tex">\{0, 1\}^{2000}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">}</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2000</span></span></span></span></span></span></span></span></span></span></span></span></span>, which happens with probability <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>2000</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-2000}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2000</span></span></span></span></span></span></span></span></span></span></span></span></span>, an absurdly low number, but nonetheless enough to count as winning sometimes.</li><li>The adversary has unbounded computational power, which will inherently break cryptographic assumptions.</li></ul>
+<p>The latter basically precludes most cryptography, restricting
+us to schemes like the one-time pad, where the key used for encrypting
+a message has to be at least as long as the message.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+Or, more precisely, that the key has at least as much <strong>entropy</strong>
+as the message.</p></blockquote>
+<p>So, usually, we instead say that a game is secure if
+"no <em>efficient</em> adversary can win, except with some <em>small</em> probability".</p>
+<p>The notion of <em>efficient</em> computation is not very controversial,
+nor hard to define.
+What a "small" probability should mean is something we do need
+to think about and define.</p>
+<p>The most common notion of smallness is that of being <em>negligible</em>.
+We measure the amount of time some algorithm
+takes relative to some (security) parameter <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span>.
+Efficient algorithms should only use <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">O</mi><mo stretchy="false">(</mo><mtext>poly</mtext><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(\text{poly}(\lambda))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord text"><span class="mord">p</span><span class="mord">o</span><span class="mord">l</span><span class="mord">y</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">))</span></span></span></span></span>
+worth of computation: i.e. only a polynomial amount.
+As <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span> grows, so can the amount of computation.
+Some tasks are prohibited by this bound, like trying all values
+in the set <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><msup><mo stretchy="false">}</mo><mi>λ</mi></msup></mrow><annotation encoding="application/x-tex">\{0, 1\}^\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0991em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">}</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span>, which would take <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>λ</mi></msup></mrow><annotation encoding="application/x-tex">2^\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span> steps,
+since this is exponential, and not polynomial in <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span>.
+A negligible amount is sort of like the opposite of this logic:
+some function <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span></span> is negligible if <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>f</mi><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">1 / f(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span></span>
+grows faster than any polynomial function.</p>
+<p>The reason this definition is useful is that it behaves well
+under composition.
+If you sum two negligible values together, you'll get a negligible
+value, as long as you only do this operation a reasonable
+(i.e. <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>poly</mtext><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{poly}(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord text"><span class="mord">p</span><span class="mord">o</span><span class="mord">l</span><span class="mord">y</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span></span>) number of times.
+This is why we use this as our notion of what amount of success
+probability can be allowed while still having security:
+we can compose a bunch of little schemes together, knowing
+that if they're all secure, the end result will be, because
+summing up all the negligible amounts of success probability
+we might have will still give us a negligible amount.</p>
+<p>One common example of a negligible value that shows up
+is when trying to guess a value sampled from <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><msup><mo stretchy="false">}</mo><mi>λ</mi></msup></mrow><annotation encoding="application/x-tex">\{0, 1\}^\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1.0991em;"></span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">}</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span>,
+which has success probability <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>λ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-\lambda}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span></span>,
+and is thus negligible, since <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>λ</mi></msup></mrow><annotation encoding="application/x-tex">2^\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span> grows faster
+than any polynomial in <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span>.</p>
+<p>Thus, the usual definition of security we end up with is:
+"A game is secure if no efficient adversary can win the game except
+with negligible probability".</p>
+<p>Some games can be shown directly to be secure:
+for example, a game which requires the adversary to
+guess some value in a large set.
+But, most games require some kind of hardness assumption for their security.</p>
+<p>For example, the security of public key encryption will rely
+on a hardness assumption about things like factoring, or elliptic curves,
+and encryption will need to assume that some kind of block cipher
+or PRF is secure.</p>
+<p>This kind of "conditional security" is known as a <em>reduction</em>.
+This is a proof that if some set of games are assumed to be secure,
+then some other game is also secure.
+For example, you might prove that if a block cipher is secure,
+then a larger mode of encryption using that cipher is secure as well.</p>
+<p>In fact, most security results are of this second kind.
+We can't prove most things to be secure in the abstract,
+but only secure relative to some assumptions.</p>
+<p>In the classical view we've been talking about so far, cryptography
+is mainly about:</p>
+<ul><li>Proving various large cryptographic schemes conditionally secure, ideally with the simplest assumptions possible.</li><li>Developing and analyzing the best attacks against certain assumptions, until reasonable <em>confidence</em> is attained that they're not insecure.</li></ul>
+<p>There's usually a good consensus about what assumptions are reasonable.
+Many assumptions have "stood the test of time", in that while attacks
+have improved, their success has satured at a comfortable level.
+Sometimes there is disagreement though, and
+novel attacks do of course get developed.</p>
+<p>Now, here comes my <em>opinion</em>, which is that I am personally
+less interested in studying and analyzing assumptions than
+I am in studying reductions.
+Cryptanalysis is a fun and vibrant field of cryptography which---at the moment--I am happy to leave to other people.
+You don't need that many assumptions to do a <em>lot</em> of cryptography,
+it turns out.</p>
+<h1>Cryptography is about Reductions!</h1>
+<p>Now that we've crossed from the land of objective facts to that
+of my personal opinion, I guess I should share my perspective
+on what placing more focus on reduction should look like.</p>
+<p>First, for applied cryptography it's still important to have some
+some assumptions you can take to be "secure", but otherwise this is something
+you don't fret about too much, instead focusing on reducing
+the security of schemes to that of simple, and, if possible,
+existing assumptions.</p>
+<p>Since reductions are so common, you really should develop better
+syntax for talking about them.
+Very often, a reduction will be written down in a paper as:
+"We show that for all efficient adversaries <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">A</mi></mrow><annotation encoding="application/x-tex">\mathscr{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7em;"></span><span class="mord mathscr" style="margin-right:0.2293em;">A</span></span></span></span></span> against
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">H_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.8333em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="margin-right:0.05em;margin-left:-0.0813em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>, there exists a an efficient adversary <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">B</mi></mrow><annotation encoding="application/x-tex">\mathscr{B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7em;"></span><span class="mord mathscr" style="margin-right:0.0409em;">B</span></span></span></span></span> against <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">G_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.8333em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>
+such that <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Advantage</mtext><mo stretchy="false">[</mo><mi mathvariant="script">A</mi><mo separator="true">,</mo><msub><mi>H</mi><mi>B</mi></msub><mo stretchy="false">]</mo><mo>≤</mo><mi>f</mi><mo stretchy="false">(</mo><mtext>Advantage</mtext><mo stretchy="false">[</mo><mi mathvariant="script">B</mi><mo separator="true">,</mo><msub><mi>G</mi><mi>b</mi></msub><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\text{Advantage}[\mathscr{A}, H_B] \leq f(\text{Advantage}[\mathscr{B}, G_b])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord text"><span class="mord">A</span><span class="mord">d</span><span class="mord">v</span><span class="mord">a</span><span class="mord">n</span><span class="mord">t</span><span class="mord">a</span><span class="mord">g</span><span class="mord">e</span></span><span class="mopen">[</span><span class="mord mathscr" style="margin-right:0.2293em;">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord text"><span class="mord">A</span><span class="mord">d</span><span class="mord">v</span><span class="mord">a</span><span class="mord">n</span><span class="mord">t</span><span class="mord">a</span><span class="mord">g</span><span class="mord">e</span></span><span class="mopen">[</span><span class="mord mathscr" style="margin-right:0.0409em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-right:0.05em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">])</span></span></span></span></span>".
+Of course, assuming that the advantage of an efficient <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">B</mi></mrow><annotation encoding="application/x-tex">\mathscr{B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7em;"></span><span class="mord mathscr" style="margin-right:0.0409em;">B</span></span></span></span></span>
+is negligible, i.e. secure, implies the same for <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">A</mi></mrow><annotation encoding="application/x-tex">\mathscr{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7em;"></span><span class="mord mathscr" style="margin-right:0.2293em;">A</span></span></span></span></span> against
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">H_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.8333em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="margin-right:0.05em;top:-2.55em;margin-left:-0.0813em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>, provided <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mo stretchy="false">⟨</mo><mtext mathvariant="monospace">negligible</mtext><mo stretchy="false">⟩</mo><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">⟨</mo><mtext mathvariant="monospace">negligible</mtext><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">f(\langle \texttt{negligible} \rangle) = \langle \texttt{negligible} \rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(⟨</span><span class="mord text"><span class="mord texttt">negligible</span></span><span class="mclose">⟩)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord text"><span class="mord texttt">negligible</span></span><span class="mclose">⟩</span></span></span></span></span>.</p>
+<p>One way I like writing this is instead:
+"We show that <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>b</mi></msub><mo>≤</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>G</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">H_b \leq f(G_b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="margin-left:0em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span>".</p>
+<p>From this perspective, cryptography is (usually) about
+proving statements of this form.
+You build some cryptographic scheme to accomplish some task,
+then show that it reduces to some well-known assumption,
+or even to another scheme people have constructed before.
+You slowly build up a web of reductions this way.
+This web exists regardless of what assumptions you make.
+Even if something is not secure, reductions to that assumption
+still remain valid,
+although they may not be useful anymore.</p>
+<p>I think this web of reductions is interesting to study and develop
+on its own merits, although one should still have some eye
+towards what assumptions are worth reducing to,
+since applications do actually care about whether or not
+these are secure.</p>
+<p>I think there are two somewhat different philosophies
+as to why this reduction-centric approach is a good direction to take.</p>
+<h1>Some Like Precise Advantages</h1>
+<p>The first philosophy is that the focus on reduction is good
+because it allows a more precise accounting of the security of
+various constructions.</p>
+<p>Instead of the asymptotic approach to security we developed in the "classical"
+view, instead you focus on the concrete security of a given assumption.
+For example, you might assume that an adversary requires
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>128</mn></msup></mrow><annotation encoding="application/x-tex">2^{128}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">128</span></span></span></span></span></span></span></span></span></span></span></span></span> units of "work" in order to be guaranteed to win a given
+security game.
+This is also called having "128 bits of security", roughly speaking.
+There's a natural tradeoff between the probability of success,
+and the amount of work done.
+In the example mentioned above,
+one might imagine adversaries that do <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>127</mn></msup></mrow><annotation encoding="application/x-tex">2^{127}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">127</span></span></span></span></span></span></span></span></span></span></span></span></span> units of work
+for a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord">2</span></span></span></span></span> probability of success,
+or <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>64</mn></msup></mrow><annotation encoding="application/x-tex">2^{64}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">64</span></span></span></span></span></span></span></span></span></span></span></span></span> work for <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>64</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-64}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">64</span></span></span></span></span></span></span></span></span></span></span></span></span> success, etc.</p>
+<p>In this perspective, you want to make sure that you keep
+track of the exact parameters of a reduction.
+For example, a reduction of the form <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>b</mi></msub><mo>≤</mo><mn>2</mn><msub><mi>G</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">H_b \leq 2 G_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.8333em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="margin-right:0.05em;margin-left:-0.0813em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.8333em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>
+means that one bit of security is lost.
+If we want <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">H_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> to have 128 bits of security, then <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">G_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>
+needs to have <em>129</em> bits, because of the factor of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span>.</p>
+<p>Sometimes, reductions might have somewhat bad factors in front
+of the reduction, like <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>b</mi></msub><mo>≤</mo><msup><mi>Q</mi><mn>2</mn></msup><mo>⋅</mo><msub><mi>G</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">H_b \leq Q^2 \cdot G_b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.8333em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="margin-right:0.05em;margin-left:0em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>, with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></span> being
+the number of "queries" to some relevant scheme.
+For example, the number of times a given encryption key is used.
+In this case, security can actually degrade somewhat rapidly
+if many queries are allowed.
+A system designer particularly enamoured with the number 128 might
+specify an explicit bound on the number of possible
+times a key is used to encrypt messages,
+such that as long this bound isn't reached, you still reach
+this magical 128 bits of security.
+For example, allowing <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup></mrow><annotation encoding="application/x-tex">2^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span></span></span></span></span> uses only, before generating a new key,
+would mean that you need 160 bits of security in the original
+assumption now.</p>
+<p>Because of this, many people often focus on developing so called
+"tight" reductions, which lose a minimal amount of security
+relative to their assumptions.
+This allows one to get the most "bang for the buck" out of cryptographic
+assumptions.</p>
+<p>To really embrace this approach you'd also want a way to account
+for the amount of work the reduction itself does.
+Each reduction would then account for the "loss" in security,
+as well as the amount of work performed.
+This kind of framework would then allow precise fine-tuning of the
+security level required in the various assumptions in order
+to guarantee a specific security level in the final scheme.</p>
+<p>A puritan version of this framework isn't all that common,
+but a looser version of this idea is still a common way
+parameter choices are thought about for applications.
+For example, guidelines about when symmetric keys need
+to be changed are based on a framework like this one.</p>
+<p>Now, I will admit that my presentation of this kind of concrete
+security framework is perhaps not entirely accurate, in part
+because it's not my main philosophical reason for
+preferring a reduction-centric view of cryptography.</p>
+<h1>Some Like Meta-Cryptography</h1>
+<p>Instead, my perspective is more so that of a recent appreciation
+for what might be called "meta-cryptography".</p>
+<p>In this perspective, you don't really commit to one single "model"
+of what cryptography is.
+Instead, you consider cryptography to be about the study of <em>all</em>
+of these models, and how they relate to one another.</p>
+<p>These models can differ in very simply ways, such as which problems
+they assume to be secure, but can also differ in more fundamental
+ways, like allowing for unbounded adversaries, or not allowing
+reductions to rewind adversaries, and other things like that.</p>
+<p>In this perspective, you naturally have to take a reduction-centric
+view, since focusing on reductions allows considering a gamut
+of models which differ only in the assumptions they make.
+This perspective goes beyond the "web of reductions" mentioned earlier,
+in that not only do you look at this web in one model,
+but you might also look at webs in alternate models,
+and try and relate them together.</p>
+<p>This might sound esoteric, but is actually somewhat common.
+For example, many schemes are analyzed in things like the "random oracle model",
+or the "generic group model".
+These can be seen as specific cryptographic models in which certain
+objects are modeled in an idealized manner.
+In this case, hash functions are modeled as random functions,
+and groups are modeled as perfectly opaque abstractions, respectively.
+One way of looking at what's going on here is that you define
+a stronger model, in which all the reductions in the standard model
+hold, but some new reductions become possible because of the idealized
+assumption.
+The utility here is that a reduction being possible in the stronger
+model provides some indication that it might be possible
+in the standard model, but more importantly,
+that if a reduction <em>is impossible</em> in the stronger model,
+then it also must be impossible in the standard model.</p>
+<p>For example, if a reduction doesn't even hold in the generic group model,
+then it has no hope of being possible with real groups.</p>
+<p>Note that this kind of model-shifting perspective doesn't really
+get explored if one is focused too much on "security".
+Once you step into an alternate model "security" goes out the window,
+because you're now longer even pretending to model the real world.
+Nonetheless, modelling hypothetical and idealized worlds
+is useful for understanding the real one.
+My point here is that even if one's goal is to develop
+a concrete notion of security, one can understand a lot more about
+cryptography by simply studying reductions in various models,
+and the connections between these models.</p>
+<p>Also, I find this perspective fun.</p>
+<h1>Conclusion</h1>
+<p>To summarize:</p>
+<ul><li>Theoretical cryptography is often framed in terms of being about formally defining and modelling what it means to be "secure".</li><li>This notion of security, in practice, will basically always depend on what you're willing to assume.</li><li>I would argue that this makes <em>reductions</em> the central notion of theoretical cryptography, rather than security itself.</li><li>There's utility in studying reductions on their own merit because they allow for better accounting of concrete security loss and the resource usage of adversaries.</li><li>My personal view is that studying "meta-cryptography", and embracing many cryptographic models is a very enlightening perspective towards understanding cryptography, even if one only cares about "security" in the standard model.</li></ul><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - Data Races vs Race Conditions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2019-06-14">2019-06-14</time>
+
+<h1>Data Races vs Race Conditions</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/concurrency/index.html">
+    #concurrency
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/go/index.html">
+    #go
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is a quick post about the difference between <em>Data Races</em> and
+<em>Race Conditions</em>, and how data structures or patterns providing freedom
+from data races can fail to provide race condition freedom.</p><!--more-->
+<p>The examples will be given in <code>Go</code>, since that's a language with a few
+of the concurrent constructs that come into play here, as well as the language
+that sparked this blog post in the first place.</p>
+<h2>Data Races</h2>
+<p>I agree almost entirely with
+<a href=https://doc.rust-lang.org/nomicon/races.html>rust's definition of data races</a>.
+Under this definition, a data race is when one or more threads concurrently
+access a location in memory / variable, at least one of which is a write,
+and at least one of which is not synchronized with other threads.</p>
+<p>For example, multiple concurrent reads to an unsychronized variable are perfectly
+fine:</p>
+<pre><code>const a = 3
+
+func main() {
+    go func() {
+        fmt.Printf("Thread B: %d\n", a)
+    }
+    fmt.Printf("Thread A: %d\n", a)
+}</code></pre>
+<p>Even though the order of printing will vary from execution to execution,
+there are no data races since both threads are merely reading from the data.</p>
+<p>If we now have one of the threads access <code>a</code> mutably, we introduce a data race:</p>
+<pre><code>func main() {
+    a := 3
+    go func() {
+        a = 10
+    }
+    fmt.Printf("Thread A: %d\n", a)
+}</code></pre>
+<p>We can solve this by introducing a mutex to synchronize access to <code>a</code>:</p>
+<pre><code>func main() {
+    a := 3
+    var m sync.Mutex
+    go func() {
+        m.Lock()
+        a = 10
+        m.Unlock()
+    }
+    m.Lock()
+    fmt.Printf("Thread A: %d\n", a)
+    m.Unlock()
+}</code></pre>
+<p>Both threads are accessing <code>a</code> at the same time, and one of them is writing,
+but since the access is synchronized, this is no longer a data race.</p>
+<h2>Race Conditions</h2>
+<p>Race conditions stem from <code>non-determinism</code> in concurrent programs.
+In theory any observable non-determinism from concurrency could be <em>considered</em>
+a race condition, but in practice what constitutes a race condition depends
+on what properties we want our program to respect.</p>
+<p>Let's take the following program as an example:</p>
+<pre><code>func main() {
+    go func() {
+        for {
+            fmt.Println("Thread B")
+        }
+    }
+    for {
+        fmt.Println("Thread A")
+    }
+}</code></pre>
+<p>We'll see some sort of random interleaving of the two messages:</p>
+<pre><code>Thread A
+Thread A
+Thread B
+Thread A
+Thread B
+Thread B</code></pre>
+<p>This could be considered a race condition, if the exact order of the printing
+was a property we wanted our program to respect. We could use some form of
+synchronization to enforce that order of printing.</p>
+<p>In practice we wouldn't consider this a race condition even if the execution
+isn't deterministic, because this isn't a property we care about.</p>
+<p>In summary, a race condition is some violation of the properties our program
+should have arising from the concurrent execution of the program.</p>
+<h2>Race Conditions without Data Races</h2>
+<p>The reason I decided to make this post was a discussion I had recently.
+Someone was claiming that using Go's channels prevents <em>race conditions</em>
+because the operations are always thread safe.</p>
+<p>It is true that Go's channels are free from <em>data races</em>, so long as memory
+isn't shared in other ways. That being, said it's pretty easy to
+write a program that has a race condition despite only using channels.</p>
+<p>In this example, we'll have a simple server responding to requests to get
+the value of an integer, and to set the value of an integer.</p>
+<p>The messages look like this:</p>
+<pre><code>type msg struct {
+    id int
+    amount int
+}</code></pre>
+<p>We'll use <code>0</code> as the id for <code>get</code> and <code>1</code> as the id for <code>set</code>.</p>
+<p>Our server type will look like this:</p>
+<pre><code>type server struct {
+  msgs chan msg
+  resps chan int
+}
+
+func newServer() *server {
+  msgs := make(chan msg)
+  resps := make(chan int)
+  return &server{msgs, resps}
+}</code></pre>
+<p>We have a channel to be able to send and receive messages for the server,
+as well as a channel for the responses to those messages.</p>
+<p>Our server will start in the background with the following function:</p>
+<pre><code>func (s *server) start() {
+  state := 0
+  for {
+    m := <-s.msgs;
+    if m.id == 0 {
+      s.resps <- state
+    } else {
+      state = m.amount
+    }
+  }
+}</code></pre>
+<p>We respond to get requests by sending back the current state, and to set requests
+by setting the concurrent state. Since only one thread is in control
+of the state, interactions with the server are free from data races.</p>
+<p>The basic operations with our server look like this:</p>
+<pre><code>func (s *server) get() int {
+  s.msgs <- msg{0, 0}
+  return <-s.resps
+}
+
+func (s *server) set(amount int) {
+  s.msgs <- msg{1, amount}
+}</code></pre>
+<p>Now with those basic operations, we can define the following function:</p>
+<pre><code>func (s *server) increment() {
+  x := s.get()
+  s.set(x + 1)
+}</code></pre>
+<p>This function simply increments the state.</p>
+<p>In our main function, we can do the following:</p>
+<pre><code>func main() {
+  s := newServer()
+  go s.start()
+  for i := 0; i < 200; i++ {
+      s.increment()
+  }
+  fmt.Println(s.get())
+}</code></pre>
+<p>This will perform 200 increment operations, leaving the state at 200, as expected.</p>
+<p>But if we start sharing these operations between threads, we'll notice
+a race condition:</p>
+<pre><code>func main() {
+  s := newServer()
+  go s.start()
+  go func() {
+      for i := 0; i < 100; i++ {
+          s.increment()
+      }
+  }
+  for i := 0; i < 100; i++ {
+      s.increment()
+  }
+  fmt.Println(s.get())
+}</code></pre>
+<p>We would expect to see 200, as before, but in practice we'll see a smaller number.
+This is a race condition. This happens because 2 threads can get the same value
+before setting the next one, and then both will set the same value, leading
+to 2 calls to increment only performing a single increment.</p>
+<h2>Simple fixes are not enough</h2>
+<p>What we want is an <em>atomic operation</em>. In this case an atomic increment.
+An atomic increment would mean that each increment happens as a single step,
+and thus prevent two concurrent increments from only leading to a single
+operation.</p>
+<p>We could add such an operation to our server with an additional message,
+let's say with id <code>2</code>:</p>
+<pre><code>else if m.id == 2 {
+    state++
+}</code></pre>
+<p>The problem is that the following function still wouldn't be atomic:</p>
+<pre><code>func (s *server) doubleIncrement() {
+    s.increment()
+    s.increment()
+}</code></pre>
+<p>No matter what set of atomic operations our server provides for its state,
+we can't simply perform multiple operations in sequence, in an unsynchronized
+manner, and expect the result to also be atomic.</p>
+<p>The full code for this example can be found here:
+<a href=https://play.golang.org/p/995MLEiqIVV>https://play.golang.org/p/995MLEiqIVV</a></p>
+<h2>Summary</h2>
+<p>Data races should not be conflated with race conditions. Just because
+a data structure provides data race free operations, doesn't mean that race conditions
+can't happen with that data structure. Furthermore, sequencing
+atomic operations does not yield an atomic operations.</p>
+<p>Designing concurrent programs without bugs is not trivial, and becomes
+even more complicated once you start working with multiple computers.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
