@@ -60,14 +60,77 @@ h1, h2, h3, h4, h5, h6 {
 
 /* https://carbondesignsystem.com/elements/color/tokens/ */
 :root {
-	--background: #ffffff;
-	--layer-01: #f4f4f4;
-	--text-primary: #161616;
-	--text-secondary: #525252;
-	--text-placeholder: #a8a8a8;
-	--link-primary: #0f62fe;
-	--link-primary-hover: #0043ce;
-	--link-visited: #8a3ffc;
+	--background-L: #ffffff;
+	--layer-01-L: #f4f4f4;
+	--text-primary-L: #161616;
+	--text-secondary-L: #525252;
+	--text-placeholder-L: #a8a8a8;
+	--link-primary-L: #0f62fe;
+	--link-primary-hover-L: #0043ce;
+	--link-visited-L: #8a3ffc;
+
+	--background-D: #161616;
+	--layer-01-D: #262626;
+	--text-primary-D: #f4f4f4;
+	--text-secondary-D: #c6c6c6;
+	--text-placeholder-D: #6f6f6f;
+	--link-primary-D: #78a9ff;
+	--link-primary-hover-D: #a6c8ff;
+	--link-visited-D: #be95ff;
+
+	--background: var(--background-L);
+	--layer-01: var(--layer-01-L);
+	--text-primary: var(--text-primary-L);
+	--text-secondary: var(--text-secondary-L);
+	--text-placeholder: var(--text-placeholder-L);
+	--link-primary: var(--link-primary-L);
+	--link-primary-hover: var(--link-primary-hover-L);
+	--link-visited: var(--link-visited-L);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+		--background: var(--background-D);
+		--layer-01: var(--layer-01-D);
+		--text-primary: var(--text-primary-D);
+		--text-secondary: var(--text-secondary-D);
+		--text-placeholder: var(--text-placeholder-D);
+		--link-primary: var(--link-primary-D);
+		--link-primary-hover: var(--link-primary-hover-D);
+		--link-visited: var(--link-visited-D);
+  }
+}
+
+:root[data-theme="light"] {
+	--background: var(--background-L);
+	--layer-01: var(--layer-01-L);
+	--text-primary: var(--text-primary-L);
+	--text-secondary: var(--text-secondary-L);
+	--text-placeholder: var(--text-placeholder-L);
+	--link-primary: var(--link-primary-L);
+	--link-primary-hover: var(--link-primary-hover-L);
+	--link-visited: var(--link-visited-L);
+}
+
+:root[data-theme="dark"] {
+		--background: var(--background-D);
+		--layer-01: var(--layer-01-D);
+		--text-primary: var(--text-primary-D);
+		--text-secondary: var(--text-secondary-D);
+		--text-placeholder: var(--text-placeholder-D);
+		--link-primary: var(--link-primary-D);
+		--link-primary-hover: var(--link-primary-hover-D);
+		--link-visited: var(--link-visited-D);
+}
+
+button {
+	color: var(--text-primary);
+	background-color: var(--background);
+	border: 0px;
+}
+
+button:hover {
+	color: var(--link-primary-hover);
 }
 
 html {
