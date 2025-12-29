@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+permissions:
+    contents: write
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Build site
+        run: nix build .
+
+      - name: Deploy to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          # Configure git
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          # Create a temporary directory for the gh-pages branch
+          tmpdir=$(mktemp -d)
+          git clone --branch gh-pages "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$tmpdir" || \
+            git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$tmpdir" && git checkout --orphan gh-pages
+
+          # Clear old files
+          rm -rf "$tmpdir"/*
+
+          # Copy new site
+          cp -r result/* "$tmpdir"
+
+          cd "$tmpdir"
+          git add .
+          git commit -m "Deploy site from GitHub Actions"
+          git push --force
