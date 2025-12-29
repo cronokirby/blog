@@ -1,9 +1,9 @@
 ---
 authors: "[[Karl Ove Knausgaard]]"
-published: 2013-05-28
-created: 2025-11-28
+published: 2009-05-11
+created: 2025-12-29
 tags:
   - book
-  - literature
   - fiction
+  - literature
 ---

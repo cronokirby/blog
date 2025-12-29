@@ -38,13 +38,16 @@ Books I read in [[2025]].
 - [[(1959) Goodbye Columbus (and 5 short stories)]]
 - [[(2023) Yellowface 1]]
 - [[(2002) Days of Abandonment]]
-- [[(2013) My Struggle; Book 1]]
+- [[(2009) My Struggle; Book 1]]
 - [[(1985) White Noise]]
 - [[(1956) Seize the Day]]
 - [[(2020) Boulder]]
 - [[(1956) Giovanni's Room]]
 - [[(1946) Nightmare Alley]]
 - [[(2025) Flesh]]
+- [[(1992) Sylvia]]
+- [[(2009) My Struggle; Book 2]]
+- [[(1949) Confessions of a Mask]]
 
 # Non-Fiction
 - [[(2023) Recoding America]]
