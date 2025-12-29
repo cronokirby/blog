@@ -69,6 +69,9 @@ jobs:
           # Copy new site
           cp -r result/* "$tmpdir"
 
+          # Put in CNAME
+          echo "cronokirby.com" > "${tmpdir}/CNAME"
+
           cd "$tmpdir"
           git add .
           git commit -m "Deploy site from GitHub Actions"
