@@ -19,6 +19,33 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
 
+      # Cache NAR of the external clog builder
+      - name: Cache clog NAR
+        id: nar-cache
+        uses: actions/cache@v5
+        with:
+          path: clog-builder.nar
+          key: ${{ runner.os }}-clog-builder-nar-${{ hashFiles('flake.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-clog-builder-nar-
+
+      - name: Restore clog from NAR if present
+        if: steps.nar-cache.outputs.cache-hit == 'true'
+        run: |
+          echo "Restoring clog builder from NAR..."
+          nix-store --import < clog-builder.nar
+
+      - name: Build clog if needed
+        if: steps.nar-cache.outputs.cache-hit != 'true'
+        run: |
+          echo "Building clog..."
+          # Evaluate the store path of the builder in the external flake
+          STORE_PATH=$(nix eval github:cronokirby/clog --raw)
+          # Build it
+          nix build github:cronokirby/clog
+          # Export its store paths (including dependencies) to a NAR
+          nix-store --export $(nix-store -qR $STORE_PATH) > clog-builder.nar
+
       - name: Build site
         run: nix build .
 
