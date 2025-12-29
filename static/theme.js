@@ -1,23 +1,22 @@
 (function () {
   const root = document.documentElement;
 
+  const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
   // Restore saved theme on load
-  const saved = localStorage.getItem("theme");
-  if (saved) {
-    root.dataset.theme = saved;
-  }
+  const saved = localStorage.getItem("theme") ?? preferred;
+  root.dataset.theme = saved;
 
   // Function to toggle theme
-  function toggleTheme(button) {
-    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  function toggleTheme() {
     const current = root.dataset.theme ?? preferred;
 
     if (current === "dark") {
       root.dataset.theme = "light";
       localStorage.setItem("theme", "light");
     } else if (current === "light") {
-      root.removeAttribute("data-theme"); // back to system preference
-      localStorage.removeItem("theme");
+      root.dataset.theme = "dark";
+      localStorage.setItem("theme", "dark");
     }
   }
 
