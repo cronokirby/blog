@@ -48,6 +48,7 @@ p {
   text-wrap: pretty;
   word-break: normal;
   hyphens: auto;
+  text-align: justify;
 }
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
@@ -151,6 +152,7 @@ pre {
   max-width: 100%;    /* prevents horizontal page overflow */
   padding: 0.2rem;
   margin: 0.5rem 0rem;
+  text-align: left;
 }
 
 p + p, p + blockquote {
