@@ -15,6 +15,7 @@ Previously, I worked on [Penumbra](https://penumbra.zone).
 
 ## Book Reviews
 - [[2025 Books]]
+- [[2026 Books]]
 ## [Links](/Links/index.html)
 ## Misc
 If you enjoy spelunking, consider:
