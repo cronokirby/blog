@@ -1,0 +1,10 @@
+---
+published: "2025-12-18"
+link: "https://eprint.iacr.org/2025/2270"
+authors: ["[[Xuelian Cao]]", "[[Zheng Yang]]", "[[Daniel Reijsbergen]]", "[[Jianting Ning]]", "[[Junming Ke]]", "[[Zhiqiang Ma]]", "[[Jianying Zhou]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Group signatures allow a group member to sign messages on behalf of the group while preserving the signer’s anonymity, making them invaluable for privacy-sensitive applications. As quantum computing advances, post-quantum security in group signatures becomes essential. Symmetric primitives (SP) offer a promising pathway due to their simplicity, efficiency, and well-understood security foundations. In this paper, we introduce the first \textit{forward-secure dynamic group signature} (FSDGS) framework relying solely on SP. We begin with \textit{hierarchical hypertree group signatures} (HHGS), a basic scheme that securely organizes keys of one-time signatures (OTS) in a hypertree using puncturable pseudorandom functions to enable on-demand key generation and forward security, dynamic enrollment, and which provides resilience against attacks that exploit registration patterns by obfuscating the assignment and usage of keys. We then extend this foundation to HHGS^+, which orchestrates multiple HHGS instances in a generic way, significantly extending the total signing capacity to $O(2^{60})$, which outperforms HHGS's closest competitors while keeping signatures below 8 kilobytes. We prove the security of both schemes in the standard model. Our results outline a practical SP-driven pathway toward post-quantum-secure group signatures suitable for resource-constrained client devices.

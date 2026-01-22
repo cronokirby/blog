@@ -1,0 +1,10 @@
+---
+published: "2026-01-13"
+link: "https://eprint.iacr.org/2026/050"
+authors: ["[[Lixuan Wu]]", "[[Yanhong Fan]]", "[[Guowei Liu]]", "[[Chaoran Wang]]", "[[Meiqin Wang]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Masking is an essential countermeasure against side-channel attacks, yet implementing secure and low-latency hardware masking remains challenging. In particular, although OPINI provides strong composability guarantees for single-cycle iterative architectures, prior low-latency OPINI gadget, $\rm HPC4$, is limited to two-input multiplication. In this work, we present a low-latency, low-randomness, first-order OPINI gadget applicable to arbitrary Boolean functions, denoted as $\rm GOM$. Independent and concurrent work by Rahimi and Moradi proposes OTSM, which is also a generic, low-latency first-order OPINI gadget. Our construction involves two new techniques: (i)~extending the $\rm HPC4$ idea--originally masking each share of one secret input with two bits of randomness--to masking each shared monomial derived from the input shares accordingly, and (ii)~a randomness-reassignment technique that enables the two circuits generating the output shares to reuse the same set of randomness while preserving OPINI security. To validate OPINI security, we propose a formal verification technique based on three symbolic reduction rules, and use it to verify multiple low-latency OPINI gadgets (i.e., $\rm HPC4$, $\rm GOM$ and $\rm OTSM$). Leveraging the generality of our gadget, we instantiate several OPINI-secure S-boxes across different algebraic degrees. For the algebraic-degree-2 Ascon S-box, our gadget achieves a 21\% reduction in area and a 28\% reduction in randomness compared to the $\rm HPC4$-based implementation. We further construct higher-degree S-boxes from the PRESENT, PRINCE and AES ciphers and report their hardware performance as reference baselines. We also provide an apples-to-apples comparison with $\rm OTSM$. All masked S-boxes are successfully verified within 20~minutes using our formal verification method. Finally, FPGA-based experiments confirm the practical security of the masked implementations.

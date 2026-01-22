@@ -1,0 +1,10 @@
+---
+published: "2026-01-07"
+link: "https://eprint.iacr.org/2026/026"
+authors: ["[[Junhuai Yang]]", "[[Feng Zhou]]", "[[Hua Chen]]", "[[Limin Fan]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Masking is a principal countermeasure against side-channel attacks, yet its practical application is often hindered by its high randomness cost. While randomness reuse is a common efficiency strategy, securely managing the resulting algebraic dependencies without significant overhead has been a central challenge. Previous approaches have either resorted to injecting costly extra randomness to ensure compositional security in hardware, or remained confined to theoretical proposals with impractical latency costs. Critically, a systematic methodology to resolve randomness dependencies and achieve provable security at a practical cost has been lacking. This paper addresses the challenge by introducing the Unique Randomness Guard (URG) property as a foundational principle for secure masked circuit design. Building upon this property, we formally establish conditions under which the randomness in a circuit remains uniform and independent throughout its computation. Based on these results, we construct a general framework that provides a systematic methodology for randomness reuse, defined through a set of formally verified rules for both parallel and serial compositions. The security of these rules is guaranteed by the URG-based theoretical results, ensuring constructions that are first-order secure under the robust probing model. We also present a first-order masked implementation of the AES. To the best of our knowledge, this hardware implementation is the first to be proven first-order secure in the robust probing model while using only the randomness required for input encoding, all while maintaining a competitive hardware area. This work ultimately validate that randomness reuse can be fully realized without compromising rigorous verifiability, establishing a new framework that directly addresses the central challenge of randomness cost in masked implementations.

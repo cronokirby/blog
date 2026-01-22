@@ -1,0 +1,10 @@
+---
+published: "2026-01-07"
+link: "https://eprint.iacr.org/2026/024"
+authors: ["[[Guowei Ling]]", "[[Peng Tang]]", "[[Jinyong Shan]]", "[[Liyao Xiang]]", "[[Weidong Qiu]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> In this work, we present a new lightweight two-party Private Set Intersection (PSI) paradigm in both the semi-honest and malicious models. It requires only a small number of base Oblivious Transfers (OTs), along with a single Oblivious Key-Value Store (OKVS) encoding and a number of decodings equal to the sender input size. All computations (except for the base OTs) can be implemented using efficient hash and bitwise operations. Furthermore, we extend the proposed PSI protocol to circuit PSI and, subsequently, to several PSI variants, including PSI-cardinality, PSI-sum, and Private Join and Compute (PJC). All proposed protocols are evaluated under both LAN and WAN settings, with performance compared against existing works. Experimental results demonstrate that the proposed PSI achieves about $1.5 \times$ faster runtime than the most efficient Vector Oblivious Linear Evaluation (VOLE)-based PSI, while maintaining consistently lower communication overhead under identical settings. For circuit PSI, it is up to $3.6\times$ faster and reduces communication by a factor of $1.5$ compared to VOLE-based circuit PSI constructions. In the cases of PSI-cardinality and PSI-sum, they achieve speedups of up to $12.2\times$ and $10\times$, respectively, while incurring only moderate communication overhead. For PJC, the proposed protocol outperforms prior work by $731\times$ in runtime and achieves a $3.2\times$ reduction in communication, maintaining high efficiency even under a low-bandwidth condition. The performance under the unbalanced setting is also evaluated, showing that our PSI achieves at most two orders of magnitude improvement in the LAN setting compared with existing unbalanced PSI protocols, and gradually gains superiority under the WAN setting as the receiver set size increases.
