@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - (2026-01) Low-Latency Low-Randomness OPINI Gadgets and Their Formal Verification</title>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous"><title>cronokirby - (2026-01) Low-Latency Low-Randomness OPINI Gadgets and Their Formal Verification</title>
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/050">(2026-01) Low-Latency Low-Randomness OPINI Gadgets and Their Formal Verification</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Lixuan Wu]]</li>
+
+  <li>[[Yanhong Fan]]</li>
+
+  <li>[[Guowei Liu]]</li>
+
+  <li>[[Chaoran Wang]]</li>
+
+  <li>[[Meiqin Wang]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-13</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Masking is an essential countermeasure against side-channel attacks, yet implementing secure and low-latency hardware masking remains challenging. In particular, although OPINI provides strong composability guarantees for single-cycle iterative architectures, prior low-latency OPINI gadget, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">C</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\rm HPC4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">HPC4</span></span></span></span></span></span>, is limited to two-input multiplication. In this work, we present a low-latency, low-randomness, first-order OPINI gadget applicable to arbitrary Boolean functions, denoted as <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">M</mi></mrow><annotation encoding="application/x-tex">\rm GOM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">GOM</span></span></span></span></span></span>. Independent and concurrent work by Rahimi and Moradi proposes OTSM, which is also a generic, low-latency first-order OPINI gadget. Our construction involves two new techniques: (i)~extending the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">C</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\rm HPC4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">HPC4</span></span></span></span></span></span> idea--originally masking each share of one secret input with two bits of randomness--to masking each shared monomial derived from the input shares accordingly, and (ii)<del>a randomness-reassignment technique that enables the two circuits generating the output shares to reuse the same set of randomness while preserving OPINI security. To validate OPINI security, we propose a formal verification technique based on three symbolic reduction rules, and use it to verify multiple low-latency OPINI gadgets (i.e., <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">C</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\rm HPC4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">HPC4</span></span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">G</mi><mi mathvariant="normal">O</mi><mi mathvariant="normal">M</mi></mrow><annotation encoding="application/x-tex">\rm GOM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">GOM</span></span></span></span></span></span> and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">O</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">M</mi></mrow><annotation encoding="application/x-tex">\rm OTSM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">OTSM</span></span></span></span></span></span>). Leveraging the generality of our gadget, we instantiate several OPINI-secure S-boxes across different algebraic degrees. For the algebraic-degree-2 Ascon S-box, our gadget achieves a 21% reduction in area and a 28% reduction in randomness compared to the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">C</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\rm HPC4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">HPC4</span></span></span></span></span></span>-based implementation. We further construct higher-degree S-boxes from the PRESENT, PRINCE and AES ciphers and report their hardware performance as reference baselines. We also provide an apples-to-apples comparison with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">O</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">M</mi></mrow><annotation encoding="application/x-tex">\rm OTSM</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathrm">OTSM</span></span></span></span></span></span>. All masked S-boxes are successfully verified within 20</del>minutes using our formal verification method. Finally, FPGA-based experiments confirm the practical security of the masked implementations.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

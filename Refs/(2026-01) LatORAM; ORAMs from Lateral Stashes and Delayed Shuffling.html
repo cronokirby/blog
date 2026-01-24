@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>cronokirby - (2026-01) LatORAM; ORAMs from Lateral Stashes and Delayed Shuffling</title>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/002">(2026-01) LatORAM; ORAMs from Lateral Stashes and Delayed Shuffling</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Sarvar Patel]]</li>
+
+  <li>[[Giuseppe Persiano]]</li>
+
+  <li>[[Joon Young Seo]]</li>
+
+  <li>[[Kevin Yeo]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-01</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We study the design of Oblivious RAMs (ORAMs) that allow a client to access memory outsourced to a remote, untrusted server without revealing the client’s data access pattern. We are interested in concretely efficient constructions and prior works have yielded different ORAM frameworks with various trade-offs. Tree-based constructions such as RingORAM [Ren et al., USENIX’15] obtain low communication overhead, but require client storage of linear position maps and two roundtrip queries. Hierarchical schemes such as FutORAMa [Asharov et al., CCS’23] further reduce communication at the cost of more roundtrips during queries. Finally, SQRT-ORAM [Goldreich, STOC ’87] enables fast queries of one roundtrip and one block of communication at the cost of larger amortized communication costs.
+We present two new constructions, LatORAM and Lat 2 ORAM, that simultaneously obtain the positive traits of all three types of ORAM constructions. Online queries are blazing fast with one roundtrip and a single block of communication like SQRT-ORAM. Fixing the client memory sizes for comparison, the online communication cost of our constructions are 5-8x smaller than RingORAM and 5-10x smaller than
+FutORAMa even though both RingORAM and FutORAM a require multiple roundtrips per online query. Furthermore, our total amortized communication is also up to 50% smaller. To obtain our constructions, we present a new lazy approach of lateral stash growth that delays large shuffles.</p>
+<p>Of independent interest, we present improved oblivious merging schemes for specific settings important for our ORAMs. Our constructions solely rely on symmetric cryptography.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
