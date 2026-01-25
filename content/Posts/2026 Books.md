@@ -7,5 +7,6 @@ created: 2026-01-07
 - [[(1980) So Long, See You Tomorrow]]
 - [[(1988) O Alquimista]]
 - [[(1927) Thérèse Desqueyroux]]
+- [[(2010) My Struggle; Book 4]]
 # Short Fiction
 - [[(1972) The Breast]]
