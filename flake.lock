@@ -7,11 +7,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1769637723,
-        "narHash": "sha256-+zU0SLIuzImm872cutQlMoRlWboys2qHfmvxYrMHJyo=",
+        "lastModified": 1769638738,
+        "narHash": "sha256-3vrJ0O+ZDzf0+RQGF20hC35dhsiJb5buMw9hPGNkrMA=",
         "owner": "cronokirby",
         "repo": "clog",
-        "rev": "12535d702107a9b46a935d10070065629850c217",
+        "rev": "4f564160aa6ed99309b0c92151a4a69ffe1c7c23",
         "type": "github"
       },
       "original": {
