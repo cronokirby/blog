@@ -1,0 +1,11 @@
+---
+published: "2026-01-24"
+link: "https://eprint.iacr.org/2026/115"
+authors: ["[[Dong-Jie Guo]]", "[[Qun-Xiong Zheng]]", "[[Zhong-Xiao Wang]]", "[[Xiao-Xin Zhao]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> The Functional Decomposition Problem (FDP) involves expressing a given set of multivariate polynomials as a composition of simpler polynomials. Traditional methods, such as Faugère-Perret’s AlgoFDP and its generalized variant MultiComPoly, rely on Gröbner basis computations on ideals generated from derivatives of composed polynomials h = f ◦ g, where f and g are called left-factor and right-factor of h, respectively. The computational cost of these methods increases significantly with both the number of variables and the degrees of the component polynomials in f and g, and their existing complexity estimates are not sufficiently precise. This paper presents two algorithmic improvements to FDP. First, we replace Gröbner basis computation with Gauss–Jordan elimination (GJE) to convert the coefficient matrix into its reduced row-echelon form (RREF), offering a clearer formulation of a key step in MultiComPoly. The resulting algorithm, named RREFComPoly, integrates this change. Additionally, by using exact binomials in place of original binomial approximations and refining the estimation of a critical parameter, we achieve a tighter complexity bound than that of MultiComPoly. Our second and more impactful contribution, PartComPoly, inverts the conventional FDP workflow. Instead of directly recovering the vector space spanned by the component
+> polynomials of g, PartComPoly first uses a localization strategy to recover f and partial information of g with RREFComPoly, and then iteratively reconstructs g by solving a series of linear systems derived from the obtained f and partial information of g. This inversion dramatically reduces computational complexity and expands the solvable domain of FDP, making previously intractable instances – such as those which were claimed to be not computationally exploitable in [1, page 175] – computationally tractable for the first time. Our experiments have confirmed the correctness and validity of both algorithms RREFComPoly and PartComPoly.

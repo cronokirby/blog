@@ -1,0 +1,16 @@
+---
+published: "2026-01-24"
+link: "https://eprint.iacr.org/2026/118"
+authors: ["[[Matteo Campanelli]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> We introduce a simple pairing-based vector commitment with subvector opening where, after a one-time preprocessing, the prover can open a subvector of size $\ell$ in linear time. Our focus is on practically relevant solutions compatible with already deployed setups—specifically, the powers-of-$\tau$ setup used by KZG and many popular SNARKs.
+> When compared to aSVC (Tomescu et al., SCN 2020)—the state of the art in deployable subvector commitments, with $O(\ell \log^2 \ell)$ prover and verifier time—our scheme achieves  substantial concrete improvements: our opening is over $\approx 60\times$ faster on subvectors of any size; on large subvectors our opening and verification achieve respectively $\approx 4000\times$ and $170\times$ speedups (and four times as much with parallelism).
+> Our main result is a construction where:
+> - A commitment is a single $\mathbb{G}_2$ element; a proof is a single $\mathbb{G}_1$ element;
+> - Opening requires $\ell$ point additions in $\mathbb{G}_1$;
+> - Verification is dominated by $2\ell$ $\mathbb{G}_1$ operations.
+> We also describe two variants of our main design that are directly compatible with deployed schemes and where the commitment is a $\mathbb{G}_1$ element; these two schemes show similar speedups over prior work.  We additionally support cross-commitment and distributed aggregation, and provide an open-source implementation.

@@ -14,3 +14,5 @@ draft: "true"
 - [[Don't Build Magical Devices]]
 - [[Hidden Reliance]]
 - [[What this blog tries to cultivate]]
+- [[Agents can do more than write software]]
+- [[An ultimate programming language]]
