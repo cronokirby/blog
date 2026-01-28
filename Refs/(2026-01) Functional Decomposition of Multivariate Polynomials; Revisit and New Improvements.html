@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements</title>
+<meta name="description" content="AbstractThe Functional Decomposition Problem (FDP) involves expressing a given set of multivariate polynomials as a composition of simpler polynomials. Traditio">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/Refs/(2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements.html">
+<meta property="og:title" content="(2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements">
+<meta property="og:description" content="AbstractThe Functional Decomposition Problem (FDP) involves expressing a given set of multivariate polynomials as a composition of simpler polynomials. Traditio">
+<meta property="og:url" content="https://cronokirby.com/Refs/(2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements">
+<meta name="twitter:description" content="AbstractThe Functional Decomposition Problem (FDP) involves expressing a given set of multivariate polynomials as a composition of simpler polynomials. Traditio">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/115">(2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Dong-Jie Guo]]</li>
+
+  <li>[[Qun-Xiong Zheng]]</li>
+
+  <li>[[Zhong-Xiao Wang]]</li>
+
+  <li>[[Xiao-Xin Zhao]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-24</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The Functional Decomposition Problem (FDP) involves expressing a given set of multivariate polynomials as a composition of simpler polynomials. Traditional methods, such as Faugère-Perret’s AlgoFDP and its generalized variant MultiComPoly, rely on Gröbner basis computations on ideals generated from derivatives of composed polynomials h = f ◦ g, where f and g are called left-factor and right-factor of h, respectively. The computational cost of these methods increases significantly with both the number of variables and the degrees of the component polynomials in f and g, and their existing complexity estimates are not sufficiently precise. This paper presents two algorithmic improvements to FDP. First, we replace Gröbner basis computation with Gauss–Jordan elimination (GJE) to convert the coefficient matrix into its reduced row-echelon form (RREF), offering a clearer formulation of a key step in MultiComPoly. The resulting algorithm, named RREFComPoly, integrates this change. Additionally, by using exact binomials in place of original binomial approximations and refining the estimation of a critical parameter, we achieve a tighter complexity bound than that of MultiComPoly. Our second and more impactful contribution, PartComPoly, inverts the conventional FDP workflow. Instead of directly recovering the vector space spanned by the component
+polynomials of g, PartComPoly first uses a localization strategy to recover f and partial information of g with RREFComPoly, and then iteratively reconstructs g by solving a series of linear systems derived from the obtained f and partial information of g. This inversion dramatically reduces computational complexity and expands the solvable domain of FDP, making previously intractable instances – such as those which were claimed to be not computationally exploitable in [1, page 175] – computationally tractable for the first time. Our experiments have confirmed the correctness and validity of both algorithms RREFComPoly and PartComPoly.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-01) Revisiting the Concrete Security of Falcon-type Signatures</title>
+<meta name="description" content="AbstractFalcon is a selected signature scheme in the NIST post-quantum standardization. It is an efficient instantiation of the GPV framework over NTRU lattices">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/Refs/(2026-01) Revisiting the Concrete Security of Falcon-type Signatures.html">
+<meta property="og:title" content="(2026-01) Revisiting the Concrete Security of Falcon-type Signatures">
+<meta property="og:description" content="AbstractFalcon is a selected signature scheme in the NIST post-quantum standardization. It is an efficient instantiation of the GPV framework over NTRU lattices">
+<meta property="og:url" content="https://cronokirby.com/Refs/(2026-01) Revisiting the Concrete Security of Falcon-type Signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-01) Revisiting the Concrete Security of Falcon-type Signatures">
+<meta name="twitter:description" content="AbstractFalcon is a selected signature scheme in the NIST post-quantum standardization. It is an efficient instantiation of the GPV framework over NTRU lattices">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/096">(2026-01) Revisiting the Concrete Security of Falcon-type Signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Huiwen Jia]]</li>
+
+  <li>[[Shiduo Zhang]]</li>
+
+  <li>[[Yang Yu]]</li>
+
+  <li>[[Chunming Tang]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-21</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Falcon is a selected signature scheme in the NIST post-quantum standardization. It is an efficient instantiation of the GPV framework over NTRU lattices.  While the GPV framework comes with an elegant security proof in theory, Falcon had no formal proof involving concrete parameters for a long time. Until recently, Fouque et al. initiate the concrete security analysis of Falcon-type signatures. They give a formal proof of Falcon+, a minor modification of Falcon, in the random oracle model, whereas they claim that Falcon+-512 barely achieves the claimed 120-bit security for plain unforgeability. % and neither Falcon+-512 nor Falcon+-1024 offer strong unforgeability. Furthermore, they show that standard reductions for strong unforgeability are vacuous for Falcon parameters, necessitating the introduction of a new, non-standard assumption.</p>
+<p>In this work, we revisit the concrete security analysis of Falcon-type signatures and present positive results. We develop improved analytic tools by leveraging the profile of the NTRU trapdoor bases. This eliminates the security loss for both Falcon+-512 and Falcon+-1024 in the case of plain unforgeability. We also apply our new analysis to the recent weak-smoothness variant Falcon-ws (Zhang et al. Asiacrypt 2025) that admits smaller parameters than Falcon under a non-standard assumption. As a result, we propose new parameters for Falcon-ws allowing for provable security under standard assumptions and signature size 17.8% (resp. 12.8%) smaller than that of Falcon-512 (resp. Falcon-1024) simultaneously. Moreover, we give a refined strong unforgeability security proof by replacing the worst-case analysis with a probabilistic analysis, which leads to a substantial increase in concrete security. Based on this, we show that by using a tighter Gaussian sampler, e.g. the one in Falcon-ws, Falcon-type signatures can achieve concrete security for strong unforgeability closely consistent with the claimed security level while keeping the compact size.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
