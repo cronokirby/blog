@@ -4,13 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cronokirby - On RAM In Structured Computation</title>
+<meta name="description" content="An idea for encoding random access memory in structured computation as in STARK arithmetization, or more general algebraic automata.If you look at the memory ac">
 <meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
 <link rel="canonical" href="https://cronokirby.com/Notes/On-RAM-In-Structured-Computation.html">
 <meta property="og:title" content="On RAM In Structured Computation">
+<meta property="og:description" content="An idea for encoding random access memory in structured computation as in STARK arithmetization, or more general algebraic automata.If you look at the memory ac">
 <meta property="og:url" content="https://cronokirby.com/Notes/On-RAM-In-Structured-Computation.html">
 <meta property="og:site_name" content="cronokirby">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="On RAM In Structured Computation">
+<meta name="twitter:description" content="An idea for encoding random access memory in structured computation as in STARK arithmetization, or more general algebraic automata.If you look at the memory ac">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
 
@@ -51,7 +54,7 @@ to circuits:</p>
 the private log, and each write with a constraint check to the private log.</li><li>With an access-sorted memory log, prove that the log is consistent,
 in that when the values read come from the latest write, etc.</li><li>Prove that you know a permutation such that the access-sorted log permutes
 to the time-sorted log.</li></ol>
-<p>For 3., you can efficiently encode a permutation of a log of size <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mi>l</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N lg N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0197em;">Nl</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mclose">)</span></span></span></span></span> gates,
+<p>For 3., you can efficiently encode a permutation of a log of size <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mi>l</mi><mi>g</mi><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N lg N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0197em;">Nl</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mclose">)</span></span></span></span></span> gates,
 using a routing network, so this can be done efficiently.</p>
 <p>But this yields a circuit, which may not have the structured format
 we need for, e.g. STARKs.</p>
