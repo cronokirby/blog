@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - Lexer Combinators</title>
+<meta name="description" content="When you write a parser in Haskell, you want to use parser combinators. When you write a lexer, you should use lexer combinators! We'll see what these are, and">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/posts/lexer-combinators.html">
+<meta property="og:title" content="Lexer Combinators">
+<meta property="og:description" content="When you write a parser in Haskell, you want to use parser combinators. When you write a lexer, you should use lexer combinators! We'll see what these are, and">
+<meta property="og:url" content="https://cronokirby.com/posts/lexer-combinators.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lexer Combinators">
+<meta name="twitter:description" content="When you write a parser in Haskell, you want to use parser combinators. When you write a lexer, you should use lexer combinators! We'll see what these are, and">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2020-10-18">2020-10-18</time>
+
+<h1>Lexer Combinators</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/haskell/index.html">
+    #haskell
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming-languages/index.html">
+    #programming-languages
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>When you write a parser in Haskell, you want to use parser combinators.
+When you write a lexer, you should use lexer combinators! We'll see
+what these are, and how to use them to write a simple lexer.</p><!--more-->
+<h1>Parser Combinators</h1>
+<p>Our starting point is the ubiquitous parser combinator. The idea behind parser
+combinators is that instead of writing one monolithic parser for some language,
+we should instead write parsers for very simple languages, and then combine
+those parsers together into a larger one.</p>
+<p>To be able to do this combining, we need some set of operations we can apply
+to parsers. Let's go over the fundamental ones:</p>
+<p>First, we have some kind of basic parsers we can use as building blocks:</p>
+<pre><code>char :: Char -> Parser Char
+string :: String -> Parser String</code></pre>
+<p>The first parser only accepts a single string, and then returns that as its
+output.
+If we wanted our parsers to operate on tokens instead of strings, we would have
+slightly different building blocks, but the idea is the same.</p>
+<p>Then, we have the classic <code>fmap</code> / <code><$></code>:</p>
+<pre><code>fmap :: (a -> b) -> Parser a -> Parser b</code></pre>
+<p>The idea is that we can take a <code>Parser</code> that accepts some language, producing
+some element of type <code>a</code>, and then get a parser accepting the <em>same</em> language,
+but with the output going through a transformation first.</p>
+<p>This is extremely useful and common. For example, you might take a parser parsing
+an expression surrounded by <code>()</code>, and then remove the parentheses using <code>fmap</code>.</p>
+<p>Then we have an operation for sequencing:</p>
+<pre><code>(<*>) :: Parser (a -> b) -> Parser a -> Parser b</code></pre>
+<p>This parser only accepts some string if the first parser accepts one part of it,
+and the second parser accepts the rest of it. The element we return will be
+the function returned by the first parser, applied to the element returned
+by the second parser.</p>
+<p>As an example, we can do:</p>
+<pre><code>term :: Parser (A, B)
+term = (,) <$> parserA <*> parserB</code></pre>
+<p>This parser will run the first parser, and the second, returning both results.</p>
+<p>Right now we can build large parsers, but all they do is run things in sequence.
+What we need is to have a parser that accepts the words that work in one parser,
+or that work in another parser:</p>
+<pre><code>(<|>) :: Parser a -> Parser a -> Parser a</code></pre>
+<p>The idea is that the language accepted by this new parser consists of strings
+that are in either the first parser, or the second parser. But what should
+the result be? If only one parser succeeds, then we should obviously
+use what the other parser returns. What if both parsers succeed? This is
+<em>ambiguity</em> in our language. With parser combinators, the idea is to move
+ambiguity towards the consumer of a combinator. Instead of providing:</p>
+<pre><code>runParser :: Parser a -> String -> Maybe a</code></pre>
+<p>which would be unambiguous, we instead provide:</p>
+<pre><code>runParser :: Parser a -> String -> [a]</code></pre>
+<p>which returns all the possible results for a given string. Ideally, you should
+design your language in a way that it can be parsed without ambiguity, but
+the combinator approach doesn't really provide any canonical way to deal
+with it should it arise. It just gives you all the results, and lets you try
+to sort through them if you'd like.</p>
+<h1>Lexer Combinators</h1>
+<p>We've talked about the fundamental operations, which will be the same for
+<em>lexer combinators</em> as well (with the exception of <code>runParser</code>, which will be
+a bit different). We have omitted any discussion of an actual <em>implementation</em>
+of these combinators though. While the exact implementation depends on the
+specific structure we choose for representing combinators, the fundamental
+operators, and the way you use combinators stays the same, so it's important
+to focus on those first.</p>
+<p>With that said, here's the simplest way to represent a parser combinator:</p>
+<pre><code>type Parser a = String -> [(a, String)]</code></pre>
+<p>The idea is that given a string, we return all the possible ways to produce
+a result of type <code>a</code>, leaving the rest of the string that we've yet to consume.</p>
+<p>As an example:</p>
+<pre><code>char :: Parser Char
+char = \case
+  [] -> []
+  (c : cs) -> [(c, cs)]</code></pre>
+<p>Now, this is for <em>parser</em> combinators, where we want to be able to deal with
+ambiguity, or at least, not impose any opinion on how we should handle ambiguous
+languages. On the other hand, when writing a lexer there's a <em>canonical</em> way
+to deal with ambiguity: the <strong>longest match rule</strong>.</p>
+<p>Let's say we have some tokens like this:</p>
+<pre><code>data Token = Keyword String | Identifier String</code></pre>
+<p>Our keywords might be <code>Keyword "data", Keyword "if"</code> etc. If we see <code>if</code>, we know
+that that's a keyword. On the other hand, if we see <code>if32</code>, we know that that
+refers to an <em>identifier</em>. The idea here is that a lexer accepting the string
+<code>if</code> would leave the <code>32</code> part alone, whereas a lexer for identifiers would
+accept the entire string. When faced with an ambiguity between these two lexers,
+we go with the identifier, because it consumed <em>more</em> input. If two lexers
+consume the same amount of input, then we can go with the first alternative.
+We'd have to make sure to define things as:</p>
+<pre><code>keywords <|> identifiers</code></pre>
+<p>to avoid giving identifiers precedence over keywords.</p>
+<p>Anyways, because we have an unambiguous way of choosing between alternatives,
+we don't need to use <code>[]</code> to represent ambiguity. A lexer will either fail,
+or produce a <em>single</em> result. With this in mind, we can massage the definition
+of <code>Parser</code> to get:</p>
+<pre><code>type Lexer a = String -> Maybe (a, String)</code></pre>
+<p>So a lexer is a function taking some input, and possible returning a result,
+along with the rest of the string that it hasn't consumed.</p>
+<h2>Implementation</h2>
+<p>Let's go through an implementation of the fundamental operations we mentioned
+earlier.</p>
+<p>First, the venerable <code>fmap</code>:</p>
+<pre><code>fmap :: (a -> b) -> Lexer a -> Lexer b
+fmap f (Lexer l) = Lexer (l >>> fmap (\(a, s) -> (f a, s))</code></pre>
+<p>So, we run the lexer on our input, and then <code>fmap</code> over the resulting <code>Maybe</code>.
+We leave the remaining input alone, and just modify the result.</p>
+<p>Next we have the applicative methods:</p>
+<pre><code>pure :: a -> Lexer a
+pure a = Lexer (\input -> Just (a, input))</code></pre>
+<p>I didn't mention this function earlier, but it's also an important one. The idea
+is that we simply produce some output, without consuming any input at all.</p>
+<p>And then to sequence two lexers together:</p>
+<pre><code>(<*>) :: Lexer (a -> b) -> Lexer a -> Lexer b
+Lexer lF <*> Lexer lA = Lexer <| \input -> do
+  (f, rest) <- lF input
+  (a, s) <- lA rest
+  return (f a, s)</code></pre>
+<p>We're working in the context of <code>Maybe</code>, so that if any parser fails, then
+so does the resulting parser we're constructing. First we pull out the
+function produced by the first lexer, and then we feed the remaining input
+to the second parser. Then we have some remaining input, a function, and
+an element to apply the function to, so the result is just putting things together.</p>
+<p>And now, for alternatives.</p>
+<p>First, we have a lexer that accepts no input at all:</p>
+<pre><code>empty :: Lexer a
+empty = Lexer (const Nothing)</code></pre>
+<p>Now, let's look at choosing between multiple lexers. Remember the
+<strong>longest match rule</strong> here. When faced with multiple choices, we pick
+the element that consumed more input, or the first element if both lexers
+consumed the same amount:</p>
+<pre><code>(<|>) :: Lexer a -> Lexer a -> Lexer a
+Lexer lA <|> Lexer lB =
+  Lexer <| \input -> case (lA input, lB input) of
+    (Left _, res) -> res
+    (res, Left _) -> res
+    (a@(Just (_, restA), b@(Just (_, restB))) ->
+      if length restA <= length restB then a else b</code></pre>
+<p>We look at the results of both lexers, and pick the succeeding one if
+only one succeeded. If both lexers work, we pick the one with less input remaining.
+The less input remaining, the more the lexer consumed. By using <code><=</code> with the first
+parser on the left, we're biased towards the left in case the amount of input
+is equal. This enables <code>keywords <|> identifiers</code> to lex as expected.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+At a first glance, it might seem that <code><|></code> ends up running both lexers. But,
+because Haskell is <em>lazy</em>, the effective behavior is to run the first lexer,
+and then inspect the output to decide whether to run the second lexer.</p></blockquote>
+<h2>Basic Lexers</h2>
+<p>The fundamental ways of combining operators are here, but what about
+the <em>building blocks</em>? Let's go over a few of these:</p>
+<pre><code>satisfies :: (Char -> Bool) -> Lexer Char
+satisfies p = Lexer <| \input -> case input of
+  c : cs | p c -> Just (c, cs)
+  rest -> Nothing</code></pre>
+<p>This function lets us match a single character matching a predicate. We
+can use this to implement many small lexers, such as
+<code>satisfies isUpper, satisfies isAlpha</code> etc.</p>
+<p>An immediate application of this function would be:</p>
+<pre><code>char :: Char -> Lexer Char
+char target = satisfies (== target)</code></pre>
+<p>We can then combine this to get a lexer for an entire string:</p>
+<pre><code>string :: String -> Lexer String
+string = traverse char</code></pre>
+<p>Now, <code>traverse :: Applicative f => (a -> f b) -> [a] -> f [b]</code>, and
+works using the <code>pure</code> and <code><*></code> functions we defined earlier.</p>
+<p>Two other useful combinators are:</p>
+<pre><code>many :: Lexer a -> Lexer [a]
+some :: Lexer a -> Lexer [a]</code></pre>
+<p>The first one takes a lexer, and then returns a lexer that runs <em>zero</em> or more times,
+and the second one does something similar, but always runs at least once. I don't
+give a definition, because these two functions are actually defined for
+any <code>Alternative</code>, i.e. something implementing <code>empty</code> and <code><|></code>:</p>
+<pre><code>some l = (:) <$> l <*> many l
+many l = some l <|> pure []</code></pre>
+<h1>An example lexer</h1>
+<p>At this point, we've defined all of the operations we need to define a full
+lexer for a simple language. This language will just have let expressions:</p>
+<pre><code>let
+  x = 3;
+  y = 5;
+in x</code></pre>
+<p>All whitespace is filtered out, so our tokens look like this:</p>
+<pre><code>data Token = Let | In | Equal | Semicolon | Name String | IntLit Int</code></pre>
+<p>Then we can have a lexer getting out a single token:</p>
+<pre><code>token :: Lexer Token
+token = keywords <|> operators <|> name <|> intLit
+  where
+    keywords = (Let <$ string "let") <|> (In <$ string "in")
+    operators = (Equal <$ char '=') <|> (Semicolon <$ char ';')
+    name = ((:) <$> startsName <*> (many continuesName))
+    	 |> fmap Name
+      where
+       startsName = satisfies isAlpha
+       continuesName = satisfies isAlphaNum
+    intLit = some (satisfies isDigit) |> fmap (read >>> IntLit)</code></pre>
+<p>To assemble this into a full lexer pulling out many tokens, and ignoring whitespace,
+we first need to have a lexer producing either a token, or a bit of whitespace:</p>
+<pre><code>data RawToken = Whitespace | RawToken Token
+
+rawToken :: Lexer RawToken
+rawToken = (Whitespace <$ whitespace) <|> (RawToken <$> token)
+  where
+    whitespace = some (satisfies isSpace)</code></pre>
+<p>Now, we need to get a lexer that runs this lexer many times, and filters out
+the whitespace:</p>
+<pre><code>lexer :: Lexer [Token]
+lexer = many rawToken |> fmap removeWhitespace
+  where
+    removeWhitespace [] = []
+    removeWhitespace (Whitespace : rest) = removeWhitespace rest
+    removeWhitespace (Token t : rest) = t : removeWhitespace rest</code></pre>
+<p>And then we can define a simple function that hides the <code>Lexer</code> type from end
+users:</p>
+<pre><code>lex :: String -> Maybe [Token]
+lex input =
+  let Lexer l = lexer
+  in l input |> fmap fst</code></pre>
+<p>This will run our lexer on some input, and then pull out the tokens we've produced,
+ignoring the remaining input.</p>
+<h1>More efficient representations</h1>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+The main discussion about lexer combinators is complete now, and this is a section
+about some ideas towards improving performance. Feel free to skip to the ending
+if you'd like.</p></blockquote>
+<p>At this point, we've gone over the essentials of what you can do with lexer
+combinators, but out implementation is a bit slow. For example, in alternation,
+we have to compare the length of two strings each time, which is a bit
+slow with Haskell's default string type. Furthermore, we build up a large closure
+doing all of the work, when we could use a more efficient representation. For
+example, building up a finite automaton would give us similar expressive power,
+but be much faster to execute. There are other strategies that could improve
+performance as well.</p>
+<p>The key to getting more performance while keeping the same ergonomics is to
+keep the fundamental operations, but instead build up a symbolic representation,
+that we can then transform into an efficient lexing function:</p>
+<pre><code>data Lexer a where
+  Satisfies :: (Char -> Bool) -> Lexer Char
+  Fmap :: (a -> b) -> Lexer a -> Lexer b
+  Pure :: a -> Lexer a
+  Empty :: Lexer a
+  Ap :: Lexer (a -> b) -> Lexer a -> Lexer b
+  Alt :: Lexer a -> Lexer a -> Lexer a</code></pre>
+<p>Here we've defined a GADT representing the domain specific language we've been
+making use of. We can still build up lexers in the same way, but now
+the representation of a lexer is purely symbolic. We can then implement:</p>
+<pre><code>runLexer :: Lexer a -> String -> Maybe (a, String)</code></pre>
+<p>by inspecting this representation, and producing a much more efficient function.</p>
+<p>Basically, the idea is that if we had some kind of operation <code><></code> for combining
+parsers before, then we have:</p>
+<pre><code>newToOld (new1 <> new2) == newToOld new1 <> newToOld new2</code></pre>
+<p>So, if we first combine things symbolically, and then interpret things into
+a concrete-style lexer, then that should be the same thing as combining both
+concrete style lexers. The difference is that by having everything be symbolic,
+we can inspect the lexers to implement a much more efficient function,
+whereas before we were completely trapped, because our representation <em>was</em>
+the function.</p>
+<h1>Conclusion</h1>
+<p>I hope this was a somewhat instructive post about an alternative to parser
+combinators for doing lexical analysis. The classic reference on parser
+combinators would be
+<a href=http://www.cs.nott.ac.uk/~pszgmh/pearl.pdf>Monadic Parsing in Haskell, Graham Hutton, Erik Meijer</a>
+. Another library that piqued my interest, although I went with a much
+simpler exposition here, would be
+<a href=https://hackage.haskell.org/package/regex-applicative>regex-applicative</a>.</p>
+<p>I highly recommend reading the original pearl about parser combinators. It's
+very readable, and quite instructive. In practice, I'd recommend using
+a library like <code>regex-applicative</code>, which applies the optimization
+principles I mentioned at the end of this post.</p>
+<p>That being said, I think building things up from scratch is very instructive :)</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

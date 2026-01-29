@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2025-08) The Best of Both KEMs</title>
+<meta name="description" content="AbstractTransitioning secure information systems to post-quantum cryptography (PQC) comes with certain risks, such as the potential for switching to PQC schemes">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2025-08-the-best-of-both-kems.html">
+<meta property="og:title" content="(2025-08) The Best of Both KEMs">
+<meta property="og:description" content="AbstractTransitioning secure information systems to post-quantum cryptography (PQC) comes with certain risks, such as the potential for switching to PQC schemes">
+<meta property="og:url" content="https://cronokirby.com/refs/2025-08-the-best-of-both-kems.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2025-08) The Best of Both KEMs">
+<meta name="twitter:description" content="AbstractTransitioning secure information systems to post-quantum cryptography (PQC) comes with certain risks, such as the potential for switching to PQC schemes">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2025/1444">(2025-08) The Best of Both KEMs</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Gorjan Alagic]]</li>
+
+  <li>[[Fahran Bajaj]]</li>
+
+  <li>[[Aybars Kocoglu]]</li>
+
+</ul>
+
+
+<div class="published">2025-08-08</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Transitioning secure information systems to post-quantum cryptography (PQC) comes with certain risks, such as the potential for switching to PQC schemes with as yet undiscovered vulnerabilities. Such risks can be mitigated by combining multiple schemes in such a way that the resulting hybrid scheme is secure provided at least one of the ingredient schemes is secure. In the case of key-encapsulation mechanisms (KEMs), this approach is already in use in practice, where the PQC scheme ML-KEM is combined with "traditional" X25519 key exchange.
+Combining multiple KEMs to construct a single hybrid KEM is largely straightforward, except for the crucial choice of how to derive the final shared secret key. A generic method for doing this in a manner that preserves IND-CCA security is to include the keys and ciphertexts of all ingredient KEMs in an appropriate key derivation step. In the specialized X-Wing construction, one instead relies on a special property of ML-KEM to avoid including its ciphertext in key derivation.
+In this work, we show that this optimization can be done in a more general setting. Specifically, when combining multiple KEMs one need not include the ciphertext of any KEM that satisfies ciphertext second preimage resistance (C2PRI)---provided the key combination step is performed using a split-key pseudorandom function. We also prove that any KEM constructed from a certain set of Fujisaki-Okamoto (FO) transforms satisfies C2PRI in the random oracle model. This applies to KEMs such as BIKE, Classic McEliece, HQC, and ML-KEM.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

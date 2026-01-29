@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2023-08) Verifiable Verification in Cryptographic Protocols</title>
+<meta name="description" content="AbstractCommon verification steps in cryptographic protocols, such as signature or message authentication code checks or the validation of elliptic curve points">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2023-08-verifiable-verification-in-cryptographic-protocols.html">
+<meta property="og:title" content="(2023-08) Verifiable Verification in Cryptographic Protocols">
+<meta property="og:description" content="AbstractCommon verification steps in cryptographic protocols, such as signature or message authentication code checks or the validation of elliptic curve points">
+<meta property="og:url" content="https://cronokirby.com/refs/2023-08-verifiable-verification-in-cryptographic-protocols.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2023-08) Verifiable Verification in Cryptographic Protocols">
+<meta name="twitter:description" content="AbstractCommon verification steps in cryptographic protocols, such as signature or message authentication code checks or the validation of elliptic curve points">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2023/1214">(2023-08) Verifiable Verification in Cryptographic Protocols</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Marc Fischlin]]</li>
+
+  <li>[[Felix Günther]]</li>
+
+</ul>
+
+
+<div class="published">2023-08-10</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Common verification steps in cryptographic protocols, such as signature or message authentication code checks or the validation of elliptic curve points, are crucial for the overall security of the protocol. Yet implementation errors omitting these steps easily remain unnoticed, as often the protocol will function perfectly anyways. One of the most prominent examples is Apple's goto fail bug where the erroneous certificate verification skipped over several of the required steps, marking invalid certificates as correctly verified. This vulnerability went undetected for at least 17 months.</p>
+<p>We propose here a mechanism which supports the detection of such errors on a cryptographic level. Instead of merely returning the binary acceptance decision, we let the verification return more fine-grained information in form of what we call a confirmation code. The reader may think of the confirmation code as disposable information produced as part of the relevant verification steps. In case of an implementation error like the goto fail bug, the confirmation code would then miss essential elements.</p>
+<p>The question arises now how to verify the confirmation code itself. We show how to use confirmation codes to tie security to basic functionality at the overall protocol level, making erroneous implementations be detected through the protocol not functioning properly. More concretely, we discuss the usage of confirmation codes in secure connections, established via a key exchange protocol and secured through the derived keys. If some verification steps in a key exchange protocol execution are faulty, then so will be the confirmation codes, and because we can let the confirmation codes enter key derivation, the connection of the two parties will eventually fail. In consequence, an implementation error like goto fail would now be detectable through a simple connection test.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

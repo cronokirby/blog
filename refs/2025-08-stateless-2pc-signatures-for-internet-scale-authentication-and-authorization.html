@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2025-08) Stateless 2PC Signatures for Internet-Scale Authentication and Authorization</title>
+<meta name="description" content="AbstractThe industry is moving away from passwords for authentication and authorization, with hardware devices for storing long-term cryptographic keys emerging">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2025-08-stateless-2pc-signatures-for-internet-scale-authentication-and-authorization.html">
+<meta property="og:title" content="(2025-08) Stateless 2PC Signatures for Internet-Scale Authentication and Authorization">
+<meta property="og:description" content="AbstractThe industry is moving away from passwords for authentication and authorization, with hardware devices for storing long-term cryptographic keys emerging">
+<meta property="og:url" content="https://cronokirby.com/refs/2025-08-stateless-2pc-signatures-for-internet-scale-authentication-and-authorization.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2025-08) Stateless 2PC Signatures for Internet-Scale Authentication and Authorization">
+<meta name="twitter:description" content="AbstractThe industry is moving away from passwords for authentication and authorization, with hardware devices for storing long-term cryptographic keys emerging">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2025/1475">(2025-08) Stateless 2PC Signatures for Internet-Scale Authentication and Authorization</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Michael Adjedj]]</li>
+
+  <li>[[Geoffroy Couteau]]</li>
+
+  <li>[[Arik Galansky]]</li>
+
+  <li>[[Nikolaos Makriyannis]]</li>
+
+  <li>[[Oren Yomtov]]</li>
+
+</ul>
+
+
+<div class="published">2025-08-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The industry is moving away from passwords for authentication and authorization, with hardware devices for storing long-term cryptographic keys emerging as the leading alternative. However, these devices often have limited displays and remain vulnerable to theft, malware, or tricking users into signing malicious payloads. Current systems provide little fallback security in such cases. Any solution must also meet strict requirements: compatibility with industry standards, scalability to handle high request volumes, and high availability.</p>
+<p>We present a novel design for authentication and authorization that meets these demands. Our approach virtualizes the authenticating/authorizing party via a two-party signing protocol with a helper entity, ensuring that keys remain secure even if a device is compromised and that every signed message conforms to a security policy.</p>
+<p>We formalize the required properties for such protocols and show how they are met by existing schemes (e.g., FROST for Schnorr, Boneh--Haitner--Lindell-Segev'25 for ECDSA). Motivated by the widespread use of ECDSA (FIDO2/Passkeys, blockchains), we introduce a new, optimized two-party ECDSA protocol that is significantly more efficient than prior work. At its core is a new variant of exponent-VRF, improving on earlier constructions and of independent interest. We validate our design with a proof-of-concept virtual authenticator for the FIDO2 Passkeys framework.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

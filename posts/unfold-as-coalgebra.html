@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (Un)fold as (Co)algebra</title>
+<meta name="description" content="One cool thing about lists is that they have canonical ways of consuming and producing them: folds, and unfolds. It turns out that these are canonical, in that">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/posts/unfold-as-coalgebra.html">
+<meta property="og:title" content="(Un)fold as (Co)algebra">
+<meta property="og:description" content="One cool thing about lists is that they have canonical ways of consuming and producing them: folds, and unfolds. It turns out that these are canonical, in that">
+<meta property="og:url" content="https://cronokirby.com/posts/unfold-as-coalgebra.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(Un)fold as (Co)algebra">
+<meta name="twitter:description" content="One cool thing about lists is that they have canonical ways of consuming and producing them: folds, and unfolds. It turns out that these are canonical, in that">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2020-12-07">2020-12-07</time>
+
+<h1>(Un)fold as (Co)algebra</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/algebra/index.html">
+    #algebra
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/category-theory/index.html">
+    #category-theory
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/haskell/index.html">
+    #haskell
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>One cool thing about lists is that they have canonical ways of consuming and
+producing them: folds, and unfolds. It turns out that these are canonical,
+in that folding and unfolding functions are themselves isomorphic to lists.
+In this post, we'll explore why this is true.</p><!--more-->
+<p>This post will build on
+<a href=/posts/2020/09/recursive-types-as-initial-algebras/>a previous post</a>
+I made a while back, so I'd recommend checking that out as well if this topic interests
+you.</p>
+<h1>Background Information</h1>
+<p>Our starting point is the standard definition of a list:</p>
+<pre><code>data [a] = a : [a] | []</code></pre>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+We can't actually write out this definition, since <code>[]</code> is special syntax in Haskell.
+If we could, it <em>would</em> look something like this though.</p></blockquote>
+<p>This recursive definition says that a list is either empty, or an element prepended
+to a list. We also have the two fundamental fold and unfold operations:</p>
+<pre><code>foldr :: (a -> r -> r) -> r -> [a] -> r
+unfoldr :: (r -> Maybe (a, r)) -> r -> [a]</code></pre>
+<p>There's already some nice symmetry between the two, but there's actually <strong>much more</strong>
+symmetry lying underneath this surface.</p>
+<h1>List as Fix Point</h1>
+<p>As usual in Haskell, you can decompose a recursive definition into a functor,
+which isn't recursive, and the "prototypical recursive type": <code>Fix</code></p>
+<pre><code>data Fix f = Fix (f (Fix f))</code></pre>
+<p>For the case of list, we have:</p>
+<pre><code>data L a r = Nil | Cons a r
+
+type [a] = Fix (L a)</code></pre>
+<p>The <code>r</code> type in <code>L a r</code> represents the "recursive part". By taking <code>Fix</code> of <code>L a</code>,
+we end up with something that is not only isomorphic to <code>[a]</code>, but structurally the
+same thing. We have the exact same pattern of construction as the normal list.</p>
+<h1>Fix as Initial Algebra</h1>
+<p>Roughly speaking, for an endofunctor <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>, an "<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>-Algebra" is going to be a tuple:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><msub><mi>ϵ</mi><mi>A</mi></msub><mo>:</mo><mi>F</mi><mi>A</mi><mo>→</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(A, \epsilon_A : F A \to A)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-right:0.05em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span></span></span>
+<p>consisting of an object, along with an evaluation function,
+from <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">F A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mord mathnormal">A</span></span></span></span></span> to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></span>. These algebras form a category, with morphisms being commutative diagrams
+like this:</p>
+<p>
+<img src=../Images/bbf3bed2bf6bb7d0d49894ae9cc5f3b287a6f62a568da20d12f7f63ce9d64fc4.png alt= /></p>
+<p>These are morphisms <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">\varphi : A \to B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.625em;"></span><span class="mord mathnormal">φ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0502em;">B</span></span></span></span></span> which respect the structure of the algebra.</p>
+<p>What we learned last time is that <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Fix</mtext><mi>F</mi></mrow><annotation encoding="application/x-tex">\text{Fix} F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">F</span><span class="mord">i</span><span class="mord">x</span></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span> is nothing more than a concrete representation
+of the initial object in this category. That is to say, there is a morphism <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Fix</mtext><mi>F</mi><mo>→</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\text{Fix} F \to A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">F</span><span class="mord">i</span><span class="mord">x</span></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></span>
+for any other <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>-Algebra <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></span>.</p>
+<h1>Fix is Terminal CoAlgebra</h1>
+<p>Similarly, for an endofunctor <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>, an "<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>-CoAlgebra" is going to be a tuple:</p><span class="katex-wrapper"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><msub><mi>α</mi><mi>A</mi></msub><mo>:</mo><mi>A</mi><mo>→</mo><mi>F</mi><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(A, \alpha_A : A \to F A)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="margin-left:-0.0037em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mord mathnormal">A</span><span class="mclose">)</span></span></span></span></span></span>
+<p>where <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></span> is an object, and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="margin-left:-0.0037em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> is a morphism from <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></span> to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">F A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mord mathnormal">A</span></span></span></span></span> in the category over which <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>
+is an endofunctor. This form a category, once again, with structure preserving morphisms.
+The commutative diagram becomes:</p>
+<p>
+<img src=../Images/b3fa5310d15676ad79c0143d465acf35c73cb8ab625bc728261cad49fce40187.png alt= /></p>
+<p>Now, my claim is that by <em>duality</em>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Fix</mtext><mi>F</mi></mrow><annotation encoding="application/x-tex">\text{Fix} F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">F</span><span class="mord">i</span><span class="mord">x</span></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span> is going to be a concrete representation
+of the <em>terminal object</em> in this category. That is to say, there is a morphism <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><mtext>Fix</mtext><mi>F</mi></mrow><annotation encoding="application/x-tex">A \to \text{Fix} F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">F</span><span class="mord">i</span><span class="mord">x</span></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>
+for any <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>-CoAlgebra <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span></span>.</p>
+<p>I leave this without proof, because it seems somewhat natural that this would be true, it holds
+in practice in Haskell-land, and this post isn't really about the Math anyways.</p>
+<h1>In Abstract Haskell</h1>
+<p>In Haskell, we can represent an <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>-Algebra <code>a</code> as:</p>
+<pre><code>(f a -> a)</code></pre>
+<p>A function <code>f a -> a</code> suffices to specify this specific algebra. To then say that <code>Fix f</code>
+is initial, is to say there exists a function:</p>
+<pre><code>Fix f -> a</code></pre>
+<p>provided that <code>a</code> is an <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span></span>-Algebra. Passing this fact explicitly, we have a function:</p>
+<pre><code>(f a -> a) -> Fix f -> a
+Fix f -> (f a -> a) -> a</code></pre>
+<p>In fact:</p>
+<pre><code>Fix f = forall a. (f a -> a) -> a</code></pre>
+<p>This initiality property completely characterizes <code>Fix f</code></p>
+<p>For CoAlgebras, we represent them as functions:</p>
+<pre><code>(a -> f a)</code></pre>
+<p>The terminality of <code>Fix f</code> now means that there will be a function</p>
+<pre><code>a -> Fix f</code></pre>
+<p>provided that <code>a</code> is a CoAlgebra. That means that there is a function:</p>
+<pre><code>(a -> f a) -> a -> Fix f</code></pre>
+<p>In, fact, I claim that we have:</p>
+<pre><code>exists a. (a -> f a, a) = Fix f</code></pre>
+<h1>For Lists</h1>
+<p>The two functions I want you to keep in mind are:</p>
+<pre><code>-- initiality
+(f a -> a) -> Fix f -> a
+
+-- terminality
+(a -> f a) -> a -> Fix f</code></pre>
+<p>These must exist, and in fact completely characterize <code>Fix f</code>.</p>
+<p>Now, for the case of <code>[a]</code>, we have:</p>
+<pre><code>(L a r -> r) -> [a] -> r
+
+(r -> L a r) -> r -> [a]</code></pre>
+<p>as our characteristic functions.</p>
+<p>Now, if you look at the definition of <code>L a r</code>:</p>
+<pre><code>data L a r = Nil | Cons a r</code></pre>
+<p>You see that it is in fact isomorphic to <code>Maybe (a, r)</code>.
+This means that our terminality function is nothing more than:</p>
+<pre><code>(r -> Maybe (a, r)) -> r -> [a]</code></pre>
+<p>But this is nothing more than <code>unfoldr</code>!</p>
+<p>Similarly, a consumer <code>L a r -> r</code> needs to provide a way to
+handle both the <code>Nil</code> and the <code>Cons</code> cases. This means that
+<code>L a r -> r</code> is isomorphic to <code>(r, a -> r -> r)</code>.
+But then we have:</p>
+<pre><code>(r, a -> r -> r) -> [a] -> r
+
+(a -> r -> r) -> r -> [a] -> r</code></pre>
+<p>which is nothing more than <code>foldr</code>!</p>
+<h1>Concrete Isomorphisms</h1>
+<p>Concretely, we can create two data types to represent folds and unfolds:</p>
+<pre><code>data Fold a = Fold (forall r. (L a r -> r) -> r)
+
+data Unfold a = forall r. Unfold r (r -> L a r)</code></pre>
+<p>The first data type, <code>Fold</code> encodes the characterization of <code>[a]</code> as the initial
+object in the category of <code>L</code>-Algebras.</p>
+<p><code>Unfold</code> encodes the characterization of <code>[a]</code> as the terminal object in the category of
+<code>L</code>-CoAlgebras.</p>
+<blockquote>
+<p>[!note] <strong>Note:</strong>
+<code>Fold</code> is a bit more straightforward to understand. The idea is that since there's
+a function <code>[a] -> (L a r -> r) -> r</code> by initiality, then given a <code>Fold [a]</code>,
+we should be able to extract that polymorphic function.</p>
+<p>With <code>Unfold</code>, this is a witness of <code>(r -> L a r) -> r -> [a]</code>, and it appears
+in the opposite position, hence the <em>existential type</em>. The idea is that if we have
+this object, we know that there must be <em>some</em> <code>r -> L a r</code> and <code>r</code> that produced it,
+hence this encoding.</p>
+<p>Credit to @Solonarv on the Functional Programming Discord for making me realize
+that an existential type was needed here.</p></blockquote>
+<p>Concretely, we'd like to prove the various isomorphisms between these objects
+and <code>[a]</code>:</p>
+<pre><code>list2Fold :: [a] -> Fold a
+fold2List :: Fold a -> [a]
+
+list2Unfold :: [a] -> Unfold a
+unfold2List :: Unfold a -> [a]</code></pre>
+<p>two of these are actually very easy, and quite elegant:</p>
+<pre><code>fold2List :: Fold a -> [a]
+fold2List (Fold f) = f <| \case
+  Nil -> []
+  Cons a as -> a : as
+  
+list2Unfold :: [a] -> Unfold a
+list2Unfold xs = Unfold xs <| \case
+  [] -> Nil
+  (a : as) -> Cons a as</code></pre>
+<p>I just find it amazing how strong the symmetry is between these two functions!
+It feels like you're uncovering some kind of underlying beauty in the universe!</p>
+<p>The other two are less elegant, but relatively straightforward:</p>
+<pre><code>list2Fold :: [a] -> Fold a
+list2Fold [] = Fold (\eps -> eps Nil)
+list2Fold (a : as) =
+  let Fold f = list2Fold as
+  in Fold (\eps -> eps (Cons a (f eps)))
+  
+unfold2List :: Unfold a -> [a]
+unfold2List (Unfold r f) =
+  let go r' = case f r' of
+        Nil -> []
+        Cons a r'' -> a : go r''
+  in go r</code></pre>
+<h1>Conclusion</h1>
+<p>These were just some rough notes about some insights I've had into
+the duality of <code>foldr</code> and <code>unfoldr</code>, as well as their connection
+with Algebras and CoAlgebras. Another point of exploration would be a
+certain duality between <code>foldl</code> and <code>foldr</code>, but I'll save that for another day.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

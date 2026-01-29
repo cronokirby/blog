@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-01) Breaking the KAZ Suite; Practical Key Recovery Attacks on MySEAL 2.0’s Post-Quantum Candidates</title>
+<meta name="description" content="AbstractTargeting the suite of four cryptographic schemes under review in Malaysia's MySEAL 2.0 initiative, we present practical key recovery attacks that break">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-01-breaking-the-kaz-suite-practical-key-recovery-attacks-on-myseal-2.0s-post-quantum-candidates.html">
+<meta property="og:title" content="(2026-01) Breaking the KAZ Suite; Practical Key Recovery Attacks on MySEAL 2.0’s Post-Quantum Candidates">
+<meta property="og:description" content="AbstractTargeting the suite of four cryptographic schemes under review in Malaysia's MySEAL 2.0 initiative, we present practical key recovery attacks that break">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-01-breaking-the-kaz-suite-practical-key-recovery-attacks-on-myseal-2.0s-post-quantum-candidates.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-01) Breaking the KAZ Suite; Practical Key Recovery Attacks on MySEAL 2.0’s Post-Quantum Candidates">
+<meta name="twitter:description" content="AbstractTargeting the suite of four cryptographic schemes under review in Malaysia's MySEAL 2.0 initiative, we present practical key recovery attacks that break">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/064">(2026-01) Breaking the KAZ Suite; Practical Key Recovery Attacks on MySEAL 2.0’s Post-Quantum Candidates</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Zhuo Huang]]</li>
+
+  <li>[[Yu Yu]]</li>
+
+  <li>[[Xiaogang Zhou]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-16</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Targeting the suite of four cryptographic schemes under review in Malaysia's MySEAL 2.0 initiative, we present practical key recovery attacks that break three of them: the KAZ-KA key agreement scheme, the KAZ-KEM key encapsulation mechanism, and the KAZ-SIGN v2.0 digital signature. All three schemes operate over <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="double-struck">Z</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">\mathbb{Z}_N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbb">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="margin-left:0em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.109em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> where <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> is a primorial-the product of consecutive small primes. This design choice makes the group order <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\varphi(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal">φ</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mclose">)</span></span></span></span></span> extremely smooth, enabling efficient attacks. For KAZ-KA and KAZ-KEM, we recover the private key by enumerating candidates modulo each small prime factor and solving discrete logarithms in small groups. For KAZ-SIGN v2.0, we exploit the linear structure of signatures to formulate a hidden number problem instance, which we solve using lattice reduction with only two signatures. Our attacks, executed on a MacBook, recover the secret keys in under one second for all recommended security levels (128, 192, and 256 bits), demonstrating that these schemes are fundamentally insecure.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

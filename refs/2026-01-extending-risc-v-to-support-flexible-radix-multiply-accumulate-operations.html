@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-01) Extending RISC-V to Support Flexible-Radix Multiply-Accumulate Operations</title>
+<meta name="description" content="AbstractSpecified as part of the (standard, optional) M extension, the mul and mulhu instructions reflect support for unsigned integer multiplication in RISC-V">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-01-extending-risc-v-to-support-flexible-radix-multiply-accumulate-operations.html">
+<meta property="og:title" content="(2026-01) Extending RISC-V to Support Flexible-Radix Multiply-Accumulate Operations">
+<meta property="og:description" content="AbstractSpecified as part of the (standard, optional) M extension, the mul and mulhu instructions reflect support for unsigned integer multiplication in RISC-V">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-01-extending-risc-v-to-support-flexible-radix-multiply-accumulate-operations.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-01) Extending RISC-V to Support Flexible-Radix Multiply-Accumulate Operations">
+<meta name="twitter:description" content="AbstractSpecified as part of the (standard, optional) M extension, the mul and mulhu instructions reflect support for unsigned integer multiplication in RISC-V">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/108">(2026-01) Extending RISC-V to Support Flexible-Radix Multiply-Accumulate Operations</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Isaar Ahmad]]</li>
+
+  <li>[[Hao Cheng]]</li>
+
+  <li>[[Johann Großschädl]]</li>
+
+  <li>[[Daniel Page]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-23</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Specified as part of the (standard, optional) M extension, the mul and mulhu instructions reflect support for unsigned integer multiplication in RISC-V base Instruction Set Architectures (ISAs) such as RV32I and RV64I: given w-bit integers x and y for a word size w, they respectively produce the less- and more-significant w bits of the (2 · w)-bit product r = x × y. This typically minimal, and hence RISC-like form contrasts sharply with many alternative ISAs. For example, ARMv7-M includes a rich set of multiply and multiply-accumulate instructions; these cater for a wide variety of important use-cases in cryptography, where multi-precision integer arithmetic is often a central requirement. In this paper, we explore the extension of RV32I and RV64I, i.e., an Instruction Set Extension (ISE), with richer support for unsigned integer multiplication. Our design has three central features: 1) it includes dedicated carry propagation and multiply-accumulate instructions, 2) those instructions allow flexible selection of the radix (thus catering for reduced- and full-radix representations), and 3) the design can be considered for any w, and so uniformly across both RV32I and RV64I. A headline outcome of our evaluation is that, for X25519-based scalar multiplication, use of the ISE affords 1.5× and 1.6× improvement for full- and reduced-radix cases, respectively, on RV32I, and 1.3× and 1.7× improvement for full- and reduced-radix cases, respectively, on RV64I.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

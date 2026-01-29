@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2025-06) Guarding the Signal</title>
+<meta name="description" content="AbstractSecure messaging protocols allow users to communicate asynchronously over untrusted channels with strong guarantees of privacy, authenticity, forward se">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2025-06-guarding-the-signal.html">
+<meta property="og:title" content="(2025-06) Guarding the Signal">
+<meta property="og:description" content="AbstractSecure messaging protocols allow users to communicate asynchronously over untrusted channels with strong guarantees of privacy, authenticity, forward se">
+<meta property="og:url" content="https://cronokirby.com/refs/2025-06-guarding-the-signal.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2025-06) Guarding the Signal">
+<meta name="twitter:description" content="AbstractSecure messaging protocols allow users to communicate asynchronously over untrusted channels with strong guarantees of privacy, authenticity, forward se">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2025/1172">(2025-06) Guarding the Signal</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Yevgeniy Dodis]]</li>
+
+  <li>[[Bernardo Magri]]</li>
+
+  <li>[[Noah Stephens-Davidowitz]]</li>
+
+  <li>[[Yiannis Tselekounis]]</li>
+
+</ul>
+
+
+<div class="published">2025-06-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Secure messaging protocols allow users to communicate asynchronously over untrusted channels with strong guarantees of privacy, authenticity, forward secrecy, and post-compromise security. However, traditional security analyses of these protocols assume complete trust in the hardware and software of honest participants, overlooking a significant class of real-world threats known as subversion attacks. These attacks alter cryptographic algorithms to compromise security, by exfiltrating secrets or creating vulnerabilities that are often undetected.</p>
+<p>The notion of reverse firewalls (EC'15), aims at protecting against subversion attacks by introducing a third party, called a "reverse firewall" (RF), which sits between a party and the outside world and modifies its  outgoing and incoming messages in a way such that, even if the party's machine has been corrupted (in a way that maintains functionality), security is still preserved. Importantly, the firewall shares no private information with the parties, and parties put no more trust in the firewall than they do in the communication channel. In this work, we address the existing gap in secure messaging and subversion attacks by presenting several key contributions:</p>
+<ul><li>We design the first subversion-resilient secure messaging protocol based on the model of RF. Our protocol is based on the Signal protocol---the current state-of-the-art in two-party secure messaging, though it lacks subversion resilience---and achieves subversion resilience with only constant overhead over Signal.</li><li>We develop a subversion-resilient version of the X3DH protocol in the RF model. X3DH is a core component that facilitates secure initial key agreement in Signal's protocol.</li><li>We introduce and formalize the notion of Continuous Key Agreement with Tamper Detection, an essential concept for subversion-resilient secure messaging. Our notion enables parties to continuously agree on keys, even in the presence of active adversaries capable of partially tampering with the key exchange transcript. We present a construction of our notion and prove its subversion resilience in the model of RF.</li></ul></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - The Component Pattern</title>
+<meta name="description" content="This post details a useful pattern for organizing stateful components in functional code. This post assumes knowledge of Haskell, up to Monad-Transformers.The P">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/posts/the-component-pattern.html">
+<meta property="og:title" content="The Component Pattern">
+<meta property="og:description" content="This post details a useful pattern for organizing stateful components in functional code. This post assumes knowledge of Haskell, up to Monad-Transformers.The P">
+<meta property="og:url" content="https://cronokirby.com/posts/the-component-pattern.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Component Pattern">
+<meta name="twitter:description" content="This post details a useful pattern for organizing stateful components in functional code. This post assumes knowledge of Haskell, up to Monad-Transformers.The P">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2019-05-14">2019-05-14</time>
+
+<h1>The Component Pattern</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/functional-programming/index.html">
+    #functional-programming
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/software-architecture/index.html">
+    #software-architecture
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This post details a useful pattern for organizing stateful components in functional code.
+This post assumes knowledge of <strong>Haskell</strong>, up to <strong>Monad-Transformers</strong>.</p><!--more-->
+<h2>The Problem</h2>
+<p>The organization of a codebase is important: how the files are the laid out, and how
+the structures inside those files mesh together. A poorly laid out codebase can be difficult
+to navigate and expand. Poorly laid out code can be hard to understand, and even harder to
+build upon.</p>
+<p>A running system will be composed of different components. These components are the different
+"bundles of functionality" that make up the behavior of our program. They may or may not have
+analogues in the codebase itself, but a poorly organized codebase rarely makes for a well organized
+set of components.</p>
+<p>Organization is no less of a concern in <em>Functional Programming</em> than it is in the more common
+forms of programming. In fact, the goals we'd like our codebase and running system to achieve
+are the same for both: Modularity and Extensibility, to list a few. Even in <em>Haskell</em>, real-world
+applications have stateful and effectful components to carry out the duties of a program.</p>
+<p>There is less talk about this organizational aspect of code in the "functional literature", but it is
+no less important. I think that this is because the organizational side of things is less unique or interesting
+compared to other aspects of <em>Functional Programming</em>. Because of this, newcomers can learn a lot about the functional
+paradigm, yet still feel unequipped to work on their own projects.</p>
+<h3>Differences from Imperative languages</h3>
+<p>The main difference in a language like <strong>Haskell</strong> as compared to the more common
+imperative languages, is the push towards pure functions. Pure functions are
+a good organizational tool, since they make sure we don't couple functions to surrounding
+state or effects. Because of this, organizing pure functions doesn't require as much care in terms
+of runtime effects. Our code may be hard to understand because of its bad organization,
+but it's unlikely to have far reaching side effects.</p>
+<h3>Organising Stateful Components</h3>
+<p>Unfortunately, not all programs can be completely pure. Most programs have at least <em>some</em>
+component that requires an effect of some kind, or needs to keep track of some changing state.</p>
+<p>In <em>Object-Oriented</em> programming, the tool to segregate away effects or state is the <strong>Class</strong>.
+In hybrid languages, like <strong>F#</strong> or <strong>Scala</strong>, using a class to organize a component like this is a perfectably
+acceptable solution. In <strong>Haskell</strong>, however, we can't use this tool. The tools we can use are the <strong>module</strong> and
+the <strong>context</strong>.</p>
+<p>Modules allow us to organize code in a way that keeps the non-essential implementation details hidden, but the abstract
+interface to that module exposed. This is similar to classes, except that the module itself has no state or effects.
+A "context" allows us to write functions with access to effects or state. We can then export these functions directly from the module,
+along with the details of that context, or we can hide that context, as we'll see later. <strong>Haskell</strong> can
+implement contexts in different ways, but we'll be looking at <a href=https://wiki.haskell.org/Monad_Transformers>monad transformers</a>.</p>
+<h3>The Component Pattern</h3>
+<p>Let's get into the meat of the pattern. The idea is to pair a conceptual component of a system,
+say, a <em>logger</em>, for example, along with a concrete module, and effect type.</p>
+<p>Let's use our logger example more fully. Our project needs a component
+responsible for logging things to a file. We can send messages for it a log across a queue,
+and it has a file that it logs to.</p>
+<p>First we'd create a module to contain this, say <code>Logger.hs</code>:</p>
+<pre><code>module Logger () where
+-- imports ommitted</code></pre>
+<p>The next step is to define a type that contains all the information the logger needs to run:</p>
+<pre><code>data LoggerInfo = LoggerInfo
+    { loggerQueue :: TBQueue Message
+    , loggerFile  :: FilePath
+    }</code></pre>
+<p>Then we create a new effect type, which is just a Reader with access to that information:</p>
+<pre><code>newtype LoggerM a = LoggerM (ReaderT LoggerInfo IO a)</code></pre>
+<p>Now inside the module itself, we write the functions we need as <code>LoggerM a</code>, for example:</p>
+<pre><code>latestMessage :: LoggerM Message
+
+logMessages :: LoggerM ()</code></pre>
+<p>We also have a main function that contains all the things a component needs to do, sort of like
+a "main loop" for that component:</p>
+<pre><code>main :: LoggerM ()</code></pre>
+<p>At this point we have the tools to express functions for that component inside the module itself,
+but no API to interact with the component from outside. We have 2 options for exposing this
+component to the outside world.</p>
+<ul><li>Export <code>LoggerInfo</code> and <code>LoggerM</code>, as well as <code>main</code></li></ul>
+<p>We'd have functions to construct <code>LoggerInfo</code> as well as run <code>LoggerM</code>:</p>
+<pre><code>makeLoggerInfo :: File -> IO LoggerInfo
+
+runLoggerM :: LoggerM a -> LoggerInfo -> IO a</code></pre>
+<ul><li>Completely hide the existence of <code>LoggerInfo</code> and <code>LoggerM</code></li></ul>
+<p>With this choice, we'd only export a function that constructs and runs the main logger computation:</p>
+<pre><code>runLoggerMain :: File -> IO ()</code></pre>
+<p>Regardless of which choice we make, we're free to start the logger component in a new thread if we want.
+This is usually done, because components generally contain independent pieces of state, and spend all their time
+doing the same thing over and over, rather than acting as a one time task.</p>
+<p>Hiding everything is the preferred choice, as it provides more encapsulation, and a cleaner API.
+Users of the component can ignore the implementation details of the component completely, and just run a single
+function in a new thread after passing it all the prerequisite information.</p>
+<h2>Summary</h2>
+<p>In summary, the component pattern looks something like this:</p>
+<pre><code>module Component (startComponent) where
+
+data ComponentInfo
+
+newtype ComponentM a = ComponentM (ReaderT ComponentInfo IO a)
+
+main :: ComponentM ()
+
+startComponent :: Dependencies -> IO ()</code></pre>
+<p>This isn't the end-all-be-all of organising stateful components of a larger project,
+but hopefully this is a useful pattern to put in the toolbox :)</p>
+<h2>Further Reading</h2>
+<ul><li><a href=https://www.fpcomplete.com/blog/2017/06/readert-design-pattern>https://www.fpcomplete.com/blog/2017/06/readert-design-pattern</a></li></ul><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

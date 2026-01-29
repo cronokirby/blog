@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - My Quick Attempt at Bluesky's Satellite Challenge</title>
+<meta name="description" content="Twitter's Bluesky initiative created a little challenge where the goal was to verifiably link different digital identities together. This is my attempt at this.">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/posts/my-quick-attempt-at-blueskys-satellite-challenge.html">
+<meta property="og:title" content="My Quick Attempt at Bluesky's Satellite Challenge">
+<meta property="og:description" content="Twitter's Bluesky initiative created a little challenge where the goal was to verifiably link different digital identities together. This is my attempt at this.">
+<meta property="og:url" content="https://cronokirby.com/posts/my-quick-attempt-at-blueskys-satellite-challenge.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My Quick Attempt at Bluesky's Satellite Challenge">
+<meta name="twitter:description" content="Twitter's Bluesky initiative created a little challenge where the goal was to verifiably link different digital identities together. This is my attempt at this.">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2021-09-03">2021-09-03</time>
+
+<h1>My Quick Attempt at Bluesky's Satellite Challenge</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/decentralized/index.html">
+    #decentralized
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/security/index.html">
+    #security
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>Twitter's Bluesky initiative created a <a href=https://blueskyweb.org/satellite>little challenge</a>
+where the goal was to verifiably link different digital identities together. This
+is my attempt at this.</p><!--more-->
+<p>I've create an Ed25519 public key (which can be used with my little tool <a href=https://github.com/cronokirby/eddo>eddo</a>):</p>
+<pre><code>エッドの公開鍵335efaf80642878279cd8466625ace0b68c8779b5429404d46e01e95d13eb980</code></pre>
+<p>I've signed the following document, verbatim:</p>
+<pre><code>This is Cronokirby.
+My twitter is https://twitter.com/cronokirby.
+My website is https://cronokirby.com.</code></pre>
+<p>resulting in the following signature:</p>
+<pre><code>エッドの署名63143968dfa673f7c638e2b924cbc272c54eee96ce7bd41c15fca53bf0f0e76c9859924b184bbdc6d8257338c18aa5f34555e5c39efa5bc94fe9480d4bfd9008</code></pre>
+<p>I assume that they're two potential anchor points upon which people might base my "online identity".
+The first is this website, and the second is my Twitter. With my website, I assume that people will
+trust that the content published on this domain was actually written by me. Thus, my endorsement
+of a public key presumably means that I have ownership of it, and that they can associate it with this
+website. By linking my Twitter, and signing it, I also prove that I have the associated private key,
+and that this key has been used to attest to my Twitter.</p>
+<p>For those who base themselves of off Twitter, I posted <a href=https://twitter.com/cronokirby/status/1433892710977572925>a tweet</a>
+with the same message and signature. Once again, by posting the public key on Twitter, my followers there
+will associate that public key with me, and will also be satisfied that I have the private key, because
+of the signed message.</p>
+<p>The linkage is further reinforced by the message being signed, which links the key to the two other identities.</p>
+<h2>Shortcomings</h2>
+<p>One major shortcoming is that nothing ties this to my offline identity. For this, I could also include
+a dated picture, which combines some personal object with the text of the public key. For example,
+I could take a picture of this week's "The Economist", alongside one of my notebooks, wherein
+I've written down the public key I want to associate myself with. People that know me may
+recognize my hand-writing, or that I've used a particular notebook before. You could further
+reinforce this by including something like a signed book someone gave me, which would
+convince them in particular, or a government ID, which would convince even more people.</p>
+<p>Another shortcoming is that I could very-well have been coerced into doing all of this,
+or perhaps both my website and my Twitter were hacked at the same time. For this to happen,
+both my Github account and my Twitter would need to be compromised at the same time.
+This would also involve compromising my phone, which acts as a second factor for both
+of these.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

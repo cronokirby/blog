@@ -1,467 +1,467 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://cronokirby.com/Projects.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/To Read.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Podcast.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Papers.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/projects.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/to-read.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/podcast.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/papers.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/index.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) Homomorphically Encrypting CRDTs.html</loc><lastmod>2025-06-17</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2018) MTime Comparison Considered Harmful.html</loc><lastmod>2025-12-06</lastmod></url>
-<url><loc>https://cronokirby.com/Links/Persée.html</loc><lastmod>2026-01-27</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) ZKSync Airbender.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) Typechecker Zoo.html</loc><lastmod>2025-08-18</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) The Cultural Decline of Literary Fiction.html</loc><lastmod>2025-06-22</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) Fannie and Freddy back again.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) If There Were No Journalism, how Would we Find Out.html</loc><lastmod>2025-06-16</lastmod></url>
-<url><loc>https://cronokirby.com/Links/(2025) What Happens After A.I. Destroys College Writing.html</loc><lastmod>2025-07-01</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/2026 Books.html</loc><lastmod>2026-01-07</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/On-Moneros-Ring-Signatures.html</loc><lastmod>2022-03-07</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Unfold-as-Coalgebra.html</loc><lastmod>2020-12-07</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/What-I-like-about-Roam-so-far.html</loc><lastmod>2020-04-13</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Integrating-Notes-and-Spaced-Repetition.html</loc><lastmod>2020-01-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/My-Quick-Attempt-at-Blueskys-Satellite-Challenge.html</loc><lastmod>2021-09-03</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/On-Deep-Immutability.html</loc><lastmod>2020-11-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Parsing-A-Whitespace-Sensitive-Language.html</loc><lastmod>2020-06-03</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Porting-Ludus-to-the-Web.html</loc><lastmod>2021-10-02</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Programming-Problem-Run-Length-Encoding.html</loc><lastmod>2021-02-05</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/On-The-Malleability-Of-Ecdsa.html</loc><lastmod>2022-02-06</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Lexer-Combinators.html</loc><lastmod>2020-10-18</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/End-to-End-Encryption-in-Web-Apps.html</loc><lastmod>2021-06-20</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/React-Pitfalls-useState-initialization.html</loc><lastmod>2020-01-09</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Empty-vs-NonEmpty-Groups.html</loc><lastmod>2020-08-17</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/The-Component-Pattern.html</loc><lastmod>2019-05-14</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/A-simple-algorithm-for-UNIXs-Tree.html</loc><lastmod>2020-12-05</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Spaced-Repetition-for-Mathematics.html</loc><lastmod>2021-02-14</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Simple-WebRTC-Video-Chat.html</loc><lastmod>2020-06-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Monty-Hall-and-Counterfactuals.html</loc><lastmod>2020-10-14</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Constant-Time-Big-Numbers-An-Introduction.html</loc><lastmod>2021-04-05</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Data-Races-vs-Race-Conditions.html</loc><lastmod>2019-06-14</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Bridging, Risk, and Buck Passing.html</loc><lastmod>2025-06-08</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Encoding-Traits-with-Go-Generics.html</loc><lastmod>2022-03-20</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/My-Blog-Version-4.html</loc><lastmod>2020-10-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Recursive-Types-as-Initial-Algebras.html</loc><lastmod>2020-09-09</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Signatures-From-Identification-Schemes.html</loc><lastmod>2021-07-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/On-Strings-in-Compilers.html</loc><lastmod>2021-01-24</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Wrapping-GtkImContext.html</loc><lastmod>2020-09-20</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Taproot-Signatures-and-BIP-32.html</loc><lastmod>2021-08-03</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Haskell-in-Haskell-3-Parsing.html</loc><lastmod>2020-12-28</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Tychonoffs-Theorem-and-Zorns-Lemma.html</loc><lastmod>2021-02-02</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Layerability-and-Abstraction.html</loc><lastmod>2019-10-27</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Categorical-Graphs.html</loc><lastmod>2020-10-02</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Introducing-Nuntius.html</loc><lastmod>2021-07-05</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Against-Fullstack-Data-Sharing.html</loc><lastmod>2020-02-13</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Bittorrent-Is-Hard-1.html</loc><lastmod>2019-05-03</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Haskell-in-Haskell-1-Setup.html</loc><lastmod>2020-11-23</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Some-Cryptography-Books-I-Like.html</loc><lastmod>2022-05-14</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Mutability-Is-a-Great-Secret-To-Have.html</loc><lastmod>2019-03-06</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Monomorphisms-vs-Epimorphisms.html</loc><lastmod>2020-06-18</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/The-Paper-that-Keeps-Showing-Up.html</loc><lastmod>2022-08-21</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Review-The-New-York-Trilogy.html</loc><lastmod>2020-01-31</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Introducing-Ludus.html</loc><lastmod>2019-06-13</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Haskell-in-Haskell-2-Lexing.html</loc><lastmod>2020-12-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Introducing-Nimotsu.html</loc><lastmod>2021-06-06</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Some-Thoughts-on-Numeric-Classes.html</loc><lastmod>2021-02-28</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Sentence-Banking.html</loc><lastmod>2019-07-07</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Explaining-Yaos-Garbled-Circuits.html</loc><lastmod>2022-05-01</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Quantum-Computing-Some-Analogies.html</loc><lastmod>2021-07-18</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Poline.html</loc><lastmod>2019-08-31</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/DKGs-in-Groups.html</loc><lastmod>2022-10-09</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/A-Sketch-of-Synthetic-Cryptography.html</loc><lastmod>2023-06-22</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/On-Identifiable-Aborts.html</loc><lastmod>2022-06-26</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Fractals-on-The-Web.html</loc><lastmod>2021-02-21</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Canetti-et-als-Paradoxical-Encryption-Scheme.html</loc><lastmod>2022-04-23</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Always-use-offsetof.html</loc><lastmod>2020-10-19</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/What-Ive-Been-Working-On-2022-W13.html</loc><lastmod>2022-04-03</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/On-Multi-Set-Hashing.html</loc><lastmod>2021-07-25</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Young-Man-Shouts-at-Computer.html</loc><lastmod>2023-03-23</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Structured-Immersion.html</loc><lastmod>2019-12-28</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Making-an-IO.html</loc><lastmod>2021-01-10</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Some-KEMs-and-Some-Proofs.html</loc><lastmod>2022-08-14</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/2025 Books.html</loc><lastmod>2025-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Basic-Universal-Properties-in-Haskell.html</loc><lastmod>2020-12-31</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/From-Interfaces-to-Traits.html</loc><lastmod>2019-08-17</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Basic-Cryptography-Without-Fluff.html</loc><lastmod>2022-07-16</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Haskell-in-Haskell-0-Introduction.html</loc><lastmod>2020-11-01</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/State-Separable-Proofs-for-the-Curious-Cryptographer.html</loc><lastmod>2022-05-28</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Notes-on-STARK-Arithmetization.html</loc><lastmod>2022-09-25</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Cryptography-without-Security.html</loc><lastmod>2023-02-19</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Encoding-the-Naturals.html</loc><lastmod>2020-08-30</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Chinese-Remainder-Theorem-for-Programmers.html</loc><lastmod>2020-12-13</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/What-Ive-Been-Working-On-2022-W10.html</loc><lastmod>2022-03-13</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Some-Bits-about-Cait-Sith.html</loc><lastmod>2023-03-09</lastmod></url>
-<url><loc>https://cronokirby.com/Posts/Lets-Describe-Algorithms-Better.html</loc><lastmod>2021-01-16</lastmod></url>
-<url><loc>https://cronokirby.com/Actors/Ursula Le Guin.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Actors/Don DeLillo.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Actors/Carol Sklenicka.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Actors/Christopher Lasch.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Zero Knowledge (About) Encryption; A Comparative Security Analysis of Three Cloud-based Password Managers.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2021) Resourceful Program Synthesis from Graded Linear Types.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2021) Deriving Distributive Laws for Graded Linear Types.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Brief Comments on Rijndael-256 and the Standard RISC-V Cryptography Extensions.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) A note on the security of the BitVM3 garbling scheme.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Practical Subvector Commitments with Optimal Opening Complexity.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Naor-Reingold goes Beyond-the-Birthday-Bound.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Aborting Random Oracles; How to Build them, How to Use them.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) JAGUAR; Efficient and Secure Unbalanced PSI under Malicious Adversaries in the Client-Server Setting.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1991) Searoad.html</loc><lastmod>2025-06-27</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-07) TaSSLE.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1960) Rabbit, Run.html</loc><lastmod>2025-10-09</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Post-Quantum Readiness in EdDSA Chains.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) A Certified Framework for Deterministic Navigation in Higher-Genus p-Isogeny Graphs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1979) The Culture of Narcissism.html</loc><lastmod>2025-06-04</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) Flesh.html</loc><lastmod>2025-12-11</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) OnionPIRv2.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024) Functional Ownership through Fractional Uniqueness.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Equivalent computational problems for superspecial abelian surfaces.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Adaptive NIKE for Unbounded Parties.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) BLISK; Boolean circuit Logic Integrated into the Single Key.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1962) The Man in the High Castle.html</loc><lastmod>2025-09-22</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Scalable Distributed Key Generation for Blockchains.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Sota Voce.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2016) Combining Effects and Coeffects via Grading.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1984) A Cabin on the Coast.html</loc><lastmod>2025-06-16</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-07) A reduction from Hawk to the principal ideal problem in a quaternion algebra.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2016-08) KangarooTwelve.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Abelian surfaces in Hesse form and explicit isogeny formulas.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Veriﬁed non-recursive calculation of Beneš networks applied to Classic McEliece.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Towards Building Efficient SCALES Protocols.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Transparent and Post-Quantum Distributed SNARK with Linear Prover Time.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) A New Paradigm for Privacy-Preserving Decision Tree Evaluation.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2017-01) Farfalle.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Augmenting BBS with Conventional Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Peeking Into the Future.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) AKE Protocol Combining PQC and QKD.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2015) Solenoid.html</loc><lastmod>2025-10-18</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Moving a Step of ChaCha in Syncopated Rhythm (Extended Version).html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Analysis and Attacks on the Reputation System of Nym.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) What’s the Matter? An In-Depth Security Analysis of the Matter Protocol.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2023) Recoding America.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) StarFortress; Hybrid Post-Quantum KEMs From SDH and IND-CCA.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024) Nuclear War; A Scenario.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2021) Graded Modal Dependent Type Theory.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) New Upper and Lower Bounds for Perfectly Secure MPC.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) Abundance.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1983) Blood Music.html</loc><lastmod>2025-06-16</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1963) Run River.html</loc><lastmod>2025-09-11</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) The Best of Both KEMs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) DNS-Anchored zk-SNARK Proofs; A Stateless Alternative to ACME Challenge-Response for Domain Control Validation.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2022) The Mexican Economy.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) A Note on the Post-Quantum Security of Identity-Based Encryption on Isogenous Pairing Groups.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Efficiently Provable Approximations for Non-Polynomial Functions.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) A note on ''a fully dynamic multi-secret sharing scheme with redundant authorization''.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Two-Tier Black-box Blockchains and Application to Instant Layer-1 Payments.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) PlasmaFold.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Multi-Source Randomness Extraction and Generation in the Random-Oracle Model.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2010) My Struggle; Book 4.html</loc><lastmod>2026-01-25</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) FRIVail; A Data Availability Scheme based on FRI Binius.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-05) A Plausible Attack on the Adaptive Security of Threshold Schnorr Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Generalization of the Class Elimination Attack to Block Ciphers.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Password-Hardened Encryption Revisited.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1992) The End of History and the Last Man.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-09) Schnorr Signatures are Tightly Secure in the ROM under a Non-interactive Assumption.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) ABEL.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Breaking the KAZ Suite; Practical Key Recovery Attacks on MySEAL 2.0’s Post-Quantum Candidates.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1887) A Study in Scarlet.html</loc><lastmod>2025-06-13</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) On Proximity Gaps for Reed–Solomon Codes.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Structured Module Lattice-based Cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024) The Anxious Generation.html</loc><lastmod>2025-07-14</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Polynomial Lattices for the BIKE Cryptosystem.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-11) Impossibility Results for Post-Compromise Security in Real-World Communication Systems.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Revisiting the Concrete Security of Falcon-type Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1969) Portnoy's Complaint.html</loc><lastmod>2025-10-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1924) Der Zauberberg.html</loc><lastmod>2026-01-12</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) SoK; Outsourced Private Set Intersection.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2009) My Struggle; Book 2.html</loc><lastmod>2025-12-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) On Reed–Solomon Proximity Gaps Conjectures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Tropical cryptography IV; Digital signatures and secret sharing with arbitrary access structure.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Jindo; Practical Lattice-Based Polynomial Commitment for Zero-Knowledge Arguments.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Heli; Heavy-Light Private Aggregation.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Argo MAC; Garbling with Elliptic Curve MACs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) XM-VRF; Forward Secure, Fast and Key Updatable Hash Based Verifiable Random Function.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2021) Five Decembers.html</loc><lastmod>2025-07-14</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1978) La Rue des Boutiques Obscures.html</loc><lastmod>2025-09-26</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-10) Blaze.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Generating Falcon Trapdoors via Gibbs Sampler.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Fast Final Exponentiation on BW and BLS Curves with Even Embedding Degrees at 128 bits security.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-03) A Fiat–Shamir Transformation From Duplex Sponges.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Tag-Friendly Lattice Sampler and Applications.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2017-05) Multi-Collision Resistance.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Functional Decomposition of Multivariate Polynomials; Revisit and New Improvements.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2022) Linearity and Uniqueness; An Entente Cordiale.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) How to Tolerate Typos in Strong Asymmetric PAKE.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1929) The Sound and The Fury.html</loc><lastmod>2025-07-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2023-08) Verifiable Verification in Cryptographic Protocols.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Uniform Sharing in Multiple Stages; NullFresh for Arbitrary Functions.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Nested YOSO MPC; Near Optimal Resilience Without an MPC Setup.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Timed Commitments and Timed Encryption; Generic Constructions and Instantiations from Isogenies.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) BABE; Verifying Proofs on Bitcoin Made 1000x Cheaper.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2023-03) Simplex Consensus.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) Vega.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) qFALL – Rapid Prototyping of Lattice-based Cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Secure Computation for Fixed-point and Floating-point Arithmetic.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Optimistic Message Dissemination.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Leakage-Resilient Multi-Party Computation; Protecting the Evaluator in Circuits Garbling.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) A General Randomness Reuse Framework for First-Order Secure Masking and Applications on AES Design Using Randomness Solely for Input Encoding.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2002) Days of Abandonment.html</loc><lastmod>2025-11-17</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1992) Sylvia.html</loc><lastmod>2025-12-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1956) Giovanni's Room.html</loc><lastmod>2025-12-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Policy-based Access Tokens; Privacy-Preserving Verification for Digital Identity.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Evaluation of Modular Polynomials from Supersingular Elliptic Curves.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Round-Optimal Pairing-Free Blind Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) VOLE-in-the-Head Signatures Based on the Linear Code Equivalence Problem.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Concretely Efficient Blind Signatures Based on VOLE-in-the-Head Proofs and the MAYO Trapdoor.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) When Can We Incrementally Prove Computations of Arbitrary Depth?.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1905) House of Mirth.html</loc><lastmod>2025-10-24</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Blind Adaptor Signatures, Revisited; Stronger Security Definitions and Their Construction toward Practical Applications.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) An Ideal Linear Secret Sharing Scheme for Complete t-Partite k-Uniform Hypergraph Access Structures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) HHGS; Forward-secure Dynamic Group Signatures from Symmetric Primitives.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Analysis of Diffusion Properties in Generalized Feistel Ciphers under Multidimensional Linear Cryptanalysis.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024) On Settler Colonialism.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Efficient Threshold ML-DSA.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-03) Analyzing Group Chat Encryption in MLS, Session, Signal, and Matrix.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1974) 52 Pickup.html</loc><lastmod>2025-08-25</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Bridging Bitcoin to Second Layers via BitVM2.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1946) Nightmare Alley.html</loc><lastmod>2025-12-09</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) 2PC Memory-Manipulating Programs with Constant Overhead.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1989) Remains of the Day.html</loc><lastmod>2025-07-14</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Deal out oblivious correlations; 2-depth HSS circuit for silent V-OLE generation.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2021) Linear Exponentials as Graded Modal Types.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) Compact, Efficient and Non-Separable Hybrid Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) HIC is all you need; Practical Post-Quantum Password-Authenticated Public Key Encryption.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1988) O Alquimista.html</loc><lastmod>2026-01-22</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Linear Prover IOPs in Log Star Rounds.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Fully-Adaptive Two-Round Threshold Schnorr Signatures from DDH.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) The Billion Dollar Merkle Tree.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Formalizing Privacy in Decentralized Identity; A Provably Secure Framework with Minimal Disclosure.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Integrity from Algebraic Manipulation Detection in Trusted-Repeater QKD Networks.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) The Cokernel Pairing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Data Availability Sampling with Repair.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) SNARGs for NP and Non-Signaling PCPs, Revisited.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-03) Improved Cryptanalysis of ChaCha.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) New Constructions of Multiplicative Secret Sharing Schemes.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) OOPS; One-time Oblivious Polynomial Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Cryptanalysis of HiAE.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) All Polynomial Generators Preserve Distance with Mutual Correlated Agreement.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Rank Syndrome Decoding Estimator - An Asymptotic and Concrete Analysis.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) LESS is Even More.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1959) Goodbye Columbus (and 5 short stories).html</loc><lastmod>2025-11-14</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) A Note on the Post-Quantum Security of the Inverse Discrete Logarithm Problem.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1985) White Noise.html</loc><lastmod>2025-12-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2006) Eat Pray Love.html</loc><lastmod>2025-09-15</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Stateless 2PC Signatures for Internet-Scale Authentication and Authorization.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) HYPERSHIELD; Protecting the Hypercube MPC-in-the-Head Framework Against Differential Probing Adversaries without Masking.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1980) So Long, See You Tomorrow.html</loc><lastmod>2026-01-20</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) InstantOMR; Oblivious Message Retrieval with Low Latency and Optimal Parallelizability.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) AGB 2.0.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2022) Septology.html</loc><lastmod>2025-08-22</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Succinct Garbled Circuits with Low-Depth Garbling Algorithms.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) People Like Us.html</loc><lastmod>2025-08-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Re2creds; Reusable Anonymous Credentials from Malleable NIZK and Legacy Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Fully-Fluctuating Participation in Sleepy Consensus.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1927) Thérèse Desqueyroux.html</loc><lastmod>2026-01-22</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Extending RISC-V to Support Flexible-Radix Multiply-Accumulate Operations.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Efficient, Scalable Threshold ML-DSA Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) New Quantum Circuits for ECDLP; Breaking Prime Elliptic Curve Cryptography in Minutes.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Rank Syndrome Decoding Estimator.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1982) The Names.html</loc><lastmod>2025-09-04</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1929) A Farewell to Arms.html</loc><lastmod>2025-11-12</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) A SNARK for (Non-)Subsequences with Text-Sub-Linear Proving Time.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1976) Will You Please be Quiet, Please?.html</loc><lastmod>2025-08-06</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Faster Than Ever; A New Lightweight Private Set Intersection and Its Variants.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) From -textsf{TS-SUF-2} to -textsf{TS-SUF-4}; Practical Security Enhancements for -textsf{FROST2} Threshold Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Optimized Implementation of ML-KEM on ARMv9-A with SVE2 and SME.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2022-03) Block-Cipher-Based Tree Hashing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Not Easy to Prepare a Pesto.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1973) Crash.html</loc><lastmod>2025-11-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Pseudorandom Correlation Functions for Garbled Circuits.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2022) The Right.html</loc><lastmod>2025-06-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) BREAKMEIFYOUCAN!; Exploiting Keyspace Reduction and Relay Attacks in 3DES and AES-protected NFC Technologies.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) On those Boolean functions having only one Walsh zero.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2020) Boulder.html</loc><lastmod>2025-12-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) How to Steal Oblivious Transfer from Minicrypt.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2001) Atonement.html</loc><lastmod>2025-09-18</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1965) Stoner.html</loc><lastmod>2025-08-11</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-03) The 2Hash OPRF Framework and Efficient Post-Quantum Instantiations.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Opossum Attack.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1956) Seize the Day.html</loc><lastmod>2025-12-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2009) Capitalist Realism.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Secret-Subspace Recovery in MAYO via Linearization of Errors from a Single Fault.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) On the Impossibility of Round-Optimal Pairing-Free Blind Signatures in the ROM.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2020) Pika Parsing.html</loc><lastmod>2026-01-04</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Qurrency; a quantum-secure, private, and auditable platform for digital assets.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) Why Nothing Works.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1976) Le Jour de Congé.html</loc><lastmod>2025-08-25</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Low-Latency Low-Randomness OPINI Gadgets and Their Formal Verification.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Batch Decryption without Epochs and its Application to Encrypted Mempools.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1972) The Breast.html</loc><lastmod>2026-01-07</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) A Tale of Two Worlds, a Formal Story of WireGuard Hybridization.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Note.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2023) The City and its Uncertain Walls.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Breaking the Myth of MPCitH Inefficiency; Optimizing MQOM for Embedded Platforms.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Generic Construction of Threshold Ring Signatures and Lattice-based Instantiations.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) All the Way to the River.html</loc><lastmod>2025-09-15</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Accelerating FrodoKEM in Hardware.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1984) Salvador.html</loc><lastmod>2025-06-16</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Verifiable Aggregate Receipts with Applications to User Engagement Auditing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Beyond LWE.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Threshold Signatures Reloaded.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Fully Dynamic Verifiable Secret Sharing and its Application to DPSS.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) SLVer Bullet.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Streaming Function Secret Sharing and Its Applications.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) A Note on the Binding Properties of KEM Combiners.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2005) The Best of the Best Science Fiction.html</loc><lastmod>2025-06-16</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024) Perfection.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1953) Go Tell It on the Mountain.html</loc><lastmod>2025-06-23</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Can we Speed up Information Set Decoding by Using Extension Field Structure?.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) An improved random AKS-class primality proving algorithm.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) DOC★.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Scalable Secure Multiparty Computation with Perfect Security from Preprocessing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-05) Groebner Basis Cryptanalysis of Anemoi.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) A New Approach to Large Party Beaver-Style MPC with Small Computational Overhead.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Hardware-Friendly Robust Threshold ECDSA in an Asymmetric Model.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Adaptively Secure Threshold ElGamal Decryption from DDH.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) A Fully-Adaptive Threshold Partially-Oblivious PRF.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2009) Raymond Carver; A Writer's Life.html</loc><lastmod>2025-08-08</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Cross-Consensus Reliable Broadcast and its Applications.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Coral.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) Time-Lock Encrypted Storage for Blockchains.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1983) La Place.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024-12) BitGC.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Efficient Polynomial Evaluation over Structured Space and Application to Polynomial Method.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2023) Yellowface.html</loc><lastmod>2025-11-15</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Fully Distributed Multi-Point Functions for PCGs and Beyond.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) On the representation of self-orthogonal codes and applications to cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Complete Characterization of Randomness Extraction from DAG-Correlated Sources.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) FRIttata.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1977) Unknown Man No. 89.html</loc><lastmod>2025-10-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) SUMSIG; Compact Code-Based Signatures from Sum-Check Protocols.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) ML-DSA-OSH; An Efficient, Open-Source Hardware Implementation of ML-DSA.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Snake Mackerel.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2024) America América.html</loc><lastmod>2025-06-08</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Incremental Single-Server Private Information Retrieval.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Benchmarking of the Amortized Post Quantum Combiner for MLS.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Automated Verification of Proofs in the Universal Composability Framework with Markov Decision Processes.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) On Weak NIZKs, One-way Functions and Amplification.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) L for the Price of One; On the Benefits of Using more than t+1 Parties in Threshold Signing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) SoK; Verifiable Federated Learning.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) The Algebraic Isogeny Model; A General Model with Applications to SQIsign and Key Exchanges.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Speeding Up Sum-Check Proving.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-05) Diving Deep Into UC.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Simple VESS.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2009) My Struggle; Book 1.html</loc><lastmod>2025-11-28</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2011) Freedom Betrayed.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Arithmetic autocorrelation of binary half--ell-sequences with connection integer p^{r}q^{s}.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Gödel in Cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2019) Quantitative Program Reasoning with Graded Modal Types.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) d-v-CLSAG; Extension for Concise Linkable Spontaneous Anonymous Group Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) zip.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) SoK; Approximate Agreement.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1949) Confessions of a Mask.html</loc><lastmod>2025-12-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Practical SNARGs for Matrix Multiplications over Encrypted Data.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2009) My Struggle; Book 3.html</loc><lastmod>2026-01-20</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) SNARGs for NP via Fiat--Shamir in the Plain Model.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1971) The Lathe of Heaven.html</loc><lastmod>2025-06-30</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) On Graded Coeffect Types for Information-Flow Control.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2023-04) Adding more parallelism to the AEGIS authenticated encryption algorithms.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1973) Competition and Entrepreneurship.html</loc><lastmod>2025-06-29</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) Conditionally Input-Revealing 2PC and Fuzzy Password-Authenticated Key Exchange.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Tree PCPs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Note.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Chasing Rabbits Through Hypercubes; Better algorithms for higher dimensional 2-isogeny computations.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1963) The Ice Palace.html</loc><lastmod>2025-11-03</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Logarithmic density of rank -geq1 and -geq2 genus-2 Jacobians and applications to hyperelliptic curve cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-11) QUIC-MLS.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) SmallWood.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1952) The Old Man and the Sea.html</loc><lastmod>2025-11-03</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Fast Unbalanced Private Computation on Set Intersection from Permuted Multi-Query Private Membership Test.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2017-01) The STROBE protocol framework.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Starfighters — on the general applicability of X-Wing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) IND-CCA Lattice Threshold KEM under 30 KiB.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) UFOs; An Ultra-fast Toolkit for Multiparty Computation of Small Elements.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2005) La Possibilité d'une île.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) High-Performance SIMD Software for Spielman Codes in Zero-Knowledge Proofs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Masked Solving of Linear Equations System and Application to UOV Signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1976) Swag.html</loc><lastmod>2025-08-09</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) On Delegation of Verifiable Presentations from mdoc and BBS Credentials.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Lether; Practical Post-Quantum Account-Based Private Blockchain Payments.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) Unforgiving Places.html</loc><lastmod>2025-07-16</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Fully Secure DKG Protocols for Discrete Logarithm Revisited.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Guarding the Signal.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Collaborative zkSNARKs with Sublinear Prover Time and Constant Proof Size.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Faster Short Pairing-Based NIZK Proofs for Ring LWE Ciphertexts.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) Batch Arguments with Optimal Communication.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) A search to distinguish reduction for the isomorphism problem on direct sum lattices.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-06) Understanding Lasso.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2026-01) LatORAM; ORAMs from Lateral Stashes and Delayed Shuffling.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025) Coming Clean.html</loc><lastmod>2025-06-05</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-07) Efficiently parsing existing eID documents for zero-knowledge proofs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-12) OHMG; One hot modular garbling.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(2025-08) Practical Collision Attacks on Reduced-Round Xoodyak Hash Mode.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Refs/(1959) The Poorhouse Fair.html</loc><lastmod>2025-11-03</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Signal (messaging).html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Powers-of-Tau-Proofs.html</loc><lastmod>2022-09-07</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Nets-define-Topologies.html</loc><lastmod>2021-01-15</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Connectedness-and-Constant-Maps.html</loc><lastmod>2020-12-25</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/On-Verifying-Public-Coin-Protocols-inside-ZK-Proofs.html</loc><lastmod>2022-08-14</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/RSA-Schnorr-Signatures.html</loc><lastmod>2022-04-05</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Reading Lists.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/The Inefficiency of Risk in Deferred Payment.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Granule.html</loc><lastmod>2026-01-02</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Stereotypic Inertia.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cities should Capture more Tax Revenue.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Universal-Properties-and-Adjunctions.html</loc><lastmod>2020-12-27</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Systemd User Units.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Causality and History.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Some-More-Notes-on-Formalizing-Games.html</loc><lastmod>2022-02-18</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Computer Science is Special.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security-2-Key-Sharing.html</loc><lastmod>2023-03-13</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Topological-Groups-are-Hausdorff.html</loc><lastmod>2020-12-24</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Simple-Multi-Round-Fiat-Shamir-with-BLAKE3.html</loc><lastmod>2022-09-11</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/What this blog tries to cultivate.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Misc-0.html</loc><lastmod>2020-12-26</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/On-Defining-the-One-More-Discrete-Logarithm-Problem.html</loc><lastmod>2022-06-02</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/On-Adding-Chaining-to-SAFE.html</loc><lastmod>2022-09-15</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Anxiety about the future.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security.html</loc><lastmod>2023-04-16</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Avalanche-Signatures.html</loc><lastmod>2021-08-05</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security-0-Preliminaries.html</loc><lastmod>2023-04-30</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Reflexive-Interfaces-in-Go.html</loc><lastmod>2021-05-11</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Discrete-Indiscrete-Free-CoFree.html</loc><lastmod>2020-12-31</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/SaaS is Inevitable.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/The-Goldilocks-Field.html</loc><lastmod>2022-09-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security-3-Multiplication-and-Triples.html</loc><lastmod>2023-04-05</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Better-Notation-for-Matrices.html</loc><lastmod>2021-08-25</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Montgomery-Ladder-in-ECC.html</loc><lastmod>2021-04-21</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Monadic Cryptography in Lean.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Notes-on-Chosen-Generator-Discrete-Logarithms.html</loc><lastmod>2022-11-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Stream of Consciousness Writing.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/SNES Emudev.html</loc><lastmod>2025-10-05</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security-4-Signing.html</loc><lastmod>2023-04-16</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Drudgery and LLMs.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security-X-Cheat-Sheet.html</loc><lastmod>2023-04-02</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Bit-Flipping-in-State-Separable-Proofs.html</loc><lastmod>2022-05-03</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Social Media Addiction.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/On-RAM-In-Structured-Computation.html</loc><lastmod>2022-08-24</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Local-First Software.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/On-Formalizing-Security-Games.html</loc><lastmod>2022-02-17</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Some Principles of Programming Language Design.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/On-Doerner-et-als-modifications-to-Extended-Random-OT.html</loc><lastmod>2021-08-28</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Power Laws in a Hyper-Connected World.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Making-Gos-RSA-Internals-Constant-Time.html</loc><lastmod>2021-05-07</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/American Mortgage Market.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Competition and Predictability.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Thoughts-on-Big-Number-APIs.html</loc><lastmod>2021-01-28</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Cait-Sith-Security-1-Echo-Broadcast.html</loc><lastmod>2023-02-27</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Anxious AI Assistant Use.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Some-MPS-Utilities.html</loc><lastmod>2023-02-23</lastmod></url>
-<url><loc>https://cronokirby.com/Notes/Hidden Reliance.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2026-01-27.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2026-01-04.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-11-05.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-06-24.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-11-18.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-07-01.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-06-04.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-11-27.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/Log/2025-06-26.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-homomorphically-encrypting-crdts.html</loc><lastmod>2025-06-17</lastmod></url>
+<url><loc>https://cronokirby.com/links/2018-mtime-comparison-considered-harmful.html</loc><lastmod>2025-12-06</lastmod></url>
+<url><loc>https://cronokirby.com/links/perse.html</loc><lastmod>2026-01-27</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-zksync-airbender.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-typechecker-zoo.html</loc><lastmod>2025-08-18</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-the-cultural-decline-of-literary-fiction.html</loc><lastmod>2025-06-22</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-fannie-and-freddy-back-again.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-if-there-were-no-journalism-how-would-we-find-out.html</loc><lastmod>2025-06-16</lastmod></url>
+<url><loc>https://cronokirby.com/links/2025-what-happens-after-a.i.-destroys-college-writing.html</loc><lastmod>2025-07-01</lastmod></url>
+<url><loc>https://cronokirby.com/posts/2026-books.html</loc><lastmod>2026-01-07</lastmod></url>
+<url><loc>https://cronokirby.com/posts/on-moneros-ring-signatures.html</loc><lastmod>2022-03-07</lastmod></url>
+<url><loc>https://cronokirby.com/posts/unfold-as-coalgebra.html</loc><lastmod>2020-12-07</lastmod></url>
+<url><loc>https://cronokirby.com/posts/what-i-like-about-roam-so-far.html</loc><lastmod>2020-04-13</lastmod></url>
+<url><loc>https://cronokirby.com/posts/integrating-notes-and-spaced-repetition.html</loc><lastmod>2020-01-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/my-quick-attempt-at-blueskys-satellite-challenge.html</loc><lastmod>2021-09-03</lastmod></url>
+<url><loc>https://cronokirby.com/posts/on-deep-immutability.html</loc><lastmod>2020-11-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/parsing-a-whitespace-sensitive-language.html</loc><lastmod>2020-06-03</lastmod></url>
+<url><loc>https://cronokirby.com/posts/porting-ludus-to-the-web.html</loc><lastmod>2021-10-02</lastmod></url>
+<url><loc>https://cronokirby.com/posts/programming-problem-run-length-encoding.html</loc><lastmod>2021-02-05</lastmod></url>
+<url><loc>https://cronokirby.com/posts/on-the-malleability-of-ecdsa.html</loc><lastmod>2022-02-06</lastmod></url>
+<url><loc>https://cronokirby.com/posts/lexer-combinators.html</loc><lastmod>2020-10-18</lastmod></url>
+<url><loc>https://cronokirby.com/posts/end-to-end-encryption-in-web-apps.html</loc><lastmod>2021-06-20</lastmod></url>
+<url><loc>https://cronokirby.com/posts/react-pitfalls-usestate-initialization.html</loc><lastmod>2020-01-09</lastmod></url>
+<url><loc>https://cronokirby.com/posts/empty-vs-nonempty-groups.html</loc><lastmod>2020-08-17</lastmod></url>
+<url><loc>https://cronokirby.com/posts/the-component-pattern.html</loc><lastmod>2019-05-14</lastmod></url>
+<url><loc>https://cronokirby.com/posts/a-simple-algorithm-for-unixs-tree.html</loc><lastmod>2020-12-05</lastmod></url>
+<url><loc>https://cronokirby.com/posts/spaced-repetition-for-mathematics.html</loc><lastmod>2021-02-14</lastmod></url>
+<url><loc>https://cronokirby.com/posts/simple-webrtc-video-chat.html</loc><lastmod>2020-06-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/monty-hall-and-counterfactuals.html</loc><lastmod>2020-10-14</lastmod></url>
+<url><loc>https://cronokirby.com/posts/constant-time-big-numbers-an-introduction.html</loc><lastmod>2021-04-05</lastmod></url>
+<url><loc>https://cronokirby.com/posts/data-races-vs-race-conditions.html</loc><lastmod>2019-06-14</lastmod></url>
+<url><loc>https://cronokirby.com/posts/bridging-risk-and-buck-passing.html</loc><lastmod>2025-06-08</lastmod></url>
+<url><loc>https://cronokirby.com/posts/encoding-traits-with-go-generics.html</loc><lastmod>2022-03-20</lastmod></url>
+<url><loc>https://cronokirby.com/posts/my-blog-version-4.html</loc><lastmod>2020-10-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/recursive-types-as-initial-algebras.html</loc><lastmod>2020-09-09</lastmod></url>
+<url><loc>https://cronokirby.com/posts/signatures-from-identification-schemes.html</loc><lastmod>2021-07-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/on-strings-in-compilers.html</loc><lastmod>2021-01-24</lastmod></url>
+<url><loc>https://cronokirby.com/posts/wrapping-gtkimcontext.html</loc><lastmod>2020-09-20</lastmod></url>
+<url><loc>https://cronokirby.com/posts/taproot-signatures-and-bip-32.html</loc><lastmod>2021-08-03</lastmod></url>
+<url><loc>https://cronokirby.com/posts/haskell-in-haskell-3-parsing.html</loc><lastmod>2020-12-28</lastmod></url>
+<url><loc>https://cronokirby.com/posts/tychonoffs-theorem-and-zorns-lemma.html</loc><lastmod>2021-02-02</lastmod></url>
+<url><loc>https://cronokirby.com/posts/layerability-and-abstraction.html</loc><lastmod>2019-10-27</lastmod></url>
+<url><loc>https://cronokirby.com/posts/categorical-graphs.html</loc><lastmod>2020-10-02</lastmod></url>
+<url><loc>https://cronokirby.com/posts/introducing-nuntius.html</loc><lastmod>2021-07-05</lastmod></url>
+<url><loc>https://cronokirby.com/posts/against-fullstack-data-sharing.html</loc><lastmod>2020-02-13</lastmod></url>
+<url><loc>https://cronokirby.com/posts/bittorrent-is-hard-1.html</loc><lastmod>2019-05-03</lastmod></url>
+<url><loc>https://cronokirby.com/posts/haskell-in-haskell-1-setup.html</loc><lastmod>2020-11-23</lastmod></url>
+<url><loc>https://cronokirby.com/posts/some-cryptography-books-i-like.html</loc><lastmod>2022-05-14</lastmod></url>
+<url><loc>https://cronokirby.com/posts/mutability-is-a-great-secret-to-have.html</loc><lastmod>2019-03-06</lastmod></url>
+<url><loc>https://cronokirby.com/posts/monomorphisms-vs-epimorphisms.html</loc><lastmod>2020-06-18</lastmod></url>
+<url><loc>https://cronokirby.com/posts/the-paper-that-keeps-showing-up.html</loc><lastmod>2022-08-21</lastmod></url>
+<url><loc>https://cronokirby.com/posts/review-the-new-york-trilogy.html</loc><lastmod>2020-01-31</lastmod></url>
+<url><loc>https://cronokirby.com/posts/introducing-ludus.html</loc><lastmod>2019-06-13</lastmod></url>
+<url><loc>https://cronokirby.com/posts/haskell-in-haskell-2-lexing.html</loc><lastmod>2020-12-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/introducing-nimotsu.html</loc><lastmod>2021-06-06</lastmod></url>
+<url><loc>https://cronokirby.com/posts/some-thoughts-on-numeric-classes.html</loc><lastmod>2021-02-28</lastmod></url>
+<url><loc>https://cronokirby.com/posts/sentence-banking.html</loc><lastmod>2019-07-07</lastmod></url>
+<url><loc>https://cronokirby.com/posts/explaining-yaos-garbled-circuits.html</loc><lastmod>2022-05-01</lastmod></url>
+<url><loc>https://cronokirby.com/posts/quantum-computing-some-analogies.html</loc><lastmod>2021-07-18</lastmod></url>
+<url><loc>https://cronokirby.com/posts/poline.html</loc><lastmod>2019-08-31</lastmod></url>
+<url><loc>https://cronokirby.com/posts/dkgs-in-groups.html</loc><lastmod>2022-10-09</lastmod></url>
+<url><loc>https://cronokirby.com/posts/a-sketch-of-synthetic-cryptography.html</loc><lastmod>2023-06-22</lastmod></url>
+<url><loc>https://cronokirby.com/posts/on-identifiable-aborts.html</loc><lastmod>2022-06-26</lastmod></url>
+<url><loc>https://cronokirby.com/posts/fractals-on-the-web.html</loc><lastmod>2021-02-21</lastmod></url>
+<url><loc>https://cronokirby.com/posts/canetti-et-als-paradoxical-encryption-scheme.html</loc><lastmod>2022-04-23</lastmod></url>
+<url><loc>https://cronokirby.com/posts/always-use-offsetof.html</loc><lastmod>2020-10-19</lastmod></url>
+<url><loc>https://cronokirby.com/posts/what-ive-been-working-on-2022-w13.html</loc><lastmod>2022-04-03</lastmod></url>
+<url><loc>https://cronokirby.com/posts/on-multi-set-hashing.html</loc><lastmod>2021-07-25</lastmod></url>
+<url><loc>https://cronokirby.com/posts/young-man-shouts-at-computer.html</loc><lastmod>2023-03-23</lastmod></url>
+<url><loc>https://cronokirby.com/posts/structured-immersion.html</loc><lastmod>2019-12-28</lastmod></url>
+<url><loc>https://cronokirby.com/posts/making-an-io.html</loc><lastmod>2021-01-10</lastmod></url>
+<url><loc>https://cronokirby.com/posts/some-kems-and-some-proofs.html</loc><lastmod>2022-08-14</lastmod></url>
+<url><loc>https://cronokirby.com/posts/2025-books.html</loc><lastmod>2025-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/posts/basic-universal-properties-in-haskell.html</loc><lastmod>2020-12-31</lastmod></url>
+<url><loc>https://cronokirby.com/posts/from-interfaces-to-traits.html</loc><lastmod>2019-08-17</lastmod></url>
+<url><loc>https://cronokirby.com/posts/basic-cryptography-without-fluff.html</loc><lastmod>2022-07-16</lastmod></url>
+<url><loc>https://cronokirby.com/posts/haskell-in-haskell-0-introduction.html</loc><lastmod>2020-11-01</lastmod></url>
+<url><loc>https://cronokirby.com/posts/state-separable-proofs-for-the-curious-cryptographer.html</loc><lastmod>2022-05-28</lastmod></url>
+<url><loc>https://cronokirby.com/posts/notes-on-stark-arithmetization.html</loc><lastmod>2022-09-25</lastmod></url>
+<url><loc>https://cronokirby.com/posts/cryptography-without-security.html</loc><lastmod>2023-02-19</lastmod></url>
+<url><loc>https://cronokirby.com/posts/encoding-the-naturals.html</loc><lastmod>2020-08-30</lastmod></url>
+<url><loc>https://cronokirby.com/posts/chinese-remainder-theorem-for-programmers.html</loc><lastmod>2020-12-13</lastmod></url>
+<url><loc>https://cronokirby.com/posts/what-ive-been-working-on-2022-w10.html</loc><lastmod>2022-03-13</lastmod></url>
+<url><loc>https://cronokirby.com/posts/some-bits-about-cait-sith.html</loc><lastmod>2023-03-09</lastmod></url>
+<url><loc>https://cronokirby.com/posts/lets-describe-algorithms-better.html</loc><lastmod>2021-01-16</lastmod></url>
+<url><loc>https://cronokirby.com/actors/ursula-le-guin.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/actors/don-delillo.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/actors/carol-sklenicka.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/actors/christopher-lasch.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-zero-knowledge-about-encryption-a-comparative-security-analysis-of-three-cloud-based-password-managers.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2021-resourceful-program-synthesis-from-graded-linear-types.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2021-deriving-distributive-laws-for-graded-linear-types.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-brief-comments-on-rijndael-256-and-the-standard-risc-v-cryptography-extensions.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-a-note-on-the-security-of-the-bitvm3-garbling-scheme.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-practical-subvector-commitments-with-optimal-opening-complexity.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-naor-reingold-goes-beyond-the-birthday-bound.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-aborting-random-oracles-how-to-build-them-how-to-use-them.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-jaguar-efficient-and-secure-unbalanced-psi-under-malicious-adversaries-in-the-client-server-setting.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1991-searoad.html</loc><lastmod>2025-06-27</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-07-tassle.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1960-rabbit-run.html</loc><lastmod>2025-10-09</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-post-quantum-readiness-in-eddsa-chains.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-a-certified-framework-for-deterministic-navigation-in-higher-genus-p-isogeny-graphs.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1979-the-culture-of-narcissism.html</loc><lastmod>2025-06-04</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-flesh.html</loc><lastmod>2025-12-11</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-onionpirv2.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-functional-ownership-through-fractional-uniqueness.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-equivalent-computational-problems-for-superspecial-abelian-surfaces.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-adaptive-nike-for-unbounded-parties.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-blisk-boolean-circuit-logic-integrated-into-the-single-key.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1962-the-man-in-the-high-castle.html</loc><lastmod>2025-09-22</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-scalable-distributed-key-generation-for-blockchains.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-sota-voce.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2016-combining-effects-and-coeffects-via-grading.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1984-a-cabin-on-the-coast.html</loc><lastmod>2025-06-16</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-07-a-reduction-from-hawk-to-the-principal-ideal-problem-in-a-quaternion-algebra.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2016-08-kangarootwelve.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-abelian-surfaces-in-hesse-form-and-explicit-isogeny-formulas.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-veried-non-recursive-calculation-of-bene-networks-applied-to-classic-mceliece.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-towards-building-efficient-scales-protocols.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-transparent-and-post-quantum-distributed-snark-with-linear-prover-time.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-a-new-paradigm-for-privacy-preserving-decision-tree-evaluation.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2017-01-farfalle.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-augmenting-bbs-with-conventional-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-peeking-into-the-future.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-ake-protocol-combining-pqc-and-qkd.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2015-solenoid.html</loc><lastmod>2025-10-18</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-moving-a-step-of-chacha-in-syncopated-rhythm-extended-version.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-analysis-and-attacks-on-the-reputation-system-of-nym.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-whats-the-matter-an-in-depth-security-analysis-of-the-matter-protocol.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2023-recoding-america.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-starfortress-hybrid-post-quantum-kems-from-sdh-and-ind-cca.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-nuclear-war-a-scenario.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2021-graded-modal-dependent-type-theory.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-new-upper-and-lower-bounds-for-perfectly-secure-mpc.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-abundance.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1983-blood-music.html</loc><lastmod>2025-06-16</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1963-run-river.html</loc><lastmod>2025-09-11</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-the-best-of-both-kems.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-dns-anchored-zk-snark-proofs-a-stateless-alternative-to-acme-challenge-response-for-domain-control-validation.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2022-the-mexican-economy.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-a-note-on-the-post-quantum-security-of-identity-based-encryption-on-isogenous-pairing-groups.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-efficiently-provable-approximations-for-non-polynomial-functions.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-a-note-on-a-fully-dynamic-multi-secret-sharing-scheme-with-redundant-authorization.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-two-tier-black-box-blockchains-and-application-to-instant-layer-1-payments.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-plasmafold.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-multi-source-randomness-extraction-and-generation-in-the-random-oracle-model.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2010-my-struggle-book-4.html</loc><lastmod>2026-01-25</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-frivail-a-data-availability-scheme-based-on-fri-binius.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-05-a-plausible-attack-on-the-adaptive-security-of-threshold-schnorr-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-generalization-of-the-class-elimination-attack-to-block-ciphers.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-password-hardened-encryption-revisited.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1992-the-end-of-history-and-the-last-man.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-09-schnorr-signatures-are-tightly-secure-in-the-rom-under-a-non-interactive-assumption.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-abel.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-breaking-the-kaz-suite-practical-key-recovery-attacks-on-myseal-2.0s-post-quantum-candidates.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1887-a-study-in-scarlet.html</loc><lastmod>2025-06-13</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-on-proximity-gaps-for-reedsolomon-codes.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-structured-module-lattice-based-cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-the-anxious-generation.html</loc><lastmod>2025-07-14</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-polynomial-lattices-for-the-bike-cryptosystem.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-11-impossibility-results-for-post-compromise-security-in-real-world-communication-systems.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-revisiting-the-concrete-security-of-falcon-type-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1969-portnoys-complaint.html</loc><lastmod>2025-10-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1924-der-zauberberg.html</loc><lastmod>2026-01-12</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-sok-outsourced-private-set-intersection.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2009-my-struggle-book-2.html</loc><lastmod>2025-12-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-on-reedsolomon-proximity-gaps-conjectures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-tropical-cryptography-iv-digital-signatures-and-secret-sharing-with-arbitrary-access-structure.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-jindo-practical-lattice-based-polynomial-commitment-for-zero-knowledge-arguments.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-heli-heavy-light-private-aggregation.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-argo-mac-garbling-with-elliptic-curve-macs.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-xm-vrf-forward-secure-fast-and-key-updatable-hash-based-verifiable-random-function.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2021-five-decembers.html</loc><lastmod>2025-07-14</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1978-la-rue-des-boutiques-obscures.html</loc><lastmod>2025-09-26</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-10-blaze.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-generating-falcon-trapdoors-via-gibbs-sampler.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-fast-final-exponentiation-on-bw-and-bls-curves-with-even-embedding-degrees-at-128-bits-security.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-03-a-fiatshamir-transformation-from-duplex-sponges.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-tag-friendly-lattice-sampler-and-applications.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2017-05-multi-collision-resistance.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-functional-decomposition-of-multivariate-polynomials-revisit-and-new-improvements.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2022-linearity-and-uniqueness-an-entente-cordiale.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-how-to-tolerate-typos-in-strong-asymmetric-pake.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1929-the-sound-and-the-fury.html</loc><lastmod>2025-07-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2023-08-verifiable-verification-in-cryptographic-protocols.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-uniform-sharing-in-multiple-stages-nullfresh-for-arbitrary-functions.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-nested-yoso-mpc-near-optimal-resilience-without-an-mpc-setup.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-timed-commitments-and-timed-encryption-generic-constructions-and-instantiations-from-isogenies.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-babe-verifying-proofs-on-bitcoin-made-1000x-cheaper.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2023-03-simplex-consensus.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-vega.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-qfall-rapid-prototyping-of-lattice-based-cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-secure-computation-for-fixed-point-and-floating-point-arithmetic.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-optimistic-message-dissemination.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-leakage-resilient-multi-party-computation-protecting-the-evaluator-in-circuits-garbling.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-a-general-randomness-reuse-framework-for-first-order-secure-masking-and-applications-on-aes-design-using-randomness-solely-for-input-encoding.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2002-days-of-abandonment.html</loc><lastmod>2025-11-17</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1992-sylvia.html</loc><lastmod>2025-12-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1956-giovannis-room.html</loc><lastmod>2025-12-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-policy-based-access-tokens-privacy-preserving-verification-for-digital-identity.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-evaluation-of-modular-polynomials-from-supersingular-elliptic-curves.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-round-optimal-pairing-free-blind-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-vole-in-the-head-signatures-based-on-the-linear-code-equivalence-problem.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-concretely-efficient-blind-signatures-based-on-vole-in-the-head-proofs-and-the-mayo-trapdoor.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-when-can-we-incrementally-prove-computations-of-arbitrary-depth.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1905-house-of-mirth.html</loc><lastmod>2025-10-24</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-blind-adaptor-signatures-revisited-stronger-security-definitions-and-their-construction-toward-practical-applications.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-an-ideal-linear-secret-sharing-scheme-for-complete-t-partite-k-uniform-hypergraph-access-structures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-hhgs-forward-secure-dynamic-group-signatures-from-symmetric-primitives.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-analysis-of-diffusion-properties-in-generalized-feistel-ciphers-under-multidimensional-linear-cryptanalysis.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-on-settler-colonialism.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-efficient-threshold-ml-dsa.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-03-analyzing-group-chat-encryption-in-mls-session-signal-and-matrix.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1974-52-pickup.html</loc><lastmod>2025-08-25</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-bridging-bitcoin-to-second-layers-via-bitvm2.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1946-nightmare-alley.html</loc><lastmod>2025-12-09</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-2pc-memory-manipulating-programs-with-constant-overhead.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1989-remains-of-the-day.html</loc><lastmod>2025-07-14</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-deal-out-oblivious-correlations-2-depth-hss-circuit-for-silent-v-ole-generation.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2021-linear-exponentials-as-graded-modal-types.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-compact-efficient-and-non-separable-hybrid-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-hic-is-all-you-need-practical-post-quantum-password-authenticated-public-key-encryption.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1988-o-alquimista.html</loc><lastmod>2026-01-22</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-linear-prover-iops-in-log-star-rounds.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-fully-adaptive-two-round-threshold-schnorr-signatures-from-ddh.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-the-billion-dollar-merkle-tree.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-formalizing-privacy-in-decentralized-identity-a-provably-secure-framework-with-minimal-disclosure.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-integrity-from-algebraic-manipulation-detection-in-trusted-repeater-qkd-networks.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-the-cokernel-pairing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-data-availability-sampling-with-repair.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-snargs-for-np-and-non-signaling-pcps-revisited.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-03-improved-cryptanalysis-of-chacha.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-new-constructions-of-multiplicative-secret-sharing-schemes.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-oops-one-time-oblivious-polynomial-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-cryptanalysis-of-hiae.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-all-polynomial-generators-preserve-distance-with-mutual-correlated-agreement.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-rank-syndrome-decoding-estimator-an-asymptotic-and-concrete-analysis.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-less-is-even-more.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1959-goodbye-columbus-and-5-short-stories.html</loc><lastmod>2025-11-14</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-a-note-on-the-post-quantum-security-of-the-inverse-discrete-logarithm-problem.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1985-white-noise.html</loc><lastmod>2025-12-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2006-eat-pray-love.html</loc><lastmod>2025-09-15</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-stateless-2pc-signatures-for-internet-scale-authentication-and-authorization.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-hypershield-protecting-the-hypercube-mpc-in-the-head-framework-against-differential-probing-adversaries-without-masking.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1980-so-long-see-you-tomorrow.html</loc><lastmod>2026-01-20</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-instantomr-oblivious-message-retrieval-with-low-latency-and-optimal-parallelizability.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-agb-2.0.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2022-septology.html</loc><lastmod>2025-08-22</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-succinct-garbled-circuits-with-low-depth-garbling-algorithms.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-people-like-us.html</loc><lastmod>2025-08-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-re2creds-reusable-anonymous-credentials-from-malleable-nizk-and-legacy-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-fully-fluctuating-participation-in-sleepy-consensus.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1927-thrse-desqueyroux.html</loc><lastmod>2026-01-22</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-extending-risc-v-to-support-flexible-radix-multiply-accumulate-operations.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-efficient-scalable-threshold-ml-dsa-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-new-quantum-circuits-for-ecdlp-breaking-prime-elliptic-curve-cryptography-in-minutes.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-rank-syndrome-decoding-estimator.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1982-the-names.html</loc><lastmod>2025-09-04</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1929-a-farewell-to-arms.html</loc><lastmod>2025-11-12</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-a-snark-for-non-subsequences-with-text-sub-linear-proving-time.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1976-will-you-please-be-quiet-please.html</loc><lastmod>2025-08-06</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-faster-than-ever-a-new-lightweight-private-set-intersection-and-its-variants.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-from-textsfts-suf-2-to-textsfts-suf-4-practical-security-enhancements-for-textsffrost2-threshold-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-optimized-implementation-of-ml-kem-on-armv9-a-with-sve2-and-sme.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2022-03-block-cipher-based-tree-hashing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-not-easy-to-prepare-a-pesto.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1973-crash.html</loc><lastmod>2025-11-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-pseudorandom-correlation-functions-for-garbled-circuits.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2022-the-right.html</loc><lastmod>2025-06-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-breakmeifyoucan-exploiting-keyspace-reduction-and-relay-attacks-in-3des-and-aes-protected-nfc-technologies.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-on-those-boolean-functions-having-only-one-walsh-zero.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2020-boulder.html</loc><lastmod>2025-12-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-how-to-steal-oblivious-transfer-from-minicrypt.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2001-atonement.html</loc><lastmod>2025-09-18</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1965-stoner.html</loc><lastmod>2025-08-11</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-03-the-2hash-oprf-framework-and-efficient-post-quantum-instantiations.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-opossum-attack.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1956-seize-the-day.html</loc><lastmod>2025-12-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2009-capitalist-realism.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-secret-subspace-recovery-in-mayo-via-linearization-of-errors-from-a-single-fault.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-on-the-impossibility-of-round-optimal-pairing-free-blind-signatures-in-the-rom.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2020-pika-parsing.html</loc><lastmod>2026-01-04</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-qurrency-a-quantum-secure-private-and-auditable-platform-for-digital-assets.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-why-nothing-works.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1976-le-jour-de-cong.html</loc><lastmod>2025-08-25</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-low-latency-low-randomness-opini-gadgets-and-their-formal-verification.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-batch-decryption-without-epochs-and-its-application-to-encrypted-mempools.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1972-the-breast.html</loc><lastmod>2026-01-07</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-a-tale-of-two-worlds-a-formal-story-of-wireguard-hybridization.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-note.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2023-the-city-and-its-uncertain-walls.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-breaking-the-myth-of-mpcith-inefficiency-optimizing-mqom-for-embedded-platforms.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-generic-construction-of-threshold-ring-signatures-and-lattice-based-instantiations.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-all-the-way-to-the-river.html</loc><lastmod>2025-09-15</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-accelerating-frodokem-in-hardware.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1984-salvador.html</loc><lastmod>2025-06-16</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-verifiable-aggregate-receipts-with-applications-to-user-engagement-auditing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-beyond-lwe.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-threshold-signatures-reloaded.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-fully-dynamic-verifiable-secret-sharing-and-its-application-to-dpss.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-slver-bullet.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-streaming-function-secret-sharing-and-its-applications.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-a-note-on-the-binding-properties-of-kem-combiners.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2005-the-best-of-the-best-science-fiction.html</loc><lastmod>2025-06-16</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-perfection.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1953-go-tell-it-on-the-mountain.html</loc><lastmod>2025-06-23</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-can-we-speed-up-information-set-decoding-by-using-extension-field-structure.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-an-improved-random-aks-class-primality-proving-algorithm.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-doc.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-scalable-secure-multiparty-computation-with-perfect-security-from-preprocessing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-05-groebner-basis-cryptanalysis-of-anemoi.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-a-new-approach-to-large-party-beaver-style-mpc-with-small-computational-overhead.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-hardware-friendly-robust-threshold-ecdsa-in-an-asymmetric-model.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-adaptively-secure-threshold-elgamal-decryption-from-ddh.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-a-fully-adaptive-threshold-partially-oblivious-prf.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2009-raymond-carver-a-writers-life.html</loc><lastmod>2025-08-08</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-cross-consensus-reliable-broadcast-and-its-applications.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-coral.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-time-lock-encrypted-storage-for-blockchains.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1983-la-place.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-12-bitgc.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-efficient-polynomial-evaluation-over-structured-space-and-application-to-polynomial-method.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2023-yellowface.html</loc><lastmod>2025-11-15</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-fully-distributed-multi-point-functions-for-pcgs-and-beyond.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-on-the-representation-of-self-orthogonal-codes-and-applications-to-cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-complete-characterization-of-randomness-extraction-from-dag-correlated-sources.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-frittata.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1977-unknown-man-no.-89.html</loc><lastmod>2025-10-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-sumsig-compact-code-based-signatures-from-sum-check-protocols.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-ml-dsa-osh-an-efficient-open-source-hardware-implementation-of-ml-dsa.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-snake-mackerel.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2024-america-amrica.html</loc><lastmod>2025-06-08</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-incremental-single-server-private-information-retrieval.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-benchmarking-of-the-amortized-post-quantum-combiner-for-mls.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-automated-verification-of-proofs-in-the-universal-composability-framework-with-markov-decision-processes.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-on-weak-nizks-one-way-functions-and-amplification.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-l-for-the-price-of-one-on-the-benefits-of-using-more-than-t1-parties-in-threshold-signing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-sok-verifiable-federated-learning.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-the-algebraic-isogeny-model-a-general-model-with-applications-to-sqisign-and-key-exchanges.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-speeding-up-sum-check-proving.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-05-diving-deep-into-uc.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-simple-vess.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2009-my-struggle-book-1.html</loc><lastmod>2025-11-28</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2011-freedom-betrayed.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-arithmetic-autocorrelation-of-binary-half-ell-sequences-with-connection-integer-prqs.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-gdel-in-cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2019-quantitative-program-reasoning-with-graded-modal-types.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-d-v-clsag-extension-for-concise-linkable-spontaneous-anonymous-group-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-zip.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-sok-approximate-agreement.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1949-confessions-of-a-mask.html</loc><lastmod>2025-12-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-practical-snargs-for-matrix-multiplications-over-encrypted-data.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2009-my-struggle-book-3.html</loc><lastmod>2026-01-20</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-snargs-for-np-via-fiat-shamir-in-the-plain-model.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1971-the-lathe-of-heaven.html</loc><lastmod>2025-06-30</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-on-graded-coeffect-types-for-information-flow-control.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2023-04-adding-more-parallelism-to-the-aegis-authenticated-encryption-algorithms.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1973-competition-and-entrepreneurship.html</loc><lastmod>2025-06-29</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-conditionally-input-revealing-2pc-and-fuzzy-password-authenticated-key-exchange.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-tree-pcps.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-note.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-chasing-rabbits-through-hypercubes-better-algorithms-for-higher-dimensional-2-isogeny-computations.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1963-the-ice-palace.html</loc><lastmod>2025-11-03</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-logarithmic-density-of-rank-geq1-and-geq2-genus-2-jacobians-and-applications-to-hyperelliptic-curve-cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-11-quic-mls.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-smallwood.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1952-the-old-man-and-the-sea.html</loc><lastmod>2025-11-03</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-fast-unbalanced-private-computation-on-set-intersection-from-permuted-multi-query-private-membership-test.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2017-01-the-strobe-protocol-framework.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-starfighters-on-the-general-applicability-of-x-wing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-ind-cca-lattice-threshold-kem-under-30-kib.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-ufos-an-ultra-fast-toolkit-for-multiparty-computation-of-small-elements.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2005-la-possibilit-dune-le.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-high-performance-simd-software-for-spielman-codes-in-zero-knowledge-proofs.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-masked-solving-of-linear-equations-system-and-application-to-uov-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1976-swag.html</loc><lastmod>2025-08-09</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-on-delegation-of-verifiable-presentations-from-mdoc-and-bbs-credentials.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-lether-practical-post-quantum-account-based-private-blockchain-payments.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-unforgiving-places.html</loc><lastmod>2025-07-16</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-fully-secure-dkg-protocols-for-discrete-logarithm-revisited.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-guarding-the-signal.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-collaborative-zksnarks-with-sublinear-prover-time-and-constant-proof-size.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-faster-short-pairing-based-nizk-proofs-for-ring-lwe-ciphertexts.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-batch-arguments-with-optimal-communication.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-a-search-to-distinguish-reduction-for-the-isomorphism-problem-on-direct-sum-lattices.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-06-understanding-lasso.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-01-latoram-orams-from-lateral-stashes-and-delayed-shuffling.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-coming-clean.html</loc><lastmod>2025-06-05</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-07-efficiently-parsing-existing-eid-documents-for-zero-knowledge-proofs.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-12-ohmg-one-hot-modular-garbling.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2025-08-practical-collision-attacks-on-reduced-round-xoodyak-hash-mode.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1959-the-poorhouse-fair.html</loc><lastmod>2025-11-03</lastmod></url>
+<url><loc>https://cronokirby.com/notes/signal-messaging.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/powers-of-tau-proofs.html</loc><lastmod>2022-09-07</lastmod></url>
+<url><loc>https://cronokirby.com/notes/nets-define-topologies.html</loc><lastmod>2021-01-15</lastmod></url>
+<url><loc>https://cronokirby.com/notes/connectedness-and-constant-maps.html</loc><lastmod>2020-12-25</lastmod></url>
+<url><loc>https://cronokirby.com/notes/on-verifying-public-coin-protocols-inside-zk-proofs.html</loc><lastmod>2022-08-14</lastmod></url>
+<url><loc>https://cronokirby.com/notes/rsa-schnorr-signatures.html</loc><lastmod>2022-04-05</lastmod></url>
+<url><loc>https://cronokirby.com/notes/reading-lists.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/the-inefficiency-of-risk-in-deferred-payment.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/granule.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/notes/stereotypic-inertia.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cities-should-capture-more-tax-revenue.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/universal-properties-and-adjunctions.html</loc><lastmod>2020-12-27</lastmod></url>
+<url><loc>https://cronokirby.com/notes/systemd-user-units.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/causality-and-history.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/some-more-notes-on-formalizing-games.html</loc><lastmod>2022-02-18</lastmod></url>
+<url><loc>https://cronokirby.com/notes/computer-science-is-special.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security-2-key-sharing.html</loc><lastmod>2023-03-13</lastmod></url>
+<url><loc>https://cronokirby.com/notes/topological-groups-are-hausdorff.html</loc><lastmod>2020-12-24</lastmod></url>
+<url><loc>https://cronokirby.com/notes/simple-multi-round-fiat-shamir-with-blake3.html</loc><lastmod>2022-09-11</lastmod></url>
+<url><loc>https://cronokirby.com/notes/what-this-blog-tries-to-cultivate.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/misc-0.html</loc><lastmod>2020-12-26</lastmod></url>
+<url><loc>https://cronokirby.com/notes/on-defining-the-one-more-discrete-logarithm-problem.html</loc><lastmod>2022-06-02</lastmod></url>
+<url><loc>https://cronokirby.com/notes/on-adding-chaining-to-safe.html</loc><lastmod>2022-09-15</lastmod></url>
+<url><loc>https://cronokirby.com/notes/anxiety-about-the-future.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security.html</loc><lastmod>2023-04-16</lastmod></url>
+<url><loc>https://cronokirby.com/notes/avalanche-signatures.html</loc><lastmod>2021-08-05</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security-0-preliminaries.html</loc><lastmod>2023-04-30</lastmod></url>
+<url><loc>https://cronokirby.com/notes/reflexive-interfaces-in-go.html</loc><lastmod>2021-05-11</lastmod></url>
+<url><loc>https://cronokirby.com/notes/discrete-indiscrete-free-cofree.html</loc><lastmod>2020-12-31</lastmod></url>
+<url><loc>https://cronokirby.com/notes/saas-is-inevitable.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/the-goldilocks-field.html</loc><lastmod>2022-09-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security-3-multiplication-and-triples.html</loc><lastmod>2023-04-05</lastmod></url>
+<url><loc>https://cronokirby.com/notes/better-notation-for-matrices.html</loc><lastmod>2021-08-25</lastmod></url>
+<url><loc>https://cronokirby.com/notes/montgomery-ladder-in-ecc.html</loc><lastmod>2021-04-21</lastmod></url>
+<url><loc>https://cronokirby.com/notes/monadic-cryptography-in-lean.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/notes-on-chosen-generator-discrete-logarithms.html</loc><lastmod>2022-11-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/stream-of-consciousness-writing.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/snes-emudev.html</loc><lastmod>2025-10-05</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security-4-signing.html</loc><lastmod>2023-04-16</lastmod></url>
+<url><loc>https://cronokirby.com/notes/drudgery-and-llms.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security-x-cheat-sheet.html</loc><lastmod>2023-04-02</lastmod></url>
+<url><loc>https://cronokirby.com/notes/bit-flipping-in-state-separable-proofs.html</loc><lastmod>2022-05-03</lastmod></url>
+<url><loc>https://cronokirby.com/notes/social-media-addiction.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/on-ram-in-structured-computation.html</loc><lastmod>2022-08-24</lastmod></url>
+<url><loc>https://cronokirby.com/notes/local-first-software.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/on-formalizing-security-games.html</loc><lastmod>2022-02-17</lastmod></url>
+<url><loc>https://cronokirby.com/notes/some-principles-of-programming-language-design.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/on-doerner-et-als-modifications-to-extended-random-ot.html</loc><lastmod>2021-08-28</lastmod></url>
+<url><loc>https://cronokirby.com/notes/power-laws-in-a-hyper-connected-world.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/making-gos-rsa-internals-constant-time.html</loc><lastmod>2021-05-07</lastmod></url>
+<url><loc>https://cronokirby.com/notes/american-mortgage-market.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/competition-and-predictability.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/thoughts-on-big-number-apis.html</loc><lastmod>2021-01-28</lastmod></url>
+<url><loc>https://cronokirby.com/notes/cait-sith-security-1-echo-broadcast.html</loc><lastmod>2023-02-27</lastmod></url>
+<url><loc>https://cronokirby.com/notes/anxious-ai-assistant-use.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/notes/some-mps-utilities.html</loc><lastmod>2023-02-23</lastmod></url>
+<url><loc>https://cronokirby.com/notes/hidden-reliance.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2026-01-27.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2026-01-04.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-11-05.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-06-24.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-11-18.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-07-01.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-06-04.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-11-27.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/log/2025-06-26.html</loc><lastmod>1970-01-01</lastmod></url>
 </urlset>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - Layerability and Abstraction</title>
+<meta name="description" content="This is a post about one of my favorite aspects of networking: how different protocols and concepts are layered together. I go over the concept of Layerability">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/posts/layerability-and-abstraction.html">
+<meta property="og:title" content="Layerability and Abstraction">
+<meta property="og:description" content="This is a post about one of my favorite aspects of networking: how different protocols and concepts are layered together. I go over the concept of Layerability">
+<meta property="og:url" content="https://cronokirby.com/posts/layerability-and-abstraction.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Layerability and Abstraction">
+<meta name="twitter:description" content="This is a post about one of my favorite aspects of networking: how different protocols and concepts are layered together. I go over the concept of Layerability">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2019-10-27">2019-10-27</time>
+
+<h1>Layerability and Abstraction</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/networking/index.html">
+    #networking
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming/index.html">
+    #programming
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This is a post about one of my favorite aspects of networking: how different protocols
+and concepts are layered together. I go over the concept of <em>Layerability</em> and how
+it applies to networking and programming more generally.</p><!--more-->
+<h1>Layerability and Networking</h1>
+<p>An interesting aspect of Networking is how different protocols are layered. For example, to view this page, you had to make
+an HTTP request. That request was delivered using the TCP protocol, which in turn used the IP protocol, and finally the
+underlying protocol to send data to your router (skimming a bit over details). Each of these layers only makes use of the one directly
+beneath it: an implementation of an HTTP client worries about TCP, the TCP code in your OS deals with IP, etc.
+This aspect is one of the best strengths of this layered model. I'll refer to this aspect as <strong>strict layering</strong>.</p>
+<p>In order to make strict layering work, we need each layer to cover the needs of the layer above it. This is why some layers
+have more than one protocol to choose from. For example, the application layer (HTTP et alii) can make use of either TCP or UDP.
+UDP was introduced after TCP to fill some unfulfilled needs of some applications. TCP provides a reliable, ordered stream of data,
+at the expense of more overhead, and (sometimes) higher latency. Some applications are willing to accept the possibility of data loss
+in exchange for lower latency. For example, voice communication will rather play a snippet immediately, even if it's missing some audio,
+rather than playing it later, but with complete audio. Because applications can use either TCP or UDP, depending on their constraints,
+there's no urge for applications to dig further down in the networking stack. If applications sometimes needed to go underneath the transport layer abstraction,
+for performance, or other reasons, then it'd break the abstraction of strict layering.</p>
+<p>Strict layering is a stellar example of a tower of abstractions with little to no leaks. Each layer provides an interface as well
+as guarantees to the layer above it. For example, TCP lets you send and receive bytes across a socket. Unlike a lower level protocol,
+you can be sure that what you receive is in the right order, and isn't missing any data. Each of these layers fulfills a similar promise,
+and we don't have to worry about the implementation details of everything below it.</p>
+<p>Of course, all networking layers have an escape hatch of sorts because of the possibility of network failure:
+TCP sockets can be closed without warning, and HTTP requests can sometimes fail. This is something we accept and deal with
+when working with networks. Well-implemented applications do, however, provide the illusion of an infallible network. Or at least,
+they provide good awareness as to what's happening.</p>
+<p>Because each layer doesn't dig into the implementation below it, we can change the implementation while providing the same guarantees.
+This allows us to improve the different layers without worrying about breaking anything. Furthermore, we can also have a higher level
+protocol be adjusted to use a different underlying protocol. For example, we can switch our HTTP server for TCP to TLS in order
+to have encryption. If every improvement to underlying layers required sweeping changes to all the applications above them,
+those changes would simply never happen.</p>
+<h1>Layerability and Compilers</h1>
+<p>Another good example of layerability is in compilers with different targets.</p>
+<p>Let's take a hypothetical language, compiling to C. C in turn, is compiled down to some variant of assembly, e.g. x86-64.
+This assembly language can be interpreted by different CPUs, even manufactured by different operators. There are quite
+a few languages that compile to C, using this layering. C remains a popular compilation target for languages.</p>
+<p>The compiler writer for this language only needs to understand the behavior of C, and trust in the implementation of their
+C compiler. The C compiler trusts that different CPUs faithfully implement the behavior of the assembly. CPU manufacturers
+faithfully provide this assembly language interface.</p>
+<p>New languages can benefit from the existing C compilers and ecosystem, just by compiling down to C. Just as networked
+applications can benefits from the work making TCP efficient, so can languages benefit from the efficiency of C compilers.</p>
+<h2>A more leaky tower</h2>
+<p>I think that the networking stack is a stellar example of a series of abstractions without leaks, but this tower is a bit more leaky.
+With the advent of modern optimizing compilers, it's difficult to beat it in writing assembly. But, there are still situations
+where we need to use certain intrinsic operations present in the assembly, but not in the C language. For example, to take advantage
+of vectorization operations, we need to go down to assembly, because the language doesn't give us access to these operations
+directly. Of course, we could use a library making use of these primitives, and compilers are getting better at including these intrinsics.
+Smart optimizing compilers will be able to find potential places to use clever assembly operations, and insert them for you.</p>
+<h1>The key points</h1>
+<p>I think the key benefits of layerability can be summarized like this:</p>
+<ul><li>The layers are reusable between different applications.</li><li>The layers can be swapped for different behaviors.</li><li>The layers simplify the work of the application developer.</li></ul>
+<p>I think we should strive for layerable architecture inside our applications, and especially
+inside of the protocols we develop. This kind of layering is perhaps the only sane way to build very durable software artifacts.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - Parsing A Whitespace-Sensitive Language</title>
+<meta name="description" content="This post is about how to parse programming languages which define blocks using indentation, instead of braces and semicolons. We'll end up learning how to infe">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/posts/parsing-a-whitespace-sensitive-language.html">
+<meta property="og:title" content="Parsing A Whitespace-Sensitive Language">
+<meta property="og:description" content="This post is about how to parse programming languages which define blocks using indentation, instead of braces and semicolons. We'll end up learning how to infe">
+<meta property="og:url" content="https://cronokirby.com/posts/parsing-a-whitespace-sensitive-language.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Parsing A Whitespace-Sensitive Language">
+<meta name="twitter:description" content="This post is about how to parse programming languages which define blocks using indentation, instead of braces and semicolons. We'll end up learning how to infe">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="2020-06-03">2020-06-03</time>
+
+<h1>Parsing A Whitespace-Sensitive Language</h1>
+
+
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/parsing/index.html">
+    #parsing
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/programming-languages/index.html">
+    #programming-languages
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<p>This post is about how to parse programming languages which define blocks using indentation,
+instead of braces and semicolons. We'll end up learning how to infer these blocks based on the indentation,
+using <a href=https://www.typescriptlang.org/>Typescript</a> to parse a toy functional language.</p><!--more-->
+<h2>Background Knowledge</h2>
+<p>This post stops at generating tokens we can feed into a parser. Implementing a parser
+doesn't change because of whitespace sensitivity (at least, not with the technique
+we'll be seeing). If you want to explore how to do parsing, <a href=https://www.craftinginterpreters.com/parsing-expressions.html>this chapter</a>
+of <a href=https://www.craftinginterpreters.com>Crafting Interpreters</a> is very good.</p>
+<p>The chapter on lexing from the same book might be useful to look at if you want to understand
+lexing as well. We will be going over how that works here though.</p>
+<p>Familiarity with Typescript will help in reading the code, but shouldn't be necessary
+to understand what's going on.</p>
+<p>There's no need to understand Haskell, or functional languages. We will be parsing a very small
+subset of a Haskell-like language, and referencing some of the syntax of Haskell, but
+nothing beyond that.</p>
+<p>With that said, let's get on to the meat of this post.</p>
+<h1>The Language</h1>
+<p>Here's an example program in the language we'll be working with in this post:</p>
+<pre><code>f = x => x * x
+
+y =
+  let
+    z = 4
+  in z + f z x = x * x
+
+y =
+  let
+    z = 4
+  in z + f z</code></pre>
+<p>We have the usual arithmetic operators: <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>. Function application doesn't require parentheses,
+so <code>f x</code> means <code>f(x)</code> in more standard notation. We define functions with <code>arg => expression</code> syntax.
+Programs are just a sequence of definitions <code>name = expression</code>. One new aspect that might be unfamiliar
+is the <code>let ... in</code> construct. This is what we'll call a "let expression", and is what
+is sensitive to whitespace.</p>
+<p>What the let expression allows us to do is define intermediate values that we use in another
+expression. We can also nest multiple let expressions:</p>
+<pre><code>let
+  z =
+    let
+      x = 2
+      y = 3
+    in x + y
+in z</code></pre>
+<p>The way we tell which definitions belong to which block is through the indentation. The
+definitions inside of the same let block all have the same indentation, which lets us
+tell that they belong there.</p>
+<h1>Parsing</h1>
+<p>Parsing is about going from the text / source code of our program, and getting to
+a representation of the program that we can use for things like iinterpreting, compiling,
+or manipulating the program in other programmatic ways.</p>
+<p>This representation usually takes the form of a <a href=https://en.wikipedia.org/wiki/Abstract_syntax_tree>Syntax Tree</a>.
+For example, if we take the first program we took as an example, we have:</p>
+<pre><code>f = x => x * x
+
+y =
+  let
+    z = 4
+  in z + f z</code></pre>
+<p>After parsing, we end up with a tree like structure representing the program:</p>
+<p>
+<img src=../Images/7e4178f71165df1704136a136b09b3f0576a82aa859d37755f134bce37f82425.png alt= /></p>
+<p>We start with the top level definitions, with one branch for each of them. Then we
+have a node for the definition / <code>=</code> construct, with a branch for the name, and a
+branch for the expression.</p>
+<p>The expression breaks down into a subtree, whose subexpressions also have trees, etc.</p>
+<p>This tree like structure is much more ready for manipulation than a string of characters is.
+It's much easier to use a tree of arithmetic operations to implement a calculator than it is to try and
+and interpret the stream of characters as they arrive.</p>
+<h2>Parsing as stages</h2>
+<p>Without going into the details too much, parsing usually works by using a set of rules
+(called a <em>Grammar</em>) which tell us how to combine certain strings into a small part of our
+tree.</p>
+<p>For example, we might define expressions like:</p>
+<pre><code>expr := expr + expr | expr - expr | expr * expr | expr / expr | number</code></pre>
+<p>This says that an expression is formed by adding one of <code>+</code>, <code>-</code>, <code>*</code>, or <code>/</code> between
+two expressions, or simply having a number. This would give us:</p>
+<pre><code>1+1+3-4
+
+1*3-4</code></pre>
+<p>As valid expressions according to these rules.</p>
+<p>Now there are a few problems with defining arithmetic expressions this way, but we
+don't really care about that in this post. We just need to know that parsing involves
+defining these kinds of rules.</p>
+<p>Here we defined parsing rules as operating strictly on characters. So:</p>
+<pre><code>1 + 2</code></pre>
+<p>Wouldn't technically be valid, because the two whitespace characters <code> </code> aren't accounted
+for in the rules. Having to add extra rules to handle things like allowing spacing things
+on the same line, or ignoring comments would get very annoying, and make our grammar
+more complicated.</p>
+<h3>Tokenizing</h3>
+<p>One solution to this problem is instead of feeding each character to our parser, we
+instead feed it larger blocks of meaningful "words". Defining a grammar in terms
+of "words" instead of individual characters makes sense in the analogy with human
+language as well. We usually call these "words" <strong>Tokens</strong> or <strong>Lexemes</strong>.</p>
+<p>Going back to the same example program:</p>
+<pre><code>f = x => x * x
+
+y =
+  let
+    z = 4
+  in z + f z</code></pre>
+<p>One way to tokenize this would be:</p>
+<pre><code>f
+=
+x
+=>
+x
+*
+x
+y
+=
+let
+z
+=
+4
+in
+z
++
+f
+z</code></pre>
+<p>Notice that some concepts become a single token, such as <code>=></code> or <code>let</code> this means that
+our grammar can refer to these directly, instead of worrying about each character. We also
+ignore all whitespace and comments when outputting tokens, which makes the grammar's work
+much simpler as well.</p>
+<h1>What's hard about whitespace</h1>
+<p>To us humans, it doesn't seem hard to understand what</p>
+<pre><code>let
+  x = f
+  y = f
+in x + y</code></pre>
+<p>means. It's difficult for us to <em>not</em> notice the indentation structure, and align
+things together. Visually, we basically see:</p>
+<p>
+<img src=../Images/3c8e85b354f1c5ab43efce065918e1cdd84b1b10a02b72ad9eb2ac4a04379514.png alt= /></p>
+<p>without even thinking about it. A parser might not see this so easily without making it
+aware of indentation. If we look at the token stream, we have:</p>
+<pre><code>let x = f y = f in x + y</code></pre>
+<p>The problem might start to appear at this stage. You see, what about that <code>f y</code> in the
+middle? What stops our parser from seeing that as the function <code>f</code> applied to the argument
+<code>y</code>? After it does that, it will run into the <code>=</code> and not understand what to do, but
+by then it's too late. The problem is that our tokenizer outputs a stream of tokens that
+ignores all whitespace, so we've removed the visual cues that tells us when certain expressions
+end.</p>
+<p>Our goal is to find a way to output this information in a way that makes the parser's
+job easy.</p>
+<h1>An easier language</h1>
+<p>Languages like C and Typescript have braces to denote blocks, instead of indentation. C
+even requires explicit semicolons between statements, instead of relying on newlines to tell it when a new statement
+begins. Typescript will try and infer semicolons for you. This is a hint towards what we might
+try to do later.</p>
+<p>For now let's remove all whitespace sensitivity from our language, and actually write a lexer
+for it.</p>
+<p>The very first program we saw now becomes:</p>
+<pre><code>{
+f = x => x * x;
+
+y =
+  let {
+    z = 4
+  } in z + f z
+}</code></pre>
+<p>A bit ugly (in my view), but it explicitly marks when statements end, and what the
+block structure looks like. Because of the semicolons, there's no issue with parsing</p>
+<pre><code>x = f;
+y = 2</code></pre>
+<p>as <code>x = f y; = 2</code>, since we put the semicolon at the right place.</p>
+<p>With the language being defined, let's actually write a lexer!</p>
+<p>It's time to put on our programming socks and write some code in an actual language
+(Typescript) instead of a made up one :)</p>
+<h2>Tokens</h2>
+<p>We need a type to represent the different tokens our lexer will output. Thankfully
+Typescript comes equipped has <a href=https://www.typescriptlang.org/docs/handbook/enums.html>enums</a>
+which fit the bill perfectly.</p>
+<pre><code>enum TokenType {
+  Equal = '=',
+  Plus = '+',
+  LeftBrace = '{',
+  RightBrace = '}',
+  SemiColon = ';',
+  // Keywords
+  Let = 'let',
+  In = 'in',
+  // These will need data attached
+  Number = 'Number',
+  Name,
+}</code></pre>
+<p>This enumerates the different types of tokens we'll be outputting. For most of the tokens,
+just knowing the type is knowing everything we need to. For the last two, we also want
+to know what exactly the token contains, to distinguish <code>Number(1)</code> from <code>Number(2)</code>.</p>
+<p>Our full token structure will thus be:</p>
+<pre><code>interface Token {
+  readonly type: TokenType;
+  readonly data?: string;
+}</code></pre>
+<p>For the last two types of token, we'll make sure to include <code>data</code> along with the type,
+so our parser can have that information as well.</p>
+<h2>Lexer</h2>
+<p>Now let's actually write a lexer for this simple language. Our goal, once again, will
+be to take in our input string, and start spitting out tokens. Our focus here will
+be to make this concrete, through an actual function.</p>
+<p>What is a "stream" anyways? How do we represent this in Typescript? One choice would be
+to have a function like this</p>
+<pre><code>function lex(input: string): Token[]</code></pre>
+<p>One thing I don't like about this is that we have to explicitly construct the entire
+list of tokens. This can be inefficient in later stages, since we're keeping the entire
+token stream in memory, instead of "streaming" them one by one.</p>
+<h3>Generators</h3>
+<p><a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator>Generators</a>
+are a better way of providing a "stream" of data from a function.</p>
+<p>Here's a simple generator returning integers:</p>
+<pre><code>function* numbers() {
+  for (let i = 0; i < 100; ++i) {
+    yield i;
+  }
+}</code></pre>
+<p>Instead of just returning a single value, we can instead yield many values. This function
+will yield all the integers up to 100. We can consume this generator like this:</p>
+<pre><code>for (const n of numbers()) {
+  console.log(n);
+}</code></pre>
+<p>And we'll end up printing all the numbers that this generator yields.</p>
+<p>One function that's very useful, is a generator over all the characters of a string:</p>
+<pre><code>function *iterString(input: string) {
+  for (const c of input) {
+    yield c;
+  }
+}</code></pre>
+<p>This actually yields <em>strings</em> since we don't have a character type in TS.</p>
+<h3>Peeking</h3>
+<p>Generators can also be seen as iterators. Given a generator, we can call it's <code>next</code> method,
+and get either:</p>
+<pre><code>{ done: false, value: v }</code></pre>
+<p>when there's a value that can be yielded, or:</p>
+<pre><code>{ done: true }</code></pre>
+<p>when we've reached the end of the stream.</p>
+<p>Another primitive we'd like to have is an iterator where we can look at the next item
+without consuming it. We need this for lexing, since we might want to do different things
+based on the input without consuming it. For example, we need to be able to look at:</p>
+<pre><code>abc;</code></pre>
+<p>And parse out the name <code>abc</code> as well as the semicolon <code>;</code>. To do this we need to be able
+to <em>peek</em> at the upcoming input, to decide whether to add it to the name or not.</p>
+<p>Let's make a class that allows us to do that (feel free to gloss over it):</p>
+<pre><code>type Peeked<T> = { ready: true; value: T } | { ready: false };
+
+class Peekable<T> implements IterableIterator<T> {
+  private _peeked: Peeked<T> = { ready: false };
+  private _iter: Iterator<T>;
+
+  constructor(iter: Iterable<T>) {
+    this._iter = iter[Symbol.iterator]();
+  }
+
+  peek() {
+    if (this._peeked.ready) {
+      return { done: false, value: this._peeked.value };
+    } else {
+      const result = this._iter.next();
+      if (!result.done) {
+        this._peeked = { ready: true, value: result.value };
+      }
+      return result;
+    }
+  }
+
+  next() {
+    if (this._peeked.ready) {
+      const value = this._peeked.value;
+      this._peeked = { ready: false };
+      return { done: false, value };
+    } else {
+      return this._iter.next();
+    }
+  }
+
+  [Symbol.iterator]() {
+    return this;
+  }
+}</code></pre>
+<p>This is a big blob of code, and you can skim over it if you want. The key thing is that
+in addition to <code>next</code> we also define <code>peek</code> which returns what <code>next</code> would return
+if we called, but doesn't advance the input stream.</p>
+<p>We define this as an <code>IterableIterator</code> because an instance has a <code>next</code> method we can
+call, making it an <code>Iterator</code>, but also a way to get an <code>Iterator</code> by calling <code>[Symbol.iterator]</code>,
+making it an <code>Iterable</code>. Making something an <code>Iterable</code> is nice, because then we can do</p>
+<pre><code>for (const thing of new Peekable(...))</code></pre>
+<h3>Back to lexing</h3>
+<p>Let's create a Lexer class that will contain the state we need when lexing, along
+with a few different methods.</p>
+<pre><code>class Lexer implements Iterable<string> {
+  private _iter: Peekable<string>;
+
+  constructor(input: string) {
+    this._iter = new Peekable(iterString(input))
+  }
+}</code></pre>
+<p>We construct the lexer by taking an input string, and creating a new peekable iterator
+over it. This will allow us to look at the next character in our input without consuming it</p>
+<p>The next method we'll write is:</p>
+<pre><code>*[Symbol.iterator]() {
+  yield { type: Token.Equal };
+}</code></pre>
+<p>This allows us to write things like:</p>
+<pre><code>for (const token of new Lexer('a + b')) {
+}</code></pre>
+<h3>Simple Tokens</h3>
+<p>The one character operators are very easy to lex:</p>
+<pre><code>*[Symbol.iterator]() {
+  for (let peek = this._iter.peek(); !peek.done; peek = this._iter.peek()) {
+    switch (peek.value) {
+      case '=':
+        self.advance();
+        yield { type: Token.Equal };
+        break;
+      case '+':
+        self.advance();
+        yield { type: Token.Plus };
+        break;
+      case '{':
+        self.advance();
+        yield { type: Token.LeftBrace };
+        break;
+      case '}':
+        self.advance();
+        yield { type: Token.RightBrace };
+        break;
+      case ';':
+        self.advance();
+        yield { type: Token.SemiColon };
+        break;
+  }
+}</code></pre>
+<p>We look at the next character, and as long as it's valid, we look at which single operator
+it matches, accept the character by advancing, and then yield the corresponding token.
+Everything is simple, because we only need to see one character to match it with a token,
+so far.</p>
+<p>Let's add support for numbers now:</p>
+<pre><code>*[Symbol.iterator]() {
+  for (let peek = this._iter.peek(); !peek.done; peek = this._iter.peek()) {
+    switch (peek.value) {
+      case '=':
+        // Single tokens ...
+      default:
+        if (isNumber(peek.value)) {
+          const data = self.number();
+          yield { type: Token.Number, data }
+        }
+        break;
+  }
+}
+
+number() {
+    let acc = '';
+    for (
+      let peek = this._iter.peek();
+      !peek.done && isNumber(peek.value);
+      peek = this._iter.peek()
+    ) {
+      acc += peek.value;
+      this._iter.next();
+    }
+    return acc;
+  }
+
+function isNumber(char: string): boolean {
+  return /[0-9]/.test(char);
+}</code></pre>
+<p>After matching all the single tokens, we then need to check whether or not the character
+is numeric. If it is, then delegate to the <code>number</code> method. The <code>number</code> method keeps
+feeding numeric characters into a big string, and returns once it sees a non-numeric
+character. It <em>doesn't</em> consume that character, so it's available for parsing.</p>
+<h3>Keywords / Names</h3>
+<p>We'll be doing names similarly to numbers:</p>
+<pre><code>*[Symbol.iterator]() {
+  for (let peek = this._iter.peek(); !peek.done; peek = this._iter.peek()) {
+    switch (peek.value) {
+    case '=':
+      // Single tokens ...
+    default:
+      if (isNumber(pee.value)) {
+        const data = this.number();
+        yield { type: TokenType.Number, data }
+      } else if (isLowerAlpha(peek.value)) {
+        const data = this.string();
+        yield { type: TokenType.Name, data }
+      }
+      break;
+  }
+}
+
+string() {
+  let acc = '';
+  for (
+    let peek = this._iter.peek();
+    !peek.done && isLowerAlpha(peek.value);
+    peek = this._iter.peek()
+  ) {
+    acc += peek.value;
+    this._iter.next();
+  }
+  return acc;
+}
+
+function isLowerAlpha(char: string): boolean {
+  return /[a-z]/.test(char)
+}</code></pre>
+<p>We have the same thing as we do for numbers, except that we're accepting <code>abc...</code> instead
+of <code>012..</code>. For the sake of simplicity, I haven't included the full character range. In
+practice you'd want to tweak this code slightly so that things like:</p>
+<pre><code>a22
+aA3
+snake_case</code></pre>
+<p>are also allowed by the function.</p>
+<p>The only tokens we have left are <code>let</code> and <code>in</code>. One problem we didn't have previously
+is that these tokens are currently recognized, but as names:</p>
+<pre><code>{ type: TokenType.Name, data: 'let' }
+{ type: TokenType.Name, data: 'in' }</code></pre>
+<p>We just need to check that the name we've just parsed doesn't correspond to one
+of the keywords, in which case we return the specialized token:</p>
+<pre><code>const data = this.string();
+if (data === 'let') {
+  yield { type: TokenType.Let };
+} else if (data === 'in') {
+  yield { type: TokenType.In };
+} else {
+  yield { type: TokenType.Name, data };
+}</code></pre>
+<p>Finally, let's throw an error if we don't recognize a character, instead of just stalling:</p>
+<pre><code>*[Symbol.iterator]() {
+  for (let peek = this._iter.peek(); !peek.done; peek = this._iter.peek()) {
+    switch (peek.value) {
+      default:
+        if (isNumber(peek.value)) {
+          // handling number
+        } else if (isLowerAlpha(peek.value)) {
+          // handling strings
+        } else {
+          throw new Error(`Unrecognized character: '${peek.value}'`);
+        }
+        break;
+    }
+  }
+}</code></pre>
+<h3>Skipping Whitespace</h3>
+<p>We can lex <code>a+3</code>, but we can't lex <code>a + 3</code> yet. This is because we're not handling
+any of the whitespace characters yet. We just need to add another case to our
+matching:</p>
+<pre><code>function isWhitespace(char: string): boolean {
+  return /[\n\r\s]/.char(string);
+}
+
+*[Symbol.iterator]() {
+  for (let peek = this._iter.peek(); !peek.done; peek = this._iter.peek()) {
+    switch (peek.value) {
+      case '=':
+      // Single tokens...
+      default:
+        if (isWhitespace(char)) {
+          this._iter.next();
+        } else if // ...
+        break;
+    }
+  }
+}</code></pre>
+<p>At this point, we have a complete lexer:</p>
+<pre><code>function isNumber(char: string): boolean {
+  return /[0-9]/.test(char);
+}
+
+function isLowerAlpha(char: string): boolean {
+  return /[a-z]/.test(char);
+}
+
+function isWhitespace(char: string): boolean {
+  return /[\n\r\s]/.test(char);
+}
+
+class Lexer implements Iterable<Token> {
+  private _iter: Peekable<string>;
+
+  constructor(input: string) {
+    this._iter = new Peekable(iterString(input));
+  }
+
+  *[Symbol.iterator]() {
+    for (let peek = this._iter.peek(); !peek.done; peek = this._iter.peek()) {
+      switch (peek.value) {
+        case '=':
+          this._iter.next();
+          yield { type: TokenType.Equal };
+          break;
+        case '+':
+          this._iter.next();
+          yield { type: TokenType.Plus };
+          break;
+        case '{':
+          this._iter.next();
+          yield { type: TokenType.LeftBrace };
+          break;
+        case '}':
+          this._iter.next();
+          yield { type: TokenType.RightBrace };
+          break;
+        case ';':
+          this._iter.next();
+          yield { type: TokenType.SemiColon };
+          break;
+        default:
+          if (isNumber(peek.value)) {
+            const data = this.number();
+            yield { type: TokenType.Number, data };
+          } else if (isLowerAlpha(peek.value)) {
+            const data = this.string();
+            if (data === 'let') {
+              yield { type: TokenType.Let };
+            } else if (data === 'in') {
+              yield { type: TokenType.In };
+            } else {
+              yield { type: TokenType.Name, data };
+            }
+          } else if (isWhitespace(peek.value)) {
+            this._iter.next();
+          } else {
+            throw new Error(`Unrecognized character: '${peek.value}'`);
+          }
+          break;
+      }
+    }
+  }
+
+  number() {
+    let acc = '';
+    for (
+      let peek = this._iter.peek();
+      !peek.done && isNumber(peek.value);
+      peek = this._iter.peek()
+    ) {
+      acc += peek.value;
+      this._iter.next();
+    }
+    return acc;
+  }
+
+  string() {
+    let acc = '';
+    for (
+      let peek = this._iter.peek();
+      !peek.done && isLowerAlpha(peek.value);
+      peek = this._iter.peek()
+    ) {
+      acc += peek.value;
+      this._iter.next();
+    }
+    return acc;
+  }
+}</code></pre>
+<p>We can test the program like, this:</p>
+<pre><code>for (const token of new Lexer('a + 45')) {
+  console.log(token);
+}</code></pre>
+<p>This should print out:</p>
+<pre><code>{ type: "Name", data: "a" }
+{ type: "+" }
+{ type: "Number", data: "45" }</code></pre>
+<h1>Becoming Whitespace Sensitive</h1>
+<p>Right now our language ignores all whitespace betwen characters:</p>
+<pre><code>let x = a + b in x + x</code></pre>
+<p>Lexes the exact same way as</p>
+<pre><code>let x
+= a +
+b     in x +
+  x</code></pre>
+<p>Additionally, we require explicit semicolons and braces to be able to handle the structure
+of our program. If we had written the parser, it would be working on semicolon tokens
+and brace tokens:</p>
+<pre><code>{
+f = x => x * x;
+
+y =
+  let {
+    z = 4
+  } in z + f z
+}</code></pre>
+<p>I mentioned that we won't go into parsing in this post. The reason is that a parser
+working on explicit semicolons and braces will be just fine. Our goal is to modify
+how the lexer works to become whitespace sensitive, while keeping the parser the same.</p>
+<p>Our parser will still munch on semicolons and braces. It's up to the lexer to look
+at the indentation, and emit the corresponding semicolons and braces.</p>
+<p>For example, the following program:</p>
+<pre><code>y =
+  let
+    z = 4
+  in z</code></pre>
+<p>Will give us the following token stream (right now):</p>
+<pre><code>y = let z = 4 in z</code></pre>
+<p>What we want is for our lexer to see that <code>z = 4</code> is indented to the right of <code>let</code>, and
+insert the missing braces, to get:</p>
+<pre><code>y = let { z = 4 } in z</code></pre>
+<h2>Annotated Tokens</h2>
+<p>More concretely, what we want is to take our existing lexer, and have it output tokens
+annotated with indentation information. So instead of</p>
+<pre><code>function lex(): Stream<Token> {}</code></pre>
+<p>we'll have:</p>
+<pre><code>function lex(): Stream<Annotated<Token>> {}</code></pre>
+<p>And then we'll end up making another iterator that uses these tokens to produce semicolons
+and braces as well, but let's not get ahead of ourselves here.</p>
+<p>There are two pieces of information that we want to keep track of with our tokens:</p>
+<ul><li>Whether or not the token is at the start of a line</li><li>Which column a token appears at</li></ul>
+<p>For example, if we have:</p>
+<pre><code>  a b</code></pre>
+<p>then <code>a</code> appears at the start of a line, and <code>b</code> doesn't. <code>a</code> appears at column 2 (indexing from 0),
+and <code>b</code> appears at index 4. It's clear that to be indentation sensitive, we need to keep track
+of the column. We also need to look at newlines, since we want to be able to look at:</p>
+<pre><code>let
+  x = 2
+  y = 3
+in x + y</code></pre>
+<p>and insert a semicolon between <code>x = 2</code> and <code>y = 3</code> because of that newline. It turns out that
+encoding whether or not a token occurs at the start of a line or not is sufficient information
+to do that.</p>
+<p>Let's create a new type to wrap our tokens:</p>
+<pre><code>enum LinePos {
+  Start,
+  Middle,
+}
+
+interface Annotated<T> {
+  item: T;
+  linePos: LinePos;
+  col: number;
+}</code></pre>
+<p>This adds the extra information we wanted to have from earlier.</p>
+<h3>Annotating characters</h3>
+<p>Now let's write a little class that will annotate characters with this information. We'll
+use this stream to feed into our old lexer.</p>
+<pre><code>function* annotate(input: Iterable<string>) {
+  let linePos = LinePos.Start;
+  let col = 0;
+  for (const c of input) {
+    yield { item: c, linePos, col };
+    if (c === '\n' || c === '\r') {
+      linePos = LinePos.Start;
+      col = 0;
+    } else {
+      col += 1;
+      if (linePos === LinePos.Start) {
+        linePos = LinePos.Middle;
+      }
+    }
+  }
+}</code></pre>
+<p>We change the current line position to be in the middle of a line as seen
+as we advance the column. We move to a newline whenever we encounter
+a newline character: <code>\n</code>.</p>
+<p>Now we just need to update the lexer class:</p>
+<pre><code>class Lexer implements Iterable<Annotated<Token>> {
+  private _iter: Peekable<Annotated<string>>;
+
+  constructor(input: Iterable<Annotated<string>>) {
+    this._iter = new Peekable(input);
+  }
+}</code></pre>
+<p>We also need to update the resut of the class to yield the additional
+metadata as well. For example, we have:</p>
+<pre><code>        case '=':
+          this._iter.next();
+          yield { ...peek.value, item: { type: TokenType.Equal } };
+          break;</code></pre>
+<p>We just have to do this everywhere else. You can check the full code
+at the end of this post if you want all of the details.</p>
+<p>This way of implementing things means that the position of a token
+is based on its first character. So:</p>
+<pre><code>let</code></pre>
+<p>is at column 0, because <code>l</code> is.</p>
+<h2>Implementing layout</h2>
+<p>Now that we have a stream of tokens along with their positions, we can move
+on to the most interesting part of this post, which is actually implementing
+the layout algorithm based on this information.</p>
+<p>Our idea will be to go over this stream of annotated tokens, and insert
+semicolons and braces where appropriate. We want to take the layout
+expressed as whitespace, and return the explicit braces and semicolons
+that maps to.</p>
+<h3>Keeping track of layouts</h3>
+<p>One core idea is to keep track of the current indentation level.
+For example, if we've just seen:</p>
+<pre><code>let
+  x = 3</code></pre>
+<p>Then currently we're in a block indented by 2 columns, and we expect
+tokens that continue the block to appear at the same indentation:</p>
+<pre><code>let
+  x = 3
+  y = 4</code></pre>
+<p>We can also have an explicit indentation, via an explicit <code>{</code>:</p>
+<pre><code>let { x = 3</code></pre>
+<p>In this case, we won't try and and infer any indentation at all, it's up
+to the user to add the semicolons. We know that this block is closed once
+we see an explicit <code>}</code>.</p>
+<p>To keep track of what kind of layout we're currently in, we need
+to create a type representing a layout context:</p>
+<pre><code>type Layout = { type: 'Explicit' } | { type: 'IndentedBy'; amount: number }</code></pre>
+<p>A layout is either explicit, when the user has supplied <code>{</code> themselves,
+or implicit, when the amount of whitespace tells us the indentation
+we're currently observing.</p>
+<p>We also need a couple of useful functions:</p>
+<pre><code>function indentedMore(layout: Layout, than: Layout) {
+  if (than.type === 'Explicit') {
+    return layout.type !== 'Explicit';
+  } else if (layout.type === 'Explicit') {
+    return indentedMore(than, layout);
+  } else {
+    return layout.amount > than.amount;
+  }
+}</code></pre>
+<p>This function tells us when one layout is strictly greater (<code>></code>) than
+another. This will be useful later. We consider implicit indentation
+to always be greater than explicit indentation, otherwise we look
+at how much things are indented.</p>
+<p>The second useful function is:</p>
+<pre><code>function sameIndentation(layout: Layout, comparedTo: Layout) {
+  if (layout.type !== comparedTo.type) {
+    return false;
+  }
+  if (layout.type === 'Explicit' || comparedTo.type === 'Explicit') {
+    return true;
+  }
+  return layout.amount === comparedTo.amount;
+}</code></pre>
+<p>This checks if two layouts are identical.</p>
+<h3>Tokens that start layouts</h3>
+<p>With the way our language works, only certain tokens can start layouts.
+Specifically, after <code>let</code>, we expect a layout to start, either explicitly:</p>
+<pre><code>let { x = 2; y = 3 } in x + y`</code></pre>
+<p>or implicitly, via indentation and newlines</p>
+<pre><code>let
+  x = 2
+  y = 3
+in x + y</code></pre>
+<p>So we create a function:</p>
+<pre><code>function startsLayout(typ: TokenType) {
+  return typ === TokenType.Let;
+}</code></pre>
+<p>Depending on our language, there might be more tokens here. For example
+if we added a <code>where</code> keyword, that worked similarly to let:</p>
+<pre><code>f = x
+  where
+    x = 3</code></pre>
+<p>which could also be written:</p>
+<pre><code>f = x
+  where { x = 3 }</code></pre>
+<p>We'd add that to the tokens that start layouts as well.</p>
+<h3>Layout function and rules</h3>
+<p>What we want to do is to iterate over our stream of annotated tokens,
+and insert <code>{</code>, <code>;</code> and <code>}</code> at the right moments:</p>
+<pre><code>function* layout(input: Iterable<Annotated<Token>>) {
+  let layouts: Layout[] = [];
+  const topLayout = () => (layouts.length > 0 ? layouts[0] : null);
+  let expectingLayout = true;
+
+  // ...
+}</code></pre>
+<p>We have <code>layouts</code>, which is a stack of the current layout contexts. Whenever
+we enter a new layout, by seeing a <code>{</code>, or through some other means, as we'll
+see soon.</p>
+<p><code>expectingLayout</code> is something we'll use soon enough. The idea is to keep
+track of whether or not the last token started a layout. For example
+when we see <code>let</code> we need to be ready to start a layout based on the next
+token. At the start of a file, we're expecting a layout.</p>
+<p>Now we go through the items tokens in the input stream:</p>
+<pre><code>  for (const { col, linePos, item } of input) {
+    yield item;
+  }</code></pre>
+<p>Right now all we're doing is taking out the token from the structure
+that holds it along with its position, and just yielding that. What
+we want to do is to add additional logic to insert semicolons and
+braces at the right spots.</p>
+<h4>Indented tokens</h4>
+<p>Let's say we see an indented token <code>z</code>:</p>
+<pre><code>let
+  y = let
+    x = 3
+  z</code></pre>
+<p>What we want to do in this case is end all the layouts that are further
+indented than this current token. If we're continuing the current layout,
+we want to make sure to insert a semicolon as well.</p>
+<pre><code>    let shouldHandleIndent = linePos === LinePos.Start;
+
+    if (shouldHandleIndent) {
+      const newIndentation: Layout = { type: 'IndentedBy', amount: col };
+      for (
+        let layout = topLayout();
+        layout && indentedMore(layout, newIndentation);
+        layout = topLayout()
+      ) {
+        yield { type: TokenType.RightBrace };
+      }
+      const current = topLayout();
+      if (current && sameIndentation(current, newIndentation)) {
+        yield { type: TokenType.SemiColon };
+      }
+    }</code></pre>
+<p>We say that we should handle the indent whenever the token is at the start
+of a line. As we'll see soon, this doesn't cover all cases. For example,
+<code>}</code> shouldn't work like this.</p>
+<p>Once there, we remove the current layout, and yield a <code>}</code>. This can be
+seen as "closing" the current layout. Note that we don't close explicit
+layouts implicitly like this, since an explicit layout is never considered
+as indented more than an implicit layout.</p>
+<p>Finally, if the top layout is the same as this layout, then we insert
+a semicolon, because there were other tokens that appeared in this same
+layout, and we need to seperate them by semicolons.</p>
+<p>This final rule lets us insert semicolons whenever we observe newlines.</p>
+<h4>Handling }</h4>
+<p>If we encounter a <code>}</code>. This means that the user is trying to close an
+explicit layout with <code>{</code>. We don't allow <code>}</code> to close implicit layouts.
+What we want to do is pop the current layout off, if it's explicit,
+otherwise throw an error.</p>
+<p>We have:</p>
+<pre><code>    let shouldHandleIndent = linePos === LinePos.Start;
+
+    if (item.type === TokenType.RightBrace) {
+      shouldHandleIndent = false;
+      if (topLayout()?.type === 'Explicit') {
+        layouts.pop();
+      } else {
+        throw Error('unmatched }');
+      }
+    }</code></pre>
+<p>We don't need to handle the indentation of <code>}</code> afterwards, as we mentioned
+before. We throw an error whenever the top layout is not explicit.</p>
+<h4>Handling a starter token</h4>
+<p>When we encounter a token like <code>let</code>, we need to expect a layout, and not
+handle that token as continuing an implicit layout.</p>
+<pre><code>    } else if (startsLayout(item.type)) {
+      shouldHandleIndent = false;
+      expectingLayout = true;
+    }</code></pre>
+<h4>Starting layouts</h4>
+<p>Now, if we're expecting to see a layout, we need to look at the current
+token's indentation (regardless of if it's at the start of a line or not),
+and start an explicit or implicit layout based on that:</p>
+<pre><code>    } else if (expectingLayout) {
+      expectingLayout = false;
+      shouldHandleIndent = false;</code></pre>
+<p>If we see a <code>{</code>, then that matches the expected layout, and starts
+an explicit layout:</p>
+<pre><code>      if (item.type === TokenType.LeftBrace) {
+        layouts.push({ type: 'Explicit' });
+      }</code></pre>
+<p>Otherwise, it depends on whether or not the token is indented further
+than the current context. If it is, then it can start a new layout,
+otherwise the token is continuing some layout, which might be further
+down the stack, and involves closing implicit layouts. In that case,
+we'll need to handle the token again later.</p>
+<p>So we have:</p>
+<pre><code>      } else {
+        const newIndentation: Layout = { type: 'IndentedBy', amount: col };
+        const currentIndentation = topLayout() ?? { type: 'Explicit' };
+        if (indentedMore(newIndentation, currentIndentation)) {
+          layouts.push(newIndentation);
+          yield { type: TokenType.LeftBrace };
+        } else {
+          yield { type: TokenType.LeftBrace };
+          yield { type: TokenType.RightBrace };
+          shouldHandleIndent = true;
+        }
+      }</code></pre>
+<p>Inserting a <code>{</code> when we start an implicit layout makes sense, but what's
+with inserting an empty layout <code>{ }</code>. This makes sense because we still
+need to have these characters in the layout, it's just that it's empty,
+because this token belongs to the layouts surround it. It's like seeing:</p>
+<pre><code>let
+  x = let
+  y = 2</code></pre>
+<p>When we see <code>y</code>, we insert <code>{}</code> after the second let, because it's empty.
+Now this program isn't syntactically valid, but our lexer doesn't care
+about that. That's for our parser to worry about.</p>
+<p>We make sure to set <code>shouldHandleIndent</code> to true, because this token continues
+a layout somewhere.</p>
+<h1>Conclusion</h1>
+<p>So that was a pretty lengthy post, and got into the details quite a bit.
+I had trouble going from haskell's description of their algorithm to
+an actual implementation, and hopefully this post can be useful to those
+who want a very verbose implementation of things.</p>
+<p>The final code can be found <a href=https://gist.github.com/cronokirby/aad5db650df406ceec76e35ea0c40ae2>here</a>.</p><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

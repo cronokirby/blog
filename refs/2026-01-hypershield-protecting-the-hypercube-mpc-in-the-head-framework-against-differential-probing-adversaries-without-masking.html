@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-01) HYPERSHIELD; Protecting the Hypercube MPC-in-the-Head Framework Against Differential Probing Adversaries without Masking</title>
+<meta name="description" content="AbstractPost-quantum secure digital signatures based on the MPC-in-the-Head (MPCitH) paradigm, a zero-knowledge (ZK) proof-based construction, are becoming incr">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-01-hypershield-protecting-the-hypercube-mpc-in-the-head-framework-against-differential-probing-adversaries-without-masking.html">
+<meta property="og:title" content="(2026-01) HYPERSHIELD; Protecting the Hypercube MPC-in-the-Head Framework Against Differential Probing Adversaries without Masking">
+<meta property="og:description" content="AbstractPost-quantum secure digital signatures based on the MPC-in-the-Head (MPCitH) paradigm, a zero-knowledge (ZK) proof-based construction, are becoming incr">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-01-hypershield-protecting-the-hypercube-mpc-in-the-head-framework-against-differential-probing-adversaries-without-masking.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-01) HYPERSHIELD; Protecting the Hypercube MPC-in-the-Head Framework Against Differential Probing Adversaries without Masking">
+<meta name="twitter:description" content="AbstractPost-quantum secure digital signatures based on the MPC-in-the-Head (MPCitH) paradigm, a zero-knowledge (ZK) proof-based construction, are becoming incr">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/081">(2026-01) HYPERSHIELD; Protecting the Hypercube MPC-in-the-Head Framework Against Differential Probing Adversaries without Masking</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Linda Pirker]]</li>
+
+  <li>[[Quinten Norga]]</li>
+
+  <li>[[Suparna Kundu]]</li>
+
+  <li>[[Anindya Ganguly]]</li>
+
+  <li>[[Barry van Leeuwen]]</li>
+
+  <li>[[Angshuman Karmakar]]</li>
+
+  <li>[[Ingrid Verbauwhede]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Post-quantum secure digital signatures based on the MPC-in-the-Head (MPCitH) paradigm, a zero-knowledge (ZK) proof-based construction, are becoming increasingly popular due to their small public key size. However, the development of techniques for protecting MPCitH-based schemes against side-channel attacks remains slow, despite them being critical for real-world deployment.
+In this work, we adapt the Hypercube-MPCitH framework exploiting its native use of additive secret sharing to enable inherent protection against first- and high-order differential power analysis (DPA). We first perform a sensitivity analysis of the Hypercube Syndrome Decoding in the Head (SDitH) digital signature scheme with respect to both simple and differential power analysis. Based on the insight into its side-channel sensitivity, we then propose a tweak to the signature scheme to increase its inherent resistance against DPAs by design, eliminating the need to explicitly mask large parts of the signing procedure. More specifically, this is achieved through the novel (k+1)-Hypercube ZK Protocol: the proposed tweak increases the number of hidden shares an adversary must probe to recover the secret key from one to k+1, thus achieving inherent masking order k. Typically, increasing the amount of hidden shares results in a degradation of soundness in the zero-knowledge proof and as a result increases the signature size to a point where the scheme becomes of limited practical interest. To address this, we propose a technique to select the hidden shares in a more structured and optimal fashion, by exploiting the GGM tree structure in the Hypercube-MPCitH framework. As a result, the amount of revealed seeds is reduced, thus resulting in a smaller signature size even compared to the original hypercube protocol.
+Finally, we implement and benchmark the proposed Hypercube-SDitH signature scheme, comparing it against the cost of traditional masking. We propose different parameter sets that explore a trade-off between computational overhead and signature size. For 3rd-order protection, our tweaked signature scheme only incurs a 35-50% overhead in computational cost, compared to an estimated overhead of 300% for a fully masked implementation, while the overhead in signature size stays relatively low (52%). Overall, we demonstrate that the proposed (k+1)-Hypercube ZK Protocol can be used to construct efficient, DPA-resistant MPCitH-based digital signatures.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

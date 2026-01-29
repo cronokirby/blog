@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-01) Uniform Sharing in Multiple Stages; NullFresh for Arbitrary Functions</title>
+<meta name="description" content="AbstractIn the field of hardware masking, threshold implementations are a well-known technique that provides glitch-resistant power analysis security. While the">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-01-uniform-sharing-in-multiple-stages-nullfresh-for-arbitrary-functions.html">
+<meta property="og:title" content="(2026-01) Uniform Sharing in Multiple Stages; NullFresh for Arbitrary Functions">
+<meta property="og:description" content="AbstractIn the field of hardware masking, threshold implementations are a well-known technique that provides glitch-resistant power analysis security. While the">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-01-uniform-sharing-in-multiple-stages-nullfresh-for-arbitrary-functions.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-01) Uniform Sharing in Multiple Stages; NullFresh for Arbitrary Functions">
+<meta name="twitter:description" content="AbstractIn the field of hardware masking, threshold implementations are a well-known technique that provides glitch-resistant power analysis security. While the">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/079">(2026-01) Uniform Sharing in Multiple Stages; NullFresh for Arbitrary Functions</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Artemii Ovchinnikov]]</li>
+
+  <li>[[Aein Rezaei Shahmirzadi]]</li>
+
+  <li>[[Siemen Dhooghe]]</li>
+
+</ul>
+
+
+<div class="published">2026-01-17</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>In the field of hardware masking, threshold implementations are a well-known technique that provides glitch-resistant power analysis security. While they guarantee probing security, finding a uniform sharing without additional randomness is difficult, making it challenging to apply to certain functions and, consequently, making it impossible to develop a tool that can straightforwardly generate the masked circuit. Additionally, this approach forces designers to use at least three shares in the underlying masking, which can make the design more costly. Other schemes, like DOM, which can work with two shares, often require fresh randomness. To address these issues, Shahmirzadi and Moradi introduced the NullFresh masking technique at CHES 2021. This method allows for uniform sharing with no additional randomness, using the minimal number of shares. However, similar to original threshold implementations, it is not always straightforward to find a NullFresh masking for arbitrary functions.</p>
+<p>In this work, we introduce an automated technique to provide masking for arbitrary functions, ensuring first-order security. This technique is applicable to functions where the number of output bits does not exceed the number of input bits. While this technique introduces additional register stages (resulting in higher latency and area) compared to existing methods, it addresses the automation challenges of threshold implementations, which have remained an open problem since their inception. We present the masking technique, along with proofs of glitch-extended probing security, and demonstrate its application to several ciphers, including PRINCE, MIDORI, SKINNY, KECCAK, and AES. The masked designs were verified using SILVER and PROLEAD, and tested on an FPGA through TVLA.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
