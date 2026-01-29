@@ -7,20 +7,20 @@ Previously, I worked on [Penumbra](https://penumbra.zone).
 
 # Site Map
 
-## [Posts](/Posts/index.html)
+## [Posts](/posts/index.html)
 
-## [Notes](/Notes/index.html)
+## [Notes](/notes/index.html)
 
-## [Log](/Log/index.html)
+## [Log](/log/index.html)
 
 ## Book Reviews
 - [[2025 Books]]
 - [[2026 Books]]
-## [Links](/Links/index.html)
+## [Links](/links/index.html)
 ## Misc
 If you enjoy spelunking, consider:
-- [references](/Refs/index.html)
-- [authors of references](/Actors/index.html)
+- [references](/refs/index.html)
+- [authors of references](/actors/index.html)
 
 # Links
 - [Github](https://github.com/cronokirby)
