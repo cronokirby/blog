@@ -11,7 +11,7 @@ Houllebecq's first novel to win the [[Prix Goncourt]]. While having many of the 
 
 The novel is mostly traditional, following the point of view of Jed Martin, an artist. While mostly chronological, following Jed's career, there is a certain amount of 4th wall breaking, with some bits of narration presenting a biography of Jed Martin written retrospectively. In the last part of the novel, the point of view switches a bit to that of a detective, unrelated to the main character.
 
-This distance with the narration allows reflecting on the actions of the artist, and the purpose of his artwork. This naturally puts one in a critical position behind the art. We question is techniques, purpose, and whether or not it resonates with us.
+This distance with the narration allows reflecting on the actions of the artist, and the purpose of his artwork. This naturally puts one in a critical position behind the art. We question its techniques, purpose, and whether or not it resonates with us.
 
 The story starts a bit later in Jed's career, centering his relationship with his father, who's living in an elder care center. By putting this element at the start of the novel, the theme of death and the relationship with your parents is centered, and provides a mood for the rest of the novel. Throughout it, we're very much concerned with death, and with the purpose of our work and lives.
 
