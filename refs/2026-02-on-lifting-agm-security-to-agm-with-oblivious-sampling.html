@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) On Lifting AGM Security to AGM with Oblivious Sampling</title>
+<meta name="description" content="AbstractIdealized models such as the Random Oracle Model and the Generic Group Model underpin much of modern provable security. The Algebraic Group Model (AGM)">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-on-lifting-agm-security-to-agm-with-oblivious-sampling.html">
+<meta property="og:title" content="(2026-02) On Lifting AGM Security to AGM with Oblivious Sampling">
+<meta property="og:description" content="AbstractIdealized models such as the Random Oracle Model and the Generic Group Model underpin much of modern provable security. The Algebraic Group Model (AGM)">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-on-lifting-agm-security-to-agm-with-oblivious-sampling.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) On Lifting AGM Security to AGM with Oblivious Sampling">
+<meta name="twitter:description" content="AbstractIdealized models such as the Random Oracle Model and the Generic Group Model underpin much of modern provable security. The Algebraic Group Model (AGM)">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/201">(2026-02) On Lifting AGM Security to AGM with Oblivious Sampling</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Juraj Belohorec]]</li>
+
+  <li>[[Pavel Hubáček]]</li>
+
+  <li>[[Dominik Stejskal]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-08</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Idealized models such as the Random Oracle Model and the Generic Group Model underpin much of modern provable security. The Algebraic Group Model (AGM) of Fuchsbauer, Kiltz, and Loss (CRYPTO 2018) attempts to bridge the gap to the standard model by forcing adversaries to justify every new group element via a linear representation in its inputs, and it was leveraged in many follow-up works. Lipmaa, Parisella, and Siim (TCC 2023) strengthened this framework to the AGM with Oblivious Sampling (AGMOS), which additionally lets attackers obtain random group elements without the knowledge of their discrete logarithms, reflecting the practical availability of hashing to the group via admissible encodings. Although several works already rely on AGMOS, the security arguments are still ad hoc, and it is unclear whether an AGM proof automatically extends to this richer setting. We initiate a systematic study of this question. Our main result is a generic lifting theorem: For any assumption whose verification predicate satisfies a simple structural lifting condition, every AGM reduction remains sound in AGMOS under the Find Polynomial Representation (FPR) and Tensor Oracle Find Representation (TOFR) assumptions.</p>
+<p>The lifting condition is met by a broad class of algebraic protocols. As illustrations, we lift from the AGM to the AGMOS (i) the knowledge soundness of KZG-like polynomial commitments and (ii) the security of the multivariate Adaptive Rational Strong Diffie–Hellman (ARSDH). Our results clarify the precise relationship between AGM and AGMOS and provide a black-box recipe for future work: once a proof is obtained in the AGM, one can often inherit AGMOS security with negligible additional effort. This both streamlines the use of AGMOS in forthcoming work and reinforces the confidence that schemes proven secure in the AGM remain robust when oblivious sampling is available.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

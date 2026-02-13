@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Faster Pseudorandom Correlation Generators via Walsh-Hadamard Transform</title>
+<meta name="description" content="AbstractThe past few years have witnessed the growing importance of pseudorandom correlation generators (PCGs) for generating correlated randomness with subline">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-faster-pseudorandom-correlation-generators-via-walsh-hadamard-transform.html">
+<meta property="og:title" content="(2026-02) Faster Pseudorandom Correlation Generators via Walsh-Hadamard Transform">
+<meta property="og:description" content="AbstractThe past few years have witnessed the growing importance of pseudorandom correlation generators (PCGs) for generating correlated randomness with subline">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-faster-pseudorandom-correlation-generators-via-walsh-hadamard-transform.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Faster Pseudorandom Correlation Generators via Walsh-Hadamard Transform">
+<meta name="twitter:description" content="AbstractThe past few years have witnessed the growing importance of pseudorandom correlation generators (PCGs) for generating correlated randomness with subline">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/196">(2026-02) Faster Pseudorandom Correlation Generators via Walsh-Hadamard Transform</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Zhe Li]]</li>
+
+  <li>[[Hongqing Liu]]</li>
+
+  <li>[[Chaoping Xing]]</li>
+
+  <li>[[Yizhou Yao]]</li>
+
+  <li>[[Chen Yuan]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-06</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The past few years have witnessed the growing importance of pseudorandom correlation generators (PCGs) for generating correlated randomness with sublinear communication. To date, quasi-linear time PCGs for oblivious linear evaluation (OLE) over arbitrary finite fields have been constructed under either Ring-LPN or Quasi-Abelian syndrome decoding (QA-SD) assumptions, with a throughput of millions of OLEs per second demonstrated, in particular, for binary field. However, many modern MPC protocols deal with large prime fields, in which existing PCGs suffer from a significant efficiency gap due to a quasi-linear number of {\em multiplications} involved in FFT (Fast Fourier Transform) algorithms. Moreover, FFT typically relies on FFT-friendly fields that contain large smooth multiplicative subgroups, and therefore are not well suited to popular fields, such as Mersenne prime fields.</p>
+<p>In this work, we close the gap by leveraging the well-known Walsh-Hadamard transform (WHT) in the context of QA-SD based PCGs. Although WHT is still a quasi-linear time algorithm as normal FFTs, no multiplication is needed — addition and subtraction suffice. Since multiplications over a prime field <code>$\Fp$</code> typically incur an <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mo>\log</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log{p})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">p</span></span><span class="mclose">)</span></span></span></span></span> overhead over additions, our scheme that avoids a large number of multiplications perfectly fits the large prime field setting. Experimental results show that WHT is at least one magnitude faster than FFT over a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn></mrow><annotation encoding="application/x-tex">64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span></span>-bit smooth prime field. Consequently, our PCG achieves <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>27</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">27,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></span> OLE per second over a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn></mrow><annotation encoding="application/x-tex">64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span></span>-bit prime field. This is the first full implementation of PCG for OLE over arbitrary large prime fields that we are aware of.</p>
+<p>We then build PCG for vector-OLE over arbitrary large prime fields from QA-SD assumptions, and fully implement it using the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">l</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">b</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">T</mi><mi mathvariant="sans-serif">e</mi></mrow><annotation encoding="application/x-tex">\mathsf{libOTe}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">libOTe</span></span></span></span></span></span> library. We achieve a throughput of over <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span></span> million vector-OLEs per second over a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn></mrow><annotation encoding="application/x-tex">64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">4</span></span></span></span></span>-bit prime field, roughly four times faster than state-of-the-art PCGs from either expand-accumulate (EA) codes (Boyle et al., CRYPTO 2022), or expand-convolute (EC) codes (Raghuraman et al., CRYPTO 2023).</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

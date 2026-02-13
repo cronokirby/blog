@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) On the Use of Atkin and Weber Modular Polynomials in Isogeny Proofs of Knowledge</title>
+<meta name="description" content="AbstractZero-knowledge proofs of knowledge of isogenies constitute a key building block in the design of isogeny-based signature schemes and have numerous other">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-on-the-use-of-atkin-and-weber-modular-polynomials-in-isogeny-proofs-of-knowledge.html">
+<meta property="og:title" content="(2026-02) On the Use of Atkin and Weber Modular Polynomials in Isogeny Proofs of Knowledge">
+<meta property="og:description" content="AbstractZero-knowledge proofs of knowledge of isogenies constitute a key building block in the design of isogeny-based signature schemes and have numerous other">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-on-the-use-of-atkin-and-weber-modular-polynomials-in-isogeny-proofs-of-knowledge.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) On the Use of Atkin and Weber Modular Polynomials in Isogeny Proofs of Knowledge">
+<meta name="twitter:description" content="AbstractZero-knowledge proofs of knowledge of isogenies constitute a key building block in the design of isogeny-based signature schemes and have numerous other">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/193">(2026-02) On the Use of Atkin and Weber Modular Polynomials in Isogeny Proofs of Knowledge</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Thomas den Hollander]]</li>
+
+  <li>[[Marzio Mula]]</li>
+
+  <li>[[Daniel Slamanig]]</li>
+
+  <li>[[Sebastian A. Spindler]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Zero-knowledge proofs of knowledge of isogenies constitute a key building block in the design of isogeny-based signature schemes and have numerous other practical applications. A recent line of work investigated such proofs based on generic proof systems, e.g., zk-SNARKs, along with a suitable arithmetization and in particular rank-1 constraint systems (R1CS). Cong, Lai and Levin (ACNS'23) considered proving the knowledge of an isogeny of degree <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">2^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span></span></span></span></span></span></span></span></span> between supersingular elliptic curves via modular polynomial relations. Recently, den Hollander et al. (CRYPTO'25) have shown that the use of canonical modular polynomials instead of the classical ones allows to improve on the number of constraints for the same types of isogenies, and further allows to extend this approach to isogenies of higher (though limited) degrees. Another recent work by Levin and Pedersen (ASIACRYPT'25) showed that switching from modular polynomials to radical isogeny formulas also leads to significant improvements (at least for the case of the prime <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\ell=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">ℓ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span>).</p>
+<p>A natural question that remained open is whether sticking with the modular polynomial-based approach, but switching to other candidates of modular polynomials, and in particular Atkin and Weber polynomials, is possible and gives improvements and flexibility. In this paper we show that the use of the Atkin modular polynomials enables the use of degrees not covered by existing works and improves the number of constraints for <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>&gt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\ell &gt; 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0391em;height:0.7335em;"></span><span class="mord">ℓ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span> by up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>27</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">27\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0556em;height:0.8056em;"></span><span class="mord">2</span><span class="mord">7</span><span class="mord">%</span></span></span></span></span>, while the Weber polynomials allow up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>39</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">39\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">3</span><span class="mord">9</span><span class="mord">%</span></span></span></span></span> sparser constraint systems than the current state of the art. As in our prior work on canonical modular polynomials, the adaption of well-known results to the Atkin and Weber modular polynomials also requires some technical work, especially when going to positive characteristic. To this end we expand and optimize our previous resultant-based methodology, resulting in much simpler proofs for our multiplicity theorems.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

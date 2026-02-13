@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Analysis and Vulnerabilities in zkLogin</title>
+<meta name="description" content="AbstractZero-Knowledge Authorization (ZKA) systems allow users to prove possession of externally issued credentials (e.g., JSON Web Tokens) without revealing th">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-analysis-and-vulnerabilities-in-zklogin.html">
+<meta property="og:title" content="(2026-02) Analysis and Vulnerabilities in zkLogin">
+<meta property="og:description" content="AbstractZero-Knowledge Authorization (ZKA) systems allow users to prove possession of externally issued credentials (e.g., JSON Web Tokens) without revealing th">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-analysis-and-vulnerabilities-in-zklogin.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Analysis and Vulnerabilities in zkLogin">
+<meta name="twitter:description" content="AbstractZero-Knowledge Authorization (ZKA) systems allow users to prove possession of externally issued credentials (e.g., JSON Web Tokens) without revealing th">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/227">(2026-02) Analysis and Vulnerabilities in zkLogin</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Sofia Celi]]</li>
+
+  <li>[[Hamed Haddadi]]</li>
+
+  <li>[[Kyle Den Hartog]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-11</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Zero-Knowledge Authorization (ZKA) systems allow users to prove possession of externally issued credentials (e.g., JSON Web Tokens) without revealing the credentials in full via the usage of Zero-Knowledge Proofs (ZKP). They are increasingly promoted as privacy-preserving and decentralized alternatives for authorization, and are already deployed in practice, with proposals for higher-stakes settings such as government access-control frameworks. In this work, we show that the security and privacy of zkLogin—the most widely deployed ZKA system—cannot only be reduced to the underlying ZKP. Instead, zkLogin critically depends on non-cryptographic assumptions about JWT/JSON parsing, issuer trust policy, architectural binding, and execution-environment integrity: none of which are specified or enforced as protocol-level properties.</p>
+<p>Via an analysis of the public documentation, source code and surveys on wallets and public endpoints, we identify three broad classes of vulnerabilities in zkLogin: (i) permissive, non-canonical claim extraction that admits malformed JWTs; (ii) transformation of short-lived authentication artifacts into durable authorization credentials without enforcing their issuance context (issuer, audience, subject and temporal validity binding), which enables cross-application impersonation and misuse—particularly in browser-based deployments that expose system’s material; and (iii) systemic centralization and privacy risks arising from reliance on a small set of issuers and outsourced proving infrastructure, including disclosure of user identity attributes to third-party services without consent. We note that none of the vulnerabilities identified are cryptographic in nature. Overall, our findings demonstrate that zkLogin inherits, and in some cases amplifies, fragilities of web-based authentication ecosystems, and that the security of the system cannot be reduced only to the ZKPs</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Optimizing Differential Privacy in Federated Analytics under Known Input Distributions</title>
+<meta name="description" content="AbstractDifferential privacy (DP) is one of the most efficient tools for protecting the privacy of individual data holders under computation. This property guar">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-optimizing-differential-privacy-in-federated-analytics-under-known-input-distributions.html">
+<meta property="og:title" content="(2026-02) Optimizing Differential Privacy in Federated Analytics under Known Input Distributions">
+<meta property="og:description" content="AbstractDifferential privacy (DP) is one of the most efficient tools for protecting the privacy of individual data holders under computation. This property guar">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-optimizing-differential-privacy-in-federated-analytics-under-known-input-distributions.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Optimizing Differential Privacy in Federated Analytics under Known Input Distributions">
+<meta name="twitter:description" content="AbstractDifferential privacy (DP) is one of the most efficient tools for protecting the privacy of individual data holders under computation. This property guar">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/220">(2026-02) Optimizing Differential Privacy in Federated Analytics under Known Input Distributions</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ferran Alborch]]</li>
+
+  <li>[[Andreas Athanasiou]]</li>
+
+  <li>[[Pascal Reisert]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-10</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Differential privacy (DP) is one of the most efficient tools for protecting the privacy of individual data holders under computation. This property guarantees that the computation outputs for every pair of adjacent input sets are statistically indistinguishable with respect to a given parameter ε, which is independent of the likelihood that specific inputs occur or not. While the distribution of input sets is generally unknown, in some use cases (approximate) information about it might be available. If the latter is the case, two adjacent inputs of one individual are sometimes already obfuscated by other inputs and the computation itself (i.e., without any additional noise). For example, if the sum of n independent and identically distributed uniformly random bits outputs approximately n/2, both values for the first bit remain (almost) equally likely for large n.</p>
+<p>Based on this observation, we present a new DP mechanism that uses an estimate of the input distribution to reduce the noise addition (compared to standard DP) and hence improves the accuracy of the output. We first explore this idea in the central model, where a single central party collects all data. Then, we provide a new technique (possibly of independent interest) that allows multiple entities to jointly generate reduced noise, using the property of infinite divisibility. This allows each party to individually add noise to their respective inputs, e.g., in Federated Analytics applications.</p>
+<p>We apply our theoretical results, both for the single and multi-party setups, to perform data analysis over human resources data from different subsidiaries within a corporate group. Our benchmarks show that our new DP mechanism provides more accurate outputs while retaining the same privacy level as state-of-the-art DP approaches using the geometric mechanism.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

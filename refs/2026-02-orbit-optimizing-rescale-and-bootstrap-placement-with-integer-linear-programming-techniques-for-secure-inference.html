@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Orbit; Optimizing Rescale and Bootstrap Placement with Integer Linear Programming Techniques for Secure Inference</title>
+<meta name="description" content="AbstractFully Homomorphic Encryption (FHE) allows computation on encrypted data without decrypting it. In theory, FHE makes privacy-preserving machine learning">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-orbit-optimizing-rescale-and-bootstrap-placement-with-integer-linear-programming-techniques-for-secure-inference.html">
+<meta property="og:title" content="(2026-02) Orbit; Optimizing Rescale and Bootstrap Placement with Integer Linear Programming Techniques for Secure Inference">
+<meta property="og:description" content="AbstractFully Homomorphic Encryption (FHE) allows computation on encrypted data without decrypting it. In theory, FHE makes privacy-preserving machine learning">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-orbit-optimizing-rescale-and-bootstrap-placement-with-integer-linear-programming-techniques-for-secure-inference.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Orbit; Optimizing Rescale and Bootstrap Placement with Integer Linear Programming Techniques for Secure Inference">
+<meta name="twitter:description" content="AbstractFully Homomorphic Encryption (FHE) allows computation on encrypted data without decrypting it. In theory, FHE makes privacy-preserving machine learning">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/213">(2026-02) Orbit; Optimizing Rescale and Bootstrap Placement with Integer Linear Programming Techniques for Secure Inference</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Zikai Zhou]]</li>
+
+  <li>[[William Seo]]</li>
+
+  <li>[[Edward Chen]]</li>
+
+  <li>[[Alex Ozdemir]]</li>
+
+  <li>[[Fraser Brown]]</li>
+
+  <li>[[Wenting Zheng]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-10</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Fully Homomorphic Encryption (FHE) allows computation on encrypted data without decrypting it. In theory, FHE makes privacy-preserving machine learning possible. In practice, however, it remains impractically slow for real workloads. A major source of slowdown is bootstrap operations; in CKKS, a popular FHE scheme for tensor workloads, the slowdown is compounded by scale management and rescale operations.</p>
+<p>FHE compilers aim to make bootstrap placement and scale management efficient and easy by compiling high-level programs into low-level, optimized FHE computations. Unfortunately, existing approaches miss crucial optimization opportunities because they overlook a key property of CKKS programs: bootstrap and rescale placement are fundamentally coupled through the level budget. In this paper, we present Orbit, an FHE compiler that jointly optimizes bootstrap and rescale placement through a novel Integer Linear Programming (ILP) formulation that reasons about both ciphertext level and scale constraints. To make this formulation tractable for end-to-end programs, we introduce three techniques that reduce ILP complexity while preserving optimality. Across five convolutional neural networks and multiple cryptographic parameter configurations, Orbit achieves a geometric mean speedup up to 1.19× over DaCapo, 1.73× over Orion, and 1.52× over ReSBM, keeps compilation under 6 minutes, and retains model accuracy within 0.3% of plaintext execution.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

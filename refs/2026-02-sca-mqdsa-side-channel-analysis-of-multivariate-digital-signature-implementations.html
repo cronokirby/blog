@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) SCA-MQDSA; Side-Channel Analysis of Multivariate Digital Signature Implementations</title>
+<meta name="description" content="AbstractThe rapid progress of Internet-of-Things (IoT) systems and network protocols has strengthened the demand for digital signature schemes with compact sign">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-sca-mqdsa-side-channel-analysis-of-multivariate-digital-signature-implementations.html">
+<meta property="og:title" content="(2026-02) SCA-MQDSA; Side-Channel Analysis of Multivariate Digital Signature Implementations">
+<meta property="og:description" content="AbstractThe rapid progress of Internet-of-Things (IoT) systems and network protocols has strengthened the demand for digital signature schemes with compact sign">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-sca-mqdsa-side-channel-analysis-of-multivariate-digital-signature-implementations.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) SCA-MQDSA; Side-Channel Analysis of Multivariate Digital Signature Implementations">
+<meta name="twitter:description" content="AbstractThe rapid progress of Internet-of-Things (IoT) systems and network protocols has strengthened the demand for digital signature schemes with compact sign">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/228">(2026-02) SCA-MQDSA; Side-Channel Analysis of Multivariate Digital Signature Implementations</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[N.K. Vishwaajith]]</li>
+
+  <li>[[Anindya Ganguly]]</li>
+
+  <li>[[Debranjan Pal]]</li>
+
+  <li>[[Trevor Yap]]</li>
+
+  <li>[[Puja Mondal]]</li>
+
+  <li>[[Suparna Kundu]]</li>
+
+  <li>[[Sayandeep Saha]]</li>
+
+  <li>[[Shivam Bhasin]]</li>
+
+  <li>[[Ingrid Verbauwhede]]</li>
+
+  <li>[[Angshuman Karmakar]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-11</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The rapid progress of Internet-of-Things (IoT) systems and network protocols has strengthened the demand for digital signature schemes with compact signatures and low computational overhead. However, standardized post-quantum signature schemes, such as ML-DSA, SLH-DSA, and Falcon, incur relatively large signature sizes, which limit their practicality on resource-constrained devices (RCD). To address this challenge, NIST recalled the post-quantum digital signature standardization process. It reopened the interest in alternative constructions. Signature schemes based on multivariate quadratic equations have emerged as promising candidates due to their comparatively small signature sizes and efficient verification. At the same time, these schemes are often deployed on platforms with limited physical protections, making side-channel security a critical concern.</p>
+<p>Four multivariate-based signature schemes, such as UOV, MAYO, QR-UOV, and SNOVA, were reached in the second round of the NIST post-quantum signature standardization process for further evaluation. In this work, we analyze implementations of multivariate digital signature algorithms submitted to the NIST process, with a particular focus on the MAYO signature scheme. We present an \textit{inexpensive} side-channel attack targeting nibble-sliced implementations of MAYO. Our attack operates under a minimal threat model: it does not require physical possession of the target device and succeeds using leakage obtained from a single signing execution.</p>
+<p>We perform our attacks on a ChipWhisperer-Lite platform with a 32-bit STM32F3 ARM Cortex-M4 target mounted on a CW308 UFO board, and we add the corresponding reference code along with target traces.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

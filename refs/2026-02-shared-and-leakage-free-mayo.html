@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Shared and leakage free MAYO</title>
+<meta name="description" content="AbstractThreshold signatures allow multiple parties to sign a common message by collaborating. More specifically, in a -threshold signature scheme, at least  ou">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-shared-and-leakage-free-mayo.html">
+<meta property="og:title" content="(2026-02) Shared and leakage free MAYO">
+<meta property="og:description" content="AbstractThreshold signatures allow multiple parties to sign a common message by collaborating. More specifically, in a -threshold signature scheme, at least  ou">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-shared-and-leakage-free-mayo.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Shared and leakage free MAYO">
+<meta name="twitter:description" content="AbstractThreshold signatures allow multiple parties to sign a common message by collaborating. More specifically, in a -threshold signature scheme, at least  ou">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/189">(2026-02) Shared and leakage free MAYO</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Paco Azevedo-Oliveira]]</li>
+
+  <li>[[Jordan Beraud]]</li>
+
+  <li>[[Pierre Varjabedian]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Threshold signatures allow multiple parties to sign a common message by collaborating. More specifically, in a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>t</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(t,n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></span>-threshold signature scheme, at least <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span> out of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> parties must collaborate to sign a message.</p>
+<p>Although pre-quantum threshold signature algorithms have been extensively studied, the state of the art in the creation of post-quantum threshold algorithms remains sparse. Most studies focus on signature algorithms based on structured lattice problems. In particular, few papers have studied the creation of a threshold algorithm based on UOV, despite the simplicity of the scheme.</p>
+<p>This paper proposes various algorithms for a set of parties to solve a shared linear system <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">Ax= y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">y</span></span></span></span></span> in finite fields of low characteristic.</p>
+<p>The first two algorithms securely calculate the determinant of a shared matrix. The first uses recent theoretical results on Newton's polynomials while the second adapts an algorithm by Samuelson and Berkowitz. From these algorithms, we can deduce two algorithms to solve the corresponding linear system. The last algorithm revisits an existing state-of-the-art algorithm by adding noise to the revealed matrix rank. We show that the resulting leakage will be hard to exploit.</p>
+<p>These two algorithms enable new threshold instantiations of UOV and UOV-based schemes, in particular MAYO.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

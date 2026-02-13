@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) The Verification Theater; When Formal Methods Create False Assurance in Cryptographic Libraries</title>
+<meta name="description" content="AbstractFormal verification of cryptographic implementations is frequently presented as providing "the highest level of assurance" against implementation defect">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-the-verification-theater-when-formal-methods-create-false-assurance-in-cryptographic-libraries.html">
+<meta property="og:title" content="(2026-02) The Verification Theater; When Formal Methods Create False Assurance in Cryptographic Libraries">
+<meta property="og:description" content="AbstractFormal verification of cryptographic implementations is frequently presented as providing "the highest level of assurance" against implementation defect">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-the-verification-theater-when-formal-methods-create-false-assurance-in-cryptographic-libraries.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) The Verification Theater; When Formal Methods Create False Assurance in Cryptographic Libraries">
+<meta name="twitter:description" content="AbstractFormal verification of cryptographic implementations is frequently presented as providing "the highest level of assurance" against implementation defect">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/192">(2026-02) The Verification Theater; When Formal Methods Create False Assurance in Cryptographic Libraries</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Nadim Kobeissi]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Formal verification of cryptographic implementations is frequently presented as providing "the highest level of assurance" against implementation defects. We examine this claim through a case study of Cryspen's libcrux and hpke-rs, two cryptographic libraries that are marketed as formally verified and high-assurance.</p>
+<p>We examine five vulnerabilities across these libraries. The first, a platform-dependent cryptographic output failure in SHA-3 intrinsics discovered by an independent researcher in November 2025, set the stage for our own audit, which identified four additional defects: a missing mandatory validation for X25519 Diffie-Hellman outputs, a nonce reuse vulnerability via integer overflow, ECDSA signature malleability due to absent low-S normalization, and an Ed25519 key generation defect that reduces seed entropy.</p>
+<p>We analyze why each defect fell outside the scope of the formal verification methodology employed, identify a structural pattern we term the verification boundary problem, and argue that the gap between marketing claims of verification completeness and the engineering reality of partial verification constitutes a systemic risk for adopters of formally verified cryptographic software. Our findings suggest that formal verification, while valuable for the specific properties it targets, must be complemented by traditional engineering practices and communicated with precision about its actual scope, lest it become a form of security theater.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

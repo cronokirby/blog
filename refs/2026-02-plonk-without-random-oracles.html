@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Plonk Without Random Oracles</title>
+<meta name="description" content="AbstractPlonk is one of the most influential and widely used zk-SNARKs, with proofs of constant size (0.5 kB), sublinear verification time, and circuit-independ">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-plonk-without-random-oracles.html">
+<meta property="og:title" content="(2026-02) Plonk Without Random Oracles">
+<meta property="og:description" content="AbstractPlonk is one of the most influential and widely used zk-SNARKs, with proofs of constant size (0.5 kB), sublinear verification time, and circuit-independ">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-plonk-without-random-oracles.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Plonk Without Random Oracles">
+<meta name="twitter:description" content="AbstractPlonk is one of the most influential and widely used zk-SNARKs, with proofs of constant size (0.5 kB), sublinear verification time, and circuit-independ">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/200">(2026-02) Plonk Without Random Oracles</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Georg Fuchsbauer]]</li>
+
+  <li>[[Marek Sefranek]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-08</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Plonk is one of the most influential and widely used zk-SNARKs, with proofs of constant size (0.5 kB), sublinear verification time, and circuit-independent setup. All prior security analyses of Plonk—of both knowledge soundness and zero knowledge (ZK)—are in the random-oracle model (ROM), which recent work has shown to be especially problematic in the context of proof systems. Moreover, a security proof in the ROM does not justify using a system recursively, a powerful technique currently used e.g. in "zk-rollups."</p>
+<p>We show that for analyzing Plonk, the ROM can be avoided when making the "zero-testing" (ZT) assumption on the used hash function (and the commitment scheme). ZT is a non-interactive, falsifiable hardness assumption. Assuming ZT, we prove Plonk knowledge-sound in the algebraic group model (AGM) and computationally ZK in the standard model. Using Plonk recursively can now be justified in the recursive AGM.</p>
+<p>To increase confidence in ZT, we prove that it holds in the ROM assuming the used commitment scheme is binding. Moreover, when using KZG commitments in the generic group model we show that collision resistance of the hash function implies ZT.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

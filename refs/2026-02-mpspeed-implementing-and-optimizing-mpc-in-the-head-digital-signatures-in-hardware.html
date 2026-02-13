@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) MPSpeed; Implementing and Optimizing MPC-in-the-Head Digital Signatures in Hardware</title>
+<meta name="description" content="AbstractThe Multi-Party Computation (MPC)-in-the-Head (MPCitH) framework enables the construction of post-quantum Digital Signature Algorithms (DSAs), offering">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-mpspeed-implementing-and-optimizing-mpc-in-the-head-digital-signatures-in-hardware.html">
+<meta property="og:title" content="(2026-02) MPSpeed; Implementing and Optimizing MPC-in-the-Head Digital Signatures in Hardware">
+<meta property="og:description" content="AbstractThe Multi-Party Computation (MPC)-in-the-Head (MPCitH) framework enables the construction of post-quantum Digital Signature Algorithms (DSAs), offering">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-mpspeed-implementing-and-optimizing-mpc-in-the-head-digital-signatures-in-hardware.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) MPSpeed; Implementing and Optimizing MPC-in-the-Head Digital Signatures in Hardware">
+<meta name="twitter:description" content="AbstractThe Multi-Party Computation (MPC)-in-the-Head (MPCitH) framework enables the construction of post-quantum Digital Signature Algorithms (DSAs), offering">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/206">(2026-02) MPSpeed; Implementing and Optimizing MPC-in-the-Head Digital Signatures in Hardware</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Stelios Manasidis]]</li>
+
+  <li>[[Quinten Norga]]</li>
+
+  <li>[[Suparna Kundu]]</li>
+
+  <li>[[Ingrid Verbauwhede]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-09</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The Multi-Party Computation (MPC)-in-the-Head (MPCitH) framework enables the construction of post-quantum Digital Signature Algorithms (DSAs), offering competitive public key sizes.  However, this comes at a cost of high computational complexity, resulting in high signature generation and verification times.</p>
+<p>In this work, we propose a compact and efficient hardware accelerator for Mirath, an MPCitH-based DSA and candidate in the ongoing NIST PQC standardization effort. We propose a series of algorithmic and hardware-level optimizations, focusing on Mirath's most critical operations: GGM tree-based polynomial commitments and MPC arithmetic. Firstly, we observe Mirath greatly relies on symmetric primitives (SHA3 & AES) during the GGM tree expansion and typically requires a large amount of memory to store the derived tree nodes. We propose an on-the-fly scheduling for generating and computing the GGM tree, such that a minimal amount of GGM tree nodes are stored in memory and their computations can be performed in parallel. Our methodology enables temporarily storing a minimal (and configurable) set of parent nodes in local buffers, from which the low-level tree nodes can be efficiently derived instead of repeatedly doing so from the root seed. This is achieved through a novel, hardware-friendly tree node indexing scheme, which enables efficient traversal through GGM tree nodes using only left and right shifts to find their closest previously computed ancestor. Secondly, we analyze the MPC arithmetic in Mirath and propose massively parallel and yet area-efficient arithmetic units, capable of exploiting algorithm-level parallelism in the MPCith operations. This is achieved by analyzing Mirath's proposed parameter sets and identifying the most hardware-friendly parameters, for which we design highly fine-tuned modules. Finally, we implement our unified design, which supports all Mirath operations, on FPGA and compare its performance against state-of-the-art PQC DSA hardware implementations. Compared to an implementation of the MPCitH-based SDitH scheme (TCHES 2024), we reduce on-chip BRAM by up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>81.6</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">81.6\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">8</span><span class="mord">1</span><span class="mord">.</span><span class="mord">6</span><span class="mord">%</span></span></span></span></span> and improve the area-time-product by a factor <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>52.7</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">52.7\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mord">2</span><span class="mord">.</span><span class="mord">7</span><span class="mord">×</span></span></span></span></span> up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64.8</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">64.8\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">6</span><span class="mord">4</span><span class="mord">.</span><span class="mord">8</span><span class="mord">×</span></span></span></span></span>. Overall, we demonstrate that modern MPCitH constructions can be significantly accelerated in hardware through a combination of algorithmic, architectural and low-level hardware optimizations, in line with real-world performance requirements.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
