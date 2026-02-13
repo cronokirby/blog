@@ -1,0 +1,16 @@
+---
+published: "2026-02-09"
+link: "https://eprint.iacr.org/2026/210"
+authors: ["[[Yael Tauman Kalai]]", "[[Dakshita Khurana]]", "[[Justin Raizes]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Existing protocols for classical verification of quantum computation (CVQC) consume the prover's witness state, requiring a new witness state for each invocation. Because QMA witnesses are not generally clonable, destroying the input witness means that amplifying soundness and completeness via repetition requires many copies of the witness. Building CVQC with low soundness error that uses only *one* copy of the witness has remained an open problem so far.
+> 
+> We resolve this problem by constructing a CVQC that uses a single copy of the QMA witness, has negligible completeness and soundness errors, and does *not* destroy its witness. The soundness of our CVQC is based on the post-quantum Learning With Errors (LWE) assumption.
+> 
+> To obtain this result, we define and construct two primitives (under the post-quantum LWE assumption)  for non-destructively handling superpositions of classical data, which we believe are of independent interest:
+> -  A *state preserving* classical argument for NP.
+> - Dual-mode trapdoor functions with *state recovery*.

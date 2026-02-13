@@ -1,0 +1,10 @@
+---
+published: "2026-02-11"
+link: "https://eprint.iacr.org/2026/230"
+authors: ["[[Felix Linker]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> We introduce an optimization to the Tamarin prover that reduces its search space. The optimization applies to protocol models that use equational theories with cancellative operators, for example, when modelling Diffie-Hellman groups or bilinear pairings. We prove the optimization's soundness and evaluate its performance.
