@@ -1,0 +1,12 @@
+---
+published: "2026-02-20"
+link: "https://eprint.iacr.org/2026/333"
+authors: ["[[Arka Rai Choudhuri]]", "[[Sanjam Garg]]", "[[Keewoo Lee]]", "[[Hart Montgomery]]", "[[Guru Vamsi Policharla]]", "[[Rohit Sinha]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> We initiate study on how to build a rigorous, cryptographic foundation for *proofs of personhood* - convincing, privacy-preserving evidence that a digital participant is a real, unique, and reputable human, optionally with authenticated attributes such as age or institutional affiliation. Towards this goal, we introduce a framework based on two types of credentials: *personhood credentials* (PHCs), issued by trusted authorities to attest to uniqueness and basic attributes, and *verifiable relationship credentials* (VRCs), issued peer-to-peer to capture reputation and real-world interactions.
+> 
+>     We formalize ideal functionalities that capture desirable security and privacy notions for proofs of personhood, including Sybil-resistance, authenticated personhood, and unlinkability across contexts. Finally, we then give efficient cryptographic constructions that realize these functionalities by combining PHCs, VRCs, and zero-knowledge proofs. Our results suggest that a scalable, Sybil-resistant, and decentralized proof-of-personhood layer can serve as a reusable trust substrate for a wide range of online economic, social, and civic applications.

@@ -1,0 +1,12 @@
+---
+published: "2026-02-18"
+link: "https://eprint.iacr.org/2026/317"
+authors: ["[[Xavier Boyen]]", "[[Stanislaw Jarecki]]", "[[Phillip Nazarian]]", "[[Jiayu Xu]]", "[[Tianyu Zheng]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> We propose a novel notion of Two-Factor Authenticated Key Exchange (TFA-KE), defined in the universal composability model (UC), which extends asymmetric PAKE (aPAKE) by a 2nd authentication factor in the form of a $t$-bit one-time code computed by a personal device based on a clock or counter.  Our notion strengthens the security of standard integration of aPAKE with short authentication codes by additionally slowing down offline brute-force password search in case of server compromise by a factor of $2^t$. In other words, our TFA-KE notion uses $t$-bit authentication codes not only to improve on-line security of password authentication, as is the current practice, but also to strengthen password security on server corruption, whilst retaining the ability of aPAKE to avoid the common but deplorable practice of relying on "secure-channel" encryption for password protection. 
+> 
+> We show a generic framework for implementing TFA-KE, with two efficient instantiations. Our key enabling tool is a tight one-way function (TOWF) with an algebraic structure that allows for its evaluation on a secret-shared input.  We initiate the study of such functions, and we provide two proposals which we show to be tightly one-way in the Generic Group Model. Tightness means that a function evaluation on an input sampled from domain $\mathcal{X}$ takes $\Omega(|\mathcal{X}|)$ time to invert, which in our application implies that offline password search attacks are slowed to $\Omega(|D|\cdot 2^t)$ for passwords sampled from dictionary $D$.

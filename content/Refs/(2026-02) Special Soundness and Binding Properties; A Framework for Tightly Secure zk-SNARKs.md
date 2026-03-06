@@ -1,0 +1,17 @@
+---
+published: "2026-02-19"
+link: "https://eprint.iacr.org/2026/326"
+authors: ["[[Erki K\u00fclaots]]", "[[Helger Lipmaa]]", "[[Roberto Parisella]]", "[[Janno Siim]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Interactive arguments often combine polynomial IOPs with polynomials commitment schemes (PCSs).
+>      Frequently, the interactive argument is proven to be knowledge sound, but this incurs a high security loss when applying the Fiat-Shamir transformation to obtain a non-interactive argument in the random oracle model (ROM).
+> 
+>      We introduce the notion of special soundness for polynomial IOPs, which surprisingly has not been considered before.
+>      We study relations between various binding properties of univariate PCSs. In the case of the KZG PCS, these properties can be based on falsifiable assumptions.
+>      We prove that a special-sound polynomial IOP plus a PCS under suitable binding notions gives a computationally special-sound interactive argument. By Attema, Fehr, and Klooss (TCC 2022), applying Fiat-Shamir to this argument yields a tightly knowledge-sound argument (or zk-SNARK) in the ROM under the same assumptions.
+>      In the case of the KZG PCS, we add various batching optimizations to our compiler and prove that they preserve computational special soundness.
+>     This yields a generic approach for achieving efficient zk-SNARKs with constant proof size and tight knowledge soundness in the ROM under falsifiable assumptions.
