@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) On the Concrete Hardness Gap Between MLWE and LWE</title>
+<meta name="description" content="AbstractConcrete security estimates for Module-LWE (MLWE) over an appropriate ring are often obtained by translating to an "equivalent" unstructured LWE instanc">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-on-the-concrete-hardness-gap-between-mlwe-and-lwe.html">
+<meta property="og:title" content="(2026-02) On the Concrete Hardness Gap Between MLWE and LWE">
+<meta property="og:description" content="AbstractConcrete security estimates for Module-LWE (MLWE) over an appropriate ring are often obtained by translating to an "equivalent" unstructured LWE instanc">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-on-the-concrete-hardness-gap-between-mlwe-and-lwe.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) On the Concrete Hardness Gap Between MLWE and LWE">
+<meta name="twitter:description" content="AbstractConcrete security estimates for Module-LWE (MLWE) over an appropriate ring are often obtained by translating to an "equivalent" unstructured LWE instanc">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/279">(2026-02) On the Concrete Hardness Gap Between MLWE and LWE</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Tabitha Ogilvie]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-16</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Concrete security estimates for Module-LWE (MLWE) over an appropriate ring are often obtained by translating to an "equivalent" unstructured LWE instance, which implicitly treats algebraic structure as a pure efficiency gain with no impact on security. We show that this heuristic fails for realistic parameters. In common MLWE/RLWE instantiations, an attacker can exploit symmetries to obtain hybrid attacks that are strictly stronger than the best corresponding attack on LWE, translating to a concrete hardness gap between MLWE and LWE.</p>
+<p>Our starting point is the observation that many cryptographically relevant rings admit coefficient isometries: ring elements whose multiplication acts as a signed permutation on coefficient vectors and preserves the secret and error distributions of interest. Multiplying an MLWE instance by such an isometry creates many derived instances that share the same public matrix and are therefore compatible with the same expensive offline preprocessing in hybrid attacks. We formalise this mechanism and incorporate it into both primal and dual hybrid frameworks.</p>
+<p>We instantiate coefficient isometries for power-of-two cyclotomic rings, and quantify the resulting advantage in two regimes. For sparse-secret RLWE (popular in homomorphic encryption), isometry-enabled hybrids yield gaps of up to 15 bits over LWE-based estimates. For the standardised Kyber/ML-KEM parameters, we obtain a consistent 2--3 bit gap under standard cost models. Our results demonstrate that the widely assumed equivalence between LWE and MLWE in power-of-two cyclotomics does not hold, with real world consequences for deployed schemes.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

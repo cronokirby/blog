@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Lighthouse; Single-Server Secure Aggregation with O(1) Server-Committee Communication at Scale</title>
+<meta name="description" content="AbstractSecure aggregation is a core primitive for privacy-preserving federated learning, enabling a server to compute aggregates of client updates without lear">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-lighthouse-single-server-secure-aggregation-with-o1-server-committee-communication-at-scale.html">
+<meta property="og:title" content="(2026-02) Lighthouse; Single-Server Secure Aggregation with O(1) Server-Committee Communication at Scale">
+<meta property="og:description" content="AbstractSecure aggregation is a core primitive for privacy-preserving federated learning, enabling a server to compute aggregates of client updates without lear">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-lighthouse-single-server-secure-aggregation-with-o1-server-committee-communication-at-scale.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Lighthouse; Single-Server Secure Aggregation with O(1) Server-Committee Communication at Scale">
+<meta name="twitter:description" content="AbstractSecure aggregation is a core primitive for privacy-preserving federated learning, enabling a server to compute aggregates of client updates without lear">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/346">(2026-02) Lighthouse; Single-Server Secure Aggregation with O(1) Server-Committee Communication at Scale</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Sanjam Garg]]</li>
+
+  <li>[[Alireza Kavousi]]</li>
+
+  <li>[[Dimitris Kolonelos]]</li>
+
+  <li>[[Erkan Tairi]]</li>
+
+  <li>[[Zhipeng Wang]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Secure aggregation is a core primitive for privacy-preserving federated learning, enabling a server to compute aggregates of client updates without learning individual inputs. Recent protocols have explored committee-based designs to reduce client overhead and tolerate weakly connected participants. However, existing approaches still incur communication and computation costs that scale with the number of clients and/or the size of model updates. This becomes a serious bottleneck in interaction between the server and the committee, given that model updates are high-dimensional and committee is a small set of clients.</p>
+<p>We present Lighthouse, a new secure aggregation protocol that supports one-shot client communication and achieves constant committee computation and communication overhead with server, independent of both the number of clients and the size of the input vector. Our protocol attains the best-known round complexity of two rounds, matching OPA (CRYPTO 2025) and TACITA (ePrint 2025) and improving upon Flamingo (IEEE S&P 2023) and Willow (CRYPTO 2025).  Our core technical contribution is a novel application of recent advances in batched threshold encryption, which enables succinct server–committee interaction while preserving security and correctness. Beyond asymptotic improvements over prior works, Lighthouse yields substantial concrete efficiency gains: For an aggregation with 1024 clients, we reduce server-to-committee communication by over 100× and committee-to-server communication by over 300× compared to Flamingo and Willow. Also, we present an extension that supports dynamic client participation, a critical requirement for practical deployments at scale, while preserving the asymptotic and concrete efficiency of the static protocol for clients.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

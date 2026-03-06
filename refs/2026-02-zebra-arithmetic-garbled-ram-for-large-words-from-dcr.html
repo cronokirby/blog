@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Zebra; Arithmetic Garbled RAM for Large Words from DCR</title>
+<meta name="description" content="AbstractGarbled RAM is a promising technique for scaling secure two-party computation to large datasets. It features an efficient two-round protocol and support">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-zebra-arithmetic-garbled-ram-for-large-words-from-dcr.html">
+<meta property="og:title" content="(2026-02) Zebra; Arithmetic Garbled RAM for Large Words from DCR">
+<meta property="og:description" content="AbstractGarbled RAM is a promising technique for scaling secure two-party computation to large datasets. It features an efficient two-round protocol and support">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-zebra-arithmetic-garbled-ram-for-large-words-from-dcr.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Zebra; Arithmetic Garbled RAM for Large Words from DCR">
+<meta name="twitter:description" content="AbstractGarbled RAM is a promising technique for scaling secure two-party computation to large datasets. It features an efficient two-round protocol and support">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/345">(2026-02) Zebra; Arithmetic Garbled RAM for Large Words from DCR</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Tianyao Gu]]</li>
+
+  <li>[[Ashrujit Ghoshal]]</li>
+
+  <li>[[Elaine Shi]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Garbled RAM is a promising technique for scaling secure two-party computation to large datasets. It features an efficient two-round protocol and supports each memory access with polylogarithmic overhead, thereby avoiding the prohibitive cost of RAM-to-circuit conversion. While earlier works on Garbled RAM primarily focused on establishing theoretical feasibility, recent research has increasingly emphasized concrete efficiency, culminating in constructions that achieve approximately <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>λ</mi><mi>T</mi><mi>W</mi><mo>\log</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\lambda T W \log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mclose">)</span></span></span></span></span> bandwidth cost (up to super-constant factors) for garbling a RAM with running time <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span></span>, memory size <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span>, and word size <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span></span></span></span></span>.</p>
+<p>We ask whether it is possible to further improve the bandwidth cost of Garbled RAM. In contrast, the Garbled Circuit literature has developed a rich set of techniques that remove the bandwidth's dependence on the security parameter <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span>, leading to constant-rate or even sub-constant-rate garbling schemes. However, no comparable methods are currently known for Garbled RAM.</p>
+<p>We propose a new garbling scheme for arithmetic RAM, called Zebra (short for <code>Zero Exposure B-bounded Random Accesses'').  Specifically, we show that when the word size $W$ is suitably large, we can eliminate the $\lambda$-factor dependence and achieve a bandwidth cost of $O(T W \log N)$. In this sense, our scheme can also be viewed as the RAM analogue of </code>constant-rate garbling for arithmetic circuits''.  Further, we show how to extend our techniques to support the garbling of boolean RAMs, achieving a bandwidth cost of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>T</mi><mi>W</mi><mo stretchy="false">(</mo><mo>\log</mo><mi>N</mi><mo>+</mo><mi>λ</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(T W (\log N + \lambda))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">λ</span><span class="mclose">))</span></span></span></span></span> when the word size is suitably large. We implemented Zebra and released our code through open source. Our evaluation shows a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10.1</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">10.1\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">×</span></span></span></span></span> concrete improvement in bandwidth and a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.5</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">3.5\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">3</span><span class="mord">.</span><span class="mord">5</span><span class="mord">×</span></span></span></span></span> improvement in end-to-end time relative to the state-of-the-art Garbled RAM schemes on a 256MB database with 4kB entries.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

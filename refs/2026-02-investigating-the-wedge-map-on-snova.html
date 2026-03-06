@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Investigating the Wedge Map on SNOVA</title>
+<meta name="description" content="AbstractThis paper investigates the algebraic structure of SNOVA, a NIST PQC Round 2 candidate, with a specific focus on the kernel dimension of the wedge map.">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-investigating-the-wedge-map-on-snova.html">
+<meta property="og:title" content="(2026-02) Investigating the Wedge Map on SNOVA">
+<meta property="og:description" content="AbstractThis paper investigates the algebraic structure of SNOVA, a NIST PQC Round 2 candidate, with a specific focus on the kernel dimension of the wedge map.">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-investigating-the-wedge-map-on-snova.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Investigating the Wedge Map on SNOVA">
+<meta name="twitter:description" content="AbstractThis paper investigates the algebraic structure of SNOVA, a NIST PQC Round 2 candidate, with a specific focus on the kernel dimension of the wedge map.">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/260">(2026-02) Investigating the Wedge Map on SNOVA</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Po-En Tseng]]</li>
+
+  <li>[[Lih-Chung Wang]]</li>
+
+  <li>[[Peigen Li]]</li>
+
+  <li>[[Yen-Liang Kuan]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>This paper investigates the algebraic structure of SNOVA, a NIST PQC Round 2 candidate, with a specific focus on the kernel dimension of the wedge map. We employ lifting techniques to transform the public key from the matrix ring <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="double-struck">F</mi><mi>q</mi><mrow><mi>l</mi><mo>×</mo><mi>l</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\mathbb{F}_q^{l \times l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.3831em;height:1.2322em;"></span><span class="mord"><span class="mord mathbb">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0359em;">q</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0197em;">l</span><span class="mbin mtight">×</span><span class="mord mathnormal mtight" style="margin-right:0.0197em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3831em;"><span></span></span></span></span></span></span></span></span></span></span> to an equivalent representation over the extension field <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="double-struck">F</mi><msup><mi>q</mi><mi>l</mi></msup></msub></mrow><annotation encoding="application/x-tex">\mathbb{F}_{q^l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.3387em;height:1.0276em;"></span><span class="mord"><span class="mord mathbb">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="margin-right:0.05em;top:-2.4974em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0359em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.782em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0197em;">l</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3387em;"><span></span></span></span></span></span></span></span></span></span></span>, establishing that the rank of the wedge map is a structural invariant. A key contribution of this work is the derivation of a generating function that explicitly characterizes the wedge map's kernel dimension. This algebraic analysis provides a rigorous understanding of SNOVA's geometry, verifying the safety of specific parameter sets and enabling future refined adjustments to guarantee structural security.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

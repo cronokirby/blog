@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Adams Bridge Accelerator; Bridging the Post-Quantum Transition</title>
+<meta name="description" content="AbstractQuantum computing threatens widely deployed public-key cryptosystems, driving the urgent adoption of post-quantum cryptography (PQC) in cloud and hardwa">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-adams-bridge-accelerator-bridging-the-post-quantum-transition.html">
+<meta property="og:title" content="(2026-02) Adams Bridge Accelerator; Bridging the Post-Quantum Transition">
+<meta property="og:description" content="AbstractQuantum computing threatens widely deployed public-key cryptosystems, driving the urgent adoption of post-quantum cryptography (PQC) in cloud and hardwa">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-adams-bridge-accelerator-bridging-the-post-quantum-transition.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Adams Bridge Accelerator; Bridging the Post-Quantum Transition">
+<meta name="twitter:description" content="AbstractQuantum computing threatens widely deployed public-key cryptosystems, driving the urgent adoption of post-quantum cryptography (PQC) in cloud and hardwa">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/256">(2026-02) Adams Bridge Accelerator; Bridging the Post-Quantum Transition</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Mojtaba Bisheh-Niasar]]</li>
+
+  <li>[[Emre Karabulut]]</li>
+
+  <li>[[Kiran Upadhyayula]]</li>
+
+  <li>[[Michael Norris]]</li>
+
+  <li>[[Bharat Pillilli]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-13</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Quantum computing threatens widely deployed public-key cryptosystems, driving the urgent adoption of post-quantum cryptography (PQC) in cloud and hardware-accelerated security infrastructures. This paper presents Adams Bridge, an industry-grade hardware accelerator for lattice-based PQC that integrates ML-KEM and ML-DSA within a unified architecture to maximize hardware reuse and silicon efficiency. The design features a staged, pipelined datapath that exploits multi-level parallelism to accelerate polynomial operations shared by both schemes. An optimized NTT/INTT and point-wise multiplication engine is tightly coupled with a high-throughput Keccak core and efficient hardware sampling, reducing memory overhead and eliminating pipeline stalls.</p>
+<p>Synthesized in 5 nm technology and operating at 600 MHz, Adams Bridge achieves the best reported normalized Area-Time (AT) efficiency among unified designs, offering a 27% AT improvement for ML-DSA compared to state-of-the-art architectures. The three phases of ML-DSA complete in 26, 61, and 31 <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.625em;"></span><span class="mord mathnormal">μ</span></span></span></span></span>s, respectively, while ML-KEM takes 11, 14, and 20 <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.625em;"></span><span class="mord mathnormal">μ</span></span></span></span></span>s for its corresponding stages.</p>
+<p>To address physical attack vectors, the accelerator embeds hardware-level side-channel countermeasures, including masking, shuffling, and constant-time control and arithmetic, mitigating information leakage without compromising performance. Empirical TVLA evaluation up to one million traces confirms the elimination of first-order leakage in critical datapaths. Targeted for deployment within the open-source Caliptra Root of Trust (RoT), Adams Bridge represents the first open-source PQC accelerator under the Apache 2.0 license designed for real-world hardware security systems.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

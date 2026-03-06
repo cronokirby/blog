@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) On Best-Possible One-Time Programs</title>
+<meta name="description" content="AbstractOne-time programs (OTPs) aim to let a user evaluate a program on a single input while revealing nothing else. Classical OTPs require hardware assumption">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-on-best-possible-one-time-programs.html">
+<meta property="og:title" content="(2026-02) On Best-Possible One-Time Programs">
+<meta property="og:description" content="AbstractOne-time programs (OTPs) aim to let a user evaluate a program on a single input while revealing nothing else. Classical OTPs require hardware assumption">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-on-best-possible-one-time-programs.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) On Best-Possible One-Time Programs">
+<meta name="twitter:description" content="AbstractOne-time programs (OTPs) aim to let a user evaluate a program on a single input while revealing nothing else. Classical OTPs require hardware assumption">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/413">(2026-02) On Best-Possible One-Time Programs</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Aparna Gupte]]</li>
+
+  <li>[[Jiahui Liu]]</li>
+
+  <li>[[Luowen Qian]]</li>
+
+  <li>[[Justin Raizes]]</li>
+
+  <li>[[Bhaskar Roberts]]</li>
+
+  <li>[[Mark Zhandry]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-28</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>One-time programs (OTPs) aim to let a user evaluate a program on a single input while revealing nothing else. Classical OTPs require hardware assumptions, and even with quantum information, deterministic functionalities remain impossible due to gentle-measurement attacks (Broadbent, Gutoski and Stebila, 2013). While recent works achieve positive results for randomized functionalities with high-entropy outputs, the fundamental limits and the strongest achievable security notions remain poorly understood.</p>
+<p>Inspired by analogous successes in the classical obfuscation setting, we ask for a "best-possible" analogue of obfuscation for OTPs: a generic transformation that, for any functionality, achieves the strongest one-time security achievable by any construction. Our first result is negative. We show that a generic best-possible one-time compiler cannot exist even for classical randomized functionalities. We prove this under the assumption that lossy encryption schemes exist (e.g. from either the Learning with Errors or weakly pseudorandom group actions). Our proof identifies computationally indistinguishable families for which any best-possible transformation would be forced to behave incompatibly.</p>
+<p>Given this impossibility, we introduce a natural subclass of one-time compilers called "testable one-time program" compilers, which output quantum states augmented with reflection oracles for themselves. We show that best-possible security for this subclass, i.e. best-possible testable one-time compilers, are most likely achievable. For this, we give two results. (1) We formulate a simplified, generalized Single-Effective-Query (SEQ) simulation security notion for quantum channels and show that SEQ security implies best-possible testable one-time security. (2) We construct SEQ-secure OTPs for all quantum functionalities in the classical oracle model, yielding the first positive results for arbitrary quantum channels beyond classical randomized functionalities. Thus, SEQ security could serve as a testable one-time analogue of virtual black-box (VBB) security in the many-time obfuscation setting.
+Finally, we propose stateful quantum indistinguishability obfuscation (stateful quantum iO) --- quantum state obfuscation for stateful quantum programs. We show that (1) stateful quantum iO implies best-possible testable OTPs and (2) stateful quantum iO is also achievable in the classical oracle model. These results identify stateful quantum iO as a promising approach towards best-possible testable OTPs.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

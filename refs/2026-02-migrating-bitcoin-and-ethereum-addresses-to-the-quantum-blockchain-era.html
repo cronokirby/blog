@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Migrating Bitcoin and Ethereum Addresses to the Quantum Blockchain Era</title>
+<meta name="description" content="AbstractRecent advances in quantum computing threaten the cryptographic foundations of blockchain systems, including Bitcoin and Ethereum, which rely on ellipti">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-migrating-bitcoin-and-ethereum-addresses-to-the-quantum-blockchain-era.html">
+<meta property="og:title" content="(2026-02) Migrating Bitcoin and Ethereum Addresses to the Quantum Blockchain Era">
+<meta property="og:description" content="AbstractRecent advances in quantum computing threaten the cryptographic foundations of blockchain systems, including Bitcoin and Ethereum, which rely on ellipti">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-migrating-bitcoin-and-ethereum-addresses-to-the-quantum-blockchain-era.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Migrating Bitcoin and Ethereum Addresses to the Quantum Blockchain Era">
+<meta name="twitter:description" content="AbstractRecent advances in quantum computing threaten the cryptographic foundations of blockchain systems, including Bitcoin and Ethereum, which rely on ellipti">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/352">(2026-02) Migrating Bitcoin and Ethereum Addresses to the Quantum Blockchain Era</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Mehmet Sabir Kiraz]]</li>
+
+  <li>[[Suleyman Kardas]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-21</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Recent advances in quantum computing threaten the cryptographic foundations of blockchain systems, including Bitcoin and Ethereum, which rely on elliptic-curve cryptography (ECC) for security. Algorithms such as Shor's algorithm can efficiently solve the discrete logarithm problem (DLP), enabling recovery of private keys from public keys. Existing funds, especially those tied to long-lived addresses or unspent coinbase outputs (such as Satoshi Nakamoto's bitcoins), and Ethereum externally owned accounts become vulnerable once large-scale quantum computers become available. While previous work has suggested post-quantum signature schemes and migration strategies, no widely deployed, end-to-end, backward-compatible, and privacy-preserving migration mechanism has been presented for migrating legacy funds without revealing the corresponding classical public keys on-chain.</p>
+<p>In this paper, we present a complete framework for secure migration of both spent and unspent Bitcoin and Ethereum assets to a post-quantum (PQ) security model, using a hybrid approach based on post-quantum signatures and quantum-resistant zero-knowledge proofs (ZKPs). We design zkSTARK circuits that prove knowledge of a witness linking a legacy Bitcoin or Ethereum address to a fresh PQ public key without disclosing the legacy elliptic-curve public key on-chain. We also formalize a one-way post-quantum transition model for migrated assets: legacy authorization is used only at enrollment, while future authorization semantics are governed by post-quantum credentials and migrated-state registry semantics. We further show why hash-security margins must be re-evaluated in the quantum setting by distinguishing collision resistance (BHT-style attacks, approximately <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{n/3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mtight">/3</span></span></span></span></span></span></span></span></span></span></span></span></span>) from preimage resistance (Grover-style attacks, approximately <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{n/2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mtight">/2</span></span></span></span></span></span></span></span></span></span></span></span></span>), and we motivate hash agility for migration-era commitments and registries. To enable verifiable on-chain transitions, we propose new primitives (\texttt{OP_CHECKQUANTUMSIG}, \texttt{OP_CHECKSTARKPROOF}), enabling verification of quantum-safe proofs and signatures. Our work and implementation\footnote{\href{<a href=https://github.com/skardas/pq_bitcoin}{\texttt{github.com/skardas/pq\_bitcoin}}}>https://github.com/skardas/pq_bitcoin}{\texttt{github.com/skardas/pq\_bitcoin}}}</a> provide a practical framework for securing legacy blockchain assets against quantum-era threats while preserving backward compatibility and operational continuity.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

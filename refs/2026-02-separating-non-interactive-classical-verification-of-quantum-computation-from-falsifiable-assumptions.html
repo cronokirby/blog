@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Separating Non-Interactive Classical Verification of Quantum Computation from Falsifiable Assumptions</title>
+<meta name="description" content="AbstractMahadev [SIAM J. Comput. 2022] introduced the first protocol for classical verification of quantum computation based on the Learning-with-Errors (LWE) a">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-separating-non-interactive-classical-verification-of-quantum-computation-from-falsifiable-assumptions.html">
+<meta property="og:title" content="(2026-02) Separating Non-Interactive Classical Verification of Quantum Computation from Falsifiable Assumptions">
+<meta property="og:description" content="AbstractMahadev [SIAM J. Comput. 2022] introduced the first protocol for classical verification of quantum computation based on the Learning-with-Errors (LWE) a">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-separating-non-interactive-classical-verification-of-quantum-computation-from-falsifiable-assumptions.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Separating Non-Interactive Classical Verification of Quantum Computation from Falsifiable Assumptions">
+<meta name="twitter:description" content="AbstractMahadev [SIAM J. Comput. 2022] introduced the first protocol for classical verification of quantum computation based on the Learning-with-Errors (LWE) a">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/415">(2026-02) Separating Non-Interactive Classical Verification of Quantum Computation from Falsifiable Assumptions</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Mohammed Barhoush]]</li>
+
+  <li>[[Tomoyuki Morimae]]</li>
+
+  <li>[[Ryo Nishimaki]]</li>
+
+  <li>[[Takashi Yamakawa]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-28</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Mahadev [SIAM J. Comput. 2022] introduced the first protocol for classical verification of quantum computation based on the Learning-with-Errors (LWE) assumption, achieving a 4-message interactive scheme. This breakthrough naturally raised the question of whether fewer messages are possible in the plain model. Despite its importance, this question has remained unresolved.</p>
+<p>In this work, we prove that there is no quantum black-box reduction of non-interactive classical verification of quantum computation of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="sans-serif">QMA</mtext></mrow><annotation encoding="application/x-tex">\textsf{QMA}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8194em;vertical-align:-0.125em;"></span><span class="mord text"><span class="mord textsf">QMA</span></span></span></span></span></span> to any falsifiable assumption. Here, “non-interactive” means that after an instance-independent setup, the protocol consists of a single message. This constitutes a strong negative result given that falsifiable assumptions cover almost all standard assumptions used in cryptography, including LWE.  Our separation holds under the existence of a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="sans-serif">QMA-QCMA</mtext></mrow><annotation encoding="application/x-tex">\textsf{QMA-QCMA}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8194em;vertical-align:-0.125em;"></span><span class="mord text"><span class="mord textsf">QMA-QCMA</span></span></span></span></span></span> gap problem. Essentially, these problems require a slightly stronger assumption than <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="sans-serif">QMA</mtext><mi mathvariant="normal">≠</mi><mtext mathvariant="sans-serif">QCMA</mtext></mrow><annotation encoding="application/x-tex">\textsf{QMA}\neq \textsf{QCMA}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.8889em;"></span><span class="mord text"><span class="mord textsf">QMA</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="vertical-align:-0.1944em;height:0.8889em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.125em;height:0.8194em;"></span><span class="mord text"><span class="mord textsf">QCMA</span></span></span></span></span></span>. To support the existence of such problems, we present a construction relative to a quantum unitary oracle.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Distributed Monotone-Policy Encryption for DNFs from Lattices</title>
+<meta name="description" content="AbstractDistributed monotone-policy encryption augments public-key encryption with fine-grained decryption capabilities in a trustless manner. In this scheme, u">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-distributed-monotone-policy-encryption-for-dnfs-from-lattices.html">
+<meta property="og:title" content="(2026-02) Distributed Monotone-Policy Encryption for DNFs from Lattices">
+<meta property="og:description" content="AbstractDistributed monotone-policy encryption augments public-key encryption with fine-grained decryption capabilities in a trustless manner. In this scheme, u">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-distributed-monotone-policy-encryption-for-dnfs-from-lattices.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Distributed Monotone-Policy Encryption for DNFs from Lattices">
+<meta name="twitter:description" content="AbstractDistributed monotone-policy encryption augments public-key encryption with fine-grained decryption capabilities in a trustless manner. In this scheme, u">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/318">(2026-02) Distributed Monotone-Policy Encryption for DNFs from Lattices</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Jeffrey Champion]]</li>
+
+  <li>[[David J. Wu]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Distributed monotone-policy encryption augments public-key encryption with fine-grained decryption capabilities in a trustless manner. In this scheme, users independently generate a public/private key-pair and post their public key to a public-key directory. Thereafter, anyone can encrypt a message to a set of public keys together with an access policy. Any set of users that satisfies the access policy can decrypt the ciphertext while the message should remain computationally hidden to any unsatisfying set of users. The primary efficiency requirement is succinctness: namely, the size of the ciphertext should be sublinear (or polylogarithmic) in the description length of the policy. Distributed monotone-policy encryption directly generalizes recent trustless cryptographic notions like threshold encryption with silent setup and distributed broadcast encryption.</p>
+<p>In this work, we show how to construct distributed monotone-policy encryption for Boolean formulas in disjunctive normal form (DNF formulas) that supports an unbounded number of users. Security relies on the decomposed learning with errors (LWE) assumption, a simple and falsifiable lattice assumption, in the random oracle model. Previously, such a scheme was only known from plain witness encryption in the random oracle model. Our scheme has a transparent setup and the ciphertext size is <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="sans-serif">p</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">l</mi><mi mathvariant="sans-serif">y</mi></mrow><mo stretchy="false">(</mo><mi>λ</mi><mo separator="true">,</mo><mo>\log</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathsf{poly}(\lambda, \log N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathsf" style="margin-right:0.0139em;">poly</span></span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mclose">)</span></span></span></span></span>, where <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> is the number of variables in the DNF formula.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

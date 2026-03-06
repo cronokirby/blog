@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Towards Practical Registered ABE; More Efficient, Non-monotone, and CCA-secure</title>
+<meta name="description" content="AbstractRegistered attribute-based encryption (Reg-ABE) is a new variant of attribute-based encryption (ABE) that was introduced to resolve the notorious key es">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-towards-practical-registered-abe-more-efficient-non-monotone-and-cca-secure.html">
+<meta property="og:title" content="(2026-02) Towards Practical Registered ABE; More Efficient, Non-monotone, and CCA-secure">
+<meta property="og:description" content="AbstractRegistered attribute-based encryption (Reg-ABE) is a new variant of attribute-based encryption (ABE) that was introduced to resolve the notorious key es">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-towards-practical-registered-abe-more-efficient-non-monotone-and-cca-secure.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Towards Practical Registered ABE; More Efficient, Non-monotone, and CCA-secure">
+<meta name="twitter:description" content="AbstractRegistered attribute-based encryption (Reg-ABE) is a new variant of attribute-based encryption (ABE) that was introduced to resolve the notorious key es">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/414">(2026-02) Towards Practical Registered ABE; More Efficient, Non-monotone, and CCA-secure</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Yannis Rouselakis]]</li>
+
+  <li>[[Junichi Tomida]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-28</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Registered attribute-based encryption (Reg-ABE) is a new variant of attribute-based encryption (ABE) that was introduced to resolve the notorious key escrow problem.
+In a Reg-ABE system, there is no authority that generates secret keys, and each user joins the system by generating its own public/secret key pair.
+Because of its public-key infrastructure-like model and versatile access control functionality, Reg-ABE is a promising alternative of ABE.
+In this work, we present a highly space efficient non-monotone Reg-ABE scheme with strong security.
+Specifically, the sizes of MPK and ciphertext of our scheme are both about 7.5KB, which could be more than 2000<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">×</span></span></span></span></span> and 5<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.6667em;"></span><span class="mord">×</span></span></span></span></span> smaller than those of the state-of-the-art scheme by Garg \textit{et al.}<del>(Crypto'24, GLWW), respectively, in a realistic parameter setting.
+The sizes of other elements such as helper secret key and a state that the system maintains could also become more than 40<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">×</span></span></span></span></span> smaller.
+Furthermore, our scheme supports non-monotone policies and CCA-security, neither of which GLWW supports.
+We implement our scheme together with GLWW and show that encryption of ours outperforms that of GLWW even with the above features, while decryption of ours is a few times less efficient than that of GLWW but still takes less than 0.1 seconds with a laptop.
+Our scheme is proven secure in the generic group model.
+We also present a dual system variant of our main scheme, which is CPA-secure under the MDDH assumption in the plain model.
+The variant is much simpler and more efficient than the only known non-monotone Reg-ABE scheme by Attrapadung \textit{et al.}</del>(Crypto'24).</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

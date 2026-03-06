@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Cryptanalysis of Poseidon-Based Fiat-Shamir Protocols</title>
+<meta name="description" content="AbstractPoseidon[GKR+19 ] and its successor Poseidon2[GKS23] are arithmetization-oriented  permutations proposed for hashing inside algebraic proof systems. Whi">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-cryptanalysis-of-poseidon-based-fiat-shamir-protocols.html">
+<meta property="og:title" content="(2026-02) Cryptanalysis of Poseidon-Based Fiat-Shamir Protocols">
+<meta property="og:description" content="AbstractPoseidon[GKR+19 ] and its successor Poseidon2[GKS23] are arithmetization-oriented  permutations proposed for hashing inside algebraic proof systems. Whi">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-cryptanalysis-of-poseidon-based-fiat-shamir-protocols.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Cryptanalysis of Poseidon-Based Fiat-Shamir Protocols">
+<meta name="twitter:description" content="AbstractPoseidon[GKR+19 ] and its successor Poseidon2[GKS23] are arithmetization-oriented  permutations proposed for hashing inside algebraic proof systems. Whi">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/409">(2026-02) Cryptanalysis of Poseidon-Based Fiat-Shamir Protocols</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Hayk Hovhannisyan]]</li>
+
+  <li>[[Nerses Asaturyan]]</li>
+
+  <li>[[Gohar Hovhannisyan]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-27</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Poseidon[GKR+19 ] and its successor Poseidon2[GKS23] are arithmetization-oriented
+permutations proposed for hashing inside algebraic proof systems. While there is extensive
+prior work on cryptanalysis of reduced-round Poseidon/Poseidon2 and theoretical and
+practical weaknesses of the Fiat-Shamir transform, these two attacks are typically studied
+in isolation. This work asks whether combining them i.e., instantiating Fiat-Shamir with
+Poseidon can enable new attacks.
+We design and implement multiple candidate attacks that encode verifier checks together
+with reduced-round Poseidon-based challenge derivation as explicit polynomial systems,
+targeting settings such as Sigma protocols and FRI-like degree enforcement. We evaluate
+these approaches using Gr¨obner bases. We use this model to derive Gr¨obner-basis attack
+formulations aimed at constructing verifier-accepting transcripts that violate the intended
+low-degree bound, and we report the computational bottlenecks encountered in representative
+parameter regimes.
+We also document additional explored directions, including retry-style challenge biasing
+and reduced-round investigations, in order to clarify which attacks appear more or less
+promising. Across our implementations, we do not obtain meaningful forgeries: even with
+heavily reduced Poseidon parameters, Gr¨obner-basis computations do not find solutions for
+random instances of the constructed systems. Our results provide negative evidence for
+several natural algebraic attack routes on Poseidon-based Fiat-Shamir instantiations, and
+help clarify which known Fiat-Shamir weaknesses do and do not transfer to well-structured,
+fully transcript-bound deployments.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

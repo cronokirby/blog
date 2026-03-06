@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-02) Group Encryption with Oblivious Traceability</title>
+<meta name="description" content="AbstractWe revisit Group Encryption (GE)—an encryption analogue of group signatures introduced by Kiayias et al. (Asiacrypt 2007). A GE system simultaneously">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-02-group-encryption-with-oblivious-traceability.html">
+<meta property="og:title" content="(2026-02) Group Encryption with Oblivious Traceability">
+<meta property="og:description" content="AbstractWe revisit Group Encryption (GE)—an encryption analogue of group signatures introduced by Kiayias et al. (Asiacrypt 2007). A GE system simultaneously">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-02-group-encryption-with-oblivious-traceability.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-02) Group Encryption with Oblivious Traceability">
+<meta name="twitter:description" content="AbstractWe revisit Group Encryption (GE)—an encryption analogue of group signatures introduced by Kiayias et al. (Asiacrypt 2007). A GE system simultaneously">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/405">(2026-02) Group Encryption with Oblivious Traceability</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Khoa Nguyen]]</li>
+
+  <li>[[Yanhong Xu]]</li>
+
+  <li>[[Nam Tran]]</li>
+
+  <li>[[Willy Susilo]]</li>
+
+  <li>[[Huaxiong Wang]]</li>
+
+</ul>
+
+
+<div class="published">2026-02-27</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We revisit Group Encryption (GE)—an encryption analogue of group signatures introduced by Kiayias et al. (Asiacrypt 2007). A GE system simultaneously provides anonymity and traceability for receivers who are certified group members, enabling a range of privacy-preserving applications. While prior work has extensively addressed \emph{how} to trace receivers in GE, the question of \emph{why} a ciphertext should be traceable remains unexplored. Unlike group signatures, where opening can be justified by the signed content, tracing in GE poses a dilemma because the underlying plaintext is confidential.</p>
+<p>To address this gap, we introduce Group Encryption with Oblivious Traceability (GEOT), an enhanced form of GE in which the traceability of a ciphertext <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\psi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">ψ</span></span></span></span></span> intended for receiver <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">d</mi></mrow><annotation encoding="application/x-tex">\mathsf{id}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">id</span></span></span></span></span></span> and containing message <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">w</mi></mrow><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf" style="margin-right:0.016em;">w</span></span></span></span></span> is governed by a public tracing policy <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">d</mi></mrow><mo separator="true">,</mo><mi mathvariant="bold">w</mi><mo stretchy="false">)</mo><mo>∈</mo><mrow><mn>0</mn><mo separator="true">,</mo><mn>1</mn></mrow></mrow><annotation encoding="application/x-tex">P(\mathsf{id},\mathbf{w}) \in {0,1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathsf">id</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.016em;">w</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.8389em;"></span><span class="mord"><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span></span></span></span></span></span>. Here, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">d</mi></mrow><mo separator="true">,</mo><mi mathvariant="bold">w</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(\mathsf{id},\mathbf{w})=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathsf">id</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.016em;">w</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span> denotes traceability, whereas <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mrow><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">d</mi></mrow><mo separator="true">,</mo><mi mathvariant="bold">w</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P(\mathsf{id},\mathbf{w})=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathsf">id</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf" style="margin-right:0.016em;">w</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span> ensures non-traceability. The traceability status is known to the sender but remains hidden from all parties except the opening authority, which learns nothing about <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">d</mi></mrow><annotation encoding="application/x-tex">\mathsf{id}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">id</span></span></span></span></span></span> in the non-traceable case. GEOT further supports message filtering and dynamic membership, following Nguyen et al. (PKC 2021). Filtering enforces that valid ciphertexts satisfy a public policy <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi mathvariant="bold">w</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F(\mathbf{w})=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathbf" style="margin-right:0.016em;">w</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>, while dynamicity enables users to join and leave the system over time.</p>
+<p>We formalize GEOT with concise syntax and rigorous security notions, and present a modular construction based on standard cryptographic primitives: signatures, public-key encryption, and non-interactive zero-knowledge proofs. We also give a concrete instantiation from code-based assumptions supporting arbitrary tracing and filtering policies represented by polynomial-size Boolean circuits. In addition to expressive filtering and tracing functionalities, our scheme achieves significant efficiency improvements over existing post-quantum GE constructions.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
