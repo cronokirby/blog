@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) Efficient Private Range Queries on Public Data</title>
+<meta name="description" content="AbstractRange queries can filter, aggregate, and retrieve database entries that lie in a specified multi-dimensional rectangle.  Private range queries allow a c">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-efficient-private-range-queries-on-public-data.html">
+<meta property="og:title" content="(2026-03) Efficient Private Range Queries on Public Data">
+<meta property="og:description" content="AbstractRange queries can filter, aggregate, and retrieve database entries that lie in a specified multi-dimensional rectangle.  Private range queries allow a c">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-efficient-private-range-queries-on-public-data.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) Efficient Private Range Queries on Public Data">
+<meta name="twitter:description" content="AbstractRange queries can filter, aggregate, and retrieve database entries that lie in a specified multi-dimensional rectangle.  Private range queries allow a c">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/429">(2026-03) Efficient Private Range Queries on Public Data</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Pranav Shriram Arunachalaramanan]]</li>
+
+  <li>[[Ananya Appan]]</li>
+
+  <li>[[David Heath]]</li>
+
+  <li>[[Ling Ren]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-03</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Range queries can filter, aggregate, and retrieve database entries that lie in a specified multi-dimensional rectangle.
+Private range queries allow a client to query a server's public database while keeping the client's multi-dimensional rectangle hidden.</p>
+<p>We construct RangeR, a constant-round private range query scheme that supports any associative aggregation function (e.g., SUM, MAX, TOP-K) and works with any number of servers. In the single-server setting, RangeR is orders of magnitude faster and uses 50%-90% less communication than HADES (VLDB 2025), a prior single-server private range query scheme that only supports linear aggregation functions.</p>
+<p>We describe how RangeR can be used to implement a privacy-preserving map application that can return the highest-rated restaurants near a user. Using data from <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="monospace">O</mi><mi mathvariant="monospace">p</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">n</mi><mi mathvariant="monospace">S</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">r</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">e</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">M</mi><mi mathvariant="monospace">a</mi><mi mathvariant="monospace">p</mi><mi mathvariant="monospace">s</mi></mrow><annotation encoding="application/x-tex">\mathtt{OpenStreetMaps}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.2222em;"></span><span class="mord"><span class="mord mathtt">OpenStreetMaps</span></span></span></span></span></span>, we estimate that a user can find the highest-rated restaurants within one kilometer of their location within <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span> seconds, while revealing only that the user is somewhere in the USA.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
