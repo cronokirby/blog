@@ -1,0 +1,10 @@
+---
+published: "2026-03-02"
+link: "https://eprint.iacr.org/2026/426"
+authors: ["[[Nilanjan Datta]]", "[[Avijit Dutta]]", "[[Sougata Mandal]]", "[[Hrithik Nandi]]", "[[Amlan Sinha]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> The rapid advancement of quantum computing poses significant challenges to the security of existing cryptographic constructions. Several constructions that are provably secure in the classical setting, e.g., the $3$-round Luby–Rackoff, Even–Mansour, Keyed Sum of Permutations, become vulnerable when the adversary is granted quantum oracle access (the Q2 model). In contrast, when the adversary is restricted to classical oracle queries while retaining the ability to perform quantum computations locally (the Q1 model), such attacks no longer apply. In this paper, we investigate the Q1 security of the Keyed Sum of Permutations construction and two closely related variants - one employing identical permutations and another using a single key. We prove that all three constructions achieve $n/3$-bit security in the Q1 model. In addition, for the same-key variant, we exhibit a key-recovery attack with matching complexity, thereby establishing the tightness of our security bound. For the remaining two constructions, we derive key-recovery attacks with complexity $2^{2n/3}$.

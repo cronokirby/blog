@@ -11,5 +11,7 @@ created: 2026-01-07
 - [[(2010) La Carte et le Territoire]]
 - [[(2010) My Struggle; Book 5]]
 - [[(1984) The Ark Sakura]]
+- [[(1978) The Switch]]
+- 
 # Short Fiction
 - [[(1972) The Breast]]
