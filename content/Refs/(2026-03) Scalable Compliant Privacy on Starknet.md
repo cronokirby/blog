@@ -1,0 +1,12 @@
+---
+published: "2026-03-07"
+link: "https://eprint.iacr.org/2026/474"
+authors: ["[[Lior Goldberg]]", "[[Maya Dotan]]", "[[Ittay Dror]]", "[[Gideon Kaempfer]]", "[[Nir Levi]]", "[[Noa Oved]]", "[[Arad Reder]]", "[[Anat Veredgorn]]", "[[Noa Wolfgor]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> We present a privacy protocol implemented on Starknet that enables confidential transactions while maintaining regulatory compliance. Transfers hide the sender, receiver, and amount from external observers, with validity enforced by zero-knowledge proofs generated on the client side using the Stwo STARK prover.
+> 
+> The protocol introduces three key innovations: (1) an efficient note discovery mechanism, (2) a practical compliance framework that enables an auditing entity to selectively unshield transactions upon legitimate regulatory request, and (3) anonymous integration with existing Starknet DeFi contracts. The system supports multiple token types in a single pool and leverages Starknet's native account abstraction for transaction authorization. All proof logic and contract code are written in Cairo, providing a unified codebase that simplifies auditing and development.
