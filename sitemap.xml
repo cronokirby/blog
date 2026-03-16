@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://cronokirby.com/wdc-w65c816s.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/podcast.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/papers.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/index.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/projects.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/65816-processor.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/to-read.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2005-la-possibilite-dune-ile.html</loc><lastmod>2025-06-05</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-snargs-for-np-and-non-signaling-pcps-revisited.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -545,12 +547,14 @@
 <url><loc>https://cronokirby.com/refs/2026-02-do-androids-dream-of-a-dead-internet-interactive-watermarks-for-bot-detection.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/monadic-cryptography-in-lean.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/on-ram-in-structured-computation.html</loc><lastmod>2022-08-24</lastmod></url>
+<url><loc>https://cronokirby.com/notes/fpga-programming.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/making-gos-rsa-internals-constant-time.html</loc><lastmod>2021-05-07</lastmod></url>
 <url><loc>https://cronokirby.com/notes/hidden-reliance.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/notes-on-chosen-generator-discrete-logarithms.html</loc><lastmod>2022-11-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/discrete-indiscrete-free-cofree.html</loc><lastmod>2020-12-31</lastmod></url>
 <url><loc>https://cronokirby.com/notes/some-more-notes-on-formalizing-games.html</loc><lastmod>2022-02-18</lastmod></url>
 <url><loc>https://cronokirby.com/notes/granule.html</loc><lastmod>2026-01-02</lastmod></url>
+<url><loc>https://cronokirby.com/notes/verilog.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/snes-emudev.html</loc><lastmod>2025-10-05</lastmod></url>
 <url><loc>https://cronokirby.com/notes/universal-properties-and-adjunctions.html</loc><lastmod>2020-12-27</lastmod></url>
 <url><loc>https://cronokirby.com/notes/on-verifying-public-coin-protocols-inside-zk-proofs.html</loc><lastmod>2022-08-14</lastmod></url>
@@ -572,6 +576,7 @@
 <url><loc>https://cronokirby.com/notes/cait-sith-security-4-signing.html</loc><lastmod>2023-04-16</lastmod></url>
 <url><loc>https://cronokirby.com/notes/cities-should-capture-more-tax-revenue.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/montgomery-ladder-in-ecc.html</loc><lastmod>2021-04-21</lastmod></url>
+<url><loc>https://cronokirby.com/notes/vhdl.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/saas-is-inevitable.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/simple-multi-round-fiat-shamir-with-blake3.html</loc><lastmod>2022-09-11</lastmod></url>
 <url><loc>https://cronokirby.com/notes/bit-flipping-in-state-separable-proofs.html</loc><lastmod>2022-05-03</lastmod></url>
@@ -615,6 +620,7 @@
 <url><loc>https://cronokirby.com/links/2025-what-happens-after-a.i.-destroys-college-writing.html</loc><lastmod>2025-07-01</lastmod></url>
 <url><loc>https://cronokirby.com/links/2025-mario-zechner-blog.html</loc><lastmod>2026-01-30</lastmod></url>
 <url><loc>https://cronokirby.com/links/2022-timeless-way-of-programming.html</loc><lastmod>2026-02-12</lastmod></url>
+<url><loc>https://cronokirby.com/log/2026-02-16.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/log/2025-06-26.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/log/2026-02-12.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/log/2025-07-01.html</loc><lastmod>1970-01-01</lastmod></url>
