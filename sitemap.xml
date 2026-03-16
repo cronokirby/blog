@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://cronokirby.com/wdc-w65c816s.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/podcast.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/papers.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/index.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/projects.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/65816-processor.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/to-read.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2005-la-possibilite-dune-ile.html</loc><lastmod>2025-06-05</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-snargs-for-np-and-non-signaling-pcps-revisited.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -547,6 +545,7 @@
 <url><loc>https://cronokirby.com/refs/2026-02-do-androids-dream-of-a-dead-internet-interactive-watermarks-for-bot-detection.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/monadic-cryptography-in-lean.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/on-ram-in-structured-computation.html</loc><lastmod>2022-08-24</lastmod></url>
+<url><loc>https://cronokirby.com/notes/wdc-w65c816s.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/fpga-programming.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/making-gos-rsa-internals-constant-time.html</loc><lastmod>2021-05-07</lastmod></url>
 <url><loc>https://cronokirby.com/notes/hidden-reliance.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -582,6 +581,7 @@
 <url><loc>https://cronokirby.com/notes/bit-flipping-in-state-separable-proofs.html</loc><lastmod>2022-05-03</lastmod></url>
 <url><loc>https://cronokirby.com/notes/reading-lists.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/misc-0.html</loc><lastmod>2020-12-26</lastmod></url>
+<url><loc>https://cronokirby.com/notes/65816-processor.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/local-first-software.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/nets-define-topologies.html</loc><lastmod>2021-01-15</lastmod></url>
 <url><loc>https://cronokirby.com/notes/topological-groups-are-hausdorff.html</loc><lastmod>2020-12-24</lastmod></url>
