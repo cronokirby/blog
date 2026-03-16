@@ -6,6 +6,16 @@ tags:
 ---
 This page is intended to collect information about developing emulators for the [[SNES]].
 
+# Architecture
+
+## CPU
+Uses a [[Ricoh 5A22]] CPU, which is based on the [[WDC W65C816S]], in turn an evolution of the classic [[6502 ISA]], with 16 bit functionality.
+
+## Assembly
+
+### References
+- https://undisbeliever.net/snesdev/65816-opcodes.html
+
 # Resources
 
 # Docs
