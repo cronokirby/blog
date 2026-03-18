@@ -12,6 +12,6 @@ created: 2026-01-07
 - [[(2010) My Struggle; Book 5]]
 - [[(1984) The Ark Sakura]]
 - [[(1978) The Switch]]
-- 
+- [[(2011) My Struggle; Book 6]]
 # Short Fiction
 - [[(1972) The Breast]]
