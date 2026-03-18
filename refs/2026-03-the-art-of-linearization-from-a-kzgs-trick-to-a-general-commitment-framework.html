@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) The Art of Linearization; From a KZG’s Trick to a General Commitment Framework</title>
+<meta name="description" content="AbstractA useful linearization technique (or a trick) was introduced in the Marlin and Plonk SNARKs, which significantly reduces the number of KZG polynomial co">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-the-art-of-linearization-from-a-kzgs-trick-to-a-general-commitment-framework.html">
+<meta property="og:title" content="(2026-03) The Art of Linearization; From a KZG’s Trick to a General Commitment Framework">
+<meta property="og:description" content="AbstractA useful linearization technique (or a trick) was introduced in the Marlin and Plonk SNARKs, which significantly reduces the number of KZG polynomial co">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-the-art-of-linearization-from-a-kzgs-trick-to-a-general-commitment-framework.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) The Art of Linearization; From a KZG’s Trick to a General Commitment Framework">
+<meta name="twitter:description" content="AbstractA useful linearization technique (or a trick) was introduced in the Marlin and Plonk SNARKs, which significantly reduces the number of KZG polynomial co">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/458">(2026-03) The Art of Linearization; From a KZG’s Trick to a General Commitment Framework</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Janno Siim]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>A useful linearization technique (or a trick) was introduced in the Marlin and Plonk SNARKs, which significantly reduces the number of KZG polynomial commitment openings a SNARK prover has to send. Subsequently, many other KZG-based protocols have taken advantage of it.</p>
+<p>We revisit and formalize this technique:
+– We define a Linearization Polynomial Commitment Scheme (LPCS) that abstracts their linearization technique.
+– We formalize LinKZG, a LPCS version of the KZG commitment scheme, and show that it achieves a weak form of extractability under a target group version of the ARSDH assumption. We show that Plonk is secure under the same assumption in the ROM.
+– We show how to construct LPCSs from any homomorphic polynomial commitment scheme. Thus, enabling the linearization technique also for those polynomial commitment schemes, and potentially improving the efficiency of many other SNARKs.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

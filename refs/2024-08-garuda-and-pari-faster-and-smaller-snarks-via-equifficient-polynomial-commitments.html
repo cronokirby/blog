@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2024-08) Garuda and Pari; Faster and Smaller SNARKs via Equifficient Polynomial Commitments</title>
+<meta name="description" content="AbstractSNARKs are powerful cryptographic primitives that allow a prover to produce a succinct proof of a computation. Two key goals of SNARK research are to mi">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2024-08-garuda-and-pari-faster-and-smaller-snarks-via-equifficient-polynomial-commitments.html">
+<meta property="og:title" content="(2024-08) Garuda and Pari; Faster and Smaller SNARKs via Equifficient Polynomial Commitments">
+<meta property="og:description" content="AbstractSNARKs are powerful cryptographic primitives that allow a prover to produce a succinct proof of a computation. Two key goals of SNARK research are to mi">
+<meta property="og:url" content="https://cronokirby.com/refs/2024-08-garuda-and-pari-faster-and-smaller-snarks-via-equifficient-polynomial-commitments.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2024-08) Garuda and Pari; Faster and Smaller SNARKs via Equifficient Polynomial Commitments">
+<meta name="twitter:description" content="AbstractSNARKs are powerful cryptographic primitives that allow a prover to produce a succinct proof of a computation. Two key goals of SNARK research are to mi">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2024/1245">(2024-08) Garuda and Pari; Faster and Smaller SNARKs via Equifficient Polynomial Commitments</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Michel Dellepere]]</li>
+
+  <li>[[Pratyush Mishra]]</li>
+
+  <li>[[Alireza Shirzad]]</li>
+
+</ul>
+
+
+<div class="published">2024-08-06</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>SNARKs are powerful cryptographic primitives that allow a prover to produce a succinct proof of a computation. Two key goals of SNARK research are to minimize the size of the proof and to minimize the time required to generate the proof. In this work, we present new SNARK constructions that push the frontier on both of these goals.</p>
+<p>Our first construction, Pari, is a SNARK that achieves the smallest proof size amongst <em>all</em> known SNARKs. Specifically, Pari achieves a proof size of just two group elements and two field elements, which, when instantiated with the BLS12-381 curve, totals just 160 bytes, smaller than that of Groth16 [Groth, EUROCRYPT '16] and Polymath [Lipmaa, CRYPTO '24].</p>
+<p>Our second construction, Garuda, is a SNARK that reduces proof generation time by supporting, for the first time, arbitrary "custom" gates and <em>free</em> linear gates. To demonstrate Garuda's performance, we implement and evaluate it, and show that it provides significant prover-time savings compared to both the state-of-the-art SNARKs (Groth16 and HyperPlonk [EUROCRYPT '22])</p>
+<p>Both constructions rely on a new cryptographic primitive: "equifficient" polynomial commitment schemes that enforce that committed polynomials have the same representation in particular bases. We provide both rigorous security definitions for this primitive as well as efficient constructions for univariate and multilinear polynomials.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

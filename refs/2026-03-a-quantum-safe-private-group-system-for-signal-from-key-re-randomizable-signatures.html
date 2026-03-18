@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) A Quantum-Safe Private Group System for Signal from Key Re-Randomizable Signatures</title>
+<meta name="description" content="AbstractInstant messaging services are an integral part of today's communication and their privacy has wide societal implications. Major messengers deploy end-t">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-a-quantum-safe-private-group-system-for-signal-from-key-re-randomizable-signatures.html">
+<meta property="og:title" content="(2026-03) A Quantum-Safe Private Group System for Signal from Key Re-Randomizable Signatures">
+<meta property="og:description" content="AbstractInstant messaging services are an integral part of today's communication and their privacy has wide societal implications. Major messengers deploy end-t">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-a-quantum-safe-private-group-system-for-signal-from-key-re-randomizable-signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) A Quantum-Safe Private Group System for Signal from Key Re-Randomizable Signatures">
+<meta name="twitter:description" content="AbstractInstant messaging services are an integral part of today's communication and their privacy has wide societal implications. Major messengers deploy end-t">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/453">(2026-03) A Quantum-Safe Private Group System for Signal from Key Re-Randomizable Signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Graeme Connell]]</li>
+
+  <li>[[Sebastian Faller]]</li>
+
+  <li>[[Felix Günther]]</li>
+
+  <li>[[Julia Hesse]]</li>
+
+  <li>[[Vadim Lyubashevsky]]</li>
+
+  <li>[[Rolfe Schmidt]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-04</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Instant messaging services are an integral part of today's communication and their privacy has wide societal implications. Major messengers deploy end-to-end encryption, hiding message contents from the service provider. Group messaging, however, creates the challenge of also keeping the group membership list private.</p>
+<p>The Signal messenger currently implements private group management using techniques inspired by Chase, Perrin, and Zaverucha (CCS 2020). Transitioning this system to quantum-safe turns out to be challenging: While one-to-one messaging can often adopt the newly standardized KEMs and signatures in a relatively direct way, private group management is more complex. Signal’s existing design heavily relies on the discrete-log structure to combine anonymous credentials, verifiable encryption, and oblivious PRFs for privacy and functionality. Quantum-safe versions of these components are unfortunately, typically far less efficient, requiring heavy zero-knowledge proofs and large communication per group operation. As a result, simply "swapping in" quantum-safe primitives is unlikely to yield an optimal protocol.</p>
+<p>This paper reconsiders the design of the entire group system from the ground-up.  Our result is a scheme that possesses the same strong privacy guarantees, but is built in a more modular way using simpler underlying cryptographic building blocks that permit a more efficient quantum-safe instantiation.  The modularity of our protocol further allows for gradual migration to quantum-safe:  we can immediately transition components vulnerable to harvest-now-decrypt-later attacks (such as classical public-key encryption, computationally hiding commitments, etc.) while deferring the transition of other building blocks, such as authentication.
+We prove our design secure in an extended security model that more comprehensively captures the rich feature set of Signal's group messaging system.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

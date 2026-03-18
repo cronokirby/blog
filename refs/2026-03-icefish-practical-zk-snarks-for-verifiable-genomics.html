@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) Icefish; Practical zk-SNARKs for Verifiable Genomics</title>
+<meta name="description" content="AbstractIndividual genomic data is a uniquely sensitive type of user data. While many papers have considered using Multi-Party Computation (MPC) or Fully Homomo">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-icefish-practical-zk-snarks-for-verifiable-genomics.html">
+<meta property="og:title" content="(2026-03) Icefish; Practical zk-SNARKs for Verifiable Genomics">
+<meta property="og:description" content="AbstractIndividual genomic data is a uniquely sensitive type of user data. While many papers have considered using Multi-Party Computation (MPC) or Fully Homomo">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-icefish-practical-zk-snarks-for-verifiable-genomics.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) Icefish; Practical zk-SNARKs for Verifiable Genomics">
+<meta name="twitter:description" content="AbstractIndividual genomic data is a uniquely sensitive type of user data. While many papers have considered using Multi-Party Computation (MPC) or Fully Homomo">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/463">(2026-03) Icefish; Practical zk-SNARKs for Verifiable Genomics</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Alexander Frolov]]</li>
+
+  <li>[[Maurice Shih]]</li>
+
+  <li>[[Rob Patro]]</li>
+
+  <li>[[Ian Miers]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Individual genomic data is a uniquely sensitive type of user data. While many papers have considered using Multi-Party Computation (MPC) or Fully Homomorphic Encryption (FHE) to allow collaborators to study combined genomic datasets they cannot share, few have considered verifying the results of genomic computations, either in research studies or in the emerging area of personalized genetic therapies.</p>
+<p>In this paper, we initiate the first systematic study of zero-knowledge proofs for verifiable genomics, providing both building blocks for verifying common operations in computational genomics, such as sequence alignment, and exploring two end-to-end applications:</p>
+<p>Verifiable Genome-Wide Association Studies: A Genome-Wide Association Study (GWAS) study operates over a repository of genomic data, identifying statistical correlations between genetic variations and observed traits or medical conditions. Our system enables third parties to verify that research was honestly computed over an authenticated, untampered database, ensuring both the integrity of the underlying data set and the correctness of the resulting science. We achieve practical performance (<20 minutes proving time) for studies of sizes equal to those in the existing genomics literature.</p>
+<p>Verifiable CRISPR Eligibility: We propose using zk-SNARKs in the context of gene engineering (e.g. CRISPR). To our knowledge, this is a new use case for zk-SNARKs. We implement and optimize models for detecting “on-target” and “off-target” sites for a CRISPR probe in zk-SNARKs, so users can, for example, demonstrate eligibility for a therapy or trial without having to reveal their own DNA sequence.</p>
+<p>In support of these applications, we develop new building blocks, like zero-knowledge proofs of sequence alignment that are 30x faster than the prior state of the art, and storage-efficient indexes for Merkle trees for large scale genomic data that asymptotically reduce storage costs.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

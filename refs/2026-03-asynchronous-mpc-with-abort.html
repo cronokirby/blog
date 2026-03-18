@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) Asynchronous MPC with Abort</title>
+<meta name="description" content="AbstractMost prior works on secure Multi-Party Computation (MPC) in asynchronous networks study Guaranteed Output Delivery (GOD), meaning that all parties learn">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-asynchronous-mpc-with-abort.html">
+<meta property="og:title" content="(2026-03) Asynchronous MPC with Abort">
+<meta property="og:description" content="AbstractMost prior works on secure Multi-Party Computation (MPC) in asynchronous networks study Guaranteed Output Delivery (GOD), meaning that all parties learn">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-asynchronous-mpc-with-abort.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) Asynchronous MPC with Abort">
+<meta name="twitter:description" content="AbstractMost prior works on secure Multi-Party Computation (MPC) in asynchronous networks study Guaranteed Output Delivery (GOD), meaning that all parties learn">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/455">(2026-03) Asynchronous MPC with Abort</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ananya Appan]]</li>
+
+  <li>[[David Heath]]</li>
+
+  <li>[[Ling Ren]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-04</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Most prior works on secure Multi-Party Computation (MPC) in asynchronous networks study Guaranteed Output Delivery (GOD), meaning that all parties learn the function output. Asynchronous MPC protocols with GOD necessarily tolerate only t < n/3 corruptions, and they necessarily allow the adversary to exclude the inputs of up to t honest parties from the computation, a phenomenon referred to as input loss. Seeking improvements to threshold/input loss, we consider weakening GOD to security with abort, a standard notion studied in the context of synchronous networks. Unfortunately we show that, when these standard notions are applied in asynchrony, it is not possible to improve the corruption threshold or the input loss.</p>
+<p>We therefore study relaxations of these standard notions under which protocols can be improved. In particular, we propose a relaxation of the standard notion of correctness for asynchronous MPC protocols. Our relaxed notion requires only that parties obtain the correct output when all parties are honest and when at most a threshold A of the parties are asynchronous. We present several impossibility and feasibility results that completely characterize what is possible in the context of our relaxed correctness. For instance, it is possible to achieve selective abort even when t < n parties are corrupt if (and only if) A < (n-t)/2, but it is impossible to achieve unanimous abort unless t < n/3, even when A=0. We additionally propose a new notion of identifiable abort for asynchronous networks (aIA), and we show that we can achieve fair MPC with aIA and min(A,t) input loss.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

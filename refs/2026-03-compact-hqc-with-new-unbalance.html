@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) Compact HQC with new (un)balance</title>
+<meta name="description" content="AbstractHamming Quasi-Cyclic (HQC) is a leading code-based key-encapsulation mechanism (KEM), recently selected by NIST for standardization, whose bandwidth and">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-compact-hqc-with-new-unbalance.html">
+<meta property="og:title" content="(2026-03) Compact HQC with new (un)balance">
+<meta property="og:description" content="AbstractHamming Quasi-Cyclic (HQC) is a leading code-based key-encapsulation mechanism (KEM), recently selected by NIST for standardization, whose bandwidth and">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-compact-hqc-with-new-unbalance.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) Compact HQC with new (un)balance">
+<meta name="twitter:description" content="AbstractHamming Quasi-Cyclic (HQC) is a leading code-based key-encapsulation mechanism (KEM), recently selected by NIST for standardization, whose bandwidth and">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/461">(2026-03) Compact HQC with new (un)balance</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Chaofeng Guan]]</li>
+
+  <li>[[Lan Luo]]</li>
+
+  <li>[[Haodong Jiang]]</li>
+
+  <li>[[Jianhua Hou]]</li>
+
+  <li>[[Tong Yu]]</li>
+
+  <li>[[Hong Wang]]</li>
+
+  <li>[[Kangquan Li]]</li>
+
+  <li>[[Longjiang Qu]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Hamming Quasi-Cyclic (HQC) is a leading code-based key-encapsulation mechanism (KEM), recently selected by NIST for standardization, whose bandwidth and efficiency are balanced with the concrete cost of information-set decoding (ISD) attacks.
+However, the current balance relies on (1) the decryption-failure-rate (DFR) is directly configured to be less than <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>λ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-\lambda}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span></span> (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span> is the security parameter), rather than carefully determined by choosing conservative parameters to resist known attacks as the Kyber team did in the design of NIST FIPS 203; (2) the error distribution in the underlying quasi-cyclic syndrome decoding problem is restricted to be balanced.</p>
+<p>In this paper, we show how to quantitatively and conservatively evaluate the impact of removing the aforementioned two restrictions on the complexities of known attacks, and thus find a new balance among bandwidth, efficiency, and security for HQC.
+In detail, we first formalize the best-known decryption-failure attack against HQC, and derive an upper bound on the probability that an adversary triggers a decryption-failure event under realistic query and time limits, enabling an attack-aware upper bound on the secure DFR.
+Second, we quantify how the weight distribution of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi mathvariant="bold">r</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi mathvariant="bold">r</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="bold">e</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\mathbf{r}_1, \mathbf{r}_2, \mathbf{e})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-left:0em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathbf">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf">e</span><span class="mclose">)</span></span></span></span></span> (the random low-weight polynomials used in encryption) affects the concrete cost of ISD attacks and DFR. This yields an \emph{unbalanced} weight strategy that strictly lowers the DFR without sacrificing the targeted bit security, leading to a new variant called \emph{Unbalanced HQC (UHQC)}.
+By combining these analyses, we provide optimized parameters for UHQC. Across all NIST security levels, UHQC reduces bandwidth by 10-12% and improves runtime by 6-8%.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
