@@ -14,5 +14,6 @@ created: 2026-01-07
 - [[(1978) The Switch]]
 - [[(2011) My Struggle; Book 6]]
 - [[(1969) Frysepunktet]] (Freezing Point)
+- [[(2024) Rejection]]
 # Short Fiction
 - [[(1972) The Breast]]
