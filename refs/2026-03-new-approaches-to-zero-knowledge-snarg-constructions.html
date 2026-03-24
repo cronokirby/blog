@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) New Approaches to Zero-Knowledge SNARG Constructions</title>
+<meta name="description" content="AbstractZero-Knowledge Succinct Non-Interactive Arguments (zkSNARGs) are SNARGs in which the proof reveals nothing except the validity of the claim. zkSNARGs fo">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-new-approaches-to-zero-knowledge-snarg-constructions.html">
+<meta property="og:title" content="(2026-03) New Approaches to Zero-Knowledge SNARG Constructions">
+<meta property="og:description" content="AbstractZero-Knowledge Succinct Non-Interactive Arguments (zkSNARGs) are SNARGs in which the proof reveals nothing except the validity of the claim. zkSNARGs fo">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-new-approaches-to-zero-knowledge-snarg-constructions.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) New Approaches to Zero-Knowledge SNARG Constructions">
+<meta name="twitter:description" content="AbstractZero-Knowledge Succinct Non-Interactive Arguments (zkSNARGs) are SNARGs in which the proof reveals nothing except the validity of the claim. zkSNARGs fo">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/562">(2026-03) New Approaches to Zero-Knowledge SNARG Constructions</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Chaya Ganesh]]</li>
+
+  <li>[[Mor Weiss]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Zero-Knowledge Succinct Non-Interactive Arguments (zkSNARGs) are SNARGs in which the proof reveals nothing except the validity of the claim. zkSNARGs for NP can be constructed generically from SNARGs for NP using a Non-interactive Zero-knowledge (NIZK) proof, but this transformation uses either the NIZK or the SNARG in a non-black-box way.</p>
+<p>We design a new SNARGs-to-zkSNARGs transformation that is conceptually different from the NIZK+SNARG approach. Our transformation is inspired by the elegant construction of succinct interactive ZK arguments of Ishai, Mahmoody and Sahai (TCC`12) which combines a cryptographic hash function with an information theoretic ZK proof system (specifically, a Probabilistically-Checkable Proof).
+Our construction takes a first step towards fully black-box (BB) zkSNARG constructions: it uses the underlying SNARG as a black-box (though the other cryptographic components are used in a non-BB way). Our transformation is applicable to SNARGs for sub-classes of NP: batched NP computations (i.e., BARGs); and languages that have computational non-signaling PCPs, which contains NTISP (non-deterministic bounded space).</p>
+<p>As a corollary, we get zkBARGs for NP, and zkSNARGs for NTISP, from the Learning With Errors (LWE) assumption. Thus, our results give a scaled-down version of the zkSNARGs-to-SNARGs reduction for NP, showing that by restricting to a sub-class of NP, the zkSNARG construction can be based on standard assumptions.</p>
+<p>A main ingredient underlying our transformation is a new commitment primitive, called Hiding Somewhere-Extractable commitment (HSE), which we introduce and construct based on LWE. This commitment primitive enhances somewhere statistically-binding hash functions (Hubáček and Wichs, ITCS 2015) to also guarantee hiding, and could be of independent interest.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

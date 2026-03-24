@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) Aggregator-Based Voting using proof of Partition</title>
+<meta name="description" content="AbstractWe present Aggios, a scalable and privacy preserving proxy voting system designed for frequent and large-scale elections such as Decentralized Autonomou">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-aggregator-based-voting-using-proof-of-partition.html">
+<meta property="og:title" content="(2026-03) Aggregator-Based Voting using proof of Partition">
+<meta property="og:description" content="AbstractWe present Aggios, a scalable and privacy preserving proxy voting system designed for frequent and large-scale elections such as Decentralized Autonomou">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-aggregator-based-voting-using-proof-of-partition.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) Aggregator-Based Voting using proof of Partition">
+<meta name="twitter:description" content="AbstractWe present Aggios, a scalable and privacy preserving proxy voting system designed for frequent and large-scale elections such as Decentralized Autonomou">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/545">(2026-03) Aggregator-Based Voting using proof of Partition</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Marius Lombard-Platet]]</li>
+
+  <li>[[Doron Zarchy]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We present Aggios, a scalable and privacy preserving proxy voting system designed for frequent and large-scale elections such as Decentralized Autonomous Organizations (DAO), when storing votes on the bulletin board is expensive. To this end, Aggios introduces `aggregators': entities to which voters delegate their votes, and who then post their batched proofs on the public ledger. Aggios achieves strong integrity guarantees: only authorized voters can vote, votes are counted correctly, voters are assured their vote is counted.</p>
+<p>At the core of Aggios, lies a novel zero-knowledge argument, which we call the Extended Partition Argument (EPA), that allows a prover to demonstrate that a committed vector can be decomposed into multiple disjoint ``subvectors'' forming a partition, each subvector of public (or not) sizes. The argument is compatible with a universal SRS, does not require precomputation, and offers efficient proving and verification complexity. We prove security of the EPA in the algebraic group model.
+Our implementation of EPA shows suitability of the argument even for very large vectors.</p>
+<p>Using the EPA as the central block to Aggios, we show that our voting scheme is at least 512 times more compact than naive casting of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> votes, and can even be size-independent of the number of voters in the optimal case, thus offering a practical route to frequent and privacy-preserving voting at scale.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
