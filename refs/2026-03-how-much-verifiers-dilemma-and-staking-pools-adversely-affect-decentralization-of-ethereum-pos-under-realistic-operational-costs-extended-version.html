@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) How Much Verifier's Dilemma and Staking Pools Adversely Affect Decentralization of Ethereum PoS under Realistic Operational Costs (Extended Version)</title>
+<meta name="description" content="AbstractSome consensus protocols, including Proof-of-Work (PoW) and Proof-of-Stake (PoS) designs of Ethereum, contain incentive misalignment because the protoco">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-how-much-verifiers-dilemma-and-staking-pools-adversely-affect-decentralization-of-ethereum-pos-under-realistic-operational-costs-extended-version.html">
+<meta property="og:title" content="(2026-03) How Much Verifier's Dilemma and Staking Pools Adversely Affect Decentralization of Ethereum PoS under Realistic Operational Costs (Extended Version)">
+<meta property="og:description" content="AbstractSome consensus protocols, including Proof-of-Work (PoW) and Proof-of-Stake (PoS) designs of Ethereum, contain incentive misalignment because the protoco">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-how-much-verifiers-dilemma-and-staking-pools-adversely-affect-decentralization-of-ethereum-pos-under-realistic-operational-costs-extended-version.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) How Much Verifier's Dilemma and Staking Pools Adversely Affect Decentralization of Ethereum PoS under Realistic Operational Costs (Extended Version)">
+<meta name="twitter:description" content="AbstractSome consensus protocols, including Proof-of-Work (PoW) and Proof-of-Stake (PoS) designs of Ethereum, contain incentive misalignment because the protoco">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/578">(2026-03) How Much Verifier's Dilemma and Staking Pools Adversely Affect Decentralization of Ethereum PoS under Realistic Operational Costs (Extended Version)</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ivan Homoliak]]</li>
+
+  <li>[[Martin Hruby]]</li>
+
+  <li>[[Martin Peresini]]</li>
+
+  <li>[[Kristian Kostal]]</li>
+
+  <li>[[Daria Smuseva]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-23</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Some consensus protocols, including Proof-of-Work (PoW) and Proof-of-Stake (PoS) designs of Ethereum, contain incentive misalignment because the protocol cannot technically verify whether a block producer or validator has executed (or omitted) validation of transaction correctness before producing a block or issuing an attestation. The incentive to omit validation stems from the risk of losing a fraction of the reward due to a late attestation in PoS, or the risk of missing timely block production (and thus its inclusion) in PoW.</p>
+<p>This problem is referred to as the Verifier’s Dilemma (VD), and it has been investigated in prior work in the context of PoW, as well as in hybrid PoW and PoS settings of Ethereum.</p>
+<p>In this work, we focus on Ethereum PoS, and we investigate how rational, minimally compliant validators affect long-term network decentralization due to VD and operational costs. Using evolutionary game theory and the replicator equation, we model competition among three validator phenotypes: the honest strategy, the lazy strategy, and the join pool strategy. While the honest strategy, which performs validation, requires the operational cost of expensive hardware to run a full validator node, which is currently about 20% of rewards earned, the lazy strategy, which omits validation (based on VD), enables operation of a reduced validator node at five times lower expense, which is currently about 4% of rewards earned. Moreover, the join pool strategy enables amortization of operational costs among pool members and can incorporate the lazy strategy to further reduce costs.</p>
+<p>We analyze the profits of these strategies co-occurring under varying late attestation rates and operational cost levels using our slot-level simulator. Our findings demonstrate that the lazy strategy consistently outperforms the honest strategy in earned profits. Our next experiments reveal that the join pool strategy, combined with a variant of the lazy strategy, forms an evolutionarily stable equilibrium that rapidly collapses the validator population into a single shared pool. These results suggest that Ethereum decentralization can erode through rational economic drift even in the absence of late attestations.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) FrozenTRU; Cold Boot Attacks on NTRU-Based Hash-and-Sign Signatures</title>
+<meta name="description" content="AbstractCold boot attacks, first introduced by Halderman et al. (USENIX'08), are a class of attacks that aim at recovering cryptographic secrets stored in volat">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-frozentru-cold-boot-attacks-on-ntru-based-hash-and-sign-signatures.html">
+<meta property="og:title" content="(2026-03) FrozenTRU; Cold Boot Attacks on NTRU-Based Hash-and-Sign Signatures">
+<meta property="og:description" content="AbstractCold boot attacks, first introduced by Halderman et al. (USENIX'08), are a class of attacks that aim at recovering cryptographic secrets stored in volat">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-frozentru-cold-boot-attacks-on-ntru-based-hash-and-sign-signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) FrozenTRU; Cold Boot Attacks on NTRU-Based Hash-and-Sign Signatures">
+<meta name="twitter:description" content="AbstractCold boot attacks, first introduced by Halderman et al. (USENIX'08), are a class of attacks that aim at recovering cryptographic secrets stored in volat">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/582">(2026-03) FrozenTRU; Cold Boot Attacks on NTRU-Based Hash-and-Sign Signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Hiroto Kaihara]]</li>
+
+  <li>[[Mehdi Tibouchi]]</li>
+
+  <li>[[Masayuki Abe]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-24</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Cold boot attacks, first introduced by Halderman et al. (USENIX'08), are a class of attacks that aim at recovering cryptographic secrets stored in volatile memory after a computer is powered off, using the fact that DRAM modules retain their contents to a large extent for some time, especially at low temperatures. Cold boot attackers can recover the original contents of memory with some flipped bits, with bit flip probabilities of <10% for one-to-zero and much lower (<0.1%) for zero-to-one shown to be easily achievable. The cryptanalytic goal is then to recover full secret keys based on this noisy data. Successful key recoveries from cold boot attacks have been shown to be feasible for various symmetric and public-key schemes, including AES, RSA, and more recently some lattice-based encryption schemes with secret keys stored in the number-theoretic transform (NTT) domain.</p>
+<p>In this paper, we investigate cold boot attacks against NTRU-based signature scheme Falcon and its ancestor, the signature scheme of Ducas–Lyubashevsky–Prest (DLP). Those schemes significantly differ from other schemes previously considered for cold boot attacks, since, in particular, the memory representation of secret signing keys mostly consists of floating point values. As a result, the various relations existing between key coefficients only hold up to floating point errors, which makes key recovery more complex. Nevertheless, at the typical bit flip probabilities achievable with cold boot attacks, we manage to fully recover Falcon and DLP keys with good probability across all parameters in simulations carried out in a simple bit flip model. Furthermore, we validate our techniques using concrete cold boot experiments againt Falcon on a Raspberry Pi single board computer.</p>
+<p>Finally, we propose countermeasures with negligible computational cost that significantly reduce the memory footprint of signing keys for Falcon and DLP, and at the same time make cold boot attacks considerably harder.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
