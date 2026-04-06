@@ -15,5 +15,8 @@ created: 2026-01-07
 - [[(2011) My Struggle; Book 6]]
 - [[(1969) Frysepunktet]] (Freezing Point)
 - [[(2024) Rejection]]
-# Short Fiction
+## Short Fiction
 - [[(1972) The Breast]]
+
+# Non-Fiction
+- [[(2026) The Infinity Machine]]

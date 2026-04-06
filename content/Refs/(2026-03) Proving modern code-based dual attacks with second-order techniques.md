@@ -1,0 +1,14 @@
+---
+published: "2026-03-26"
+link: "https://eprint.iacr.org/2026/599"
+authors: ["[[Charles Meyer-Hilfiger]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> In code-based cryptography, dual attacks for solving the decoding problem have recently been improved. They are now competitive and beat information set decoders for a significant regime. These recent dual attacks, starting from Carrier et al. (Asiacrypt 2022), work by reducing decoding to an LPN problem where the secret and the noise involve parts of the error vector coming from the decoding problem. However, currently, the analysis of all these dual attacks is heuristic. In the original Asiacrypt 2022 work, a simple LPN modeling was used to carry out the analysis but Meyer-Hilfiger and Tillich (TCC 2023) showed that this assumption could not be used. Consequently, they proposed an alternative analysis based on Fourier theory and on heuristically modeling the weight enumerator of a random linear code as a Poisson variable. The analysis of the newest and most efficient dual attack, doubleRLPN, introduced by Carrier et al. (Eurocrypt 2024) also relies on this technique and on this model.
+> 
+> Our main contribution is to devise a variant of doubleRLPN that we can fully prove without using any model. We show that our variant has the same performance, up to polynomial factors, as the original doubleRLPN algorithm. The final algorithm and its analysis are also simpler. Our technique involves flipping the coordinates of the noisy codeword and observing the fine changes in the amount of noise in the related LPN problem to reconstruct the entire error. The analysis is based on the second-order behavior of the bias of the noise which was already used in the original analysis.
+> 
+> Secondly, the performance of our algorithm, as it was the case for doubleRLPN, heavily depends on having access to a good code along with an efficient decoder. We instantiate this code by choosing a Cartesian product of a constant (instead of sublinear in the original proposal by Carrier et al.) number of random linear codes. We use a decoder based on blockwise error enumeration that was already used by Guo et al. (Asiacrypt 2014). We show that our approach is optimal up to polynomial (instead of superpolynomial) factors.

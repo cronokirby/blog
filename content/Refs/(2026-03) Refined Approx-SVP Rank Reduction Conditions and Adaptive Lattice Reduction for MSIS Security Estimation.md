@@ -1,0 +1,10 @@
+---
+published: "2026-03-27"
+link: "https://eprint.iacr.org/2026/607"
+authors: ["[[Xiaohan Zhang]]", "[[Zijian Zhou]]", "[[Longjiang Qu]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> The security of lattice-based cryptography relies critically on the concrete hardness of the approximate shortest vector problem (Approx-SVP). For cryptographic-sized instances, existing Approx-SVP rank reduction conditions may be overly aggressive, as they implicitly assume access to a large number of extremely short lattice vectors. In this work, we systematize and refine Approx-SVP rank reduction conditions from a feasibility perspective. We identify that, in the context of dimension-for-free (D4f) technique, the existence of a single sufficiently short vector is the essential requirement, and we derive two refined and compact rank reduction conditions accordingly. The first condition is based on geometric properties of lattice sieving, while the second incorporates a basis-quality-dependent probabilistic bound. These results are validated through extensive experiments on high-dimensional lattices, where the compact condition outperforms prior methods by up to a factor of $60$ in dimensions $850$ and $925$. To reliably realize these conditions in high dimensions, we present APBKZ, an adaptive Pump-based lattice reduction strategy that dynamically selects the blocksize and dimension-for-free parameters according to the evolving Gram-Schmidt profile. We further introduce HeadAPBKZ, a head-focused execution mode that restricts reduction to a critical prefix once the rank reduction condition is satisfied. Combining these advances, we develop an improved concrete security estimation framework for the MSIS problem. Applied to Dilithium, our analysis indicates that when integrating compact rank reduction behavior with the D4f technique, the estimated concrete security margin of Dilithium drops by 9.50-16.63 bits compared to the conservative Core-SVP baseline, offering more accurate security benchmarks for cryptographic standardization.
