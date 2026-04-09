@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) THED; Threshold Dilithium from FHE</title>
+<meta name="description" content="AbstractWe describe THED, a threshold version of the Dilithium signature scheme (ML-DSA), whose issued signatures are valid for the genuine Dilithium verificati">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-thed-threshold-dilithium-from-fhe.html">
+<meta property="og:title" content="(2026-04) THED; Threshold Dilithium from FHE">
+<meta property="og:description" content="AbstractWe describe THED, a threshold version of the Dilithium signature scheme (ML-DSA), whose issued signatures are valid for the genuine Dilithium verificati">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-thed-threshold-dilithium-from-fhe.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) THED; Threshold Dilithium from FHE">
+<meta name="twitter:description" content="AbstractWe describe THED, a threshold version of the Dilithium signature scheme (ML-DSA), whose issued signatures are valid for the genuine Dilithium verificati">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/638">(2026-04) THED; Threshold Dilithium from FHE</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Jai Hyun Park]]</li>
+
+  <li>[[Alain Passelègue]]</li>
+
+  <li>[[Damien Stehlé]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-01</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We describe THED, a threshold version of the Dilithium signature scheme (ML-DSA), whose issued signatures are valid for the genuine Dilithium verification algorithm. The signing protocol has two rounds of communication, one of which that lends itself to pre-processing. The scheme supports arbitrary number of users and threshold parameter.</p>
+<p>The construction consists in running Dilithium's signing algorithm under Threshold Fully Homomorphic Encryption (ThFHE), except for the computation of the signing challenge that happens in clear. Due to the type of operations performed, we rely on the CKKS scheme for homomorphic computations. However, a number of challenges remain, for which we develop new tools. In particular, we describe a CKKS-BFV continuum that helps for modular operations in the context of other non-arithmetic operations, a hybrid-format homomorphic comparison when the input is the sum of a bit-decomposed integer and a small integer, and a modulus-thrifty homomorphic comparison of larger non-bit-decomposed integers. Furthermore, to ensure the protocol is communication efficient, we developed a new threshold decryption method for CKKS providing more compact decryption shares.</p>
+<p>Our proof-of-concept implementation of the FHE components of the signing protocol runs in 1.343s on an RTX-5090 GPU, with 23.6KB of communication per party for the NIST level-2 Dilithium variant. Most of it can be run in an offline phase without the message to be signed, the online cost then shrinks to~0.202s and 4.10KB per party. Apart from the two decryption steps, this computation is entirely public and can be delegated to a server with more powerful hardware.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

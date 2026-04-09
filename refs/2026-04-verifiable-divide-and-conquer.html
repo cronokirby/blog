@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Verifiable Divide-and-Conquer</title>
+<meta name="description" content="AbstractSuccinct non-interactive arguments (SNARGs) for P are a powerful tool for verifiably outsourcing a computation to a single entity.  In this work, we stu">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-verifiable-divide-and-conquer.html">
+<meta property="og:title" content="(2026-04) Verifiable Divide-and-Conquer">
+<meta property="og:description" content="AbstractSuccinct non-interactive arguments (SNARGs) for P are a powerful tool for verifiably outsourcing a computation to a single entity.  In this work, we stu">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-verifiable-divide-and-conquer.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Verifiable Divide-and-Conquer">
+<meta name="twitter:description" content="AbstractSuccinct non-interactive arguments (SNARGs) for P are a powerful tool for verifiably outsourcing a computation to a single entity.  In this work, we stu">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/662">(2026-04) Verifiable Divide-and-Conquer</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Omer Paneth]]</li>
+
+  <li>[[Rafael Pass]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Succinct non-interactive arguments (SNARGs) for P are a powerful tool for verifiably outsourcing a computation to a single entity.
+In this work, we study verifiable outsourcing in a distributed divide-and-conquer setting: a party tasked with solving a large computational problem divides it into smaller subproblems, delegates each subproblem to a different party, and then combines their solutions. Moreover, each party may recursively apply the same strategy, further delegating its computation. Verifying such recursive outsourcing requires SNARGs that are \emph{mergeable}, so that proofs for subproblems can be efficiently combined into a single proof for the original problem.</p>
+<p>While mergeable proofs have been known for nearly two decades (either based on heuristic assumptions such at SNARKs or, more recently, on standard hardness assumptions), in all existing approaches security degrades exponentially with the number of recursive merges. In this work, we overcome this barrier. Assuming the Learning with Errors (LWE) assumption, we construct a mergeable SNARG for P that supports an unbounded polynomial number of recursive merges. The proof size grows only linearly with the depth of the merge tree, and is independent of its total size.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

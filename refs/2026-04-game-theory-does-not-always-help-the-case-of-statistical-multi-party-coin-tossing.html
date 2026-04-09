@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Game Theory Does Not Always Help; The Case of Statistical Multi-Party Coin Tossing</title>
+<meta name="description" content="AbstractThe study of coin-tossing protocols lies at the intersection of cryptography and game theory, where parties with potentially conflicting interests aim t">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-game-theory-does-not-always-help-the-case-of-statistical-multi-party-coin-tossing.html">
+<meta property="og:title" content="(2026-04) Game Theory Does Not Always Help; The Case of Statistical Multi-Party Coin Tossing">
+<meta property="og:description" content="AbstractThe study of coin-tossing protocols lies at the intersection of cryptography and game theory, where parties with potentially conflicting interests aim t">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-game-theory-does-not-always-help-the-case-of-statistical-multi-party-coin-tossing.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Game Theory Does Not Always Help; The Case of Statistical Multi-Party Coin Tossing">
+<meta name="twitter:description" content="AbstractThe study of coin-tossing protocols lies at the intersection of cryptography and game theory, where parties with potentially conflicting interests aim t">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/657">(2026-04) Game Theory Does Not Always Help; The Case of Statistical Multi-Party Coin Tossing</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Chen-Da Liu-Zhang]]</li>
+
+  <li>[[Elisaweta Masserova]]</li>
+
+  <li>[[João Ribeiro]]</li>
+
+  <li>[[Sri AravindaKrishnan Thyagarajan]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-04</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The study of coin-tossing protocols lies at the intersection of cryptography and game theory, where parties with potentially conflicting interests aim to jointly generate an unbiased random bit. Classical cryptographic results establish that strong fairness is achievable with an honest majority in the statistical setting, but impossible with a dishonest majority. In parallel, game-theoretic approaches [TCC 2018, Eurocrypt 2022 & CRYPTO 2024] have demonstrated that weaker equilibrium-based fairness guarantees can sometimes circumvent cryptographic lower bounds, raising the question of whether such techniques can overcome impossibility in the statistical regime.</p>
+<p>In this work, we answer this question negatively.</p>
+<pre><code>  - We show that for $n$ parties and $t \geq n/2$ corruptions, there exists no statistically secure, game-theoretic coin-tossing protocol, even assuming broadcast and bounded round complexity—with the sole exception of the case $n=4$ where all but one party share the same preference. This complements known feasibility results for $t < n/2$, thereby completing the statistical feasibility landscape.
+
+  - We further consider the setting without broadcast. Here we prove that no computationally secure game-theoretic coin-tossing protocol exists for $t \geq n/3$ and polynomial-round complexity, except for the corner case $n=6$ where all but one party share the same preference.</code></pre>
+<p>To establish these results, we refine existing frameworks for game-theoretic fairness to capture both broadcast and point-to-point communication models.</p>
+<p>Together, our results establish the boundaries of game-theoretic fairness in multi-party coin tossing: while it extends feasibility in the computational setting, it offers no advantage in the statistical setting once an honest majority is lost.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

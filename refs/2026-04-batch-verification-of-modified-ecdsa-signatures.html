@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Batch Verification of Modified ECDSA Signatures</title>
+<meta name="description" content="AbstractECDSA is a widely deployed digital signature scheme used in securing communications and distributed systems but its structure prevents efficient batch v">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-batch-verification-of-modified-ecdsa-signatures.html">
+<meta property="og:title" content="(2026-04) Batch Verification of Modified ECDSA Signatures">
+<meta property="og:description" content="AbstractECDSA is a widely deployed digital signature scheme used in securing communications and distributed systems but its structure prevents efficient batch v">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-batch-verification-of-modified-ecdsa-signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Batch Verification of Modified ECDSA Signatures">
+<meta name="twitter:description" content="AbstractECDSA is a widely deployed digital signature scheme used in securing communications and distributed systems but its structure prevents efficient batch v">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/663">(2026-04) Batch Verification of Modified ECDSA Signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Irem Keskinkurt Paksoy]]</li>
+
+  <li>[[Muhammad ElSheikh]]</li>
+
+  <li>[[Murat Cenk]]</li>
+
+  <li>[[M. Anwar Hasan]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>ECDSA is a widely deployed digital signature scheme used in securing communications and distributed systems but its structure prevents efficient batch verification. This limitation is impactful in high-throughput applications such as blockchain transaction validation. In this paper, we consider two modified versions of standard ECDSA, namely ECDSA_rec and ECDSA_ast, which embed additional bits in the signature, that enable efficient batch verification. We contribute the first publicly available C implementations of ECDSA_ast on secp256k1 and of both ECDSA_ast and ECDSA_rec on secp256r1, built on top of Bitcoin and OpenSSL codebases, respectively. We evaluate both variants on the two curves and demonstrate batch verification using the two established randomization techniques, NMVR-rand and HSS-rand. The results of our software implementation indicate that batch verification of modified ECDSA signatures usingHSS-rand generally outperforms individual verification of standard ECDSA. Furthermore, the HSS-rand technique provides more efficient batch verification than NMVR-rand in the majority of cases. For a batch of 32 ECDSA_ast (ECDSA_rec resp.) signatures on secp256k1, HSS-rand batch verification improves individual verification by approximately 30.9% (17.2% for ECDSA_rec) and outperforms NMVR_rand batch verification, which achieves improvements of 10.6% (9.8% for ECDSA_rec). The improvements achieved by HSS-rand on secp256r1 are even more pronounced, reaching  53.9% for ECDSA_ast and 40.5% for ECDSA_rec over individual verification of standard ECDSA signatures. In comparison, HSS-rand yields improvements of 27.6% for ECDSA_ast and 22.9% for ECDSA_rec over NMVR-rand, respectively.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Verification Facade; Masquerading Insecure Cryptographic Implementations as Verified Code</title>
+<meta name="description" content="AbstractHax is a verification pipeline that translates a subset of Rust into F*, enabling machine-checked proofs of panic freedom and functional correctness for">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-verification-facade-masquerading-insecure-cryptographic-implementations-as-verified-code.html">
+<meta property="og:title" content="(2026-04) Verification Facade; Masquerading Insecure Cryptographic Implementations as Verified Code">
+<meta property="og:description" content="AbstractHax is a verification pipeline that translates a subset of Rust into F*, enabling machine-checked proofs of panic freedom and functional correctness for">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-verification-facade-masquerading-insecure-cryptographic-implementations-as-verified-code.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Verification Facade; Masquerading Insecure Cryptographic Implementations as Verified Code">
+<meta name="twitter:description" content="AbstractHax is a verification pipeline that translates a subset of Rust into F*, enabling machine-checked proofs of panic freedom and functional correctness for">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/670">(2026-04) Verification Facade; Masquerading Insecure Cryptographic Implementations as Verified Code</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Nadim Kobeissi]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-06</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Hax is a verification pipeline that translates a subset of Rust into F*, enabling machine-checked proofs of panic freedom and functional correctness for cryptographic implementations being developed in partnership with Google and tested in Signal's post-quantum protocol.</p>
+<p>We study whether hax's translation preserves the security properties it claims to verify. Through a structural analysis of its 35-phase transformation engine, F* proof libraries, and specification API, we identify three classes of semantic gap between the Rust source and the F* verification target: translation infidelity, where pipeline transformations distort security-relevant semantics; unverifiable trust boundaries, where operations are axiomatized without postconditions; and specification gaming, where escape hatches inject unproven facts into the verification context.</p>
+<p>We demonstrate each class through five proof-of-concept exploits against ML-DSA (FIPS 204), ML-KEM (FIPS 203), Ed25519 (FIPS 186-5), and ChaCha20 (RFC 8439). Every exploit meets a strict criterion: the Rust code compiles, passes functional tests, and extracts to F* without warnings, while harboring a security gap invisible to testing.</p>
+<p>We distinguish three gradations: facade gaps where the F* model actively diverges from Rust semantics, a conditional gap dependent on the compilation mode, and a scope gap where the model is faithful but cannot cover a critical property. We call the resulting phenomenon a verification facade: verification that is performed but covers less than it appears to cover.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

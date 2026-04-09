@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-03) Refined Approx-SVP Rank Reduction Conditions and Adaptive Lattice Reduction for MSIS Security Estimation</title>
+<meta name="description" content="AbstractThe security of lattice-based cryptography relies critically on the concrete hardness of the approximate shortest vector problem (Approx-SVP). For crypt">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-03-refined-approx-svp-rank-reduction-conditions-and-adaptive-lattice-reduction-for-msis-security-estimation.html">
+<meta property="og:title" content="(2026-03) Refined Approx-SVP Rank Reduction Conditions and Adaptive Lattice Reduction for MSIS Security Estimation">
+<meta property="og:description" content="AbstractThe security of lattice-based cryptography relies critically on the concrete hardness of the approximate shortest vector problem (Approx-SVP). For crypt">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-03-refined-approx-svp-rank-reduction-conditions-and-adaptive-lattice-reduction-for-msis-security-estimation.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-03) Refined Approx-SVP Rank Reduction Conditions and Adaptive Lattice Reduction for MSIS Security Estimation">
+<meta name="twitter:description" content="AbstractThe security of lattice-based cryptography relies critically on the concrete hardness of the approximate shortest vector problem (Approx-SVP). For crypt">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/607">(2026-03) Refined Approx-SVP Rank Reduction Conditions and Adaptive Lattice Reduction for MSIS Security Estimation</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Xiaohan Zhang]]</li>
+
+  <li>[[Zijian Zhou]]</li>
+
+  <li>[[Longjiang Qu]]</li>
+
+</ul>
+
+
+<div class="published">2026-03-27</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The security of lattice-based cryptography relies critically on the concrete hardness of the approximate shortest vector problem (Approx-SVP). For cryptographic-sized instances, existing Approx-SVP rank reduction conditions may be overly aggressive, as they implicitly assume access to a large number of extremely short lattice vectors. In this work, we systematize and refine Approx-SVP rank reduction conditions from a feasibility perspective. We identify that, in the context of dimension-for-free (D4f) technique, the existence of a single sufficiently short vector is the essential requirement, and we derive two refined and compact rank reduction conditions accordingly. The first condition is based on geometric properties of lattice sieving, while the second incorporates a basis-quality-dependent probabilistic bound. These results are validated through extensive experiments on high-dimensional lattices, where the compact condition outperforms prior methods by up to a factor of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>60</mn></mrow><annotation encoding="application/x-tex">60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">0</span></span></span></span></span> in dimensions <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>850</mn></mrow><annotation encoding="application/x-tex">850</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span><span class="mord">5</span><span class="mord">0</span></span></span></span></span> and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>925</mn></mrow><annotation encoding="application/x-tex">925</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9</span><span class="mord">2</span><span class="mord">5</span></span></span></span></span>. To reliably realize these conditions in high dimensions, we present APBKZ, an adaptive Pump-based lattice reduction strategy that dynamically selects the blocksize and dimension-for-free parameters according to the evolving Gram-Schmidt profile. We further introduce HeadAPBKZ, a head-focused execution mode that restricts reduction to a critical prefix once the rank reduction condition is satisfied. Combining these advances, we develop an improved concrete security estimation framework for the MSIS problem. Applied to Dilithium, our analysis indicates that when integrating compact rank reduction behavior with the D4f technique, the estimated concrete security margin of Dilithium drops by 9.50-16.63 bits compared to the conservative Core-SVP baseline, offering more accurate security benchmarks for cryptographic standardization.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
