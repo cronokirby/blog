@@ -3,8 +3,8 @@ created: 2025-07-16
 tags: 
 draft: "true"
 ---
-- [[Computer Science is Special]]
-- [[Causality and History]]
+- [[Notes/Computer Science is Special]]
+- [[Notes/Causality and History]]
 - [[Incentives in Information Ecosystems]]
 - The promise of distributed systems
 - Counter Lemire on innovation
@@ -12,8 +12,8 @@ draft: "true"
 - [[The Loneliness of Oppositionalism]]
 - [[Taylorism and Software]]
 - [[Don't Build Magical Devices]]
-- [[Hidden Reliance]]
-- [[What this blog tries to cultivate]]
+- [[Notes/Hidden Reliance]]
+- [[Notes/What this blog tries to cultivate]]
 - [[Agents can do more than write software]]
 - [[An ultimate programming language]]
 - [[On AI Code Segregation]]

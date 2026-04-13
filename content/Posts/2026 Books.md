@@ -20,3 +20,4 @@ created: 2026-01-07
 
 # Non-Fiction
 - [[(2026) The Infinity Machine]]
+- [[(2004) Dark Age Ahead]]

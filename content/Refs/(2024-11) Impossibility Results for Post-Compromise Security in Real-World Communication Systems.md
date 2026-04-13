@@ -14,7 +14,7 @@ tags: ["cryptography", "paper"]
 > Our results have direct consequences for the design of future secure communication systems, and could motivate either the simplification of redundant mechanisms, or the improvement of session-management designs to provide better security trade-offs with respect to state loss/failure tolerance.
 
 # Notes
-They model messaging frameworks as consisting of a broader conversation, which may be broken up into *sessions*, each of which starts with the establishment of a basic set of keys, which then are used to encrypt messages, potentially being ratcheted, like for [[Signal (messaging)|Signal]]. They assume that there's a *static* state, which is used to establish new sessions, and a *dynamic* state, used for encryption within a session.
+They model messaging frameworks as consisting of a broader conversation, which may be broken up into *sessions*, each of which starts with the establishment of a basic set of keys, which then are used to encrypt messages, potentially being ratcheted, like for [[Notes/Signal (messaging)|Signal]]. They assume that there's a *static* state, which is used to establish new sessions, and a *dynamic* state, used for encryption within a session.
 
 The core result they prove is that it's not possible to have post-compromise security if the static state can be compromised. Intuitively, this makes sense. When only the dynamic state is compromised, then you can recover by using the static state to reestablish communication. With the static state compromised, there's no difference between your knowledge and that of the adversary.
 
