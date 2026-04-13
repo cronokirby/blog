@@ -15,7 +15,6 @@
 <url><loc>https://cronokirby.com/notes/making-gos-rsa-internals-constant-time.html</loc><lastmod>2021-05-07</lastmod></url>
 <url><loc>https://cronokirby.com/notes/cait-sith-security-4-signing.html</loc><lastmod>2023-04-16</lastmod></url>
 <url><loc>https://cronokirby.com/notes/wdc-w65c816s.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/notes/2026-the-infinity-machine.html</loc><lastmod>2026-04-09</lastmod></url>
 <url><loc>https://cronokirby.com/notes/power-laws-in-a-hyper-connected-world.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/some-more-notes-on-formalizing-games.html</loc><lastmod>2022-02-18</lastmod></url>
 <url><loc>https://cronokirby.com/notes/cait-sith-security-1-echo-broadcast.html</loc><lastmod>2023-02-27</lastmod></url>
@@ -318,6 +317,7 @@
 <url><loc>https://cronokirby.com/refs/2026-04-fova-fast-one-shot-verifiable-aggregation-for-federated-learning.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-information-theoretic-network-agnostic-mpc-with-polynomial-communication.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-efficient-and-parallel-implementation-of-isogeny-based-deterministic-group-actions.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-the-infinity-machine.html</loc><lastmod>2026-04-09</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-which-privacy-blanket-is-optimal-in-the-shuffle-model.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/1960-rabbit-run.html</loc><lastmod>2025-10-09</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-investigating-the-wedge-map-on-snova.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -652,6 +652,7 @@
 <url><loc>https://cronokirby.com/refs/2026-02-cryptanalysis-of-poseidon-based-fiat-shamir-protocols.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/1979-the-culture-of-narcissism.html</loc><lastmod>2025-06-04</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-fuzzy-private-set-intersection-for-real-world-datasets.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2004-dark-age-ahead.html</loc><lastmod>2026-04-13</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-exploiting-pdf-obfuscation-in-llms-arxiv-and-more.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-neo-and-superneo-post-quantum-folding-with-pay-per-bit-costs-over-small-fields.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-succinct-verification-of-lattice-based-compressed-sigma-protocols-via-delegated-proofs-of-correct-folding-of-cryptographically-generated-public-parameters.html</loc><lastmod>1970-01-01</lastmod></url>
