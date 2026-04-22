@@ -1,0 +1,10 @@
+---
+published: "2026-04-10"
+link: "https://eprint.iacr.org/2026/703"
+authors: ["[[Keita Emura]]", "[[Toshihiro Ohigashi]]", "[[Nobuyuki Sugio]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Basically, public-key searchable encryption schemes require a linear search time with respect to the total number of ciphertexts. Xu, Wu, Wang, Susilo, Domingo-Ferrer, and Jin (IEEE Transactions on Information Forensics and Security, 2015) introduced Searchable Public-Key Ciphertexts with Hidden Structure (SPCHS). In SPCHS, ciphertexts associated with the same keyword are linked through a hidden structure that can be revealed using a trapdoor. This enables efficient extraction of matching ciphertexts and achieves optimal asymptotic search efficiency by traversing only the result set. However, a drawback of the SPCHS scheme and its subsequent works is that they are all pairing-based or rely on identity-based encryption (IBE) as a foundational component. To improve efficiency, this paper proposes a generic construction of SPCHS. Our core building block is Non-Interactive Key Exchange (NIKE), and the remaining components are symmetric-key primitives, namely secret-key encryption and a pseudorandom function (PRF). In particular, our search algorithm depends solely on these symmetric-key primitives and is independent of any public-key primitives. We implement the most efficient instantiation of the generic construction using Diffie-Hellman NIKE, an HMAC-based PRF, and AES. Our evaluation demonstrates that the search time of the DH-based instantiation is over 250 times faster than that of the asymmetric pairing-based scheme by Wang et al. (IEEE Transactions on Industrial Informatics, 2020). Moreover, we reduce the ciphertext size by a factor of approximately 20. In addition to this practical contribution of significantly improving efficiency, the proposed generic construction also makes a theoretical contribution by enabling the realization of the first set of post-quantum SPCHS schemes based on lattices, isogenies, and codes.

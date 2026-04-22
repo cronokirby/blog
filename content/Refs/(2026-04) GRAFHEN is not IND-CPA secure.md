@@ -1,0 +1,14 @@
+---
+published: "2026-04-09"
+link: "https://eprint.iacr.org/2026/700"
+authors: ["[[Remi Geraud-Stewart]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> GRAFHEN is a recently proposed noise-free fully homomorphic encryption scheme based on rewriting systems in symmetric groups.
+> 
+> We show that GRAFHEN is not IND-CPA secure by constructing a polynomial-time cross-reduction distinguisher whose advantage can be amplified to overwhelming via d! scrambled cross-evaluations. We prove an unconditional information-theoretic lower bound using the near-uniformity of word maps on symmetric groups. 
+> 
+> We further prove structural barriers to repair: for G= Sn, any semidirect product action compatible with decryption reduces to conjugation, collapsing back to the original attack.

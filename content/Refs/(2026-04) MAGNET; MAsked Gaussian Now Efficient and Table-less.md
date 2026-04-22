@@ -1,0 +1,10 @@
+---
+published: "2026-04-14"
+link: "https://eprint.iacr.org/2026/728"
+authors: ["[[Mert Yassi]]", "[[Soundes Marzougui]]", "[[Raymond K. Zhao]]", "[[Muhammed F. Esgin]]", "[[Amin Sakzad]]", "[[Ron Steinfeld]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Discrete Gaussian sampling (DGS) is a fundamental method for generating random noise in various post-quantum cryptographic key generation and signature schemes. However, DGS has been shown to be highly susceptible to side-channel analysis, and several countermeasures have been developed. Masking, a robust countermeasure, is widely employed to secure these schemes against side-channel attacks. Due to the non-linear arithmetic operations involved, DGS has traditionally been considered unsuitable for efficient masked implementations. In this work, we propose $\textsf{MAGNET}$: an efficient masking design for the novel discrete Gaussian sampler based on Boolean circuits introduced by Wei et al. at ACM CCS 2023. With $\textsf{MAGNET}$, we demonstrate that DGS can be implemented in a masking-friendly manner. Previous masked DGS approaches in the literature have relied on computation-intensive floating point operations or table-lookup-based techniques using Cumulative Distribution Tables (CDT). In contrast, we show that DGS can be efficiently masked for moderate orders without relying on heavy computation or precomputed large lookup tables. In addition to delivering good performance at a small standard deviation $\sigma$, the efficiency of $\textsf{MAGNET}$ becomes increasingly significant in large $\sigma$ settings. $\textsf{MAGNET}$ achieves up to $17\times$ speed-up at $\sigma = 256$, and $56\times$ speed-up at $\sigma = 1024$ over the CDT-based sampler of Gérard and Rossi (2019). We provide an arbitrary-order C implementation and a first-order ARM Cortex-M4 implementation of $\textsf{MAGNET}$. We validate the practical security of the first-order implementation through Test Vector Leakage Assessment (TVLA) and systematic hardening of gadgets that exhibit side-channel leakage.

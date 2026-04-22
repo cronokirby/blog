@@ -15,6 +15,9 @@ created: 2026-01-07
 - [[(2011) My Struggle; Book 6]]
 - [[(1969) Frysepunktet]] (Freezing Point)
 - [[(2024) Rejection]]
+- [[(1979) Die Unendliche Geschichte]]
+- [[(1932) Brave New World]]
+- 
 ## Short Fiction
 - [[(1972) The Breast]]
 

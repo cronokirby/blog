@@ -1,0 +1,16 @@
+---
+published: "2026-04-07"
+link: "https://eprint.iacr.org/2026/682"
+authors: ["[[Gal Arnon]]", "[[Noam Mazor]]", "[[Rafael Pass]]", "[[Jad Silbak]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> In this paper we study the cryptographic complexity of non-trivial witness-indistinguishable (WI) arguments of knowledge. We establish that:
+> 
+> - Assuming that $NP\not\subseteq P/poly$, the existence of a constant-round computational WI argument of knowledge for $NP$ implies that (infinitely-often) auxiliary-input one-way functions exist.
+> 
+> - Assuming that $ NP\nsubseteq P^{Sam}/poly$, there is no black-box construction of a constant-round (unbounded-verifier) statistical WI argument of knowledge from one-way permutations. Here, $Sam$ is the collision finder oracle of Haitner, Hoch, Reingold, and Segev [FOCS '07].
+> 
+> Moreover, we identify a natural class of knowledge extractors for which stronger versions of the above implications hold (e.g., even if the protocols have many rounds).
