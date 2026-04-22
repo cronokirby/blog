@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) SPLASH; SPeculative Leakage-Adaptive Secure Hardware</title>
+<meta name="description" content="AbstractModern processors are largely fixed at the time of fabrication, rendering post-silicon security updates infeasible. This lack of flexibility is especial">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-splash-speculative-leakage-adaptive-secure-hardware.html">
+<meta property="og:title" content="(2026-04) SPLASH; SPeculative Leakage-Adaptive Secure Hardware">
+<meta property="og:description" content="AbstractModern processors are largely fixed at the time of fabrication, rendering post-silicon security updates infeasible. This lack of flexibility is especial">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-splash-speculative-leakage-adaptive-secure-hardware.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) SPLASH; SPeculative Leakage-Adaptive Secure Hardware">
+<meta name="twitter:description" content="AbstractModern processors are largely fixed at the time of fabrication, rendering post-silicon security updates infeasible. This lack of flexibility is especial">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/677">(2026-04) SPLASH; SPeculative Leakage-Adaptive Secure Hardware</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Huimin Li]]</li>
+
+  <li>[[Mohamadreza Rostami]]</li>
+
+  <li>[[Pallavi Borkar]]</li>
+
+  <li>[[Lichao Wu]]</li>
+
+  <li>[[Ahmad-Reza Sadeghi]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-07</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Modern processors are largely fixed at the time of fabrication, rendering post-silicon security updates infeasible. This lack of flexibility is especially problematic for speculative execution attacks, which exploit microarchitectural optimizations to leak sensitive information through transient execution. However, existing defenses are typically hardwired, narrowly scoped, and non-adaptive.
+Once deployed, these defenses lack the flexibility to respond to new attack variants, creating a critical security gap.</p>
+<p>This paper presents SPLASH, a novel and adaptive framework for comprehensively mitigating speculative execution vulnerabilities across processor components. SPLASH introduces two primary contributions: (i) we introduce Speculative Information Flow Tracking (SIFT), which enables fine-grained tracking of speculative data propagation throughout the microarchitecture; (ii) the reconfigurable speculative table provides, for the first time, enforceable and fully configurable control over speculative behavior across the processor pipeline. SPLASH is runtime-configurable, allowing dynamic security policy adjustments post-fabrication, such as tuning the speculative window size or selectively protecting specific microarchitectural structures, without requiring hardware redesign.</p>
+<p>We implement SPLASH on both the small and medium BOOM processors and evaluate its effectiveness in mitigating speculative leakage vulnerabilities. SPLASH successfully mitigates all types of speculative execution attacks. In terms of computation overhead, SPLASH incurs only 0.05% overhead on small BOOM and 1.23% on medium BOOM on average compared with the baseline.
+Compared to the best performing state-of-the-art defenses, SPLASH reduces overhead by 129.2X and 1.2X, respectively, with negligible hardware cost.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

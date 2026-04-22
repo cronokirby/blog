@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) SPoCK; Sequential Proofs of Complete Knowledge</title>
+<meta name="description" content="AbstractA proof of knowledge certifies that the prover “knows” a secret. This property is established by the existence of an extractor that, given access to">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-spock-sequential-proofs-of-complete-knowledge.html">
+<meta property="og:title" content="(2026-04) SPoCK; Sequential Proofs of Complete Knowledge">
+<meta property="og:description" content="AbstractA proof of knowledge certifies that the prover “knows” a secret. This property is established by the existence of an extractor that, given access to">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-spock-sequential-proofs-of-complete-knowledge.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) SPoCK; Sequential Proofs of Complete Knowledge">
+<meta name="twitter:description" content="AbstractA proof of knowledge certifies that the prover “knows” a secret. This property is established by the existence of an extractor that, given access to">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/738">(2026-04) SPoCK; Sequential Proofs of Complete Knowledge</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Antonio Giulio D'Antona]]</li>
+
+  <li>[[Charlotte Hoffmann]]</li>
+
+  <li>[[Krzysztof Pietrzak]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>A proof of knowledge certifies that the prover “knows” a secret. This property is established by the existence of an extractor that, given access to the prover, can extract the secret. Unfortunately, this does not  imply that a single entity has access to the secret in the clear, as it may be secret-shared among several parties and the proof computed using multiparty computation (MPC), or the secret may be embedded in a trusted execution environment (TEE) that only allows limited access to it.</p>
+<p>Often, the ability to encumber a secret in this way breaks the security of a system; vote selling in e-voting schemes is one example. To address this, two recent papers introduced the notions of “Proofs of Complete Knowledge” (PoCK) [Kelkar et al., CCS’24] and “Individual Cryptography” [Dziembowski et al., CRYPTO’23]. While the goals and constructions in those works differ, both rely on the same key idea to prevent encumbrance. To compute a proof, the prover must evaluate a hash function on a huge number of inputs. One then assumes that only a fraction of those can be encumbered, while for the rest the prover must know the inputs in the clear, and these clear inputs are sufficient to extract the secret. Computing a huge number of hashes is a challenge even for an honest prover (who has the secret in the clear), so those works suggest using outdated Bitcoin mining hardware to make the scheme practical.</p>
+<p>By forcing the prover to evaluate the hashes in a sequential manner, we could get meaningful security against encumbrance with far fewer hashes, especially against MPC, where round complexity is a major bottleneck.</p>
+<p>As a concrete instantiation of this idea, we define and construct Sequential Proofs of Complete Knowledge (SPoCK). Our construction uses the PoCK of Kelkar et al. (which are based on Fischlin’s straight-line extractable proofs of knowledge). The computation of this PoCK is then embedded into the computation of the Proof of Sequential Work from [Cohen&Pietrzak, EUROCRYPT’18]. SPoCK thus have the potential to enable complete-knowledge or individual-cryptography primitives where honest parties can use standard hardware. We also propose a variant of this scheme that requires a large amount of memory throughout the evaluation, providing better security also against TEEs.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

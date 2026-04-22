@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Evaluating PQC KEMs, Combiners, and Cascade Encryption via Adaptive IND-CPA Testing Using Deep Learning</title>
+<meta name="description" content="AbstractEnsuring ciphertext indistinguishability is fundamental to cryptographic security, but empirically validating this property in real implementations and">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-evaluating-pqc-kems-combiners-and-cascade-encryption-via-adaptive-ind-cpa-testing-using-deep-learning.html">
+<meta property="og:title" content="(2026-04) Evaluating PQC KEMs, Combiners, and Cascade Encryption via Adaptive IND-CPA Testing Using Deep Learning">
+<meta property="og:description" content="AbstractEnsuring ciphertext indistinguishability is fundamental to cryptographic security, but empirically validating this property in real implementations and">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-evaluating-pqc-kems-combiners-and-cascade-encryption-via-adaptive-ind-cpa-testing-using-deep-learning.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Evaluating PQC KEMs, Combiners, and Cascade Encryption via Adaptive IND-CPA Testing Using Deep Learning">
+<meta name="twitter:description" content="AbstractEnsuring ciphertext indistinguishability is fundamental to cryptographic security, but empirically validating this property in real implementations and">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/689">(2026-04) Evaluating PQC KEMs, Combiners, and Cascade Encryption via Adaptive IND-CPA Testing Using Deep Learning</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Simon Calderon]]</li>
+
+  <li>[[Niklas Johansson]]</li>
+
+  <li>[[Onur Günlü]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-08</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Ensuring ciphertext indistinguishability is fundamental to cryptographic security, but empirically validating this property in real implementations and hybrid settings presents practical challenges. The transition to post-quantum cryptography (PQC), with its hybrid constructions combining classical and quantum-resistant primitives, makes empirical validation approaches increasingly valuable. By modeling indistinguishability under chosen-plaintext attack (IND-CPA) games as binary classification tasks and training on labeled ciphertext data with binary cross-entropy loss, we study deep neural network (DNN) distinguishers for ciphertext indistinguishability. We apply this methodology to PQC key encapsulation mechanisms (KEMs). We specifically test the public-key encryption (PKE) schemes used to construct examples such as ML-KEM, BIKE, and HQC. Moreover, a novel extension of this DNN modeling for empirical distinguishability testing of hybrid KEMs is presented. We implement and test this on combinations of PQC KEMs with unpadded RSA, RSA-OAEP, and plaintext. Finally, methodological generality is illustrated by applying the DNN IND-CPA classification framework to cascade symmetric encryption, where we test combinations of AES-CTR, AES-CBC, AES-ECB, ChaCha20, and DES-ECB. In our experiments on PQC algorithms, KEM combiners, and cascade encryption, no algorithm or combination of algorithms demonstrates a significant advantage (evaluated via two-sided binomial tests with significance level <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">1</span></span></span></span></span>), consistent with theoretical guarantees that hybrids including at least one IND-CPA-secure component preserve indistinguishability, and with the absence of exploitable patterns under the considered DNN adversary model. These illustrate the potential of using deep learning as an adaptive, practical, and versatile empirical estimator for indistinguishability in more general IND-CPA settings, allowing data-driven validation of implementations and compositions and complementing the analytical security analysis.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

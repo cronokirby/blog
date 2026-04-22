@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Breaking Optimized HQC; The First Cache-Timing Full Decryption Oracle Key-Recovery Attack in Post-Quantum Cryptography</title>
+<meta name="description" content="AbstractHamming Quasi-Cyclic (HQC) has been selected by NIST for standardization in the post-quantum landscape. As deployment approaches, implementation securit">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-breaking-optimized-hqc-the-first-cache-timing-full-decryption-oracle-key-recovery-attack-in-post-quantum-cryptography.html">
+<meta property="og:title" content="(2026-04) Breaking Optimized HQC; The First Cache-Timing Full Decryption Oracle Key-Recovery Attack in Post-Quantum Cryptography">
+<meta property="og:description" content="AbstractHamming Quasi-Cyclic (HQC) has been selected by NIST for standardization in the post-quantum landscape. As deployment approaches, implementation securit">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-breaking-optimized-hqc-the-first-cache-timing-full-decryption-oracle-key-recovery-attack-in-post-quantum-cryptography.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Breaking Optimized HQC; The First Cache-Timing Full Decryption Oracle Key-Recovery Attack in Post-Quantum Cryptography">
+<meta name="twitter:description" content="AbstractHamming Quasi-Cyclic (HQC) has been selected by NIST for standardization in the post-quantum landscape. As deployment approaches, implementation securit">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/693">(2026-04) Breaking Optimized HQC; The First Cache-Timing Full Decryption Oracle Key-Recovery Attack in Post-Quantum Cryptography</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Haiyue Dong]]</li>
+
+  <li>[[Qian Guo]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-08</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Hamming Quasi-Cyclic (HQC) has been selected by NIST for standardization in the post-quantum landscape. As deployment approaches, implementation security becomes as critical as mathematical hardness. In this work, we demonstrate that source-level constant-time coding is not a standalone guarantee: the compiled binary must inherently preserve this behavior.</p>
+<p>We identify a severe compiler-induced vulnerability within the official AVX2-optimized implementation of HQC, despite its claims of being constant-time. Although the C source code relies on secure, mask-based conditional selection, certain compiler optimizations rewrite this logic systematically. This transformation silently introduces secret-dependent control flow into the inner Reed-Muller decoding process, resulting in secret-dependent cache access patterns.</p>
+<p>Exploiting this vulnerability, we mount, to the best of our knowledge, the first cache-timing Full-Decryption-style oracle attack against a post-quantum cryptosystem. Using Flush+Reload on shared libraries, an unprivileged co-located adversary can extract fine-grained predicates of the decoder's internal state. To achieve full key recovery, we develop a novel, reliability-aware Soft Information Set Decoding (Soft-ISD) post-processing framework. Leveraging a GPU-accelerated meet-in-the-middle strategy optimized for heterogeneous platforms (including Apple Silicon), we demonstrate end-to-end secret key recovery for hqc-1 with less than 10 seconds of online trace collection.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

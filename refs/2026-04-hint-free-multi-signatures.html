@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Hint-Free Multi-Signatures</title>
+<meta name="description" content="AbstractIn a (non-interactive) multi-signature scheme, parties independently generate keys and produce signatures on a common message, which can be aggregated i">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-hint-free-multi-signatures.html">
+<meta property="og:title" content="(2026-04) Hint-Free Multi-Signatures">
+<meta property="og:description" content="AbstractIn a (non-interactive) multi-signature scheme, parties independently generate keys and produce signatures on a common message, which can be aggregated i">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-hint-free-multi-signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Hint-Free Multi-Signatures">
+<meta name="twitter:description" content="AbstractIn a (non-interactive) multi-signature scheme, parties independently generate keys and produce signatures on a common message, which can be aggregated i">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/723">(2026-04) Hint-Free Multi-Signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Dennis Hofheinz]]</li>
+
+  <li>[[Michael Reichle]]</li>
+
+  <li>[[Benedikt Wagner]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>In a (non-interactive) multi-signature scheme, parties independently generate keys and produce signatures on a common message, which can be aggregated into a single signature verifiable with respect to the set of public keys. Existing multi-signature constructions, however, suffer from at least one of two limitations: either (1) aggregate signatures cannot be further aggregated, or (2) verification requires auxiliary information beyond the set of public keys, such as the aggregation topology.</p>
+<p>We argue that these limitations significantly restrict the applicability of multi-signatures in large-scale distributed systems, such as proof-of-stake blockchains. To address this gap, we initiate the formal study of hint-free multi-signatures, which support multi-hop aggregation while allowing verification using only the set of public keys.</p>
+<p>To the best of our knowledge, the only previously known (folklore) construction that is fully hint-free relies on recursive SNARKs, which introduces unclear heuristics for security (e.g., proving statements about random oracle relations) or inherently limits the depth of the aggregation topology.</p>
+<p>We show that hint-free multi-signatures can be realized without proof recursion, in the standard model. At a high level, we show how to publicly normalize BLS multi-signatures so that verification depends only on the set of public keys rather than a multi-set. While our scheme is not practical (it uses indistinguishability obfuscation), it establishes the feasibility of the primitive provides a foundation for future work on practical constructions.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
