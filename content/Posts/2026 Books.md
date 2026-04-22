@@ -17,7 +17,6 @@ created: 2026-01-07
 - [[(2024) Rejection]]
 - [[(1979) Die Unendliche Geschichte]]
 - [[(1932) Brave New World]]
-- 
 ## Short Fiction
 - [[(1972) The Breast]]
 
