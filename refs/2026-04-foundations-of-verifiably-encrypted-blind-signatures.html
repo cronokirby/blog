@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Foundations of Verifiably Encrypted (Blind) Signatures</title>
+<meta name="description" content="AbstractMany blockchain-based applications can be seen as instances of fair exchange of two signatures. Adaptor signatures (AS) and, more concretely, their extr">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-foundations-of-verifiably-encrypted-blind-signatures.html">
+<meta property="og:title" content="(2026-04) Foundations of Verifiably Encrypted (Blind) Signatures">
+<meta property="og:description" content="AbstractMany blockchain-based applications can be seen as instances of fair exchange of two signatures. Adaptor signatures (AS) and, more concretely, their extr">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-foundations-of-verifiably-encrypted-blind-signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Foundations of Verifiably Encrypted (Blind) Signatures">
+<meta name="twitter:description" content="AbstractMany blockchain-based applications can be seen as instances of fair exchange of two signatures. Adaptor signatures (AS) and, more concretely, their extr">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/789">(2026-04) Foundations of Verifiably Encrypted (Blind) Signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Diego Castejon-Molina]]</li>
+
+  <li>[[Erkan Tairi]]</li>
+
+  <li>[[Dimitrios Vasilopoulos]]</li>
+
+  <li>[[Pedro Moreno-Sanchez]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-21</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Many blockchain-based applications can be seen as instances of fair exchange of two signatures. Adaptor signatures (AS) and, more concretely, their extractability property, are commonly combined with blockchain-based economic incentives to achieve fairness in the exchange of two signatures in the blockchain. Certain blockchain applications require unique signatures (e.g., BLS), but it is formally impossible to build AS from unique signatures. Other applications need blind signatures, however, we found a tension between extractability and blindness. To address these limitations, we observe that fair exchange protocols based on AS only require extractability for one of the two exchanged signatures. This observation allows the other AS to be replaced with a primitive that provides similar security guarantees without inheriting the limitations of AS with respect to unique and blind signatures. A natural candidate is verifiably encrypted signatures (VES), introduced by Boneh et al. (Eurocrypt'03). However, this primitive predates blockchain systems and relies on a trusted party, the adjudicator.</p>
+<p>Our first contribution is to eliminate the need for an adjudicator by shifting trust to the blockchain and redefining the VES security model accordingly.  We introduce two new security notions and prove that our notions imply existing guarantees.  We revisit classical VES constructions by Boneh et al. (Eurocrypt'03) for unique signatures and by Hanser et al. (ESORICS'15) for probabilistic signatures, and show that they satisfy our new definitions. Furthermore, we compare our new notions with AS, and conclude that our revised VES is equivalent in terms of security to AS without extractability. Our second contribution extends VES to support blind and non-interactive blind signatures, introducing a new primitive: Verifiably Encrypted Blind Signatures (VEBS). We present a novel construction for non-interactive blind signatures and prove its security. We implement our construction and demonstrate its practical efficiency: encryption requires 3 ms, verification 6 ms, and decryption 13 ms, with a communication cost of 912 bytes. Finally, we discuss how VES/VEBS apply to diverse use cases, including anonymous credentials, contingent payments, atomic swaps, intermediated payments, coin mixing, and applications involving blind signatures.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

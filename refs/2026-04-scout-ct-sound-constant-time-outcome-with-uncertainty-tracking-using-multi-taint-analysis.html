@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) SCOUT-CT; Sound Constant-Time Outcome with Uncertainty Tracking using multi-taint analysis</title>
+<meta name="description" content="AbstractSide-channel attacks are an important class of security exploits, in which an attacker gains access to confidential data by observing information inadve">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-scout-ct-sound-constant-time-outcome-with-uncertainty-tracking-using-multi-taint-analysis.html">
+<meta property="og:title" content="(2026-04) SCOUT-CT; Sound Constant-Time Outcome with Uncertainty Tracking using multi-taint analysis">
+<meta property="og:description" content="AbstractSide-channel attacks are an important class of security exploits, in which an attacker gains access to confidential data by observing information inadve">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-scout-ct-sound-constant-time-outcome-with-uncertainty-tracking-using-multi-taint-analysis.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) SCOUT-CT; Sound Constant-Time Outcome with Uncertainty Tracking using multi-taint analysis">
+<meta name="twitter:description" content="AbstractSide-channel attacks are an important class of security exploits, in which an attacker gains access to confidential data by observing information inadve">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/776">(2026-04) SCOUT-CT; Sound Constant-Time Outcome with Uncertainty Tracking using multi-taint analysis</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Damien Maier]]</li>
+
+  <li>[[Jean-François Pasche]]</li>
+
+  <li>[[Maxim Golay]]</li>
+
+  <li>[[Alexandre Duc]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Side-channel attacks are an important class of security exploits, in which an attacker gains access to confidential data by observing information inadvertently leaked by a system.
+Writing constant-time code is a common defense against time-based and microarchitectural side-channel attacks.</p>
+<p>Many approaches have been proposed to automatically verify that a program is constant-time.
+Sound methods can detect all information leaks but, to efficiently analyze large programs, most of them rely on overapproximation which can yield false alarms (i.e., reports of non-existent information leaks).
+Each finding produced by such analyses therefore requires manual inspection.
+Additionally, most existing approaches do not perform binary-level analysis and thus miss vulnerabilities introduced by compilation.</p>
+<p>In this paper, we present a novel sound analysis for detecting information leaks under the constant-time threat model.
+Compared with existing work, our technique improves taint analysis by systematically tracking precision loss to determine whether a detected information leak could be caused by overapproximation.
+Findings for which no precision loss is detected are reported as confirmed; as long as they do not arise from dead code, confirmed findings are guaranteed to be true and thus do not require significant manual inspection.
+Only findings with detected precision loss need classical human verification.
+Our analysis operates directly on binary executables.
+We instantiate our technique within the abstract interpretation framework and provide a proof of correctness.</p>
+<p>We implemented our approach in a prototype tool, SCOUT-CT, and evaluated it on a benchmark of constant-time and non-constant-time programs, including real-world cryptographic implementations.
+Our results show that SCOUT-CT is effective: our tool detected all 98 timing leaks in the benchmark and automatically classified 97 as confirmed findings that do not require significant manual inspection.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

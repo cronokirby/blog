@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) LigeSIS; Distribution-friendly Polynomial Commitment -- Based on Error-correcting Code</title>
+<meta name="description" content="AbstractPolynomial commitment schemes (PCS) are a fundamental building block of modern proof systems. As proof system applications scale to increasingly large w">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-ligesis-distribution-friendly-polynomial-commitment-based-on-error-correcting-code.html">
+<meta property="og:title" content="(2026-04) LigeSIS; Distribution-friendly Polynomial Commitment -- Based on Error-correcting Code">
+<meta property="og:description" content="AbstractPolynomial commitment schemes (PCS) are a fundamental building block of modern proof systems. As proof system applications scale to increasingly large w">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-ligesis-distribution-friendly-polynomial-commitment-based-on-error-correcting-code.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) LigeSIS; Distribution-friendly Polynomial Commitment -- Based on Error-correcting Code">
+<meta name="twitter:description" content="AbstractPolynomial commitment schemes (PCS) are a fundamental building block of modern proof systems. As proof system applications scale to increasingly large w">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/751">(2026-04) LigeSIS; Distribution-friendly Polynomial Commitment -- Based on Error-correcting Code</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Yanpei Guo]]</li>
+
+  <li>[[Hancheng Lou]]</li>
+
+  <li>[[Wenjie Qu]]</li>
+
+  <li>[[Zhuoyuan Xu]]</li>
+
+  <li>[[Jiaheng Zhang]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-16</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Polynomial commitment schemes (PCS) are a fundamental building block of modern proof systems. As proof system applications scale to increasingly large workloads, distributed PCS become essential for reducing prover time and memory pressure. Among existing PCS constructions, code-based PCS achieve significantly better concrete prover performance than group-based schemes by avoiding expensive elliptic-curve operations and operating over small-characteristic fields. However, despite these advantages, code-based PCS are notoriously difficult to distribute.</p>
+<p>In this work, we present LigeSIS, the first distribution-friendly code-based multilinear PCS. LigeSIS achieves sublinear cross-node communication while keeping the final proof size independent of the number of machines. Our key insight is to replace Merkle-tree hashing with a homomorphic subset-sum hash over Goldilocks64, enabling algebraic aggregation of partial commitments produced by different nodes. To make this approach practical, we further introduce a preprocessing-accelerated subset-sum hash that reduces hashing overhead by up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">8\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">8</span><span class="mord">×</span></span></span></span></span>.</p>
+<p>Our evaluation shows that, on a single node, LigeSIS achieves performance comparable to the state-of-the-art RS-based PCS WHIR (Eurocrypt’25). In distributed settings, LigeSIS exhibits near-linear scalability in prover time. Compared with distributed MKZG (S&P’25), LigeSIS achieves a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>24</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">24 \times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord">4</span><span class="mord">×</span></span></span></span></span> improvement in prover time. Compared with PIP (Security’26), LigeSIS reduces cross-node communication by up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">20\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span>.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

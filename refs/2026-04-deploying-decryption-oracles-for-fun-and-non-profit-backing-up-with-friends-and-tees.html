@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Deploying decryption oracles for fun and non-profit; Backing up with friends and TEEs</title>
+<meta name="description" content="AbstractSecure backups are the Achilles' Heel of the E2EE ecosystem if they do not provide the same strong security properties as the E2EE messaging systems the">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-deploying-decryption-oracles-for-fun-and-non-profit-backing-up-with-friends-and-tees.html">
+<meta property="og:title" content="(2026-04) Deploying decryption oracles for fun and non-profit; Backing up with friends and TEEs">
+<meta property="og:description" content="AbstractSecure backups are the Achilles' Heel of the E2EE ecosystem if they do not provide the same strong security properties as the E2EE messaging systems the">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-deploying-decryption-oracles-for-fun-and-non-profit-backing-up-with-friends-and-tees.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Deploying decryption oracles for fun and non-profit; Backing up with friends and TEEs">
+<meta name="twitter:description" content="AbstractSecure backups are the Achilles' Heel of the E2EE ecosystem if they do not provide the same strong security properties as the E2EE messaging systems the">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/800">(2026-04) Deploying decryption oracles for fun and non-profit; Backing up with friends and TEEs</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Kanav Gupta]]</li>
+
+  <li>[[Gabriel Kaptchuk]]</li>
+
+  <li>[[Ian Miers]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-23</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Secure backups are the Achilles' Heel of the E2EE ecosystem if they do not provide the same strong security properties as the E2EE messaging systems they support. They constitute a set of servers that, if compromised, would expose nearly all user messages.  Unfortunately, state-of-the-art and deployed secure backup systems fail to consider forward secrecy and post-compromise security of these servers as first-order design constraints.  Additionally, some proposals, in limited deployment, implicitly rely on the PKIs of trusted execution environments in order to provide security, creating a small number of keys whose compromise would be catastrophic.</p>
+<p>We develop an elegant, efficient, and simple secure backup system that naturally addresses these issues by regularly rotating backup servers, each of which samples independent key material.  To make this approach scalable, we design a silent backup procedure, reducing server load compared to state-of-the-art designs while providing improved security.
+<br/>Our design can be trivially extended to incorporate \emph{social key recovery}, enabling more flexible deployment configurations.  We carefully prove the security of our construction and benchmark it to  show that it is deployment-ready. Our approach works on commodity hardware making it deployable without the resources needed for  WhatsApp or Apple's Encrypted Backups.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

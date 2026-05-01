@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Montgomery Multiplication in Signed Redundant Representations</title>
+<meta name="description" content="AbstractIn this paper, we explore the use of Montgomery multiplication with a multi-limb redundant representation of integers, in particular in combination with">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-montgomery-multiplication-in-signed-redundant-representations.html">
+<meta property="og:title" content="(2026-04) Montgomery Multiplication in Signed Redundant Representations">
+<meta property="og:description" content="AbstractIn this paper, we explore the use of Montgomery multiplication with a multi-limb redundant representation of integers, in particular in combination with">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-montgomery-multiplication-in-signed-redundant-representations.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Montgomery Multiplication in Signed Redundant Representations">
+<meta name="twitter:description" content="AbstractIn this paper, we explore the use of Montgomery multiplication with a multi-limb redundant representation of integers, in particular in combination with">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/780">(2026-04) Montgomery Multiplication in Signed Redundant Representations</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Thomas Pornin]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>In this paper, we explore the use of Montgomery multiplication with a multi-limb redundant representation of integers, in particular in combination with signed reduction factors. We develop techniques that are particularly suited to software platforms on which carry propagation is expensive, in particular RISC-V CPUs which lack hardware support for carries. We also show how to perform a whole-primitive range analysis that demonstrates that overflows are not possible, thus allowing liberal use of unreduced limb-wise additions and subtractions, which are small and fast. The implementation and analysis techniques are illustrated in a codegolfing exercise, to produce size-optimized implementations of ECDSA signature verification over NIST curve P-256; use of a virtual CPU with a custom instruction set with byte-size encoding ("bytecode") allows the production of an implementation as small as 848 bytes on x86 CPUs (in 64-bit mode); RISC-V (984 bytes), Armv8-A (1136 bytes) and portable C implementations (about 2200 to 2800 bytes) are also provided. In the process, an AI is utterly discomfited.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

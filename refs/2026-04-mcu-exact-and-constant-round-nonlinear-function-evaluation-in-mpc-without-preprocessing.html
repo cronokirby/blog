@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) MCU; Exact and Constant-Round Nonlinear Function Evaluation in MPC without Preprocessing</title>
+<meta name="description" content="AbstractThe rapid proliferation of artificial intelligence (AI) applications—from large language models to deep neural networks—has led to an unprecedented">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-mcu-exact-and-constant-round-nonlinear-function-evaluation-in-mpc-without-preprocessing.html">
+<meta property="og:title" content="(2026-04) MCU; Exact and Constant-Round Nonlinear Function Evaluation in MPC without Preprocessing">
+<meta property="og:description" content="AbstractThe rapid proliferation of artificial intelligence (AI) applications—from large language models to deep neural networks—has led to an unprecedented">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-mcu-exact-and-constant-round-nonlinear-function-evaluation-in-mpc-without-preprocessing.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) MCU; Exact and Constant-Round Nonlinear Function Evaluation in MPC without Preprocessing">
+<meta name="twitter:description" content="AbstractThe rapid proliferation of artificial intelligence (AI) applications—from large language models to deep neural networks—has led to an unprecedented">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/750">(2026-04) MCU; Exact and Constant-Round Nonlinear Function Evaluation in MPC without Preprocessing</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Min Yang]]</li>
+
+  <li>[[Jinxuan Du]]</li>
+
+  <li>[[Zihang Zhou]]</li>
+
+  <li>[[Dongcan Guo]]</li>
+
+  <li>[[Qingshu Meng]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-16</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The rapid proliferation of artificial intelligence (AI) applications—from large language models to deep neural networks—has led to an unprecedented demand for massive training data. This, in turn, has intensified privacy concerns, as sensitive information may be exposed during collaborative model training and inference. Privacy-preserving computing, particularly secure multi-party computation (MPC), offers a rigorous technical solution. Since Yao’s garbled circuits, nearly four decades of research have brought significant progress, yet MPC still faces fundamental challenges in efficiency and scalability. A handful of efficient and scalable MPC systems exist, but they almost invariably require heavy offline preprocessing—a burden that becomes prohibitive for modern Transformer‑based architectures with hundreds of billions of parameters. Conversely, the few approaches that eliminate preprocessing cover only a limited set of nonlinear functions, leaving a critical gap for real‑world machine learning.</p>
+<p>In this paper, we propose MCU (Mask‑Compute‑Unmask), a novel MPC architecture that directly supports a broad spectrum of nonlinear functions without any offline preprocessing. MCU introduces a semi‑honest, non‑colluding helper party (HP) that acts as an active computational engine: parties additively mask their inputs, the HP computes the exact target function on the aggregated masked data, and the parties then unmask using locally known masks. This simple yet powerful paradigm enables a suite of constant‑round, scalable protocols, including general multiplication (2 rounds), power functions (2 rounds), exponentials and trigonometric functions (4 rounds), and sigmoid and softmax (6 rounds). All protocols achieve simulation‑based security and rely solely on additive masks and synchronized pseudorandom generators—no preprocessing, no polynomial approximations, and no accuracy loss. MCU effectively overcomes long‑standing efficiency and scalability barriers in privacy‑preserving machine learning, offering a practical solution for deploying large models such as Transformers in privacy‑sensitive environments.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

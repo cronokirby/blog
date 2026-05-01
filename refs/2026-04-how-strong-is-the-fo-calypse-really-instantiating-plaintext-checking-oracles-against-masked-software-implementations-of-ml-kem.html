@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) How Strong is the FO-Calypse, Really Instantiating Plaintext-Checking Oracles against Masked Software Implementations of ML-KEM</title>
+<meta name="description" content="AbstractSide-channel attacks exploiting Plaintext-Checking Oracles (PCOs) instantiated thanks to the leakage of the re-encryption step taking place during decap">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-how-strong-is-the-fo-calypse-really-instantiating-plaintext-checking-oracles-against-masked-software-implementations-of-ml-kem.html">
+<meta property="og:title" content="(2026-04) How Strong is the FO-Calypse, Really Instantiating Plaintext-Checking Oracles against Masked Software Implementations of ML-KEM">
+<meta property="og:description" content="AbstractSide-channel attacks exploiting Plaintext-Checking Oracles (PCOs) instantiated thanks to the leakage of the re-encryption step taking place during decap">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-how-strong-is-the-fo-calypse-really-instantiating-plaintext-checking-oracles-against-masked-software-implementations-of-ml-kem.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) How Strong is the FO-Calypse, Really Instantiating Plaintext-Checking Oracles against Masked Software Implementations of ML-KEM">
+<meta name="twitter:description" content="AbstractSide-channel attacks exploiting Plaintext-Checking Oracles (PCOs) instantiated thanks to the leakage of the re-encryption step taking place during decap">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/777">(2026-04) How Strong is the FO-Calypse, Really Instantiating Plaintext-Checking Oracles against Masked Software Implementations of ML-KEM</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Brieuc Balon]]</li>
+
+  <li>[[Gaëtan Cassiers]]</li>
+
+  <li>[[Thibaud Schoenauen]]</li>
+
+  <li>[[François-Xavier Standaert]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Side-channel attacks exploiting Plaintext-Checking Oracles (PCOs) instantiated thanks to the leakage of the re-encryption step taking place during decapsulation are a well-known weakness of ML-KEM. An already wide literature investigated how to efficiently exploit such oracles, leading to easy (full) key recoveries. Somewhat surprisingly, the investigation of how to best instantiate PCOs against ML-KEM's most leaking operations is less investigated, in particular when it comes to quantitative evaluations against concrete masked implementations. In this paper, we first remedy this lack by systematically instantiating PCOs against three open source masked software implementations of the Keccak function used in ML-KEM, based on different masking techniques and programming styles. We evaluate the accuracy of PCOs for increasing number of shares using state-of-the-art profiled attacks against ARM Cortex-M4 implementations, and succeed obtaining high accuracy for up to 7 shares by leveraging the leakage of approximately 50 ML-KEM executions only. Doing so, we confirm the ``computing more implies leaking more'' adage and conclude that enforcing high security levels on such platforms will not be affordable. Next, we consolidate recent solutions for exploiting PCOs.
+For this purpose, we start by introducing a simple, concrete and re-usable model for PCOs targeting
+masked implementations of Keccak. We follow by clarifying that approaches based on hard decisions are suboptimal compared to soft (probabilistic) ones. We finally open a study of how to best exploit the adversary's computational power in a security evaluation.
+We show that (even naive) lattice based attacks are a promising approach for this purpose,
+leaving the design of a generic estimator that could efficiently leverage physical (side-channel) information as an interesting research direction.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
