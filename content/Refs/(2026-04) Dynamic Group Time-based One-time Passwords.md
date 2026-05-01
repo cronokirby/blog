@@ -1,0 +1,11 @@
+---
+published: "2026-04-18"
+link: "https://eprint.iacr.org/2026/766"
+authors: ["[[Xuelian Cao]]", "[[Zheng Yang]]", "[[Jianting Ning]]", "[[Chenglu Jin]]", "[[Zhiming Liu]]", "[[Jianying Zhou]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Group time-based one-time passwords (GTOTP)  is a novel lightweight cryptographic primitive for achieving anonymous client authentication, which enables the efficient generation of time-based one-time passwords on behalf of a group without revealing any information about the actual client's identity beyond their group membership. The security properties of GTOTP regarding anonymity and traceability have been formulated in a static group management setting (where all group members should be determined during the group initialization phase), yet, a formal treatment for real-world dynamic groups (i.e., group members may join and leave at any time) is still an open question. It is non-trivial to construct an efficient GTOTP scheme that can provide a lightweight password generation procedure run by group members and support dynamic group management, allowing group members to join and leave without affecting other members' states (non-disruptively). 
+> To address the above challenge, we first define the notion and the security model of dynamic group time-based one-time passwords (DGTOTP) in this work. We then present an efficient DGTOTP construction that can generically transform an asymmetric time-based one-time passwords scheme into a DGTOTP scheme utilizing a chameleon hash function family and a Merkle tree scheme. Within our construction, we particularly tailor an outsourcing solution realizing an issue-first-and-join-later (IFJL) strategy, enabling smooth joining and revocation without disrupting other group members. Moreover, our scheme minimizes symmetric cryptographic operations and maintains constant storage for group members, compared to the linear storage cost that grows rapidly with respect to the lifetime of the GTOTP instance in the previous static GTOTP scheme. Our DGTOTP scheme satisfies stronger security guarantees in a dynamic group management setting without random oracles. Our experimental results confirm the efficiency of our DGTOTP scheme.
