@@ -7,11 +7,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1769793829,
-        "narHash": "sha256-M3FFZFZ0ZthWcxmt+vGw0Pn6mikqFHVHDqFW83+MJk8=",
+        "lastModified": 1778167840,
+        "narHash": "sha256-/tuVwK5Ca/VbEeDYG73o8VPFJDBZy2wu9ibEmu5Aueo=",
         "owner": "cronokirby",
         "repo": "clog",
-        "rev": "9fd93302be8c1b19d01207911f01e01601a2b06e",
+        "rev": "e56b8d119da0e10d37d61aa25cbc9c64391a955c",
         "type": "github"
       },
       "original": {
@@ -132,11 +132,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1769598131,
-        "narHash": "sha256-e7VO/kGLgRMbWtpBqdWl0uFg8Y2XWFMdz0uUJvlML8o=",
+        "lastModified": 1778003029,
+        "narHash": "sha256-q/nkKLDtHIyLjZpKhWk3cSK5IYsFqtMd6UtXF3ddjgA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fa83fd837f3098e3e678e6cf017b2b36102c7211",
+        "rev": "0c88e1f2bdb93d5999019e99cb0e61e1fe2af4c5",
         "type": "github"
       },
       "original": {
