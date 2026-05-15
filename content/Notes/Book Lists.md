@@ -12,3 +12,15 @@ Lists of books which might be interesting to read.
 	- **John Adams**, David McCullough
 	- **A Magnificent Catastrophe: The Tumultuous Election of 1800, America’s First Presidential Campaign**, Edward J Larson
 	- **The Hemingses of Monticello: An American Family**, Annette Gordon-Reed
+
+## Economic
+
+### Manufacturing
+- *The Deindustrialization of America*
+
+### Auto Industry
+- *The Reckoning*, David Halberstam
+- *Crash Course*, Ingrassia
+- *Rivethead*, Ben Hamper
+- *American Icon*, Bryce Hoffman
+- *Once Upon a Car*, Bill Vlasic

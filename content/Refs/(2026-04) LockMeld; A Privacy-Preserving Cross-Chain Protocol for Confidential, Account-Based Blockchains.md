@@ -1,0 +1,10 @@
+---
+published: "2026-04-28"
+link: "https://eprint.iacr.org/2026/831"
+authors: ["[[Hanqing Huang]]", "[[Chenke Wang]]", "[[Yu Long]]", "[[Xian Xu]]", "[[Dawu Gu]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> In this paper, we present LockMeld, the first solution for enabling private cross-chain transfers when both underlying chains rely on homomorphic commitments to safeguard transaction amounts. LockMeld tackles the core challenges of ensuring unlinkability without sacrificing availability and accommodating arbitrary transaction amounts. Central to our solution is a batching technique that selectively discloses transaction details to the cross-chain intermediary, preventing any actor from directly correlating a sender’s escrow on one chain with the corresponding redemption on the other. Moreover, LockMeld combines additive homomorphic public-key encryption with randomizable signatures over randomizable commitments, ensuring robust on-chain confidentiality while still enabling necessary account management for future transactions. We provide not only a rigorous game-based security analysis but also demonstrate the protocol’s resilience against both malicious participants and external adversaries. We also implement and evaluate LockMeld's performance. This empirical validation reveals that LockMeld’s privacy guarantees can be achieved in practice without incurring excessive overhead, making it an attractive option for privacy-conscious cross-chain interoperability.

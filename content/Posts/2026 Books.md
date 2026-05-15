@@ -18,6 +18,7 @@ created: 2026-01-07
 - [[(1979) Die Unendliche Geschichte]]
 - [[(1932) Brave New World]]
 - [[(2011) Leaving the Atocha Station]]
+- [[(1987) The Bonfire of the Vanities]]
 ## Short Fiction
 - [[(1972) The Breast]]
 

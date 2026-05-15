@@ -1,0 +1,10 @@
+---
+published: "2026-04-29"
+link: "https://eprint.iacr.org/2026/839"
+authors: ["[[Dragan Lambi\u0107]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> In this paper a novel key refresh architecture using multiple independent third-party refreshers, to eliminate the centralized trust required by single-dealer approaches, is presented. Each refresher independently maintains and refreshes a split of its share, distributing fragments to signing parties asynchronously without coordination. This eliminates the need for coordinated interaction required by committee-based refresh protocols, avoiding substantial communication overhead and synchronization complexity. The architectural separation, where signing parties never participate in refresh and refreshing parties never participate in signing, enables efficient proactive security without disrupting operational availability. The proposed design does not require all refreshers to participate in each refresh operation. Unavailable refreshers are not excluded from the protocol, only malicious ones that deviate from protocol rules. This provides graceful degradation: the system maintains confidentiality even when all refreshers are compromised (requiring only one honest signing party) and achieves proactive security with minimal participation (requiring only one honest refresher between compromise events). This approach extends the period between costly on-chain key rotations by maintaining security through continuous off-chain refresh. Key rotation should be carried out when very few honest refreshers remain. Security under various adversarial scenarios is proven, including malicious refreshers, cross-epoch compromises, and denial-of-service attacks, demonstrating $O(k)$ communication per refresh for k participating refreshers versus $O(n^2)$ for committee-based protocols. The proposed approach is particularly suited for high-availability systems requiring frequent or continuous key refresh, including cryptocurrency wallets and distributed key management.
