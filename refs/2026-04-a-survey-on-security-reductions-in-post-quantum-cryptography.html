@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) A Survey on Security Reductions in Post-Quantum Cryptography</title>
+<meta name="description" content="AbstractIt is obviously necessary that the security of post-quantum cryptographic schemes is based on computational problems that are hard to solve even with a">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-a-survey-on-security-reductions-in-post-quantum-cryptography.html">
+<meta property="og:title" content="(2026-04) A Survey on Security Reductions in Post-Quantum Cryptography">
+<meta property="og:description" content="AbstractIt is obviously necessary that the security of post-quantum cryptographic schemes is based on computational problems that are hard to solve even with a">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-a-survey-on-security-reductions-in-post-quantum-cryptography.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) A Survey on Security Reductions in Post-Quantum Cryptography">
+<meta name="twitter:description" content="AbstractIt is obviously necessary that the security of post-quantum cryptographic schemes is based on computational problems that are hard to solve even with a">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/846">(2026-04) A Survey on Security Reductions in Post-Quantum Cryptography</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Thomas Attema]]</li>
+
+  <li>[[Ronald Cramer]]</li>
+
+  <li>[[Serge Fehr]]</li>
+
+  <li>[[Yu-Hsuan Huang]]</li>
+
+  <li>[[Bor de Kock]]</li>
+
+  <li>[[Jana Sotáková]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-30</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>It is obviously necessary that the security of post-quantum cryptographic schemes is based on computational problems that are hard to solve even with a quantum computer (unlike, e.g., factoring). Examples of such computational problems appear in the theory of lattices or in coding theory. However, this is not sufficient: also the security proof, which comes in the form of an algorithmic reduction that turns any hypothetical attacker into an algorithm that solves the considered hard computational problem, needs to be valid when considering quantum computing as the model of computation.</p>
+<p>In this work, we provide an overview of the hurdles one typically encounters when proving the security of post-quantum cryptographic schemes, and we elaborate on some of the mathematical techniques that have been developed in order to overcome these hurdles (to some extent). We also discuss the caveat that even when a security proof can be established (by reducing the security to a quantum-hard computational problem), the reduction often suffers from a larger reduction loss, compared to when proving classical security, which negatively affects the concrete security.</p>
+<p>In the second part of this work, we offer a survey of the respective reduction losses in (1) generic transformations that are often used in the design of cryptographic schemes (like the Fiat-Shamir and Fujisaki-Okamoto transformations), and (2) some concrete cryptographic schemes (with a focus on those standardized by NIST), when considering classical and when considering post-quantum security.</p>
+<p>Finally, we consider the notion of bit security, the standard measure of the concrete security of a cryptographic scheme (or of the hardness of an underlying computational problem). A natural question is how the bit security is affected by the different reduction losses we encountered. Surprisingly, we observe that a better or worse reduction (in terms of the reduction loss) is not always reflected as such in the bit security. We explain this phenomenon by the fact that the bit security is oblivious to the actual advantage–time function, and instead considers a worst-case behavior of that function. Thus, by exploiting the actual advantage–time function there is potential to get more accurate (i.e., less conservative) estimates for the concrete security.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

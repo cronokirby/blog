@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) UnifOMR; Oblivious Message Retrieval with Near-optimal Concrete Efficiency</title>
+<meta name="description" content="AbstractEnd-to-end encryption guarantees message confidentiality but does not hide metadata such as communication patterns among senders and recipients, or thei">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-unifomr-oblivious-message-retrieval-with-near-optimal-concrete-efficiency.html">
+<meta property="og:title" content="(2026-05) UnifOMR; Oblivious Message Retrieval with Near-optimal Concrete Efficiency">
+<meta property="og:description" content="AbstractEnd-to-end encryption guarantees message confidentiality but does not hide metadata such as communication patterns among senders and recipients, or thei">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-unifomr-oblivious-message-retrieval-with-near-optimal-concrete-efficiency.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) UnifOMR; Oblivious Message Retrieval with Near-optimal Concrete Efficiency">
+<meta name="twitter:description" content="AbstractEnd-to-end encryption guarantees message confidentiality but does not hide metadata such as communication patterns among senders and recipients, or thei">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/910">(2026-05) UnifOMR; Oblivious Message Retrieval with Near-optimal Concrete Efficiency</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ben Fisch]]</li>
+
+  <li>[[Zeyu Liu]]</li>
+
+  <li>[[Eran Tromer]]</li>
+
+  <li>[[Yunhao Wang]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-09</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>End-to-end encryption guarantees message confidentiality but does not hide metadata such as communication patterns among senders and recipients, or their identities. Oblivious Message Retrieval (OMR) is a cryptographic protocol that enables servers to assist recipients in retrieving their messages from a database without learning the mapping between messages and recipients, thereby protecting such metadata.</p>
+<p>This paper investigates two central questions of OMR: (1) What is the precise relationship between OMR and the better-studied primitive of Private Information Retrieval (PIR)?  (2) Can OMR schemes achieve concrete efficiency comparable to state-of-the-art PIR protocols?</p>
+<p>We show that OMR with a property we call strong detection-key-unlinkability is at least as hard as PIR, and that existing OMR constructions already satisfy this property. This PIR-to-OMR reduction has low overhead, suggesting that OMR cannot be made substantially more efficient than PIR.</p>
+<p>We then present <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">U</mi><mi mathvariant="sans-serif">n</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">f</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">M</mi><mi mathvariant="sans-serif">R</mi></mrow><annotation encoding="application/x-tex">\mathsf{UnifOMR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">UnifOMR</span></span></span></span></span></span>, which achieves <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">20\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span> to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1080</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">1080\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">8</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span> faster server runtime over the state-of-the-art <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">S</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">p</mi><mi mathvariant="sans-serif">h</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">M</mi><mi mathvariant="sans-serif">R</mi></mrow><annotation encoding="application/x-tex">\mathsf{SophOMR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">SophOMR</span></span></span></span></span></span> under practical parameter settings. For <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>19</mn></msup></mrow><annotation encoding="application/x-tex">2^{19}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">19</span></span></span></span></span></span></span></span></span></span></span></span></span> messages of 612 bytes each, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">U</mi><mi mathvariant="sans-serif">n</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">f</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">M</mi><mi mathvariant="sans-serif">R</mi></mrow><annotation encoding="application/x-tex">\mathsf{UnifOMR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">UnifOMR</span></span></span></span></span></span> completes in only <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo lspace="0em" rspace="0em">∼</mo><mn>25</mn></mrow><annotation encoding="application/x-tex">{\sim}25</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"><span class="mrel">∼</span></span><span class="mord">2</span><span class="mord">5</span></span></span></span></span> seconds with 4 MB of communication, compared to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>1250</mn></mrow><annotation encoding="application/x-tex">&gt;1250</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">5</span><span class="mord">0</span></span></span></span></span> seconds and 260 KB for <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">S</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">p</mi><mi mathvariant="sans-serif">h</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">M</mi><mi mathvariant="sans-serif">R</mi></mrow><annotation encoding="application/x-tex">\mathsf{SophOMR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.8889em;"></span><span class="mord"><span class="mord mathsf">SophOMR</span></span></span></span></span></span>. These gains come with two trade-offs: an asymptotically linear digest size (albeit with small constants), and two rounds of interaction between the detector and the client.</p>
+<p>Furthermore, crucially, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">U</mi><mi mathvariant="sans-serif">n</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">f</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">M</mi><mi mathvariant="sans-serif">R</mi></mrow><annotation encoding="application/x-tex">\mathsf{UnifOMR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">UnifOMR</span></span></span></span></span></span> uses batch PIR as a black-box component, which in our experiments accounts for <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span></span>--<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>92</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">92\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">9</span><span class="mord">2</span><span class="mord">%</span></span></span></span></span> of the server runtime. Thus, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">U</mi><mi mathvariant="sans-serif">n</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">f</mi><mi mathvariant="sans-serif">O</mi><mi mathvariant="sans-serif">M</mi><mi mathvariant="sans-serif">R</mi></mrow><annotation encoding="application/x-tex">\mathsf{UnifOMR}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">UnifOMR</span></span></span></span></span></span> nearly matches the aforementioned lower bound concretely (for databases of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup></mrow><annotation encoding="application/x-tex">2^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span></span></span></span></span> to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup></mrow><annotation encoding="application/x-tex">2^{23}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">23</span></span></span></span></span></span></span></span></span></span></span></span></span> messages, each with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>612</mn></mrow><annotation encoding="application/x-tex">612</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">1</span><span class="mord">2</span></span></span></span></span> to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3060</mn></mrow><annotation encoding="application/x-tex">3060</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord">0</span><span class="mord">6</span><span class="mord">0</span></span></span></span></span> bytes), given the status quo of batch PIR.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

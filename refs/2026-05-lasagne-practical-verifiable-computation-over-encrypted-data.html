@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Lasagne; Practical Verifiable Computation over Encrypted Data</title>
+<meta name="description" content="AbstractVerifiable Computation on Encrypted Data (VCoED) addresses the computational integrity gap in Fully Homomorphic Encryption (FHE). While recent protocols">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-lasagne-practical-verifiable-computation-over-encrypted-data.html">
+<meta property="og:title" content="(2026-05) Lasagne; Practical Verifiable Computation over Encrypted Data">
+<meta property="og:description" content="AbstractVerifiable Computation on Encrypted Data (VCoED) addresses the computational integrity gap in Fully Homomorphic Encryption (FHE). While recent protocols">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-lasagne-practical-verifiable-computation-over-encrypted-data.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Lasagne; Practical Verifiable Computation over Encrypted Data">
+<meta name="twitter:description" content="AbstractVerifiable Computation on Encrypted Data (VCoED) addresses the computational integrity gap in Fully Homomorphic Encryption (FHE). While recent protocols">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/857">(2026-05) Lasagne; Practical Verifiable Computation over Encrypted Data</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Xinxuan Zhang]]</li>
+
+  <li>[[Ruida Wang]]</li>
+
+  <li>[[Qingyun Niu]]</li>
+
+  <li>[[Peixin Liu]]</li>
+
+  <li>[[Xianhui Lu]]</li>
+
+  <li>[[Lutan Zhao]]</li>
+
+  <li>[[Rui Hou]]</li>
+
+  <li>[[Yi Deng]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-01</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Verifiable Computation on Encrypted Data (VCoED) addresses the computational integrity gap in Fully Homomorphic Encryption (FHE). While recent protocols have made significant strides in making VCoED feasible, server-side proof generation remains computationally intensive, often requiring hours for a modest <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">2^{20}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">20</span></span></span></span></span></span></span></span></span></span></span></span></span>-gate payload circuit (e.g., 2.27 hours for Phalanx, 9.26 hours for Blind Fractal). Moreover, most existing schemes lack support for payload circuits that are homomorphically executed with SIMD operations.</p>
+<p>In this work, we present Lasagne, a new efficient VCoED scheme for BGV/BFV-type FHE schemes. Lasagne offers the following:</p>
+<ol><li>It supports multiplicative layered payload circuits and allows them to be homomorphically evaluated under SIMD message encoding, which aligns with the requirements of practical FHE deployment.</li><li>It achieves efficient prover time while maintaining acceptable communication/verification overhead, and supports flexible parameters choosing to trade off prover time and communication overhead.</li></ol>
+<p>For a 16-layer, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>20</mn></msup></mrow><annotation encoding="application/x-tex">2^{20}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">20</span></span></span></span></span></span></span></span></span></span></span></span></span>-gate payload circuit, Lasagne generates a 30 MB proof in just 6–12 minutes(single core), achieving an <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>11</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">11\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mord">×</span></span></span></span></span>–<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>23</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">23\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">2</span><span class="mord">3</span><span class="mord">×</span></span></span></span></span> speedup over Phalanx (2.27 hours, 61.4 MB). When the payload natively supports SIMD execution (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">2^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span> slots), the proving time further reduces to 4–5 minutes (a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>27</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">27\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">2</span><span class="mord">7</span><span class="mord">×</span></span></span></span></span>–<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>34</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">34\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">3</span><span class="mord">4</span><span class="mord">×</span></span></span></span></span> speedup). We instantiate Lasagne for a face recognition application built on FHE. Empirical results confirm the validity of our time estimates and the practical viability of the scheme.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

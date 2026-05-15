@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Bluestreak; Scaling DAG BFT by Sparsifying Metadata</title>
+<meta name="description" content="AbstractDAG-based Byzantine fault-tolerant (BFT) consensus protocols achieve  high throughput by allowing many validators to propose concurrently, but scaling t">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-bluestreak-scaling-dag-bft-by-sparsifying-metadata.html">
+<meta property="og:title" content="(2026-05) Bluestreak; Scaling DAG BFT by Sparsifying Metadata">
+<meta property="og:description" content="AbstractDAG-based Byzantine fault-tolerant (BFT) consensus protocols achieve  high throughput by allowing many validators to propose concurrently, but scaling t">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-bluestreak-scaling-dag-bft-by-sparsifying-metadata.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Bluestreak; Scaling DAG BFT by Sparsifying Metadata">
+<meta name="twitter:description" content="AbstractDAG-based Byzantine fault-tolerant (BFT) consensus protocols achieve  high throughput by allowing many validators to propose concurrently, but scaling t">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/898">(2026-05) Bluestreak; Scaling DAG BFT by Sparsifying Metadata</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Nikita Polianskii]]</li>
+
+  <li>[[Ilya Vorobyev]]</li>
+
+  <li>[[Sebastian Muller]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-07</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>DAG-based Byzantine fault-tolerant (BFT) consensus protocols achieve
+high throughput by allowing many validators to propose concurrently, but scaling them to large committees remains challenging. In a committee of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> validators, up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span></span></span></span></span> of which may be Byzantine (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn><mi>f</mi><mo rspace="0em" lspace="0em">+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n = 3f{+}1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">3</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord"><span class="mord">+</span></span><span class="mord">1</span></span></span></span></span>), dense round-based DAG designs require each block to reference at least <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>f</mi><mo lspace="0em" rspace="0em">+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2f{+}1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.8889em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord"><span class="mord">+</span></span><span class="mord">1</span></span></span></span></span> blocks from the previous round. This yields <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></span> metadata per block, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1.0641em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> metadata per round, and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> metadata bytes transmitted per round under all-to-all dissemination, increasing bandwidth and processing costs and making metadata, rather  than payload, the latency bottleneck.</p>
+<p>We present Bluestreak, a sparse uncertified DAG BFT consensus protocol that keeps non-leader blocks constant-size (in <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span>) and concentrates committee-scale ancestry in a single leader block per round, yielding constant \emph{average} metadata per block as committees grow. Bluestreak combines this sparse block format with a new leader commit rule co-designed for the sparse DAG and a new pull-based pacemaker, and we prove safety and liveness under partial synchrony using only collision-resistant hashes and standard digital signatures.</p>
+<p>We implement and evaluate Bluestreak under wide-area latency spanning ten geo-distributed regions. Bluestreak scales from 10 to 400 validators on commodity 4-vCPU instances with sub-second WAN latency throughout (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo rspace="0em" lspace="0em">≈</mo><mspace width="0.1667em"/><mn>470</mn></mrow><annotation encoding="application/x-tex">{\approx}\,470</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"><span class="mrel">≈</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4</span><span class="mord">7</span><span class="mord">0</span></span></span></span></span> ms at <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo rspace="0em" lspace="0em">=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">n{=}10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">n</span><span class="mord"><span class="mrel">=</span></span><span class="mord">1</span><span class="mord">0</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo lspace="0em" rspace="0em">≈</mo><mspace width="0.1667em"/><mn>720</mn></mrow><annotation encoding="application/x-tex">{\approx}\,720</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"><span class="mrel">≈</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">7</span><span class="mord">2</span><span class="mord">0</span></span></span></span></span> ms at <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo lspace="0em" rspace="0em">=</mo><mn>400</mn></mrow><annotation encoding="application/x-tex">n{=}400</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">n</span><span class="mord"><span class="mrel">=</span></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span></span></span></span></span>), keeping average per-block metadata constant at <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo rspace="0em" lspace="0em">≈</mo><mspace width="0.1667em"/><mn>320</mn></mrow><annotation encoding="application/x-tex">{\approx}\,320</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"><span class="mrel">≈</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">3</span><span class="mord">2</span><span class="mord">0</span></span></span></span></span> bytes. At <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo rspace="0em" lspace="0em">=</mo><mn>120</mn></mrow><annotation encoding="application/x-tex">n{=}120</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord mathnormal">n</span><span class="mord"><span class="mrel">=</span></span><span class="mord">1</span><span class="mord">2</span><span class="mord">0</span></span></span></span></span>, Bluestreak sustains <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo rspace="0em" lspace="0em">≈</mo><mspace width="0.1667em"/><mn>220</mn></mrow><annotation encoding="application/x-tex">{\approx}\,220</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"><span class="mrel">≈</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mord">2</span><span class="mord">0</span></span></span></span></span>k tx/s with LSM-tree storage and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo rspace="0em" lspace="0em">≈</mo><mspace width="0.1667em"/><mn>400</mn></mrow><annotation encoding="application/x-tex">{\approx}\,400</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord"><span class="mrel">≈</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mord">0</span></span></span></span></span>k tx/s with WAL-based storage, both at sub-second latency.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

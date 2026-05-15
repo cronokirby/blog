@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) SealAgg; A Lightweight Auditing Framework for One-Shot Secure Aggregation against Malicious Servers</title>
+<meta name="description" content="AbstractTrustworthy federated learning requires both update privacy and aggregate integrity. While secure aggregation protects the confidentiality of client upd">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-sealagg-a-lightweight-auditing-framework-for-one-shot-secure-aggregation-against-malicious-servers.html">
+<meta property="og:title" content="(2026-05) SealAgg; A Lightweight Auditing Framework for One-Shot Secure Aggregation against Malicious Servers">
+<meta property="og:description" content="AbstractTrustworthy federated learning requires both update privacy and aggregate integrity. While secure aggregation protects the confidentiality of client upd">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-sealagg-a-lightweight-auditing-framework-for-one-shot-secure-aggregation-against-malicious-servers.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) SealAgg; A Lightweight Auditing Framework for One-Shot Secure Aggregation against Malicious Servers">
+<meta name="twitter:description" content="AbstractTrustworthy federated learning requires both update privacy and aggregate integrity. While secure aggregation protects the confidentiality of client upd">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/869">(2026-05) SealAgg; A Lightweight Auditing Framework for One-Shot Secure Aggregation against Malicious Servers</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ge Gao]]</li>
+
+  <li>[[Haining Yu]]</li>
+
+  <li>[[Yue Sun]]</li>
+
+  <li>[[Zhongyun Hua]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-04</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Trustworthy federated learning requires both update privacy and aggregate integrity. While secure aggregation protects the confidentiality of client updates, it does not prevent a malicious server from tampering with the final aggregate. Existing verifiable schemes typically address this limitation by introducing separate integrity-verification layers, such as zero-knowledge proofs, homomorphic hashes, and commitmentbased mechanisms. However, these approaches either require clients to remain online after uploading their updates for additional verification or recovery procedures, or incur substantial computation overhead that scales linearly with the model dimension. To address these limitations, we propose SealAgg, a one-shot verifiable secure aggregation framework that simultaneously guarantees update confidentiality and aggregate integrity against a malicious server. SealAgg allows clients to disconnect immediately after uploading their updates and introduces an aggregatenative auditing mechanism that enables lightweight integrity verification without a separate costly verification pipeline. Specifically, each client embeds dual hidden finite-field linear projections and a context-binding heartbeat value into its update before encryption, so that the audit material is co-aggregated with the gradients along the same path. Moreover, we design an asymmetric three-server architecture that confines integrity validation entirely to the server side, thereby fully supporting one-shot client participation. We provide formal analyses of the correctness and security of SealAgg. Extensive experiments show that SealAgg achieves practical end-to-end efficiency, incurs only a small auditing overhead relative to the total cost, and outperforms state-of-the-art schemes.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes</title>
+<meta name="description" content="AbstractHash-based SNARKs are arguably the most prominent and widely deployed class of transparent SNARKs, owing to desirable properties such as plausible post-">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-field-agnostic-snarks-with-small-proofs-via-encode-repeat-accumulate-era-codes.html">
+<meta property="og:title" content="(2026-05) Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes">
+<meta property="og:description" content="AbstractHash-based SNARKs are arguably the most prominent and widely deployed class of transparent SNARKs, owing to desirable properties such as plausible post-">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-field-agnostic-snarks-with-small-proofs-via-encode-repeat-accumulate-era-codes.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes">
+<meta name="twitter:description" content="AbstractHash-based SNARKs are arguably the most prominent and widely deployed class of transparent SNARKs, owing to desirable properties such as plausible post-">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/864">(2026-05) Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Anubhav Baweja]]</li>
+
+  <li>[[Giacomo Fenzi]]</li>
+
+  <li>[[Pratyush Mishra]]</li>
+
+  <li>[[Tushar Mopuri]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-03</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Hash-based SNARKs are arguably the most prominent and widely deployed class of transparent SNARKs, owing to desirable properties such as plausible post-quantum security and the avoidance of public-key cryptography. The key ingredients in the construction of hash-based SNARKs are an error-correcting code and an Interactive Oracle Proof of Proximity (IOPP) for that code.</p>
+<p>A particularly desirable property for hash-based SNARKs is field-agnosticism, i.e., the ability to natively prove statements over arbitrary fields (of sufficient size). We advance the study of field-agnostic hash-based SNARKs as follows:</p>
+<p><span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∙</mo><mrow></mrow></mrow><annotation encoding="application/x-tex">\bullet{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord">∙</span><span class="mord"></span></span></span></span></span> We introduce a new family of linear-time encodable field-agnostic error-correcting codes called Encode-Repeat-Accumulate (ERA) codes. These codes achieve a strong trade-off between encoding time and relative distance, the two properties that largely determine the commitment time and proof size of the resulting hash-based SNARK. We also show that ERA codes are efficiently codeswitchable (Ron-Zewi and Rothblum [JACM 2024]), i.e., we can efficiently reduce the task of checking the proximity of a word to an ERA code to checking the proximity of a related word to an arbitrary code.</p>
+<p><span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∙</mo><mrow></mrow></mrow><annotation encoding="application/x-tex">\bullet{}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord">∙</span><span class="mord"></span></span></span></span></span> We present an IOPP for (interleaved) ERA codes that leverages their fast encoding time, strong distance guarantees, and efficient codeswitchability to achieve concretely small query complexity (and hence small proof size in the resulting hash-based SNARK) while maintaining good prover efficiency.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

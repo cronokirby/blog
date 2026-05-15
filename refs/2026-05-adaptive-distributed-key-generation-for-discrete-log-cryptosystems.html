@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Adaptive Distributed Key Generation for Discrete-Log Cryptosystems</title>
+<meta name="description" content="AbstractThe security of decentralized asset custody and blockchain consensus increasingly relies on threshold signatures to eliminate single points of failure.">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-adaptive-distributed-key-generation-for-discrete-log-cryptosystems.html">
+<meta property="og:title" content="(2026-05) Adaptive Distributed Key Generation for Discrete-Log Cryptosystems">
+<meta property="og:description" content="AbstractThe security of decentralized asset custody and blockchain consensus increasingly relies on threshold signatures to eliminate single points of failure.">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-adaptive-distributed-key-generation-for-discrete-log-cryptosystems.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Adaptive Distributed Key Generation for Discrete-Log Cryptosystems">
+<meta name="twitter:description" content="AbstractThe security of decentralized asset custody and blockchain consensus increasingly relies on threshold signatures to eliminate single points of failure.">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/892">(2026-05) Adaptive Distributed Key Generation for Discrete-Log Cryptosystems</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ruben Baecker]]</li>
+
+  <li>[[Paul Gerhart]]</li>
+
+  <li>[[Stanislaw Jarecki]]</li>
+
+  <li>[[Phillip Nazarian]]</li>
+
+  <li>[[Daniel Rausch]]</li>
+
+  <li>[[Dominique Schröder]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-06</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The security of decentralized asset custody and blockchain consensus increasingly relies on threshold signatures to eliminate single points of failure. In these high-stakes environments, static security models are an insufficient theoretical abstraction. Real-world blockchain deployments demand adaptive security to ensure protocols remain secure against adversaries who reactively compromise participants based on observed network traffic and protocol state.</p>
+<p>While the NIST standardization effort and Bitcoin’s Taproot (BIP340) upgrade have accelerated interest in adaptively secure threshold Schnorr signatures, a threshold system is only as secure as its setup phase. In decentralized settings, this necessitates a Distributed Key Generation (DKG) protocol to eliminate reliance on a trusted dealer. However, a critical gap remains: current DKG protocols are incompatible with the specific key structures required by promising schemes (EUROCRYPT'26). Furthermore, a result from CRYPTO'25 demonstrated that unique key commitments necessitate a non-falsifiable assumption for adaptive security. To avoid non-standard assumptions, DKG protocols must be key-share hiding, a property existing DKGs fail to provide.</p>
+<p>We close this gap by proposing two novel DKG protocols that support identifiable abort and tolerate a dishonest majority and prove them secure under new ideal functionalities in the UC framework. Our first protocol achieves optimal round complexity via a single broadcast round at the cost of allowing adversarial bias, while our second protocol eliminates the bias in two rounds. In addition, the protocols provide a proactive key refresh mechanism that allows long-lived decentralized networks to refresh internal key material periodically. This enables the system to recover from transient node compromises without the operational burden of rotating the underlying public key. Our evaluation demonstrates that these constructions are practically efficient, incurring minimal communication and computation overhead for modern high-throughput architectures.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

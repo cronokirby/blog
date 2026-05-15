@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) On Why and How to Minimize the Arithmetic Complexity of Fast Matrix Multiplication Algorithms</title>
+<meta name="description" content="AbstractNaively multiplying two  matri-  ces requires eight multiplications and four additions.  Strassen showed how to perform the same computation  using seve">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-on-why-and-how-to-minimize-the-arithmetic-complexity-of-fast-matrix-multiplication-algorithms.html">
+<meta property="og:title" content="(2026-04) On Why and How to Minimize the Arithmetic Complexity of Fast Matrix Multiplication Algorithms">
+<meta property="og:description" content="AbstractNaively multiplying two  matri-  ces requires eight multiplications and four additions.  Strassen showed how to perform the same computation  using seve">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-on-why-and-how-to-minimize-the-arithmetic-complexity-of-fast-matrix-multiplication-algorithms.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) On Why and How to Minimize the Arithmetic Complexity of Fast Matrix Multiplication Algorithms">
+<meta name="twitter:description" content="AbstractNaively multiplying two  matri-  ces requires eight multiplications and four additions.  Strassen showed how to perform the same computation  using seve">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/849">(2026-04) On Why and How to Minimize the Arithmetic Complexity of Fast Matrix Multiplication Algorithms</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Erik Mårtensson]]</li>
+
+  <li>[[Paul Stankovski Wagner]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-30</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Naively multiplying two <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2 \times 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span> matri-
+ces requires eight multiplications and four additions.
+Strassen showed how to perform the same computation
+using seven multiplications and 18 additions. By chang-
+ing basis, Karstadt and Schwartz lowered the number of
+additions to 12, which they showed to be optimal within
+this generalized Karstadt-Schwartz (KS) framework.</p>
+<p>We present improved methods for optimizing the
+number of additions in Strassen-type matrix multipli-
+cation schemes for larger matrix sizes, and without any
+change of basis. Considering fast matrix generation
+process holistically as consisting of scheme generation
+and addition reduction, we discuss how to optimize both
+parts of this pipeline. We indicate that minimizing ad-
+ditions during the generation process is advantageous.</p>
+<p>We implement of our methods and use them to
+optimize the number of additions for schemes with
+dimensions up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mn>5</mn><mo separator="true">,</mo><mn>7</mn><mo separator="true">,</mo><mn>10</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n, m, k) = (5, 7, 10)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mopen">(</span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mclose">)</span></span></span></span></span>. Our methods
+can handle larger dimensions than (what has been
+published within) the KS framework.</p>
+<p>We compare our results against solutions within the
+KS framework on several large sets of schemes. We show
+that our method performs better relative to the KS
+framework, the larger the matrix dimensions are. We
+also apply our algorithms to a large number of schemes
+where we do not have apples-to-apples results in the KS
+framework as a comparison.</p>
+<p>We optimize the arithmetic complexity for two sets
+of thousands of schemes with the same rank. The
+number of additions needed after optimization roughly
+follows a normal distribution. Thus, we need to generate
+many solutions to minimize arithmetic complexity.</p>
+<p>Finally, our results on a large set of schemes and
+our extensive list of future research directions make for a valuable benchmark and facilitate future study of the
+arithmetic complexity of fast matrix multiplication.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

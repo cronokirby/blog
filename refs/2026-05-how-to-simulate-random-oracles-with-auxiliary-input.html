@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) How to Simulate Random Oracles with Auxiliary Input</title>
+<meta name="description" content="AbstractThe random oracle model (ROM) allows us to optimistically reason about security properties of cryptographic hash functions, and has been hugely influent">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-how-to-simulate-random-oracles-with-auxiliary-input.html">
+<meta property="og:title" content="(2026-05) How to Simulate Random Oracles with Auxiliary Input">
+<meta property="og:description" content="AbstractThe random oracle model (ROM) allows us to optimistically reason about security properties of cryptographic hash functions, and has been hugely influent">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-how-to-simulate-random-oracles-with-auxiliary-input.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) How to Simulate Random Oracles with Auxiliary Input">
+<meta name="twitter:description" content="AbstractThe random oracle model (ROM) allows us to optimistically reason about security properties of cryptographic hash functions, and has been hugely influent">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/854">(2026-05) How to Simulate Random Oracles with Auxiliary Input</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Yevgeniy Dodis]]</li>
+
+  <li>[[Aayush Jain]]</li>
+
+  <li>[[Huijia Lin]]</li>
+
+  <li>[[Ji Luo]]</li>
+
+  <li>[[Daniel Wichs]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-01</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The <em>random oracle model</em> (ROM) allows us to optimistically reason about security properties of cryptographic hash functions, and has been hugely influential in designing practical cryptosystems.  But it is overly optimistic against non-uniform adversaries, and often suggests security properties and security levels unachievable by any real hash function.  To reconcile with this discrepancy, Unruh [CRYPTO ’07] proposed the <em>auxiliary-input random oracle model</em> (AI-ROM), where a non-uniform attacker additionally gets a bounded amount of advice about the random oracle.</p>
+<p>Proving security in the AI-ROM is often much more difficult, but a series of works starting with Unruh provided useful technical tools to do so.  Although these tools lead to good results in the information-theoretic setting, they are unsatisfactory in the computational setting, where the random oracle is used alongside other computational hardness assumptions.  At the most basic level, we did not even know whether it is possible to efficiently simulate random oracle queries given auxiliary input, which has remained as an explicit open problem since the work of Unruh.</p>
+<p>In this work, we resolve the above open problem and show how to efficiently simulate auxiliary-input random oracles.  Moreover, the simulation has low concrete overhead, leading to small losses in exact security.  We use it to prove the security of a broad class of computational schemes in the AI-ROM, including the first non-interactive zero-knowledge (NIZK) scheme in the AI-ROM.  As a tool of independent interest, we develop a new notion of ultra-secure pseudorandom functions with fast RAM evaluation, which can achieve <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>λ</mi></msup></mrow><annotation encoding="application/x-tex">2^\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span> security while having sublinear <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">o</mi><mo stretchy="false">(</mo><mi>λ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathrm{o}(\lambda)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathrm">o</span><span class="mopen">(</span><span class="mord mathnormal">λ</span><span class="mclose">)</span></span></span></span></span> evaluation time.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

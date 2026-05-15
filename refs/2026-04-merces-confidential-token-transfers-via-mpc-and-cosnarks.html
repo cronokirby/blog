@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Merces; Confidential Token Transfers via MPC and CoSNARKs</title>
+<meta name="description" content="AbstractFungible tokens on public blockchains expose all balances and transfer amounts in the clear, which is incompatible with the financial privacy required b">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-merces-confidential-token-transfers-via-mpc-and-cosnarks.html">
+<meta property="og:title" content="(2026-04) Merces; Confidential Token Transfers via MPC and CoSNARKs">
+<meta property="og:description" content="AbstractFungible tokens on public blockchains expose all balances and transfer amounts in the clear, which is incompatible with the financial privacy required b">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-merces-confidential-token-transfers-via-mpc-and-cosnarks.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Merces; Confidential Token Transfers via MPC and CoSNARKs">
+<meta name="twitter:description" content="AbstractFungible tokens on public blockchains expose all balances and transfer amounts in the clear, which is incompatible with the financial privacy required b">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/850">(2026-04) Merces; Confidential Token Transfers via MPC and CoSNARKs</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Daniel Escudero]]</li>
+
+  <li>[[Florian Lugstein]]</li>
+
+  <li>[[Christian Rechberger]]</li>
+
+  <li>[[Verena Schröppel]]</li>
+
+  <li>[[Roman Walch]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-30</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Fungible tokens on public blockchains expose all balances and transfer amounts in the clear, which is incompatible with the financial privacy required by many real-world applications. We present Merces a confidential token contract that hides user balances and transaction amounts while preserving on-chain verifiability. The core idea is to store secret shares of balances within a decentralized MPC network, while only commitments are published to a smart contract. Thereby, Merces is capable of translating any existing token (e.g., any ERC20 token) into a confidential version. Deposits, withdrawals, and transfers are computed privately within the MPC network, which generates a collaborative SNARK (CoSNARK) to prove the validity of each state transition. In particular, the proof ensures that on-chain commitments are updated consistently and that the sender has sufficient funds. In this paper we give a full formalization of our construction in the Universal Composability (UC) framework, provide rigorous security proofs, and describe a concrete instantiation using Groth16 over BN254 with Poseidon2-based commitments. We further provide a complete end-to-end implementation, accompanied by extensive benchmarks and discussion of a working demo: our system achieves over 300 transactions per second, including proof generation, while requiring only minimal client-side computation.</p></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>

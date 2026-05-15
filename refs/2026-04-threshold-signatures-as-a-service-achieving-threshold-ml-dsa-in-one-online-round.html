@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-04) Threshold Signatures as-a-Service; Achieving Threshold ML-DSA in One Online Round</title>
+<meta name="description" content="AbstractWe formally define Threshold Signatures as-a-Service (TSaaS), in which the honest parties performing the threshold signature respond only to the signing">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-04-threshold-signatures-as-a-service-achieving-threshold-ml-dsa-in-one-online-round.html">
+<meta property="og:title" content="(2026-04) Threshold Signatures as-a-Service; Achieving Threshold ML-DSA in One Online Round">
+<meta property="og:description" content="AbstractWe formally define Threshold Signatures as-a-Service (TSaaS), in which the honest parties performing the threshold signature respond only to the signing">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-04-threshold-signatures-as-a-service-achieving-threshold-ml-dsa-in-one-online-round.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-04) Threshold Signatures as-a-Service; Achieving Threshold ML-DSA in One Online Round">
+<meta name="twitter:description" content="AbstractWe formally define Threshold Signatures as-a-Service (TSaaS), in which the honest parties performing the threshold signature respond only to the signing">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/814">(2026-04) Threshold Signatures as-a-Service; Achieving Threshold ML-DSA in One Online Round</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Matthieu Rambaud]]</li>
+
+  <li>[[Sascha Roth]]</li>
+
+  <li>[[Antoine Urban]]</li>
+
+</ul>
+
+
+<div class="published">2026-04-25</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We formally define Threshold Signatures as-a-Service (TSaaS), in which the honest parties performing the threshold signature respond only to the signing requests of a designated client. This model captures the mainstream industrial use case of threshold signatures which is to implement Wallets as-a-Service.</p>
+<p>This new model allows for optimizations of existing threshold signature schemes, in particular in the lattice setting. As a particularly relevant case study, we describe a TSaaS variant of the Threshold ML-DSA scheme from [Celi et al., USENIX'26], called ML-DSaaS, which combines the first two rounds into a single message-independent round that can be pre-processed before the message is known.
+We first describe a simple version of ML-DSaaS in a model where the client is semi honest. We then upgrade the construction to withstand a possibly corrupt client, by leveraging existence of a coordinating machine which is present in all real-life deployments of TSaaS. This machine, dubbed the Relayer, filters the requests of the client to the parties and centralizes the communications between them.
+We provide an implementation of our scheme together with experimental benchmarks. The online phase of our scheme is two to three times faster than the one of [Celi et al., USENIX'26].</p>
+<pre><code>Our modification carries over unchanged to many similar threshold signature schemes, provided they are used in the TSaaS setting.</code></pre></blockquote><section class="footnotes">
+<ol>
+</ol>
+</section>
+
+
+</body>
+</html>
