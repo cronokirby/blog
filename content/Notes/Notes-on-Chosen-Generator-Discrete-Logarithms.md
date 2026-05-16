@@ -127,8 +127,6 @@ logarithm of $X$ with respect to $G$.
 In more detail, consider the following game:
 
 $$
-
-$$
 \boxed{
 \begin{aligned}
 &\colorbox{#FBCFE8}{\large
@@ -137,7 +135,7 @@ $$
 \cr
 &P \gets \bot\cr
 &X \gets \texttt{super}.\text{Pub}()\cr
-&r \xleftarrow{\\$} \mathbb{F}_q\cr
+&r \xleftarrow{\$} \mathbb{F}_q\cr
 &R \gets r \cdot G\cr
 \cr
 &\underline{\mathtt{SetP}(P):}\cr

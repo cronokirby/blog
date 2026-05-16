@@ -81,7 +81,7 @@ implemented from scratch.
 - [Saferith](https://github.com/cronokirby/saferith) [[2021]]
   - A library providing constant-time Big Number arithmetic, for Go. Essentially,
 a replacement for `big.Int`, suitable for Cryptography.
-    This was the subject of my [BSc Project](/papers/2021/06/bsc_report.pdf)
+    This was the subject of my [BSc Project](https://cronokirby.com/papers/2021/06/bsc_report.pdf)
     at EPFL, under the supervision of [Prof. Bryan Ford](https://people.epfl.ch/bryan.ford).
 
 - [Fractals](https://github.com/cronokirby/fractals) [[2021]]
@@ -99,7 +99,7 @@ a replacement for `big.Int`, suitable for Cryptography.
   - This is a compiler for a respectable subset of Haskell,
     written in Haskell. This features standard data types,
     pattern matching, as well as lazy evaluation!
-    I'm also writing [an in-depth series](/series/haskell-in-haskell) 
+    I'm also writing [an in-depth series](/posts/haskell-in-haskell-0-introduction.html)
     about this compiler
 
 - [KaTeX Playground](https://github.com/cronokirby/katex-playground) [[2020]]
@@ -129,7 +129,7 @@ a replacement for `big.Int`, suitable for Cryptography.
     people, in a peer 2 peer fashion. Unlike applications like zoom, there's
     no central server handling connections.
 
-    [Read More](/posts/simple-webrtc-video-chat)
+    [Read More](/posts/simple-webrtc-video-chat.html)
 
 - [Musync](https://github.com/cronokirby/musync) [[2020]]
   - This is similar to [Populate](https://github.com/cronokirby/populate).
@@ -182,7 +182,6 @@ a replacement for `big.Int`, suitable for Cryptography.
     The protocol involves participating nodes ferrying messages to eachother in a ring like fashion.
     New nodes can join the chat by talking to any of the existing nodes in the swarm. *Go* is used for
     simple networking and concurrency, as well as to provide both a command line, and a graphical terminal interface.
-    [Read More](/posts/notes-on-ripple/)
 
 - [Huffman-rs](https://github.com/cronokirby/bittrickle) [[2019]]
   - This is a CLI program using *Huffman Coding* to compress files. The program is written in *Rust*

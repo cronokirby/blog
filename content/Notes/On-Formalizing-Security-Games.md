@@ -20,12 +20,14 @@ A game $G$ of class $\mathfrak{c}$ with $N$ phases consists of
 - Response types $R_0, \ldots, R_n : \mathcal{U}$
 - State types $C_0, \dots, C_{N + 1} : \mathcal{U}$
 - A starting state $c_0 : C_{0}$
-- Transition functions (of class $\mathfrak{c}$): $$
-\begin{aligned}
-&\mathscr{C_0} : C_0 \xrightarrow{\mathfrak{c}} C_1 \times R_0\cr
-&\mathscr{C_i} : C_i \times Q_i \xrightarrow{\mathfrak{c}} C_{i + 1} \times R_i
-\end{aligned}
-$$
+- Transition functions (of class $\mathfrak{c}$):
+
+  $$
+  \begin{aligned}
+  &\mathscr{C_0} : C_0 \xrightarrow{\mathfrak{c}} C_1 \times R_0\cr
+  &\mathscr{C_i} : C_i \times Q_i \xrightarrow{\mathfrak{c}} C_{i + 1} \times R_i
+  \end{aligned}
+  $$
 
 The notion of "class" is just a way to talk about various assumptions around
 the functions we use. In most cases, $\mathfrak{c}$ will be randomized functions,
@@ -73,9 +75,11 @@ An adversary $\mathscr{A}$ of class $\mathfrak{c}$ for $G$ consists of
 
 - State types $A_0, \ldots, A_N : \mathcal{U}$
 - A starting state $a_0 : A_0$
-- Transition functions (of class $\mathfrak{c}$): $$
-\mathscr{A_i} : A_i \times R_i \xrightarrow{\mathfrak{c}} A_{i + 1} \times Q_{i + 1}
-$$
+- Transition functions (of class $\mathfrak{c}$):
+
+  $$
+  \mathscr{A_i} : A_i \times R_i \xrightarrow{\mathfrak{c}} A_{i + 1} \times Q_{i + 1}
+  $$
 
 Note that the parameters here are dictated by the game, whereas the class
 of adversaries isn't. We can have adversaries that aren't polynomially bounded,

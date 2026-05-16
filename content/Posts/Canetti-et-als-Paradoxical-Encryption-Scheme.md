@@ -320,7 +320,7 @@ has the shape of a hash function.
 
 All of this is just to say that given a string $s \in \{0, 1\}^*$,
 I can interpret that string as a function
-${\langle s \rangle : \{0, 1\}^\* \to \{0, 1\}^\* + \bot}$,
+${\langle s \rangle : \{0, 1\}^* \to \{0, 1\}^* + \bot}$,
 potentially outputting $\bot$ if we have an invalid program,
 or the program doesn't have the shape of a hash function, etc.
 

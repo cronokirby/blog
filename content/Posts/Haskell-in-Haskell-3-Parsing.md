@@ -10,11 +10,11 @@ tags:
 draft: "False"
 ---
 
-This is the third post in the [Haskell in Haskell](/series/haskell-in-haskell) series.
+This is the third post in the [Haskell in Haskell](/posts/haskell-in-haskell-0-introduction.html) series.
 
 In this post, we'll go over creating a _parser_ for our subset of Haskell.
 This stage of the compiler is responsible for taking the tokens that our
-lexer produced in the [previous part](/posts/haskell-in-haskell-3).
+lexer produced in the [previous part](/posts/haskell-in-haskell-2-lexing.html).
 
 <!--more-->
 
@@ -678,7 +678,7 @@ parserStage = makeStage "Parser" Parser.parser
 
 The definition of this is essentially the same as we had for `lexerStage`.
 Stages were introduced in great detail
-[last time](/posts/2020/12/haskell-in-haskell-2/#stages-the-idea),
+[last time](/posts/haskell-in-haskell-2-lexing.html),
 so feel free to take a quick refresher if you'd like.
 
 We also need to modify our argument parsing to accept "parse" as a stage.

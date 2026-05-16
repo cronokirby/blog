@@ -185,7 +185,7 @@ $$
   (1)\text{SetMask}_i():
 }\cr
   &\enspace
-    f_i \xleftarrow{\$} \{ f_i \in \mathbb{F}_q[X]\_{\leq t - 1} \mid f_i(0) = 0 \\}
+    f_i \xleftarrow{\$} \{ f_i \in \mathbb{F}_q[X]\_{\leq t - 1} \mid f_i(0) = 0 \}
   \cr
   &\enspace
     F_i \gets f_i \cdot G

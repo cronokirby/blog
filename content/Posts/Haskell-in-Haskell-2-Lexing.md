@@ -10,7 +10,7 @@ tags:
 draft: "False"
 ---
 
-This is the second post in the [Haskell in Haskell](/series/haskell-in-haskell) series.
+This is the second post in the [Haskell in Haskell](/posts/haskell-in-haskell-0-introduction.html) series.
 
 In this post, we'll go over creating a _lexer_ for our subset of Haskell. This stage
 of the compiler goes from the raw characters in our a source file, to a more
@@ -247,7 +247,7 @@ and there. `LambdaCase`, in particular, will even be used pretty heavily through
 the project.
 
 We also have `import Ourlude`, in order to import the custom prelude
-we defined [last time](/posts/2020/11/haskell-in-haskell-1/).
+we defined [last time](/posts/haskell-in-haskell-1-setup.html).
 
 For now, let's create a "stub" implementation of our lexer:
 
@@ -294,7 +294,7 @@ to our program, as well as `exitFailure :: IO ()`, to quit the program if an err
 
 `pPrint` and `pPrintString` come from
 the library we mentioned
-[last time](/posts/2020/11/haskell-in-haskell-1/)
+[last time](/posts/haskell-in-haskell-1-setup.html)
 , which can format any given string in a nice way.
 
 ### Stages: The Idea
@@ -646,7 +646,7 @@ we want to be able to build up a large lexer for Haskell source code from lexers
 for smaller parts.
 
 To do this we'll use _Lexer Combinators_, a topic I've already talked about
-[previously](/posts/20202/10/lexical-combinators).
+[previously](/posts/lexer-combinators.html).
 See that post if you want even more detail and explanation after what we see here.
 
 ## The Basic Definition

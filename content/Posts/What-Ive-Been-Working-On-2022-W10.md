@@ -171,8 +171,8 @@ simulation based security.
 
 # Cryptographic Foundations
 
-I wrote [a post](/notes/2022/on-formalizing-security-games/)
-[or two](/notes/2022/some-more-notes-on-security-games/) tinkering
+I wrote [a post](/notes/on-formalizing-security-games.html)
+[or two](/notes/some-more-notes-on-formalizing-games.html) tinkering
 around with a more categorical formulation of basic security games,
 and I've been pretty happy with the results so far. I've been taking
 Serge Vaudenay's "Advanced Cryptography" course this semester, which goes

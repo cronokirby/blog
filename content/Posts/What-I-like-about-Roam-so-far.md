@@ -31,7 +31,7 @@ got out of the habit of visiting my markdown notes. Something I want in a note t
 this is that it should be basically effortless to start taking notes on something. I shouldn't
 have to worry about opening something up and navigating.
 
-Recently, I've tried out [Roam](roamresearch.com/). It's been working very well for me so far.
+Recently, I've tried out [Roam](https://roamresearch.com/). It's been working very well for me so far.
 In fact, it's been working out *surprisingly* well for me so far. It's very effortless for me
 to open up Roam and start taking notes on something, and I feel that I actually get a lot of
 value with how Roam lets me organize things.
@@ -95,5 +95,5 @@ and more easily take notes. And having access to this tool makes me feel much mo
 in my thoughts, and makes my thoughts feel much more permanent as well.
 
 This was a bit of rambling post, and I don't intend to edit it very much. I think I should write
-more free-form posts like this, and I encourage you to check out [Roam](roamresearch.com)
+more free-form posts like this, and I encourage you to check out [Roam](https://roamresearch.com)
 for yourself!

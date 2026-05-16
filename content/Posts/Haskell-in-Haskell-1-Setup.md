@@ -9,7 +9,7 @@ tags:
   - "compiler"
 ---
 
-This is the first "real" post in the [Haskell in Haskell](/series/haskell-in-haskell/)
+This is the first "real" post in the [Haskell in Haskell](/posts/haskell-in-haskell-0-introduction.html)
 series.
 
 In this post we'll go over setting up a basic project in Haskell.
@@ -663,6 +663,6 @@ set up, and a lot of the boilerplate necessary for the project out of the way.
 The code for this part is available [here](https://github.com/cronokirby/haskell-in-haskell/tree/part-1).
 
 Stay tuned for
-[the next part](/posts/2020/12/haskell-in-haskell-2/)
+[the next part](/posts/haskell-in-haskell-2-lexing.html)
 of this series, where we'll finally get into compiler goodness,
 by writing our own lexer for Haskell, and all of its whitespace trickery!

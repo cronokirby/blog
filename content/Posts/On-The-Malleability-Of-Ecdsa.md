@@ -239,7 +239,7 @@ most commonly in the form of [Ed25519 signatures](https://datatracker.ietf.org/d
 You can actually set up this signature scheme so that the signatures are
 tied to a specific public key, avoiding this kind of malleability.
 
-I wrote [a post](/posts/2021/07/signatures_from_identification) on Schnorr Signatures
+I wrote [a post](/posts/signatures-from-identification-schemes.html) on Schnorr Signatures
 previously, and I'd recommend taking a look at it for more
 information, but I'll recap the essence of the scheme here.
 

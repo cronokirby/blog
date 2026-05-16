@@ -30,8 +30,8 @@
       <span class="entry-date">{{ item.date }}</span>
     </div>
     <ul class="item-tags">
-    {% for tag in item.tags %}
-    <li><a href="/tag/{{ tag }}/index.html">#{{ tag }}</a></li>
+    {% for tag in item.tag_links %}
+    <li><a href="{{ tag.link }}">#{{ tag.name }}</a></li>
     {% endfor %}
     </ul>
   </li>

@@ -57,7 +57,7 @@ be its field of scalars.
 
 The starting point for this variant of ring signature is the ubiquitous
 _Schnorr_ signature. Since this scheme has been explained many times,
-including [in this blog](/posts/2021/07/signatures_from_identification/),
+including [in this blog](/posts/signatures-from-identification-schemes.html),
 I'll limit myself to a brief summary.
 
 **Key Generation**

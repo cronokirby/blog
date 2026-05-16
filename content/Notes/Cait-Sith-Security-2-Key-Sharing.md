@@ -767,7 +767,7 @@ $$
   (1)\text{SetMask}_i():
 }\cr
   &\enspace
-    f_i \xleftarrow{\$} \{ f_i \in \mathbb{F}_q[X]\_{\leq t - 1} \mid f_i(0) = s_i \\}
+    f_i \xleftarrow{\$} \{ f_i \in \mathbb{F}_q[X]\_{\leq t - 1} \mid f_i(0) = s_i \}
   \cr
   &\enspace
     F_i \gets f_i \cdot G
@@ -1612,7 +1612,7 @@ $$
   (1)\text{Set}_i(z):
 }\cr
   &\enspace
-    f_i \xleftarrow{\$} \{ f_i \in \mathbb{F}_q[X]\_{\leq t - 1} \mid f_i(0) = z \\}
+    f_i \xleftarrow{\$} \{ f_i \in \mathbb{F}_q[X]\_{\leq t - 1} \mid f_i(0) = z \}
   \cr
   &\enspace
     F_i \gets f_i \cdot G

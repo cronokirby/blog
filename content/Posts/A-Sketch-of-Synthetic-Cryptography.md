@@ -599,7 +599,7 @@ as we'll see later.
 Another variant of security for encryption involves
 comparing the encryption of a chosen set of messages,
 and that of a random set of messages, as described by the property
-$\Pi[\text{\\$IND-CPA}(N)]$:
+$\Pi[\text{RAND-IND-CPA}(N)]$:
 ![](../Images/157dfcfe008d15d674d70435d22201c450d5f74af9dd3df922b59743dad5f733.png)
 
 This turns out to be equivalent.
@@ -607,7 +607,7 @@ This turns out to be equivalent.
 The first direction is trivial:
 **Claim:**
 $$
-\Pi[\text{IND-CPA}(N)] \multimap \Pi[\text{\$IND-CPA}(N)]
+\Pi[\text{IND-CPA}(N)] \multimap \Pi[\text{RAND-IND-CPA}(N)]
 $$
 **Proof:**
 ![](../Images/732c5e1891630c7aae7b2e913af3263292742b819b9421204a68bee946e1fd7d.png)
@@ -618,7 +618,7 @@ in that we need to use the assumption twice.
 
 **Claim:**
 $$
-\Pi[\text{\$IND-CPA}(N)]^2 \multimap \Pi[\text{IND-CPA}(N)]
+\Pi[\text{RAND-IND-CPA}(N)]^2 \multimap \Pi[\text{IND-CPA}(N)]
 $$
 **Proof:**
 ![](../Images/b3d9ac7573258b7e33e85ccaa3cbc462faa81835d625a8e20b85f8364bbbcd7c.png)
@@ -788,15 +788,15 @@ $(A = B)^n \multimap A^n = B^n$.)
 Now, given an encryption scheme
 $$
 E : K_0 \otimes M \to C
-$$,
+$$
 and a PRF
 $$
 F : K_1 \otimes X \to K_0
 $$
-, we construct an encryption scheme
+we construct an encryption scheme
 $$
 E' : K_1 \otimes M \to (X \otimes C)
-$$.
+$$
 
 The idea is that $X$ will be the type of our "nonce", which will be generated
 at random and appended to the ciphertext:
@@ -842,8 +842,8 @@ More formally, a public key encryption scheme consists of:
 
 - Types for public keys $\text{PK}$, private keys $\text{SK}$,
 messages $M$, and ciphertexts $C$.
-- A key generation algorithm $K : \emptyset \xrightarrow{\\$} (\text{SK}, \text{PK})$
-- An encryption algorithm $E : \text{PK} \otimes M \xrightarrow{\\$} C$.
+- A key generation algorithm $K : \emptyset \xrightarrow{R} (\text{SK}, \text{PK})$
+- An encryption algorithm $E : \text{PK} \otimes M \xrightarrow{R} C$.
 - An encryption algorithm $D : \text{SK} \otimes C \to M$.
 
 The following correctness property must be satisfied:
@@ -883,8 +883,8 @@ mechanism*, or KEM.
 Formally, a KEM consists of:
 - Types $\text{PK}$ (public keys), $\text{SK}$ (private keys), $\text{C}$
 (ciphertexts / encapsulations), $\text{K}$ (output keys).
-- A key generation algorithm $K : \emptyset \xrightarrow{\\$} (\text{SK}, \text{PK})$
-- An encapsulation algorithm $E : \text{PK} \xrightarrow{\\$} C \otimes K$.
+- A key generation algorithm $K : \emptyset \xrightarrow{R} (\text{SK}, \text{PK})$
+- An encapsulation algorithm $E : \text{PK} \xrightarrow{R} C \otimes K$.
 - A decapsulation algorithm $D : \text{SK} \otimes C \to K$.
 
 The idea is that the encapsulation algorithm will generate a new key,

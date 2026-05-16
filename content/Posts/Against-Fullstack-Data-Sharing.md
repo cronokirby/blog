@@ -214,9 +214,7 @@ There's a common complaint going around that our applications, and especially th
 ecosystem, have gotten a bit too dependency-hungry. We have millions of dependencies, 8 layers deep,
 and we can't stop adding more of them to our projects.
 
-Illustrated:
-
-![A diagram shows that .node_modules is heavier than a black hole](/node_modules_heavy.png)
+Illustrated: `node_modules` is heavier than a black hole.
 
 One reason for this (I don't think I have the guts to pretend to diagnose the problem), is that
 it's pretty easy to add a new dependency to an application, and hard to feel the costs.

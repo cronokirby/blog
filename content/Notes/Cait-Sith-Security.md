@@ -13,7 +13,7 @@ type: "note"
 ---
 
 This serves as an organizing document for the
-security analysis of [Cait-Sith](github.com/cronokirby/cait-sith).
+security analysis of [Cait-Sith](https://github.com/cronokirby/cait-sith).
 This document isn't intended to be a specification
 for the protocol itself, rather,
 it's intended to analyze the protocol *as specified*
@@ -42,12 +42,12 @@ which you can think of as being like UC security, in essence),
 as well as some notational conventions, and how we structure round communication
 and aborts.
 
-# [Part 1: Broadcast](/notes/2023/04/cait-sith-security-1-echo-broadcast)
+# [Part 1: Broadcast](/notes/cait-sith-security-1-echo-broadcast.html)
 
 One key intermediate protocol is broadcast, which ensures that a party
 sends the same message to all other parties.
 
-# [Part 2: Key Sharing](/notes/2023/04/cait-sith-security-2-key-sharing)
+# [Part 2: Key Sharing](/notes/cait-sith-security-2-key-sharing.html)
 
 This document looks at the key sharing protocol.
 You can think of this as a generalization of key generation to also handle

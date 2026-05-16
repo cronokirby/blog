@@ -207,7 +207,7 @@ for serial media, understanding the story requires having understood most of the
 of the story.
 
 This approach is also easier, because we don't have to worry about sourcing the material, and can instead
-rely on the user providing us with material on their own. This is similar to how [](japanese.io) works,
+rely on the user providing us with material on their own. This is similar to how [japanese.io](https://japanese.io) works,
 where you enter text into their site, and then it augments it with dictionary entries and what not.
 
 ## Presenting media

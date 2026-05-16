@@ -76,7 +76,7 @@ which allow you to easily listen to incoming messages. Another way is to poll a 
 for new messages periodically, although I had trouble getting this to work without losing
 messages.
 
-I knew I wanted to deploy with [vercel](vercel.com), which meant going with a serverless
+I knew I wanted to deploy with [vercel](https://vercel.com), which meant going with a serverless
 approach. That's why I ended up going with [Pusher](https://pusher.com/), which
 essentially provides "websockets as a service". You can subscribe to events based on
 an identifier, and push to a channel based on the same identifier, which is all we

@@ -47,12 +47,12 @@
 {% if published %}
 <div class="published">{{ published }}</div>
 {% endif %}
-{% if tags %}
+{% if tag_links %}
 <ul class="tags">
-{% for tag in tags %}
+{% for tag in tag_links %}
   <li class="tag">
-    <a href="/tag/{{ tag }}/index.html">
-    #{{ tag }}
+    <a href="{{ tag.link }}">
+    #{{ tag.name }}
     </a>
   </li>
 {% endfor %}
