@@ -36,34 +36,12 @@
 
 
 
-<ul class="tags">
-
-  <li class="tag">
-    <a href="/tag/compiler/index.html">
-    #compiler
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/haskell/index.html">
-    #haskell
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/programming-languages/index.html">
-    #programming-languages
-    </a>
-  </li>
-
-</ul>
-
 </header>
 
-<p>This is the third post in the <a href=/series/haskell-in-haskell>Haskell in Haskell</a> series.</p>
+<p>This is the third post in the <a href=/posts/haskell-in-haskell-0-introduction.html>Haskell in Haskell</a> series.</p>
 <p>In this post, we'll go over creating a <em>parser</em> for our subset of Haskell.
 This stage of the compiler is responsible for taking the tokens that our
-lexer produced in the <a href=/posts/haskell-in-haskell-3>previous part</a>.</p><!--more-->
+lexer produced in the <a href=/posts/haskell-in-haskell-2-lexing.html>previous part</a>.</p><!--more-->
 <p>As usual, both the code
 <a href=https://github.com/cronokirby/haskell-in-haskell/tree/part-3>for this part</a>,
 and the <a href=https://github.com/cronokirby/haskell-in-haskell/>entire compiler</a>
@@ -480,7 +458,7 @@ import qualified Parser
 parserStage = makeStage "Parser" Parser.parser</code></pre>
 <p>The definition of this is essentially the same as we had for <code>lexerStage</code>.
 Stages were introduced in great detail
-<a href=/posts/2020/12/haskell-in-haskell-2/#stages-the-idea>last time</a>,
+<a href=/posts/haskell-in-haskell-2-lexing.html>last time</a>,
 so feel free to take a quick refresher if you'd like.</p>
 <p>We also need to modify our argument parsing to accept "parse" as a stage.
 This way, users can do:</p>

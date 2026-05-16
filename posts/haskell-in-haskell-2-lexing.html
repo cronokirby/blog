@@ -36,31 +36,9 @@
 
 
 
-<ul class="tags">
-
-  <li class="tag">
-    <a href="/tag/compiler/index.html">
-    #compiler
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/haskell/index.html">
-    #haskell
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/programming-languages/index.html">
-    #programming-languages
-    </a>
-  </li>
-
-</ul>
-
 </header>
 
-<p>This is the second post in the <a href=/series/haskell-in-haskell>Haskell in Haskell</a> series.</p>
+<p>This is the second post in the <a href=/posts/haskell-in-haskell-0-introduction.html>Haskell in Haskell</a> series.</p>
 <p>In this post, we'll go over creating a <em>lexer</em> for our subset of Haskell. This stage
 of the compiler goes from the raw characters in our a source file, to a more
 structured stream of <em>tokens</em>.</p>
@@ -210,7 +188,7 @@ For example, you can do:</p>
 and there. <code>LambdaCase</code>, in particular, will even be used pretty heavily throughout
 the project.</p>
 <p>We also have <code>import Ourlude</code>, in order to import the custom prelude
-we defined <a href=/posts/2020/11/haskell-in-haskell-1/>last time</a>.</p>
+we defined <a href=/posts/haskell-in-haskell-1-setup.html>last time</a>.</p>
 <p>For now, let's create a "stub" implementation of our lexer:</p>
 <pre><code>data LexerError = UnimplementedError deriving (Eq, Show)
 
@@ -243,7 +221,7 @@ We have some IO stuff we'll be using like <code>getArgs :: IO [String]</code> fo
 to our program, as well as <code>exitFailure :: IO ()</code>, to quit the program if an error happens.</p>
 <p><code>pPrint</code> and <code>pPrintString</code> come from
 the library we mentioned
-<a href=/posts/2020/11/haskell-in-haskell-1/>last time</a>
+<a href=/posts/haskell-in-haskell-1-setup.html>last time</a>
 , which can format any given string in a nice way.</p>
 <h3>Stages: The Idea</h3>
 <p>We're going to make a bit an abstraction over the concept of a <em>stage</em>.
@@ -473,7 +451,7 @@ into creating a little framework in Haskell for building up our lexer. The idea 
 we want to be able to build up a large lexer for Haskell source code from lexers
 for smaller parts.</p>
 <p>To do this we'll use <em>Lexer Combinators</em>, a topic I've already talked about
-<a href=/posts/20202/10/lexical-combinators>previously</a>.
+<a href=/posts/lexer-combinators.html>previously</a>.
 See that post if you want even more detail and explanation after what we see here.</p>
 <h2>The Basic Definition</h2>
 <p>The basic idea of a Lexer Combinator is that a lexer is nothing more than a function

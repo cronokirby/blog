@@ -36,40 +36,6 @@
 
 
 
-<ul class="tags">
-
-  <li class="tag">
-    <a href="/tag/backend/index.html">
-    #backend
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/frontend/index.html">
-    #frontend
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/graphql/index.html">
-    #graphql
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/javascript/index.html">
-    #javascript
-    </a>
-  </li>
-
-  <li class="tag">
-    <a href="/tag/programming/index.html">
-    #programming
-    </a>
-  </li>
-
-</ul>
-
 </header>
 
 <p>This is a post about how I work with data in fullstack development. Specifically, I share what I think are
@@ -213,9 +179,7 @@ not something you want to be shipping to your user.</p>
 <p>There's a common complaint going around that our applications, and especially those in the NPM
 ecosystem, have gotten a bit too dependency-hungry. We have millions of dependencies, 8 layers deep,
 and we can't stop adding more of them to our projects.</p>
-<p>Illustrated:</p>
-<p>
-<img src=/node_modules_heavy.png alt=A diagram shows that .node_modules is heavier than a black hole /></p>
+<p>Illustrated: <code>node_modules</code> is heavier than a black hole.</p>
 <p>One reason for this (I don't think I have the guts to pretend to diagnose the problem), is that
 it's pretty easy to add a new dependency to an application, and hard to feel the costs.</p>
 <p>Well, on the backend you don't feel the costs. On the frontend you actually try to care about
