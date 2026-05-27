@@ -1,0 +1,10 @@
+---
+published: "2026-05-15"
+link: "https://eprint.iacr.org/2026/969"
+authors: ["[[Ahmet Ramazan A\u011f\u0131rta\u015f]]", "[[Arda Bu\u011fra \u00d6zer]]", "[[Z\u00fclf\u00fckar Sayg\u0131]]", "[[O\u011fuz Yayla]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Unbiased and unpredictable randomness is a cornerstone of Web3 security, underpinning everything from consensus protocols to DeFi logic. Although Distributed Verifiable Random Functions (DVRFs) eliminate central points of failure, current designs often have to compromise performance. Most existing protocols are hindered by one of three limitations: proofs that scale linearly with the number of participants, high computational cost of bilinear pairings, or latency introduced by mandatory interactive steps during generation. In this work, we present Icy-DVRF, a protocol that improves DVRFwCP by employing a preprocessing scheme similar to FROST to reduce the number of interaction rounds among participants, by lowering the additional communication cost from $O(n^2 t)$ to $O(t)$ while maintaining constant-size proofs. The downside of our construction is that, relative to DDH-DVRF and GLOW-DVRF, this approach incurs an additional off-chain communication round due to the threshold structure of our non-interactive zero-knowledge proof. This architecture ensures that verification costs remain low, regardless of the set of participants. We evaluate Icy-DVRF against established standards and demonstrate that our protocol achieves a substantial efficiency gain over pairing-based alternatives. While theoretical estimates suggest verification costs of approximately one quarter of those of standard designs, our empirical benchmarks on the Sepolia testnet, utilizing the EIP-2537: Precompile for BLS12-381 curve operations, confirm that Icy-DVRF requires only 88,803 gas for full execution. This represents a significant 43.02\% reduction in total gas consumption compared to existing pairing-based constructions, saving 67,035 gas per on-chain verification.

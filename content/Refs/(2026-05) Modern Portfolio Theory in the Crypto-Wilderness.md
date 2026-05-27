@@ -1,0 +1,10 @@
+---
+published: "2026-05-19"
+link: "https://eprint.iacr.org/2026/999"
+authors: ["[[Ivan Vynyavskyy]]", "[[Stefan Kitzler]]", "[[Bernhard Haslhofer]]", "[[Aviv Yaish]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Modern portfolio theory (MPT) prescribes how to maximise the return of an asset portfolio for a given level of risk. The optimal trade-off between return and variance defines the efficient frontier. Whether actual cryptoasset portfolios approximate this prescription and whether proximity to the frontier translates into realised performance remain difficult to test at large scale in traditional markets due to their opaque nature and the inaccessibility of data. As we show, public blockchains make these questions measurable: every token transfer is recorded, thus enabling complete portfolio reconstruction for every account at any point in time. We leverage this transparency to reconstruct cryptoasset portfolios for over 116 M Ethereum accounts across the full chain history (2015-2025), measure their distance to the constrained efficient frontier, and quantify how deviations translate into realised performance. Here we show that market entry timing, not allocation choice, is the dominant predictor of realised cryptoasset returns. On-chain wealth is highly concentrated and portfolios are pervasively under-diversified, with single-asset holdings accounting for 83.35% of accounts. Two-asset portfolios sit closest to the efficient frontier defined by their held assets, a proximity that reflects the narrowness of their opportunity set rather than deliberate optimisation. Passive market-capitalisation weighting outperforms every MPT optimisation strategy in median realised return, and entry month alone explains 70-79% of the variance in returns, far exceeding the contribution of allocation choice. Mean-variance optimisation therefore appears neither descriptive of observed behaviour nor prescriptively useful in the cryptoasset domain, even if MPT retains its value as a normative benchmark.

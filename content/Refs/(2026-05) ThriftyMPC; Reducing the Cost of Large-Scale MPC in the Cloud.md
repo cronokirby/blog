@@ -1,0 +1,10 @@
+---
+published: "2026-05-17"
+link: "https://eprint.iacr.org/2026/977"
+authors: ["[[David Inyangson]]", "[[Sahbaaz Ansari]]", "[[Tushar M. Jois]]", "[[Rosario Gennaro]]", "[[Gamze Gursoy]]", "[[Gabriel Kaptchuk]]", "[[Moti Yung]]", "[[Diogo Barradas]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Cloud computing has become the standard for large-scale computation, offering elastic scalability and on-demand resources that exceed typical on-premise capabilities. However, many large-scale computations over sensitive data -- such as genome-wide association studies (GWAS) -- face significant barriers to cloud adoption due to privacy concerns and regulatory constraints. While cryptographic primitives like multi-party computation can alleviate these concerns through provable privacy guaranties, their substantial communication and computational overhead can make cloud deployment cost-prohibitive.  To address both privacy and cost constraints, we present ThriftyMPC.  ThriftyMPC is a framework that leverages spot instances (ephemeral cloud compute at reduced rates) to enable cost-effective, privacy-preserving computation at scale by combining secure multi-party computation with preemption-tolerant execution. We introduce a formal model for multi-party execution under ephemeral compute conditions, demonstrate how ThriftyMPC handles spot instance preemptions while maintaining cryptographic security guaranties, and provide a formal discussion of these guaranties. Our evaluations on realistic GWAS-inspired workloads over the Google Cloud Platform demonstrate robust execution despite spot instance churn, and show significant cost reduction compared to the state-of-the-art multi-party computation framework (MP-SPDZ) run traditionally using on-demand instances.  We show that leveraging multi-party computation on spot instances makes privacy-preserving computation economically viable, enabling organizations to harness the cloud for sensitive workloads previously confined to isolated, on-premise deployments.
