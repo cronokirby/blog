@@ -19,6 +19,7 @@ created: 2026-01-07
 - [[(1932) Brave New World]]
 - [[(2011) Leaving the Atocha Station]]
 - [[(1987) The Bonfire of the Vanities]]
+- [[(2026) Transcription]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
