@@ -18,6 +18,15 @@ jobs:
 
       - name: Install Nix
         uses: cachix/install-nix-action@v31
+        with:
+          # crates.io's data-access policy blocks the default Nixpkgs
+          # User-Agent ("curl/<ver> Nixpkgs/<ver>") with HTTP 403, which breaks
+          # naersk's per-crate fetchurl downloads. Inject a unique User-Agent
+          # into the fixed-output fetch sandbox via NIX_CURL_FLAGS so curl
+          # identifies us per https://crates.io/data-access.
+          extra_nix_config: |
+            experimental-features = nix-command flakes configurable-impure-env
+            impure-env = NIX_CURL_FLAGS=-Acronokirby-blog-build/1.0
 
       # Cache NAR of the external clog builder
       - name: Cache clog NAR
