@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Icy-DVRF; A Distributed Verifiable Random Function based on FROST signatures</title>
+<meta name="description" content="AbstractUnbiased and unpredictable randomness is a cornerstone of Web3 security, underpinning everything from consensus protocols to DeFi logic. Although Distri">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-icy-dvrf-a-distributed-verifiable-random-function-based-on-frost-signatures.html">
+<meta property="og:title" content="(2026-05) Icy-DVRF; A Distributed Verifiable Random Function based on FROST signatures">
+<meta property="og:description" content="AbstractUnbiased and unpredictable randomness is a cornerstone of Web3 security, underpinning everything from consensus protocols to DeFi logic. Although Distri">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-icy-dvrf-a-distributed-verifiable-random-function-based-on-frost-signatures.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Icy-DVRF; A Distributed Verifiable Random Function based on FROST signatures">
+<meta name="twitter:description" content="AbstractUnbiased and unpredictable randomness is a cornerstone of Web3 security, underpinning everything from consensus protocols to DeFi logic. Although Distri">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/969">(2026-05) Icy-DVRF; A Distributed Verifiable Random Function based on FROST signatures</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ahmet Ramazan Ağırtaş]]</li>
+
+  <li>[[Arda Buğra Özer]]</li>
+
+  <li>[[Zülfükar Saygı]]</li>
+
+  <li>[[Oğuz Yayla]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Unbiased and unpredictable randomness is a cornerstone of Web3 security, underpinning everything from consensus protocols to DeFi logic. Although Distributed Verifiable Random Functions (DVRFs) eliminate central points of failure, current designs often have to compromise performance. Most existing protocols are hindered by one of three limitations: proofs that scale linearly with the number of participants, high computational cost of bilinear pairings, or latency introduced by mandatory interactive steps during generation. In this work, we present Icy-DVRF, a protocol that improves DVRFwCP by employing a preprocessing scheme similar to FROST to reduce the number of interaction rounds among participants, by lowering the additional communication cost from <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2 t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span> to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span> while maintaining constant-size proofs. The downside of our construction is that, relative to DDH-DVRF and GLOW-DVRF, this approach incurs an additional off-chain communication round due to the threshold structure of our non-interactive zero-knowledge proof. This architecture ensures that verification costs remain low, regardless of the set of participants. We evaluate Icy-DVRF against established standards and demonstrate that our protocol achieves a substantial efficiency gain over pairing-based alternatives. While theoretical estimates suggest verification costs of approximately one quarter of those of standard designs, our empirical benchmarks on the Sepolia testnet, utilizing the EIP-2537: Precompile for BLS12-381 curve operations, confirm that Icy-DVRF requires only 88,803 gas for full execution. This represents a significant 43.02% reduction in total gas consumption compared to existing pairing-based constructions, saving 67,035 gas per on-chain verification.</p></blockquote>
+
+
+</body>
+</html>

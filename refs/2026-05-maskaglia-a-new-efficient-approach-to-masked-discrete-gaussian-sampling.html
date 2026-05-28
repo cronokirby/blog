@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Maskaglia; A New, Efficient Approach to Masked Discrete Gaussian Sampling</title>
+<meta name="description" content="AbstractDiscrete Gaussian sampling is an important operation at the core of many lattice-based cryptosystems, which presents significant challenges from an impl">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-maskaglia-a-new-efficient-approach-to-masked-discrete-gaussian-sampling.html">
+<meta property="og:title" content="(2026-05) Maskaglia; A New, Efficient Approach to Masked Discrete Gaussian Sampling">
+<meta property="og:description" content="AbstractDiscrete Gaussian sampling is an important operation at the core of many lattice-based cryptosystems, which presents significant challenges from an impl">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-maskaglia-a-new-efficient-approach-to-masked-discrete-gaussian-sampling.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Maskaglia; A New, Efficient Approach to Masked Discrete Gaussian Sampling">
+<meta name="twitter:description" content="AbstractDiscrete Gaussian sampling is an important operation at the core of many lattice-based cryptosystems, which presents significant challenges from an impl">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/988">(2026-05) Maskaglia; A New, Efficient Approach to Masked Discrete Gaussian Sampling</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Calvin Abou Haidar]]</li>
+
+  <li>[[Thomas Espitau]]</li>
+
+  <li>[[Clément Hoffmann]]</li>
+
+  <li>[[Mehdi Tibouchi]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Discrete Gaussian sampling is an important operation at the core of many lattice-based cryptosystems, which presents significant challenges from an implementation standpoint. In particular, it is difficult to protect against side-channel attacks.</p>
+<p>Extensive research has gone into the problem of addressing timing side-channel attacks, and as result, constant-time discrete Gaussian sampling is now well-understood. However, few papers so far have attempted to achieve protection against stronger side-channel attacks like correlation power analysis via, e.g., masking, and those that have tend to suffer from underwhelming performance.</p>
+<p>Focusing on the case of discrete Gaussians with fixed center and standard deviation, the state-of-the-art approach to applying a masking countermeasure is to start from a constant-time cumulative distribution table-based (CDT-based) sampler, possibly with a search tree twist. Such a CDT-based sampler compares a uniform random value to each element of the CDT of the target distribution. Replacing these comparisons with a masked comparison circuit (typically based on a carry-save adder like Kogge-Stone) yields the desired, albeit costly, countermeasure.</p>
+<p>In this paper, we propose a very different approach to masked discrete Gaussian sampling. We start from a new rejection-based discrete Gaussian sampler, obtained by discretizing a sampler for the continuous normal distribution related to an algorithm of Marsaglia (1963). We show that our new sampler can be expressed elegantly in terms of uniform and geometric distributions, in a way that is surprisingly friendly to masking, particularly when using bitslicing. The resulting masked, t-probing secure gadget dramatically outperforms previous work. When applied to NIST candidate signature HAWK, we find it to need less than 5 masked AND gates per generated sample on a 32-bit architecture, and about 20 times fewer than the state-of-the-art, comparison tree-based masked sampler of Eid et al. (TCHES 2026). Furthermore, we show that while Eid et al.'s sampler can be sped up with significant tweaks (bitslicing, faster masked comparisons, etc.), the modified gadget still requires 4 to 5 times as many masked AND gates as our techniques.</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) DDYF; Differential Dolev-Yao Fuzzing of Cryptographic Protocols</title>
+<meta name="description" content="AbstractSymbolic formal verification of cryptographic protocols based on the Dolev-Yao (DY) attacker model---an active attacker with full network control and pe">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-ddyf-differential-dolev-yao-fuzzing-of-cryptographic-protocols.html">
+<meta property="og:title" content="(2026-05) DDYF; Differential Dolev-Yao Fuzzing of Cryptographic Protocols">
+<meta property="og:description" content="AbstractSymbolic formal verification of cryptographic protocols based on the Dolev-Yao (DY) attacker model---an active attacker with full network control and pe">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-ddyf-differential-dolev-yao-fuzzing-of-cryptographic-protocols.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) DDYF; Differential Dolev-Yao Fuzzing of Cryptographic Protocols">
+<meta name="twitter:description" content="AbstractSymbolic formal verification of cryptographic protocols based on the Dolev-Yao (DY) attacker model---an active attacker with full network control and pe">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/991">(2026-05) DDYF; Differential Dolev-Yao Fuzzing of Cryptographic Protocols</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Tom Gouville]]</li>
+
+  <li>[[Lucca Hirschi]]</li>
+
+  <li>[[Steve Kremer]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Symbolic formal verification of cryptographic protocols based on the Dolev-Yao (DY) attacker model—an active attacker with full network control and perfect cryptography—is well-established for finding design-level logical flaws in cryptographic protocols. Building on this, DY fuzzing enriches fuzzing with this attacker model to uncover logical bugs at the implementation level. In contrast to bit-level fuzzers (e.g., AFL), DY fuzzing leverages a formal model of messages and cryptography to generate structured, adversarial executions, such as replaying and re-signing a modified payload.</p>
+<p>However, a significant limitation of DY fuzzing is the requirement to precisely model properties to check at runtime (e.g., session parameter agreement). Defining these properties is labor-intensive and inherently non-exhaustive, often necessitating complex instrumentation of the Programs Under Test (PUTs). Consequently, typically only a subset of logical attacks is detected.</p>
+<p>We address this limitation by introducing Differential DY Fuzzing (DDYF), which uses a differential oracle to compare executions across different protocol implementations. By interpreting discrepancies through the DY model, it identifies semantic differences indicative of bugs or vulnerabilities, effectively minimizing false positives.</p>
+<p>We propose a generic design for DDYF, implement it within the puffin DY fuzzer, and evaluate it on two major TLS implementations. Our results demonstrate that DDYF can detect vulnerabilities that evade state-of-the-art fuzzers, specifically those requiring DY attacker capabilities (missed by bit-level differential fuzzers) or complex objective oracles (missed by DY fuzzing). DDYF also uncovered 8 new RFC violations in Openssl and Wolfssl, which are by-design hardly detectable with non-differential oracle. Furthermore, we show that DDYF exposes fine-grained behavioral discrepancies, enabling more precise fingerprinting of protocol implementations.</p></blockquote>
+
+
+</body>
+</html>

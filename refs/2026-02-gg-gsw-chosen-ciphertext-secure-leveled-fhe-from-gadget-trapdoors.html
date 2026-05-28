@@ -44,15 +44,28 @@
 <div class="published">2026-02-18</div>
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <h1>Abstract</h1>
 <blockquote>
 <p>We build a leveled fully homomorphic encryption (FHE) scheme that achieves IND-CCA1 security under the  learning with errors (LWE) assumption in the standard model. It is the first scheme of this kind that does not rely on succinct non-interactive arguments of knowledge (SNARK) to obtain security against active adversaries. Instead, we use the gadget lattice trapdoors introduced by Micciancio and Peikert [Eurocrypt 2012] in combination with a dual version of the GSW FHE scheme [Gentry, Sahai, Waters, Crypto 2013]. Instead of proving the integrity of a ciphertext with a SNARK, we use the gadget trapdoor to recover the LWE noise of a ciphertext. This ensures IND-CCA1 security because it allows us to determine whether a ciphertext queried to the decryption oracle will reveal information about the secret key to an adversary.</p>
-<p>Our scheme is fully compact, multi-hop and requires very few changes to the original GSW scheme beyond the key generation and decryption algorithm. In particular, the homomorphic operations remain unchanged. We also follow ideas from Bourse et al. [Crypto 2016] to obtain IND-CPA-D security almost for free, without requiring correctness.</p></blockquote><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p>Our scheme is fully compact, multi-hop and requires very few changes to the original GSW scheme beyond the key generation and decryption algorithm. In particular, the homomorphic operations remain unchanged. We also follow ideas from Bourse et al. [Crypto 2016] to obtain IND-CPA-D security almost for free, without requiring correctness.</p></blockquote>
 
 
 </body>

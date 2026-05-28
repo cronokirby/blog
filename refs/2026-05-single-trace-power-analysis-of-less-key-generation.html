@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Single-Trace Power Analysis of LESS Key Generation</title>
+<meta name="description" content="AbstractThis paper presents a side-channel attack on the Linear Equivalence Signature Scheme (LESS) v2.0. LESS derives its security from the Linear Equivalence">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-single-trace-power-analysis-of-less-key-generation.html">
+<meta property="og:title" content="(2026-05) Single-Trace Power Analysis of LESS Key Generation">
+<meta property="og:description" content="AbstractThis paper presents a side-channel attack on the Linear Equivalence Signature Scheme (LESS) v2.0. LESS derives its security from the Linear Equivalence">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-single-trace-power-analysis-of-less-key-generation.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Single-Trace Power Analysis of LESS Key Generation">
+<meta name="twitter:description" content="AbstractThis paper presents a side-channel attack on the Linear Equivalence Signature Scheme (LESS) v2.0. LESS derives its security from the Linear Equivalence">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/990">(2026-05) Single-Trace Power Analysis of LESS Key Generation</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Süleyman Emir Akın]]</li>
+
+  <li>[[Abdullah Talayhan]]</li>
+
+  <li>[[Özcan Öztürk]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>This paper presents a side-channel attack on the Linear Equivalence Signature Scheme (LESS) v2.0. LESS derives its security from the Linear Equivalence Problem and was evaluated as a candidate during Round 2 of the NIST post-quantum cryptography standardization process. LESS secret keys are used to generate monomial matrices, which are stored efficiently in two one-dimensional lists: the permutation list and the coefficient list. Recovering the secret monomial matrices is sufficient to forge signatures, as they are the values actually used during signing. We propose a profiled, single-trace horizontal attack that recovers the full secret monomial matrices. First, monomial coefficients that are multiplied by the dense part of the public generator matrix are recovered via power analysis of the matrix multiplication function. Next, we attack the reduced row echelon form function to recover the permutation list. Finally, we exploit an algebraic relation between the recovered values and the public key to obtain the rest of the coefficient list. We validated our attack on an ARM Cortex-M4 microcontroller. Our results demonstrate that we can exactly recover the secret monomial matrices from a single power trace with a 96% success rate on the NIST Category 1 parameter set. We also analyze potential countermeasures and show that independently shuffling the row processing order within each column reduces the success rate of our attack to negligible levels, providing protection against the specific attack vector demonstrated in this paper.</p></blockquote>
+
+
+</body>
+</html>

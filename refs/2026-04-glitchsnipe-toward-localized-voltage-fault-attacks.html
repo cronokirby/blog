@@ -50,14 +50,27 @@
 <div class="published">2026-04-16</div>
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <h1>Abstract</h1>
 <blockquote>
-<p>Voltage glitching is one of the most prominent fault injection techniques due to its effectiveness and simplicity. Although it is generally regarded as a spatially global fault method, in which the injected glitch uniformly affects all circuits on the die, several studies have observed that specific locations may be affected more than others. To characterize this phenomenon, we draw inspiration from methods used in electromagnetic interference (EMI) analysis. In this paper, we demonstrate that voltage attacks can be modeled as the transfer of conducted electromagnetic energy through the power delivery network (PDN) to the chip’s die. By analyzing voltage glitches in the frequency domain and modeling the PDN as a communication channel, we demonstrate that different frequency components of an injected glitch signal propagate through the network in distinct patterns. In this context, we further show that modulating the supply voltage with a single-frequency sinusoidal signal, rather than injecting a pulse-shaped glitch, enables an adversary to influence transistors in specific regions of the chip and thus induce localized faults. To validate these claims, we first propose a post-silicon profiling framework that identifies the frequency bands in which the system’s PDN is most vulnerable and maps the spatial regions of the chip affected by each frequency component. To this end, we perform extensive profiling on several FPGAs using distributed time-to-digital converters (TDCs) to measure the impact of injected signals across a range of frequencies. As a proof-of-concept, we also demonstrate successful localized voltage attacks on simple FSMs and AES-128 implementations with various placements, to further show the sensitivity of chip locations to injected energy at different frequencies. Our results reveal that even minor changes in design placement can significantly affect a circuit’s susceptibility to voltage-based fault attacks, either weakening or strengthening its resilience.</p></blockquote><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p>Voltage glitching is one of the most prominent fault injection techniques due to its effectiveness and simplicity. Although it is generally regarded as a spatially global fault method, in which the injected glitch uniformly affects all circuits on the die, several studies have observed that specific locations may be affected more than others. To characterize this phenomenon, we draw inspiration from methods used in electromagnetic interference (EMI) analysis. In this paper, we demonstrate that voltage attacks can be modeled as the transfer of conducted electromagnetic energy through the power delivery network (PDN) to the chip’s die. By analyzing voltage glitches in the frequency domain and modeling the PDN as a communication channel, we demonstrate that different frequency components of an injected glitch signal propagate through the network in distinct patterns. In this context, we further show that modulating the supply voltage with a single-frequency sinusoidal signal, rather than injecting a pulse-shaped glitch, enables an adversary to influence transistors in specific regions of the chip and thus induce localized faults. To validate these claims, we first propose a post-silicon profiling framework that identifies the frequency bands in which the system’s PDN is most vulnerable and maps the spatial regions of the chip affected by each frequency component. To this end, we perform extensive profiling on several FPGAs using distributed time-to-digital converters (TDCs) to measure the impact of injected signals across a range of frequencies. As a proof-of-concept, we also demonstrate successful localized voltage attacks on simple FSMs and AES-128 implementations with various placements, to further show the sensitivity of chip locations to injected energy at different frequencies. Our results reveal that even minor changes in design placement can significantly affect a circuit’s susceptibility to voltage-based fault attacks, either weakening or strengthening its resilience.</p></blockquote>
 
 
 </body>

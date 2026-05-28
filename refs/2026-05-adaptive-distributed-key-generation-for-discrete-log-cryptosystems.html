@@ -54,16 +54,29 @@
 <div class="published">2026-05-06</div>
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <h1>Abstract</h1>
 <blockquote>
 <p>The security of decentralized asset custody and blockchain consensus increasingly relies on threshold signatures to eliminate single points of failure. In these high-stakes environments, static security models are an insufficient theoretical abstraction. Real-world blockchain deployments demand adaptive security to ensure protocols remain secure against adversaries who reactively compromise participants based on observed network traffic and protocol state.</p>
 <p>While the NIST standardization effort and Bitcoin’s Taproot (BIP340) upgrade have accelerated interest in adaptively secure threshold Schnorr signatures, a threshold system is only as secure as its setup phase. In decentralized settings, this necessitates a Distributed Key Generation (DKG) protocol to eliminate reliance on a trusted dealer. However, a critical gap remains: current DKG protocols are incompatible with the specific key structures required by promising schemes (EUROCRYPT'26). Furthermore, a result from CRYPTO'25 demonstrated that unique key commitments necessitate a non-falsifiable assumption for adaptive security. To avoid non-standard assumptions, DKG protocols must be key-share hiding, a property existing DKGs fail to provide.</p>
-<p>We close this gap by proposing two novel DKG protocols that support identifiable abort and tolerate a dishonest majority and prove them secure under new ideal functionalities in the UC framework. Our first protocol achieves optimal round complexity via a single broadcast round at the cost of allowing adversarial bias, while our second protocol eliminates the bias in two rounds. In addition, the protocols provide a proactive key refresh mechanism that allows long-lived decentralized networks to refresh internal key material periodically. This enables the system to recover from transient node compromises without the operational burden of rotating the underlying public key. Our evaluation demonstrates that these constructions are practically efficient, incurring minimal communication and computation overhead for modern high-throughput architectures.</p></blockquote><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p>We close this gap by proposing two novel DKG protocols that support identifiable abort and tolerate a dishonest majority and prove them secure under new ideal functionalities in the UC framework. Our first protocol achieves optimal round complexity via a single broadcast round at the cost of allowing adversarial bias, while our second protocol eliminates the bias in two rounds. In addition, the protocols provide a proactive key refresh mechanism that allows long-lived decentralized networks to refresh internal key material periodically. This enables the system to recover from transient node compromises without the operational burden of rotating the underlying public key. Our evaluation demonstrates that these constructions are practically efficient, incurring minimal communication and computation overhead for modern high-throughput architectures.</p></blockquote>
 
 
 </body>

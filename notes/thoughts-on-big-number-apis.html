@@ -38,6 +38,22 @@
 
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/math/index.html">
+    #math
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <p>Big numbers are useful for general purpose applications,
@@ -117,8 +133,8 @@ be known in advance.</p>
 <p>This is the same idea as the last version, except in terms of cap overflow.
 The idea is that we can have operations that create a new cap based on the
 maximum possible size allowable for that operation. For example,
-multiplication of two integers with caps <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">c_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.5806em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-left:0em;top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.5806em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-left:0em;margin-right:0.05em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> can yield
-an integer of cap <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_1 + c_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.5806em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>. Taking modular operations with a cap
+multiplication of two integers with caps <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">c_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-right:0.05em;margin-left:0em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.5806em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> can yield
+an integer of cap <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_1 + c_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.15em;height:0.7333em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-right:0.05em;margin-left:0em;top:-2.55em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="margin-left:0em;top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>. Taking modular operations with a cap
 of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span> can yield integers with a cap of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span>.</p>
 <p>Since all of these caps are public information, having variable
 time operation, even creating new caps, so long as they depend only
@@ -156,58 +172,31 @@ in Dedis's kyber library <sup><a href="#fn-9">9</a></sup></p>
 <p><sup><a href="#fn-9">9</a></sup></p><section class="footnotes">
 <ol>
 <li id="fn-3">
-<p><a href=https://golang.org/pkg/math/big/>[3] big - The Go Programming Language</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://golang.org/pkg/math/big/>[3] big - The Go Programming Language</a></p>
 </li>
 <li id="fn-4">
-<p><a href=https://hackage.haskell.org/package/integer-gmp-0.5.1.0/docs/GHC-Integer.html>[4] GHC.Integer</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://hackage.haskell.org/package/integer-gmp-0.5.1.0/docs/GHC-Integer.html>[4] GHC.Integer</a></p>
 </li>
 <li id="fn-5">
-<p><a href=https://eprint.iacr.org/2016/224.pdf>[5] Yarom, Yuval, Daniel Genkin, and Nadia Heninger. "CacheBleed: A Timing Attack on OpenSSL Constant Time RSA"</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://eprint.iacr.org/2016/224.pdf>[5] Yarom, Yuval, Daniel Genkin, and Nadia Heninger. "CacheBleed: A Timing Attack on OpenSSL Constant Time RSA"</a></p>
 </li>
 <li id="fn-6">
-<p><a href=https://www.usenix.org/system/files/sec20-weiser.pdf>[6] Weiser, Samuel, Lukas Bodner, David Schrammel, and Raphael Spreitzer. "Big Numbers -- Big Troubles: Systematically Analyzing Nonce Leakage in (EC)DSA Implementations"</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://www.usenix.org/system/files/sec20-weiser.pdf>[6] Weiser, Samuel, Lukas Bodner, David Schrammel, and Raphael Spreitzer. "Big Numbers -- Big Troubles: Systematically Analyzing Nonce Leakage in (EC)DSA Implementations"</a></p>
 </li>
 <li id="fn-7">
-<p><a href=https://github.com/openssl/openssl/issues/6640>[7] OpenSSL - BIGNUM code is not constant-time due to bn_correct_top</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://github.com/openssl/openssl/issues/6640>[7] OpenSSL - BIGNUM code is not constant-time due to bn_correct_top</a></p>
 </li>
 <li id="fn-8">
-<p><a href=https://boringssl.googlesource.com/boringssl/+/HEAD/include/openssl/bn.h>[8] BoringSSL - include/openssl/bn.h</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://boringssl.googlesource.com/boringssl/+/HEAD/include/openssl/bn.h>[8] BoringSSL - include/openssl/bn.h</a></p>
 </li>
 <li id="fn-1">
-<p><a href=https://github.com/golang/go/issues/20654>[1] math/big: support for constant-time arithmetic</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://github.com/golang/go/issues/20654>[1] math/big: support for constant-time arithmetic</a></p>
 </li>
 <li id="fn-2">
-<p><a href=https://www.bearssl.org/bigint.html>[2] BearSSL - Big Integer Design</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://www.bearssl.org/bigint.html>[2] BearSSL - Big Integer Design</a></p>
 </li>
 <li id="fn-9">
-<p><a href=https://github.com/dedis/kyber/blob/master/group/mod/int.go>[9] Dedis - Kyber - kyber/int.go</a></p><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p><a href=https://github.com/dedis/kyber/blob/master/group/mod/int.go>[9] Dedis - Kyber - kyber/int.go</a></p>
 </li>
 </ol>
 </section>

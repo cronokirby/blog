@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Verifying Consensus Protocols from LLM-assisted TLA^+; A Case Study of Byzantine Reliable Broadcast</title>
+<meta name="description" content="AbstractTLA (Temporal Logic of Actions) is a formal specification language well-suited for distributed systems. However, writing proper TLA scripts requires hig">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-verifying-consensus-protocols-from-llm-assisted-tla-a-case-study-of-byzantine-reliable-broadcast.html">
+<meta property="og:title" content="(2026-05) Verifying Consensus Protocols from LLM-assisted TLA^+; A Case Study of Byzantine Reliable Broadcast">
+<meta property="og:description" content="AbstractTLA (Temporal Logic of Actions) is a formal specification language well-suited for distributed systems. However, writing proper TLA scripts requires hig">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-verifying-consensus-protocols-from-llm-assisted-tla-a-case-study-of-byzantine-reliable-broadcast.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Verifying Consensus Protocols from LLM-assisted TLA^+; A Case Study of Byzantine Reliable Broadcast">
+<meta name="twitter:description" content="AbstractTLA (Temporal Logic of Actions) is a formal specification language well-suited for distributed systems. However, writing proper TLA scripts requires hig">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/978">(2026-05) Verifying Consensus Protocols from LLM-assisted TLA^+; A Case Study of Byzantine Reliable Broadcast</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Shuhe Cao]]</li>
+
+  <li>[[Xin Wang]]</li>
+
+  <li>[[Chenxu Wang]]</li>
+
+  <li>[[Xiao Sui]]</li>
+
+  <li>[[Sisi Duan]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-18</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>TLA<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> (Temporal Logic of Actions) is a formal specification language well-suited for distributed systems. However, writing proper TLA<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> scripts requires high domain expertise. When it comes to modeling Byzantine behaviors for Byzantine fault-tolerant consensus protocols, the simulation of malicious behavior is a fundamental challenge: overly simplified modeling misses critical vulnerabilities, and verbose modeling leads to state-space explosion.</p>
+<p>In this paper, we present TLAssist, a large language model (LLM)-assisted tool for semi-automated TLA<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> generation tailored for Byzantine reliable broadcast (RBC) protocols. We provide a highly structured workflow and domain-specific data format to improve the quality of LLM prompts. Using five RBC protocols as case studies, we have some interesting findings. First, the specification generated by TLAssist outperforms many open-source TLA<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">^+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7713em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span></span> scripts we are aware of, including those written by domain experts. Second,  TLAssist can assist domain experts in identifying deep design flaws. Notably, our case study on the (2,3,4)-Optimistic RBC (a CCS'25 distinguished paper) captures a subtle issue that causes the violation of the totality property. Finally, TLAssist is useful for non-experts. Namely, we show that by revising the protocols slightly, the generated error traces effectively show complex corner cases that can facilitate understanding of the design.</p></blockquote>
+
+
+</body>
+</html>

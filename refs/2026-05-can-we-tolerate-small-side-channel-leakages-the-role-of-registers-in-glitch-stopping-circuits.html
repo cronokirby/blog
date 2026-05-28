@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Can We Tolerate Small Side-Channel Leakages; The Role of Registers in Glitch-Stopping Circuits</title>
+<meta name="description" content="AbstractResearch on cryptographic algorithms implemented in hardware and protected against side-channel attacks has advanced rapidly in recent years. Generalize">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-can-we-tolerate-small-side-channel-leakages-the-role-of-registers-in-glitch-stopping-circuits.html">
+<meta property="og:title" content="(2026-05) Can We Tolerate Small Side-Channel Leakages; The Role of Registers in Glitch-Stopping Circuits">
+<meta property="og:description" content="AbstractResearch on cryptographic algorithms implemented in hardware and protected against side-channel attacks has advanced rapidly in recent years. Generalize">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-can-we-tolerate-small-side-channel-leakages-the-role-of-registers-in-glitch-stopping-circuits.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Can We Tolerate Small Side-Channel Leakages; The Role of Registers in Glitch-Stopping Circuits">
+<meta name="twitter:description" content="AbstractResearch on cryptographic algorithms implemented in hardware and protected against side-channel attacks has advanced rapidly in recent years. Generalize">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1011">(2026-05) Can We Tolerate Small Side-Channel Leakages; The Role of Registers in Glitch-Stopping Circuits</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Artemii Ovchinnikov]]</li>
+
+  <li>[[Jelle Biesmans]]</li>
+
+  <li>[[Kris Myny]]</li>
+
+  <li>[[Ventzislav Nikov]]</li>
+
+  <li>[[Svetla Nikova]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Research on cryptographic algorithms implemented in hardware and protected against side-channel attacks has advanced rapidly in recent years. Generalized masking schemes, such as Threshold Implementations (TI) and Domain-Oriented Masking (DOM), currently provide a solid theoretical security foundation. Security models, including the probing model and its various extensions, enable formal verification of these guarantees. In addition, established guidelines for designing securely composable gadgets, along with tools for the automatic generation of masked designs, have further advanced the field. Experimental security assessment approaches, such as the Test Vector Leakage Assessment (TVLA) complement these efforts. Consequently, the primary focus of the research community has shifted toward optimizing existing techniques and bridging the gap between theoretical and practical security models.</p>
+<p>In this work, we demonstrate a case in which side-channel leakage, caused by glitches, can be concealed during experimental assessment in a setup that is theoretically not robustly secure. This effect arises due to specific patterns of glitch propagation. We investigate whether a particular layout of the complete logic chain can further contribute to a design’s resistance to side-channel attacks, potentially reducing latency and area by relaxing glitch-mitigation requirements, such as reducing the number of pipeline registers. To this end, we introduce new adversarial model which further relaxes the model of Müller and Moradi, introduced at CHES 2024. To illustrate the practical relevance of our proposal, we provide experimental evidence by modifying a well-known, provably secure AES S-box design by De Cnudde, rendering it insecure under the robust probing model. We conduct TVLA of power consumption for both FPGA-based (physical) and ASIC-like (simulation) implementations of our netlists, demonstrating the absence of detectable leakage, similar to the originally robustly secure version of the algorithm.</p></blockquote>
+
+
+</body>
+</html>

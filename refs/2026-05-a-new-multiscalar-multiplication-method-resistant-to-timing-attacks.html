@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) A New Multiscalar Multiplication Method Resistant to Timing Attacks</title>
+<meta name="description" content="AbstractMultiscalar multiplication (MSM) is a core operation in modern cryptographic systems, commonly used in various applications such as Zero-Knowledge Succi">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-a-new-multiscalar-multiplication-method-resistant-to-timing-attacks.html">
+<meta property="og:title" content="(2026-05) A New Multiscalar Multiplication Method Resistant to Timing Attacks">
+<meta property="og:description" content="AbstractMultiscalar multiplication (MSM) is a core operation in modern cryptographic systems, commonly used in various applications such as Zero-Knowledge Succi">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-a-new-multiscalar-multiplication-method-resistant-to-timing-attacks.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) A New Multiscalar Multiplication Method Resistant to Timing Attacks">
+<meta name="twitter:description" content="AbstractMultiscalar multiplication (MSM) is a core operation in modern cryptographic systems, commonly used in various applications such as Zero-Knowledge Succi">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/966">(2026-05) A New Multiscalar Multiplication Method Resistant to Timing Attacks</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Abhraneel Dutta]]</li>
+
+  <li>[[Veronika Kuchta]]</li>
+
+  <li>[[Francesco Sica]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Multiscalar multiplication (MSM) is a core operation in modern cryptographic systems, commonly used in various applications such as Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge (ZK-SNARKs) and Homomorphic Encryption. In elliptic curve–based ZK-SNARK constructions, MSM accounts for up to 80–90% of the total proof generation time, making its optimization critical to improving overall protocol performance. Despite significant progress in accelerating MSM through algorithmic techniques such as Pippenger’s method, existing implementations remain vulnerable to timing attacks due to irregular scalar representations and conditional operations on zero digits.\</p>
+<p>In this paper, we revisit the original Pippenger’s MSM algorithm, proposing novel modifications that achieve resistance to timing attacks while at the same time increasing its performance by almost 25%. Our main contribution is a new scalar recoding algorithm that transforms conventional <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.625em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span></span></span></span></span>-ary representations containing zero digits into equivalent non-zero representations. This ensures that all scalar digits are processed uniformly, eliminating timing-based side-channel leaks. Building on this recoding technique, we introduce a secure variant of Pippenger’s bucket method, that avoids zero digits. Finally, we demonstrate that employing an endomorphism-based splitting yields shorter digit expansions and further efficiency gains. To the best of our knowledge, this is the first MSM algorithm explicitly designed to mitigate timing attacks within the Pippenger bucket method framework.</p></blockquote>
+
+
+</body>
+</html>

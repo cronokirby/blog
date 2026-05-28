@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Revisiting Linear Subspace Trails in Poseidon</title>
+<meta name="description" content="AbstractPoseidon/Poseidon2 and Neptune use sparse S-box activation in internal partial rounds to reduce arithmetization cost. This structure makes linear subspa">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-revisiting-linear-subspace-trails-in-poseidon.html">
+<meta property="og:title" content="(2026-05) Revisiting Linear Subspace Trails in Poseidon">
+<meta property="og:description" content="AbstractPoseidon/Poseidon2 and Neptune use sparse S-box activation in internal partial rounds to reduce arithmetization cost. This structure makes linear subspa">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-revisiting-linear-subspace-trails-in-poseidon.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Revisiting Linear Subspace Trails in Poseidon">
+<meta name="twitter:description" content="AbstractPoseidon/Poseidon2 and Neptune use sparse S-box activation in internal partial rounds to reduce arithmetization cost. This structure makes linear subspa">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/967">(2026-05) Revisiting Linear Subspace Trails in Poseidon</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Enyan Li]]</li>
+
+  <li>[[Gaoli Wang]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Poseidon/Poseidon2 and Neptune use sparse S-box activation in internal partial rounds to reduce arithmetization cost. This structure makes linear subspace trails relevant to algebraic attacks. If the initial state is restricted to a suitable linear subspace, then subsequent internal states may remain in prescribed linear subspaces for a number of rounds. The corresponding partial rounds therefore do not increase the degree of the resulting polynomial system. Existing analyses use this property to estimate the complexity of reduced round preimage attacks. It is therefore important to understand how long such linear subspace trails can persist.</p>
+<p>We revisit infinite and finite linear subspace trails in Poseidon-like designs. First, we study the invariant subspace conditions on Poseidon that give rise to infinitely long trails. We relate these conditions to the characteristic polynomials of the Cauchy MDS matrices used in Poseidon, and we discuss qualitatively why they are unlikely over fields of large characteristic. Second, we analyze finite linear trails for internal partial rounds in a state of width <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span>, where each round activates <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span></span></span></span></span> S-box coordinates. Under the rank-growth condition stated in this paper, when no such invariant subspace exists, a finite trail has length at most <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⌈</mo><mi>t</mi><mi mathvariant="normal">/</mi><mi>s</mi><mo stretchy="false">⌉</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lceil t/s\rceil-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌈</span><span class="mord mathnormal">t</span><span class="mord">/</span><span class="mord mathnormal">s</span><span class="mclose">⌉</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>. For Poseidon, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>, this gives at most <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.6984em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span> consecutive linearized internal partial rounds.</p>
+<p>Considering preimage attacks in sponge mode with rate <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span></span></span></span></span>, capacity <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span></span>, and digest size <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span></span></span></span></span>, the available extra constraint budget is <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>c</mi><mo>=</mo><mi>r</mi><mo>−</mo><mo>\min</mo><mo stretchy="false">{</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">Ec=r-\min\{c,d\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.6667em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mop">min</span><span class="mopen">{</span><span class="mord mathnormal">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mclose">}</span></span></span></span></span>. For Poseidon, the finite trail bound and this constraint budget together determine how many internal partial rounds can be linearized in the corresponding attack model. For Poseidon2 and Neptune, although MDS-based finite trail bound is not claimed, in the common <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span> setting the realizable trail length is still bounded by <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">Ec</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal">c</span></span></span></span></span>.</p></blockquote>
+
+
+</body>
+</html>

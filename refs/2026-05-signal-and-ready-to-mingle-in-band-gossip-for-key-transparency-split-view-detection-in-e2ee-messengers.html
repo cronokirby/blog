@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Signal and Ready to MINGLE; In-Band Gossip for Key Transparency Split-View Detection in E2EE Messengers</title>
+<meta name="description" content="AbstractEnd-to-end encrypted (E2EE) messengers such as Signal, WhatsApp and iMessage increasingly deploy Key Transparency (KT) to make malicious key substitutio">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-signal-and-ready-to-mingle-in-band-gossip-for-key-transparency-split-view-detection-in-e2ee-messengers.html">
+<meta property="og:title" content="(2026-05) Signal and Ready to MINGLE; In-Band Gossip for Key Transparency Split-View Detection in E2EE Messengers">
+<meta property="og:description" content="AbstractEnd-to-end encrypted (E2EE) messengers such as Signal, WhatsApp and iMessage increasingly deploy Key Transparency (KT) to make malicious key substitutio">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-signal-and-ready-to-mingle-in-band-gossip-for-key-transparency-split-view-detection-in-e2ee-messengers.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Signal and Ready to MINGLE; In-Band Gossip for Key Transparency Split-View Detection in E2EE Messengers">
+<meta name="twitter:description" content="AbstractEnd-to-end encrypted (E2EE) messengers such as Signal, WhatsApp and iMessage increasingly deploy Key Transparency (KT) to make malicious key substitutio">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1010">(2026-05) Signal and Ready to MINGLE; In-Band Gossip for Key Transparency Split-View Detection in E2EE Messengers</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Edona Fasllija]]</li>
+
+  <li>[[Lena Heimberger]]</li>
+
+  <li>[[Kevin Paul]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-20</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>End-to-end encrypted (E2EE) messengers such as Signal, WhatsApp and iMessage increasingly deploy Key Transparency (KT) to make malicious key substitution detectable. Yet KT only delivers its intended protection if users are anchored to the same global append-only KT history. A malicious operator can break this condition by equivocating, presenting incompatible views of the KT directory to different clients. Current deployments delegate detection to a small set of third-party auditors, creating a centralized trust bottleneck that can be pressured, compromised, or fail to audit continuously.</p>
+<p>We ask whether clients can detect equivocation themselves, without dedicated infrastructure, simply by comparing KT state as they communicate. We introduce MINGLE, an opportunistic in-band gossip protocol for end-to-end encrypted messengers. MINGLE piggybacks compact KT commitments on a subset of ordinary messages before encryption, keeping gossip indistinguishable from regular application data while requiring no external services or overlay network. Rather than asking users to manually verify safety numbers or relying on a small set of auditors, MINGLE distributes the consistency check across the entire communication graph: an adversary wishing to sustain a split view must permanently isolate targeted clients from the rest of the network, preventing any cross-partition message from ever being delivered, a requirement that grows increasingly difficult to maintain covertly as the social graph densifies.
+MINGLE inherits the Trust-on-First-Use (TOFU) assumption standard in E2EE messengers: equivocation that begins at registration evades immediate detection, though the append-only log ensures it remains retroactively exposable once any cross-partition gossip event occurs. Using a temporal communication model, we show that under eventual cross-partition connectivity, conflicting KT views yield publicly verifiable evidence.</p>
+<p>We prototype MINGLE in the Signal Android client using Signal's KT Server implementation, incurring a payload overhead of 119 bytes per gossip-carrying message without UI changes.
+Simulations under realistic messaging patterns show that MINGLE achieves high reliability and fast evidence generation without aggressive gossip flooding.
+MINGLE yields evidence of a targeted split view in a (12000)-client deployment within about (5) minutes when only (20%) of clients participate and gossip is attached to roughly (5%) of messages, suggesting that ordinary client communication can serve as a practical audit layer for KT.</p></blockquote>
+
+
+</body>
+</html>

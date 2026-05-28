@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Super-intelligence Survival Guide; Verification via Proof-Carrying Output</title>
+<meta name="description" content="AbstractThe increasing deployment of large language models (LLMs) in high-stakes domains demands infrastructure to ensure trust in artificial intelligence (AI)-">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-super-intelligence-survival-guide-verification-via-proof-carrying-output.html">
+<meta property="og:title" content="(2026-05) Super-intelligence Survival Guide; Verification via Proof-Carrying Output">
+<meta property="og:description" content="AbstractThe increasing deployment of large language models (LLMs) in high-stakes domains demands infrastructure to ensure trust in artificial intelligence (AI)-">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-super-intelligence-survival-guide-verification-via-proof-carrying-output.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Super-intelligence Survival Guide; Verification via Proof-Carrying Output">
+<meta name="twitter:description" content="AbstractThe increasing deployment of large language models (LLMs) in high-stakes domains demands infrastructure to ensure trust in artificial intelligence (AI)-">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/994">(2026-05) Super-intelligence Survival Guide; Verification via Proof-Carrying Output</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Hillel Avni]]</li>
+
+  <li>[[Shlomi Dolev]]</li>
+
+  <li>[[Avraam Yagudaev]]</li>
+
+  <li>[[Moti Yung]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-19</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The increasing deployment of large language models (LLMs) in high-stakes domains demands infrastructure to ensure trust in artificial intelligence (AI)-generated outputs and actions. Users often struggle to validate results from LLMs because their reasoning is opaque and possibly beyond human comprehension. This paper introduces proof-carrying output (PCO), a framework in which an AI system returns an answer accompanied by a machine-checkable proof. We define φ-compliance formally (see the compliance definition in the paper): given a decidable predicate φ over signed inputs and AI outputs published by a named authority, a pair (x, y) is φ-compliant iff φ(x, y) = 1. "Compliance" in the rest of the paper refers to this binary, machine-checkable relation, not to organizational assurance practice. The framework is an instance of the producer-verifier-with-audit pattern previously introduced for game-theoretic rational behavior, applied here to regulatory compliance for AI-mediated decisions. Our primary security contribution is a cryptographic accountability layer that binds an AI output, its formal proof, the verifying validator's version, and a trusted timestamp into a non-repudiable commitment recorded on an append-only ledger before the output is acted upon. This layer provides four properties—binding, hiding, temporal ordering, and audit correctness—which jointly yield non-repudiation of AI-mediated decisions, a property neither LLM outputs nor formal proofs provide in isolation. These proofs rely on established proof assistants such as Rocq (Coq) (the Coq proof assistant was recently renamed to Rocq; we use "Rocq" throughout the paper, with "Coq" appearing where the historical name is more recognizable) for symbolic reasoning and (linear temporal logic (LTL), signal temporal logic (STL)) for temporal logics prior to output usage. A legal entity—whether a human subject to law or an AI agent bound by smart contracts—must employ independent proof validators to confirm that the inputs (multiple-choice selections and signed documents) correctly lead to the output under published specifications and regulations. After validation and before acting on the output, the legal entity cryptographically commits the query, specification, output, validator version, timestamp, and proof to an append-only ledger. The entity then proceeds based on the output and reveals the proof only during the audit. We demonstrate PCO through three case studies with working Rocq/STL implementations: tax computation, autonomous-vehicle compliance, and recommendation transparency, extending proof-carrying code (PCC) from static programs to dynamic AI outputs. To enable reliable proof generation as an enabling substrate, we propose that regulatory authorities publish specification-coupled small language models (SLMs) trained on canonical scenario-proof pairs; we view this as supporting infrastructure rather than the core security contribution. We explicitly delimit PCO's scope to compliance predicates expressible as decidable first-order logic with bounded quantification or STL over finite-horizon signals; free-form prose, input authenticity, and specification correctness are out of scope and treated as orthogonal problems. PCO complements existing approaches to interpretable and explainable AI by providing machine-verifiable certificates of compliance rather than human-readable rationalizations.</p></blockquote>
+
+
+</body>
+</html>

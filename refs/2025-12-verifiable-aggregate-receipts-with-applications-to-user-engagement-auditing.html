@@ -52,6 +52,22 @@
 <div class="published">2025-12-28</div>
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <h1>Abstract</h1>
@@ -64,10 +80,7 @@ A VAR system allows an issuer to issue receipts to users and to verify the numbe
 Our first protocol, S-VAR, leverages bottom-up secret-sharing to enable tiered ``fuzzy'' audits, and achieves constant-size receipts regardless of the number of supported thresholds. Our second protocol, P-VAR, uses bilinear pairings to aggregate receipts into a proof verifiable in constant time, enables exact auditing, and can be extended to handle a dynamic user set. We prove both constructions secure with respect to our ideal functionality.</p>
 <p>We implement and benchmark our VAR constructions. For a million users, issuance takes less than <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span> seconds for either scheme, and for audit proving time, P-VAR requires less than <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></span> seconds and S-VAR requires less than <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>35</mn></mrow><annotation encoding="application/x-tex">35</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord">5</span></span></span></span></span> seconds.
 Compared to our schemes, baseline and existing solutions are either at least an order of magnitude slower in proving and verification time, or they do not scale to one million users.
-Our benchmarks demonstrate that our VAR protocols can be used to enable verifiable and privacy-preserving user engagement auditing at scale. Finally, we showcase how VAR can be integrated with the aforementioned applications.</p></blockquote><section class="footnotes">
-<ol>
-</ol>
-</section>
+Our benchmarks demonstrate that our VAR protocols can be used to enable verifiable and privacy-preserving user engagement auditing at scale. Finally, we showcase how VAR can be integrated with the aforementioned applications.</p></blockquote>
 
 
 </body>

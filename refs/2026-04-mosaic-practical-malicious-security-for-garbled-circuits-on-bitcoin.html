@@ -60,15 +60,28 @@
 <div class="published">2026-04-24</div>
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <h1>Abstract</h1>
 <blockquote>
 <p>Bitcoin's scripting language cannot verify arbitrary computation natively, yet applications such as trust-minimized bridges depend on this capability. Recent techniques employ garbled circuits: the prover commits off chain to a garbled circuit encoding a verifier, designed so that evaluating it on an invalid witness reveals a secret. Posting that secret on chain serves as a fraud proof, allowing the verifier to claim the prover's stake without any on-chain computation. To evaluate the garbled circuit and recover the secret, the verifier needs the prover's input labels, which the prover must post on chain. Since Bitcoin charges permanently for block space, minimizing this on-chain footprint is a primary design concern. Achieving malicious security via cut-and-choose compounds this: the prover must produce multiple independently garbled copies of the circuit, requiring one set of labels per copy.</p>
-<p>We present Mosaic, a protocol that achieves malicious security via cut-and-choose but reduces the on-chain footprint so that it is independent of the number of garbled copies. The key technique, first introduced by Eagen (Glock, 2025) in this setting, is polynomial label correlation: labels across all <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> garbled copies are arranged as evaluations of a degree-<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span> polynomial, so the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span> shares revealed during cut-and-choose fall one short of the reconstruction threshold. We use adaptor signatures to arrange that the prover's on-chain witness commitment reveals the missing share as a byproduct; the evaluator then reconstructs labels for all unchallenged copies by interpolation. We sketch why Mosaic is secure against a malicious prover and verifier and instantiate it for trust-minimized Bitcoin bridging with a Groth16 verifier circuit, a full protocol specification, and a Rust implementation.</p></blockquote><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p>We present Mosaic, a protocol that achieves malicious security via cut-and-choose but reduces the on-chain footprint so that it is independent of the number of garbled copies. The key technique, first introduced by Eagen (Glock, 2025) in this setting, is polynomial label correlation: labels across all <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span> garbled copies are arranged as evaluations of a degree-<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span> polynomial, so the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span> shares revealed during cut-and-choose fall one short of the reconstruction threshold. We use adaptor signatures to arrange that the prover's on-chain witness commitment reveals the missing share as a byproduct; the evaluator then reconstructs labels for all unchallenged copies by interpolation. We sketch why Mosaic is secure against a malicious prover and verifier and instantiate it for trust-minimized Bitcoin bridging with a Groth16 verifier circuit, a full protocol specification, and a Rust implementation.</p></blockquote>
 
 
 </body>

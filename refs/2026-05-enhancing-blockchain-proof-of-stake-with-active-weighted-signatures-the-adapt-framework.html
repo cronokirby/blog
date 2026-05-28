@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-05) Enhancing Blockchain Proof of Stake with Active Weighted Signatures; The ADAPT Framework</title>
+<meta name="description" content="AbstractProof of Stake (PoS) blockchain systems require weighted threshold signatures where participants’ voting powers reflect their stakes. As stakes change">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-05-enhancing-blockchain-proof-of-stake-with-active-weighted-signatures-the-adapt-framework.html">
+<meta property="og:title" content="(2026-05) Enhancing Blockchain Proof of Stake with Active Weighted Signatures; The ADAPT Framework">
+<meta property="og:description" content="AbstractProof of Stake (PoS) blockchain systems require weighted threshold signatures where participants’ voting powers reflect their stakes. As stakes change">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-05-enhancing-blockchain-proof-of-stake-with-active-weighted-signatures-the-adapt-framework.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-05) Enhancing Blockchain Proof of Stake with Active Weighted Signatures; The ADAPT Framework">
+<meta name="twitter:description" content="AbstractProof of Stake (PoS) blockchain systems require weighted threshold signatures where participants’ voting powers reflect their stakes. As stakes change">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/958">(2026-05) Enhancing Blockchain Proof of Stake with Active Weighted Signatures; The ADAPT Framework</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Jae Hyun Choi]]</li>
+
+  <li>[[Hobin Jang]]</li>
+
+  <li>[[Ik Rae Jeong]]</li>
+
+  <li>[[Changmin Lee]]</li>
+
+</ul>
+
+
+<div class="published">2026-05-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Proof of Stake (PoS) blockchain systems require weighted threshold signatures where participants’ voting powers reflect their stakes. As stakes change dynamically through deposits and withdrawals, efficient weight and threshold adjustments are essential for maintaining system security and availability without downtime. However, existing approaches face critical limitations: (1) virtualization-based schemes require <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>w</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(w)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mclose">)</span></span></span></span></span> operations (signatures) per participant with weight w; (2) dynamic threshold / paricipants schemes do not support weighted participants; (3) schemes with both properties require trusted dealers or <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1.0641em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> re-setup, causing temporary unavailability.
+This paper introduces Active Weighted Signature (AWS), enabling dynamic adjustments without trusted dealers or re-setup. We propose Generalized Lagrange Interpolation (GLI), encoding weights as polynomial derivatives rather than virtualized participants, and instantiate AWS through ADAPT by applying GLI to the Schnorr-based threshold signature FROST. Our implementation shows that ADAPT achieves comparable efficiency to FROST for key generation, while weight and threshold adjustments complete in 4.1-22.3% of re-setup time. For uneven weight distributions, ADAPT achieves sub-linear scaling: 49× weight difference requires only 3.29× computation versus 49× in virtualization.</p></blockquote>
+
+
+</body>
+</html>

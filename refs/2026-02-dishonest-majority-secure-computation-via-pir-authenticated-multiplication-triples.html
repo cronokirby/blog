@@ -52,6 +52,22 @@
 <div class="published">2026-02-13</div>
 
 
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
 </header>
 
 <h1>Abstract</h1>
@@ -60,10 +76,7 @@
 <p>A leading approach, pioneered by the SPDZ line of protocols, uses homomorphic MACs to authenticate computation:  Parties effectively compute a MAC on the computation output using authenticated multiplication triples (AMT). However, securely generating these AMTs presently sits as the cost bottleneck.</p>
 <p>In this work, we introduce a new technique for enabling SPDZ-style verification via homomorphic MACs, while bypassing the need for AMT. We instead rely on the specific structure of state-of-the-art fast pseudorandom correlation generators (PCG) for generating standard (unauthenticated) multiplication triples (MT).
 Parties authenticate the computation result via an authenticated variant of private information retrieval (PIR), relying on the sparse representation of MT produced by these PCGs.</p>
-<p>This opens the door to a wide range of PIR optimizations and tradeoffs from the literature, resulting in asymptotic and concrete improvements over the traditional AMT-based approach. For example, in the Boolean 2-party case with (\sigma=40), we get a (3\times) to (8\times) computation improvement (and comparable communication) over best approaches using PCG to generate AMT, where the latter exploits variants of the Stationary Syndrome Decoding assumption of Kolesnikov et al. (Crypto 2025). With (m\ge 3) parties we obtain even larger improvements while reducing the asymptotic dependence on (m) from cubic to quadratic.</p></blockquote><section class="footnotes">
-<ol>
-</ol>
-</section>
+<p>This opens the door to a wide range of PIR optimizations and tradeoffs from the literature, resulting in asymptotic and concrete improvements over the traditional AMT-based approach. For example, in the Boolean 2-party case with (\sigma=40), we get a (3\times) to (8\times) computation improvement (and comparable communication) over best approaches using PCG to generate AMT, where the latter exploits variants of the Stationary Syndrome Decoding assumption of Kolesnikov et al. (Crypto 2025). With (m\ge 3) parties we obtain even larger improvements while reducing the asymptotic dependence on (m) from cubic to quadratic.</p></blockquote>
 
 
 </body>
