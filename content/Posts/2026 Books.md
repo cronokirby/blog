@@ -20,6 +20,7 @@ created: 2026-01-07
 - [[(2011) Leaving the Atocha Station]]
 - [[(1987) The Bonfire of the Vanities]]
 - [[(2026) Transcription]]
+- [[(1952) The Killer Inside Me]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
