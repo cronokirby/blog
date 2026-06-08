@@ -21,6 +21,7 @@ created: 2026-01-07
 - [[(1987) The Bonfire of the Vanities]]
 - [[(2026) Transcription]]
 - [[(1952) The Killer Inside Me]]
+- [[(1954) Contempt]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
