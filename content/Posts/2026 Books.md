@@ -21,8 +21,9 @@ created: 2026-01-07
 - [[(1987) The Bonfire of the Vanities]]
 - [[(1974) Les Armoires Vides]]
 - [[(2026) Transcription]]
-- [[(1952) The Killer Inside Me]]
 - [[(1954) Contempt]]
+- [[(1952) The Killer Inside Me]]
+- [[(2017) My Absolute Darling]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
