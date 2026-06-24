@@ -18,7 +18,7 @@ This needs to be represented in a ZK circuit, with that circuit's field being wh
 
 The [Bandersnatch](https://eprint.iacr.org/2021/1152) curve is exactly what you need here, but comes with the annoying downside of having a cofactor. You need to consider this when doing the Diffie-Hellman exchange, and even more so when signing, which complicates the protocol design a bit.
 
-You can avoid these concerns using the [Decaf construction]https://eprint.iacr.org/2015/673), creating a prime order group out of this curve, called [Banderwagon](https://hackmd.io/@kevaundray/BJBNcv9fq). This works in two steps:
+You can avoid these concerns using the [Decaf construction](https://eprint.iacr.org/2015/673), creating a prime order group out of this curve, called [Banderwagon](https://hackmd.io/@kevaundray/BJBNcv9fq). This works in two steps:
 - first, you eliminate half of the curve by doing an extra check on incoming claimed group elements, removing some points on the curve but not in the subgroup,
 - second, you eliminate the remaining half by identifying $P$ and $-P$, for any given point.
 
