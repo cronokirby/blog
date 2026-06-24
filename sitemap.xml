@@ -118,7 +118,7 @@
 <url><loc>https://cronokirby.com/notes/making-gos-rsa-internals-constant-time.html</loc><lastmod>2021-05-07</lastmod></url>
 <url><loc>https://cronokirby.com/notes/local-first-software.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/verilog.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/notes/2017-my-absolute-darling.html</loc><lastmod>2026-06-20</lastmod></url>
+<url><loc>https://cronokirby.com/notes/using-banderwagon-in-the-golden-dkg.html</loc><lastmod>2026-06-24</lastmod></url>
 <url><loc>https://cronokirby.com/notes/cait-sith-security.html</loc><lastmod>2023-04-16</lastmod></url>
 <url><loc>https://cronokirby.com/notes/montgomery-ladder-in-ecc.html</loc><lastmod>2021-04-21</lastmod></url>
 <url><loc>https://cronokirby.com/notes/the-goldilocks-field.html</loc><lastmod>2022-09-01</lastmod></url>
@@ -148,7 +148,6 @@
 <url><loc>https://cronokirby.com/notes/snes-emudev.html</loc><lastmod>2025-10-05</lastmod></url>
 <url><loc>https://cronokirby.com/notes/simple-multi-round-fiat-shamir-with-blake3.html</loc><lastmod>2022-09-11</lastmod></url>
 <url><loc>https://cronokirby.com/notes/65816-processor.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/notes/1974-les-armoires-vides.html</loc><lastmod>2026-05-23</lastmod></url>
 <url><loc>https://cronokirby.com/notes/drudgery-and-llms.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/thoughts-on-big-number-apis.html</loc><lastmod>2021-01-28</lastmod></url>
 <url><loc>https://cronokirby.com/notes/apps-and-forms.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -323,6 +322,7 @@
 <url><loc>https://cronokirby.com/refs/2025-06-bridging-bitcoin-to-second-layers-via-bitvm2.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-07-on-weak-nizks-one-way-functions-and-amplification.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-efficient-pairing-based-batch-arguments-for-np-with-a-constant-size-proof.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2017-my-absolute-darling.html</loc><lastmod>2026-06-20</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-08-note.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-06-guarding-the-signal.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-niropok-based-post-quantum-sidechain-design-on-ethereum.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -823,6 +823,7 @@
 <url><loc>https://cronokirby.com/refs/2025-07-slver-bullet.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-multi-committee-mpc-from-unanimous-to-identifiable-abort.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-lightweight-pq-kem-and-hybrid-mqtt-protocol-for-8-bit-avr-sensor-nodes.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/1974-les-armoires-vides.html</loc><lastmod>2026-05-23</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-formalizing-privacy-in-decentralized-identity-a-provably-secure-framework-with-minimal-disclosure.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-how-to-classically-verify-a-quantum-cat-without-killing-it.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-batch-arguments-with-optimal-communication.html</loc><lastmod>1970-01-01</lastmod></url>
