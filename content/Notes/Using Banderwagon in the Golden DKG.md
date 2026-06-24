@@ -6,10 +6,10 @@ tags:
 [Golden](https://eprint.iacr.org/2025/1924) is a neat DKG scheme, making use of an Elliptic-Curve based VRF:
 
 $$
-\begin{align}
+\begin{aligned}
 k &\leftarrow x(\text{sk} \cdot \text{Pk}) \\
 o &\leftarrow x(k \cdot H_0(m)) + \alpha \cdot x(k \cdot H_1(m))
-\end{align}
+\end{aligned}
 $$
 
 (some details omitted, but that's the core of it)
