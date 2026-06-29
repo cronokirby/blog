@@ -19,7 +19,7 @@ created: 2026-01-07
 - [[(1932) Brave New World]]
 - [[(2011) Leaving the Atocha Station]]
 - [[(1987) The Bonfire of the Vanities]]
-- [[Refs/(1974) Les Armoires Vides]]
+- [[(1974) Les Armoires Vides]]
 - [[(2026) Transcription]]
 - [[(1954) Contempt]]
 - [[(1952) The Killer Inside Me]]
