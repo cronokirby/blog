@@ -23,7 +23,8 @@ created: 2026-01-07
 - [[(2026) Transcription]]
 - [[(1954) Contempt]]
 - [[(1952) The Killer Inside Me]]
-[[Refs/(1974) Les Armoires Vides]]- [[Refs/(2017) My Absolute Darling]]
+- [[(2017) My Absolute Darling]]
+- [[(2014) On Such a Full Sea]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
