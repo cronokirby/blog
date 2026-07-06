@@ -1,0 +1,10 @@
+---
+published: "2026-06-13"
+link: "https://eprint.iacr.org/2026/1251"
+authors: ["[[Kamil Otal]]", "[[Ali Mert S\u00fcl\u00e7e]]", "[[O\u011fuz Yayla]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> A pair of differences  is a \emph{related differential} for a linear layer  if, for every coordinate at both the input and the output, at least one of the two values vanishes or the two values coincide.  Related differentials underlie the zero-difference attack on AES of Bardeh and Rijmen, and the question of which maximum distance separable (MDS) matrices admit them was raised by Daemen and Rijmen, who showed that every  circulant MDS matrix does while some Hadamard ones do not.  In earlier work the  MDS matrices over  admitting related differentials were characterized by fifteen explicit equations.  In this paper we settle the  case completely: an MDS matrix  over  admits a related differential if and only if at least one of  explicit polynomial equations in the nine free entries of its reduced form  holds.  The equations,  quadratic and  cubic, are pairwise distinct, irreducible and pairwise coprime, and fall into  orbits under the natural symmetries.  We further determine the structure of the equation set: the fifteen equations of the  case are exactly the points of , while the  equations span a -dimensional -space, satisfy exactly  additive relations, and contain exactly  pairs that can never hold simultaneously on an MDS matrix. The discarded zero patterns split into  whose determinant condition is equivalent to the failure of MDS-ness and  vacuous cases. Over , the smallest field carrying  MDS matrices, exhaustive enumeration shows that there are exactly  reduced MDS matrices; each satisfying exactly  of the equations and each equation being satisfied by exactly  matrices; in particular every  MDS matrix over  admits a related differential.  Over  we exhibit an explicit MDS matrix admitting none. All results are verified by exact computation against an independent exhaustive search.

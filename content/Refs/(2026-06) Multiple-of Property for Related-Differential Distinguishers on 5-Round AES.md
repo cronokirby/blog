@@ -1,0 +1,10 @@
+---
+published: "2026-06-19"
+link: "https://eprint.iacr.org/2026/1286"
+authors: ["[[Hanbeom Shin]]", "[[Donggeun Kwon]]", "[[Byoungjin Seok]]", "[[Deukjo Hong]]", "[[Jaechul Sung]]", "[[Seokhie Hong]]", "[[Dongjae Lee]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> A key-independent secret-key distinguisher identifies inherent structural deviations of a block cipher from an ideal random permutation without recovering any information about the secret key. For the Advanced Encryption Standard (AES), various key-independent secret-key distinguishers have been proposed on reduced-round versions. In this paper, we study related-differential distinguishers for 5-round AES that combine a 1-round related differential trail with the 4-round generalized zero-difference property. We prove that the number of valid quartets satisfying the underlying property takes the multiple-of form, N_q = 2^{2-n_z}(2^w)^{n_z} A + 8B, where A, B are non-negative integers, w is the cell size, and n_z is the number of inactive bytes of Delta X_2 (the difference at the second-round input) under the chosen pairing of the 4-plaintext quartet into two pairs. The pairing fixes the bundle size 2^{2-n_z}(2^w)^{n_z}, which sets the variance of the valid-quartet count. We compare the three pairings n_z in {0, 1, 2}. In the chosen-plaintext setting, where a single structure is examined as a whole, a smaller bundle keeps the count closer to its mean, so n_z=0 is the most reliable single-structure distinguisher, n_z=1 is close behind, and n_z=2 almost fails. The pairing n_z=1 is that of Yan et al. Its 2*2^w bundle raises the variance, so it reaches 63% only at 2^{27.2}, rather than at the 2^{27} where one valid quartet is expected. At the same 2^{27.2}, the smaller bundle of n_z=0 reaches 65%. In the adaptively chosen-plaintext setting the bundle does not form across the separate base collisions, so n_z=1, which produces more valid quartets, is the better pairing. All claims are verified experimentally on both small-AES (w=4) and the standard AES (w=8).
