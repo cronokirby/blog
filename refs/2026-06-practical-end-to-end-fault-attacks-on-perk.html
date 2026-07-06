@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) Practical End-to-end Fault Attacks on PERK</title>
+<meta name="description" content="AbstractThis paper presents the first practical end-to-end fault injection attacks on the post-quantum signature scheme PERK, based on the MPC-in-the-Head parad">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-practical-end-to-end-fault-attacks-on-perk.html">
+<meta property="og:title" content="(2026-06) Practical End-to-end Fault Attacks on PERK">
+<meta property="og:description" content="AbstractThis paper presents the first practical end-to-end fault injection attacks on the post-quantum signature scheme PERK, based on the MPC-in-the-Head parad">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-practical-end-to-end-fault-attacks-on-perk.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) Practical End-to-end Fault Attacks on PERK">
+<meta name="twitter:description" content="AbstractThis paper presents the first practical end-to-end fault injection attacks on the post-quantum signature scheme PERK, based on the MPC-in-the-Head parad">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1266">(2026-06) Practical End-to-end Fault Attacks on PERK</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Tanguy Stekke]]</li>
+
+  <li>[[Durba Chatterjee]]</li>
+
+  <li>[[Lejla Batina]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-16</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>This paper presents the first practical end-to-end fault injection attacks on the post-quantum signature scheme PERK, based on the MPC-in-the-Head paradigm and relies on GGM tree expansions for efficient randomness generation. While GGM trees reduce memory requirements, they introduce implementation-level deviations from the theoretical model. We show that these implementation choices fundamentally alter the fault surface and enable new attack vectors that are not captured by the original security assumptions. We propose two attacks targeting distinct stages of the GGM tree construction. The first attack fixes the root seed, resulting in deterministic tree generation and enabling full reconstruction of all leaf labels. The second attack induces reuse of GGM roots via an instruction skip, allowing recovery of hidden leaf values across consecutive rounds. Both attacks require only a single fault to recover the secret key.</p>
+<p>We demonstrate both attacks end-to-end on the pqm4 reference implementation compiled with optimization levels -O3 as well as -Os for ARM Cortex-M4 microcontrollers. Our evaluation is performed on two hardware platforms (ChipWhisperer-Lite with STM32F303 and Nucleo-L4R5ZI-P) using clock glitching and electromagnetic fault injection (EMFI). We achieve success probabilities of 100% and 85% for the two attacks, respectively. Finally, we propose countermeasures for both attacks.</p></blockquote>
+
+
+</body>
+</html>

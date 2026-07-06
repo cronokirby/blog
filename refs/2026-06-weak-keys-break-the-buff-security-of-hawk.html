@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) Weak Keys Break the BUFF Security of HAWK</title>
+<meta name="description" content="AbstractHAWK is a signature scheme based on the module lattice isomorphism problem, and the only lattice-based candidate in the third round of NIST's call for a">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-weak-keys-break-the-buff-security-of-hawk.html">
+<meta property="og:title" content="(2026-06) Weak Keys Break the BUFF Security of HAWK">
+<meta property="og:description" content="AbstractHAWK is a signature scheme based on the module lattice isomorphism problem, and the only lattice-based candidate in the third round of NIST's call for a">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-weak-keys-break-the-buff-security-of-hawk.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) Weak Keys Break the BUFF Security of HAWK">
+<meta name="twitter:description" content="AbstractHAWK is a signature scheme based on the module lattice isomorphism problem, and the only lattice-based candidate in the third round of NIST's call for a">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1298">(2026-06) Weak Keys Break the BUFF Security of HAWK</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Quang Dao]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-21</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>HAWK is a signature scheme based on the module lattice isomorphism problem, and the only lattice-based candidate in the third round of NIST's call for additional post-quantum signatures. Its specification claims that HAWK achieves the BUFF (Beyond UnForgeability Features) security properties "as is", without applying the generic BUFF transform, citing the analysis of Aulbach, Düzlü, Meyer, Struck, and Weishäupl (PQCrypto'24).</p>
+<p>We refute this claim for HAWK exactly as specified. Several of the BUFF games let the adversary register a public key of its own choosing, yet the HAWK reference verifier performs almost no validity check on a key beyond decoding it. We exhibit degenerate "weak" public keys under which the all-zero signature verifies for all random-oracle challenges except the negligible symmetry-breaking corner case, and use them to break the three BUFF properties whose games let the adversary supply both the verification key and the signature: message-bound signatures, malicious strong universal exclusive ownership, and weak non-resignability.</p>
+<p>We trace these breaks to gaps in the BUFF proofs for HAWK of Aulbach et al.: one missing case analysis, and three steps that silently assume properties of the adversarially chosen keys as if they come from honest key generation. Honest key generation already enforces bounds that would reject our weak-key family on the attacks we exhibit. We prove that enforcing this norm floor at verification yields message-bound security for constant keys, but we make no claim that it fully restores BUFF security.</p></blockquote>
+
+
+</body>
+</html>

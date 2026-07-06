@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) A Differentiated Approach for Post-Quantum DNSSEC</title>
+<meta name="description" content="AbstractPost-quantum signature algorithms pose significant challenges for DNSSEC migration: their larger keys and signatures exceed DNS over UDP transport limit">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-a-differentiated-approach-for-post-quantum-dnssec.html">
+<meta property="og:title" content="(2026-06) A Differentiated Approach for Post-Quantum DNSSEC">
+<meta property="og:description" content="AbstractPost-quantum signature algorithms pose significant challenges for DNSSEC migration: their larger keys and signatures exceed DNS over UDP transport limit">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-a-differentiated-approach-for-post-quantum-dnssec.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) A Differentiated Approach for Post-Quantum DNSSEC">
+<meta name="twitter:description" content="AbstractPost-quantum signature algorithms pose significant challenges for DNSSEC migration: their larger keys and signatures exceed DNS over UDP transport limit">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1332">(2026-06) A Differentiated Approach for Post-Quantum DNSSEC</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Marc Espie]]</li>
+
+  <li>[[Hugo Mayer]]</li>
+
+  <li>[[Ludovic Perret]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-28</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Post-quantum signature algorithms pose significant challenges for DNSSEC migration: their larger keys and signatures exceed DNS over UDP transport limits, making TCP fallback unavoidable even for the most compact schemes. We propose a differentiated algorithm selection, assigning distinct signature algorithms to the Zone Signing Key (ZSK) and Key Signing Key (KSK) roles. This approach expands the space of deployable post-quantum configurations beyond what undifferentiated selection permits, enabling algorithms that would otherwise be impossible to deploy: UOV, with 128-byte signatures but 43<del>KB keys, produces DNSKEY responses exceeding the 64</del>KB DNS limit under undifferentiated constraints, yet becomes viable when paired with a compact-key KSK. We also evaluate hybrid PQ/T schemes through signature concatenation, combining classical P256 with post-quantum algorithms in a single RRSIG record to provide dual security during the transition period.</p>
+<p>Using a containerized testbed validated against AFNIC's .fr TLD structure (4.2 million domains), we systematically measure response sizes, resolution latency, TCP fallback rates, and signing performance across 18 configurations. Differentiated configurations achieve 1.28-1.52× latency overhead relative to classical ECDSA while enabling algorithms that undifferentiated constraints prohibit. Hybrid PQ/T concatenation introduces acceptable overhead (7--19%) for backward-compatible quantum resistance.</p></blockquote>
+
+
+</body>
+</html>

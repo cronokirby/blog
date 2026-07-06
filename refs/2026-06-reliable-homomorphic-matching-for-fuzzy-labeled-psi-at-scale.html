@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) Reliable Homomorphic Matching for Fuzzy Labeled PSI at Scale</title>
+<meta name="description" content="AbstractFuzzy Labeled Private Set Intersection (FLPSI) lets a receiver learn the labels of enrolled records that are similar to its query, and nothing else. FLP">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-reliable-homomorphic-matching-for-fuzzy-labeled-psi-at-scale.html">
+<meta property="og:title" content="(2026-06) Reliable Homomorphic Matching for Fuzzy Labeled PSI at Scale">
+<meta property="og:description" content="AbstractFuzzy Labeled Private Set Intersection (FLPSI) lets a receiver learn the labels of enrolled records that are similar to its query, and nothing else. FLP">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-reliable-homomorphic-matching-for-fuzzy-labeled-psi-at-scale.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) Reliable Homomorphic Matching for Fuzzy Labeled PSI at Scale">
+<meta name="twitter:description" content="AbstractFuzzy Labeled Private Set Intersection (FLPSI) lets a receiver learn the labels of enrolled records that are similar to its query, and nothing else. FLP">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1322">(2026-06) Reliable Homomorphic Matching for Fuzzy Labeled PSI at Scale</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Erkam Uzun]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-26</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Fuzzy Labeled Private Set Intersection (FLPSI) lets a receiver learn the labels of enrolled records that are similar to its query, and nothing else. FLPSI can be built in several ways. Constructions based on a set-threshold reduction reach practical performance: a query matches a record when the two agree on a threshold number of components. These constructions delegate the private matching to an inner set-threshold kernel. We study its homomorphic form, which combines leveled-BFV homomorphic encryption (HE), a garbled circuit, and secret sharing to decide the match under encryption and release the record's label. We identify a composition gap in this kernel, an instance of a protocol-level problem: efficiency is bought with a per-trial false-accept probability, but one query runs a trial for every record, so the error compounds with the database size into the kernel's realization soundness error (RSE), the rate at which it accepts a query the plaintext matcher would reject. The RSE is a reliability property of the cryptographic matching layer, not the matcher's accuracy. On a spurious accept the kernel also returns a value the plaintext matcher would never produce. A sound kernel must contribute zero or negligible RSE of its own. We formalize this requirement as a composable security property, give a closed-form bound on the receiver's advantage, and close the gap with CSTPSI, a kernel that runs independent token rounds and raises the per-trial bound to a matching power. We prove CSTPSI secure in the semi-honest model. The closed-form bound sets the round count: two token rounds suffice for million-scale databases and three for billion-scale at the <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span></span> engineering threshold. Our evaluation confirms the prediction. At a million records the baseline kernel's RSE reaches <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>100</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">100\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0556em;height:0.8056em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">%</span></span></span></span></span> while CSTPSI holds it at <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></span> in every measured configuration. CSTPSI decouples threshold-checking and upload costs from label size. For large labels at small to moderate scale it is more than <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">20\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span> faster than the baseline kernel, with up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>93</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">93\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0556em;height:0.8056em;"></span><span class="mord">9</span><span class="mord">3</span><span class="mord">%</span></span></span></span></span> less communication. It converges to the baseline only at the million-scale database size. Our implementation, with a one-command reproducibility harness, is publicly available.</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) TruthTable; A Verifiable Query Engine</title>
+<meta name="description" content="AbstractWe present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-truthtable-a-verifiable-query-engine.html">
+<meta property="og:title" content="(2026-06) TruthTable; A Verifiable Query Engine">
+<meta property="og:description" content="AbstractWe present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-truthtable-a-verifiable-query-engine.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) TruthTable; A Verifiable Query Engine">
+<meta name="twitter:description" content="AbstractWe present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1260">(2026-06) TruthTable; A Verifiable Query Engine</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Bharath Namboothiry]]</li>
+
+  <li>[[Alireza Shirzad]]</li>
+
+  <li>[[Spencer Solit]]</li>
+
+  <li>[[Ryan Marcus]]</li>
+
+  <li>[[Pratyush Mishra]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution of the verifier's SQL query over the prover's committed database.</p>
+<p>TruthTable supports a large subset of SQL, enabling it to prove 17 out of 22 queries in the standard TPC-H benchmark. To our knowledge, this is the widest support out of all prior work. Moreover, TruthTable's proofs are small, and fast to generate and verify: on the TPC-H benchmark with a database of a million rows, TruthTable's average proving time is  seconds, average verification time is  ms, and average proof size is  kB. Compared to prior work, TruthTable's proving times are between - better, while the verification times and proof sizes are competitive.</p>
+<p>TruthTable achieves these properties via a codesign of cryptography and database techniques. On the cryptographic front, we propose a new polynomial representation of database tables, and design new subprotocols for proving the correct execution of various relational operators on these representations. On the database front, we propose a query planner that optimizes queries for minimal proving time, as opposed to minimal execution time. We also design new optimizations for this planner that reduce proving time by up to .</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) On the Additive Sensitivity of LZ77 Under Consecutive Edits</title>
+<meta name="description" content="AbstractWe revisit the problem of mitigating information leakage in the widely used but insecure compress-then-encrypt paradigm. While encryption hides message">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-on-the-additive-sensitivity-of-lz77-under-consecutive-edits.html">
+<meta property="og:title" content="(2026-06) On the Additive Sensitivity of LZ77 Under Consecutive Edits">
+<meta property="og:description" content="AbstractWe revisit the problem of mitigating information leakage in the widely used but insecure compress-then-encrypt paradigm. While encryption hides message">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-on-the-additive-sensitivity-of-lz77-under-consecutive-edits.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) On the Additive Sensitivity of LZ77 Under Consecutive Edits">
+<meta name="twitter:description" content="AbstractWe revisit the problem of mitigating information leakage in the widely used but insecure compress-then-encrypt paradigm. While encryption hides message">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1238">(2026-06) On the Additive Sensitivity of LZ77 Under Consecutive Edits</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Jeremiah Blocki]]</li>
+
+  <li>[[Seunghoon Lee]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-10</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>We revisit the problem of mitigating information leakage in the widely used but insecure compress-then-encrypt paradigm. While encryption hides message contents, the ciphertext length is directly related to the length of the compressed message, which may, in turn, leak information about the {\em content} of the message itself. Recent work of Blocki et al. (TCC 2025) proposed an -differentially private approach that adds randomized padding calibrated to the global sensitivity of the compression algorithm, and showed that the global sensitivity of LZ77 is , where  is the input length and  is the sliding
+window size.</p>
+<p>However, prior analysis focused only on sensitivity with respect to single-character edits, which leads to limited privacy guarantees when protecting longer substrings such as passwords, passphrases, cookies, or confidential user records.  A natural attempt to handle longer secrets is to appeal to group privacy, but for approximate differential privacy, this leads to very poor parameter degradation: in particular, the effective value of  can grow exponentially with the group size .  In this work, we introduce and study the sensitivity of compression schemes under block edits. Specifically, we define two strings to be -neighbors if they differ only within a contiguous interval of length .</p>
+<p>Our main technical contribution is a nearly tight characterization of the -consecutive sensitivity of LZ77. We show that the -consecutive sensitivity of both LZ77 variants (with and without self-referencing) is at most . In particular, when , the bound simplifies to , matching the known bound for single-character edits. Thus, calibrating noise to the single-character sensitivity of LZ77 already suffices to protect much longer contiguous substrings. We provide matching lower bounds to demonstrate that our upper bound is tight, e.g., when , the -consecutive sensitivity of LZ77 is at least , matching the  term from our upper bound up to a logarithmic factor.</p></blockquote>
+
+
+</body>
+</html>

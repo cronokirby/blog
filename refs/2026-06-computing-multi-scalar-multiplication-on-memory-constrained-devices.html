@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) Computing multi-scalar multiplication on memory-constrained devices</title>
+<meta name="description" content="AbstractMulti-Scalar Multiplication is a critical operation in most pairing-based zero knowledge proofs. In a lot of studies, memory limitations have often been">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-computing-multi-scalar-multiplication-on-memory-constrained-devices.html">
+<meta property="og:title" content="(2026-06) Computing multi-scalar multiplication on memory-constrained devices">
+<meta property="og:description" content="AbstractMulti-Scalar Multiplication is a critical operation in most pairing-based zero knowledge proofs. In a lot of studies, memory limitations have often been">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-computing-multi-scalar-multiplication-on-memory-constrained-devices.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) Computing multi-scalar multiplication on memory-constrained devices">
+<meta name="twitter:description" content="AbstractMulti-Scalar Multiplication is a critical operation in most pairing-based zero knowledge proofs. In a lot of studies, memory limitations have often been">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1316">(2026-06) Computing multi-scalar multiplication on memory-constrained devices</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Léo Noël]]</li>
+
+  <li>[[Thomas Plantard]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-25</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Multi-Scalar Multiplication is a critical operation in most pairing-based zero knowledge proofs. In a lot of studies, memory limitations have often been reported to be the primary bottleneck preventing the calculation of larger MSMs. In this paper, we are particularly interested in the acceleration of this operation on devices with limited memory.
+Pippenger’s algorithm (also known as bucket method) is the most efficient and, consequently, the most widely used method to calculate Multi-Scalar Multiplications. We propose an optimization of Pippenger’s algorithm which is at least as efficient as the original, and significantly more effective when operating under limited memory. The main idea is to use an adapted number of buckets depending on the available memory instead of . We conducted tests on the curve BLS12-381 with Multi-Scalar Multiplications ranging from  to  points. The results obtained demonstrate that we have a very significant gain (up to ) for very limited memories. This gain gradually decreases as more memory becomes available, until we achieve performance comparable to Pippenger’s once memory is no longer limited. For example, in a Multi-Scalar Multiplication with  points, we observe a gain of  with only  KB of memory,  with  KB,  with  KB, and so on, down to  once memory is no longer a constraint.</p></blockquote>
+
+
+</body>
+</html>

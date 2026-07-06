@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) Oblivious Priority Queue and Single-Source Shortest Path in the External Memory Setting</title>
+<meta name="description" content="AbstractThe study of oblivious algorithms is concerned with designing privacy-preserving algorithms whose memory access patterns reveal nothing about the secret">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-oblivious-priority-queue-and-single-source-shortest-path-in-the-external-memory-setting.html">
+<meta property="og:title" content="(2026-06) Oblivious Priority Queue and Single-Source Shortest Path in the External Memory Setting">
+<meta property="og:description" content="AbstractThe study of oblivious algorithms is concerned with designing privacy-preserving algorithms whose memory access patterns reveal nothing about the secret">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-oblivious-priority-queue-and-single-source-shortest-path-in-the-external-memory-setting.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) Oblivious Priority Queue and Single-Source Shortest Path in the External Memory Setting">
+<meta name="twitter:description" content="AbstractThe study of oblivious algorithms is concerned with designing privacy-preserving algorithms whose memory access patterns reveal nothing about the secret">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1285">(2026-06) Oblivious Priority Queue and Single-Source Shortest Path in the External Memory Setting</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Arya Maheshwari]]</li>
+
+  <li>[[Elaine Shi]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-18</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>The study of oblivious algorithms is concerned with designing privacy-preserving algorithms whose memory access patterns reveal nothing about the secret inputs. Such algorithms have been deployed at scale in production systems, most notably in Signal's private contact discovery service. So far, all practical implementations of oblivious algorithms (e.g., those by Signal and Meta) rely on trusted hardware and operate within the external-memory model of computation. While it is known how to generically compile an arbitrary program to execute obliviously on an external-memory target machine, such generic oblivious simulations trade asymptotical efficiency for generality and therefore are rarely used in practice. Instead, customized oblivious algorithms tailored for the computational tasks of interest are almost always favored.</p>
+<p>In this paper, we explore the single-source shortest path (SSSP) problem, a fundamental algorithmic building block with broad applications in scheduling, routing, graph mining, resource allocation and flow optimization. We present an external-memory oblivious SSSP algorithm for undirected graphs that achieves I/O efficiency  and total work  assuming , where  denotes the number of vertices,  denotes the number of edges, and  and  represent the target machine's cache size and block size, respectively. Our algorithm almost matches the best known non-private external-memory algorithm for SSSP, up to a  factor in the second term of the I/O bound. The remaining  gap is conjectured to be an inherent barrier, since making the underlying priority queue oblivious requires an  blowup in I/O cost, which is known to be inherent.</p>
+<p>As a by-product, we develop an improved external-memory oblivious priority queue that supports DecrKey operations. Specifically, while the construction of Jafargholi et al. attains optimal I/O efficiency, it is suboptimal in total work under a strong notion of obliviousness—where the adversary can observe both block-level and word-level accesses. This stronger security guarantee is the current industry norm and explicitly required by companies such as Signal. We present a new oblivious priority queue that achieves optimality in both dimensions. Specifically, we achieve an I/O cost of  and total work  per query where  is the capacity of the priority queue.</p></blockquote>
+
+
+</body>
+</html>

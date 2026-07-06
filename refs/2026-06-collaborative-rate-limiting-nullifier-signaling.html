@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) Collaborative Rate Limiting Nullifier Signaling</title>
+<meta name="description" content="AbstractRate Limiting Nullifier (RLN) is a privacy-preserving and decentralized spam-prevention mechanism for anonymous broadcast networks: each member can emit">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-collaborative-rate-limiting-nullifier-signaling.html">
+<meta property="og:title" content="(2026-06) Collaborative Rate Limiting Nullifier Signaling">
+<meta property="og:description" content="AbstractRate Limiting Nullifier (RLN) is a privacy-preserving and decentralized spam-prevention mechanism for anonymous broadcast networks: each member can emit">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-collaborative-rate-limiting-nullifier-signaling.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) Collaborative Rate Limiting Nullifier Signaling">
+<meta name="twitter:description" content="AbstractRate Limiting Nullifier (RLN) is a privacy-preserving and decentralized spam-prevention mechanism for anonymous broadcast networks: each member can emit">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1259">(2026-06) Collaborative Rate Limiting Nullifier Signaling</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Yağmur Gürel]]</li>
+
+  <li>[[Uğur Şen]]</li>
+
+  <li>[[Oğuz Yayla]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Rate Limiting Nullifier (RLN) is a privacy-preserving and decentralized spam-prevention mechanism for anonymous broadcast networks: each member can emit at most  signals per epoch, and any violation reveals a secret that enables the member's stake to be slashed. The standard construction binds each membership to a single secret key , so the unit of identity, the unit of authorization, and the unit of slashing all coincide with one party. This rules out settings in which a group should speak with one voice, share one rate budget, and stand behind one collective bond without any single member being able to act unilaterally.
+We introduce Collaborative RLN Signaling (coRLN), a protocol that lets  parties register as a single RLN member and signal only by acting jointly. The group secret  is held as additive shares under SPDZ and never reconstructed; the identity (or rate) commitment, the per-epoch RLN evaluation, and the broadcast proof are produced inside an MPC network using collaborative zk-SNARKs. The group occupies one leaf in the membership Merkle tree, locks one aggregated stake , and is bound by one rate limit. We present the construction in both the rate-limit-1 and the general  settings, and we extend the protocol with a collaborative withdrawal procedure that lets the group exit without ever reconstructing .
+We prove three security properties of coRLN by reduction to the collaborative-SNARK composition and the standard primitives underneath: (i) no PPT adversary corrupting up to  parties recovers  as long as one party is honest; (ii) two signals in the same epoch with the same  yield an efficient extractor that recovers  and triggers forfeiture of ; and (iii) no strict subset of  can produce a verifying signal. The verifier interface and signal shape match classical RLN at the byte level, so coRLN deploys on existing RLN-aware infrastructure with only the verification key updated.</p></blockquote>
+
+
+</body>
+</html>

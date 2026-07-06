@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) GumSwap; Griefing-Free Universal Multi-Party Atomic Swaps</title>
+<meta name="description" content="AbstractUniversal multi-party swaps were proposed for secure cross-chain cryptocurrency exchanges across multiple blockchains that require only signature verifi">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-gumswap-griefing-free-universal-multi-party-atomic-swaps.html">
+<meta property="og:title" content="(2026-06) GumSwap; Griefing-Free Universal Multi-Party Atomic Swaps">
+<meta property="og:description" content="AbstractUniversal multi-party swaps were proposed for secure cross-chain cryptocurrency exchanges across multiple blockchains that require only signature verifi">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-gumswap-griefing-free-universal-multi-party-atomic-swaps.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) GumSwap; Griefing-Free Universal Multi-Party Atomic Swaps">
+<meta name="twitter:description" content="AbstractUniversal multi-party swaps were proposed for secure cross-chain cryptocurrency exchanges across multiple blockchains that require only signature verifi">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1253">(2026-06) GumSwap; Griefing-Free Universal Multi-Party Atomic Swaps</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Dongkun Hou]]</li>
+
+  <li>[[Yuanzhe Zhang]]</li>
+
+  <li>[[Shujie Cui]]</li>
+
+  <li>[[Tsz Hon Yuen]]</li>
+
+  <li>[[Joseph K. Liu]]</li>
+
+  <li>[[Jiangshan Yu]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Universal multi-party swaps were proposed for secure cross-chain cryptocurrency exchanges across multiple blockchains that require only signature verification from the underlying blockchains. However, existing universal swap protocols remain vulnerable to griefing attacks, where a deviating party aborts the swap to lock a compliant party’s assets for a long period, potentially causing indirect economic losses. A natural approach is to lift existing griefing-free solutions to the universal setting; however, we observe that this direct approach still faces three key challenges: (i) a timeout race attack, which arises from the absence of an upper bound on the transaction validity; (ii) a premium escape attack, which results from multiple refund transactions for the same assets being simultaneously valid; and (iii) a topological limitation, which implies that universal multi-party swaps can support only a special class of strongly connected digraphs, called reuniclus graphs.</p>
+<p>In this paper, we propose GumSwap, a Griefing-free universal multi-party atomic Swap, which guarantees that a compliant party receives a premium if its asset is locked but not redeemed. To mitigate the timeout race attack and the premium escape attack, we impose minimum timeout intervals for the principal and premium timeouts, respectively, and introduce an asset migration mechanism that ensures that, during any time interval, at most one refund transaction is valid.  Given the topological limitations of universal swap protocols, we further design a novel premium distribution mechanism that accommodates two classes of leaders in reuniclus graphs. Our experimental results demonstrate that GumSwap can be performed in less than 0.5 seconds per party, while reducing gas costs by 10.3X compared with existing contract-based solutions.</p></blockquote>
+
+
+</body>
+</html>

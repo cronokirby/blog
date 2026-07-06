@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) RondoMPC; Asynchronous MPC with G.O.D. made More Practical</title>
+<meta name="description" content="AbstractAsynchronous multi-party computation (AMPC) en- ables a set of mutually distrustful parties to securely compute any joint function on their private inpu">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-rondompc-asynchronous-mpc-with-g.o.d.-made-more-practical.html">
+<meta property="og:title" content="(2026-06) RondoMPC; Asynchronous MPC with G.O.D. made More Practical">
+<meta property="og:description" content="AbstractAsynchronous multi-party computation (AMPC) en- ables a set of mutually distrustful parties to securely compute any joint function on their private inpu">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-rondompc-asynchronous-mpc-with-g.o.d.-made-more-practical.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) RondoMPC; Asynchronous MPC with G.O.D. made More Practical">
+<meta name="twitter:description" content="AbstractAsynchronous multi-party computation (AMPC) en- ables a set of mutually distrustful parties to securely compute any joint function on their private inpu">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1261">(2026-06) RondoMPC; Asynchronous MPC with G.O.D. made More Practical</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Xuanji Meng]]</li>
+
+  <li>[[Zhaoyang Xie]]</li>
+
+  <li>[[Zhaoxin Yang]]</li>
+
+  <li>[[Sisi Duan]]</li>
+
+  <li>[[Aggelos Kiayias]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Asynchronous multi-party computation (AMPC) en-
+ables a set of mutually distrustful parties to securely compute
+any joint function on their private inputs under arbitrary
+network delays. The guaranteed output delivery (i.e., G.O.D.)
+property is essential for availability, but can be very challenging
+to achieve in practice. HoneyBadgerMPC (CCS 2019), the
+first practical AMPC protocol, follows Beaver’s paradigm that
+generates Beaver triples offline to simplify online computation.
+One of the underlying building blocks, the random double
+sharing protocol that generates random double shares, how-
+ever, implicitly assumes a synchronous network. DumboMPC
+(Usenix Sec 2025) overcomes the issue by adopting a two-phase
+workflow where the underlying consensus protocol has to be
+executed twice, and thus incurs high latency. Velox (CCS 2025)
+achieves lower latency and weaker cryptographic assumptions
+at the cost of sacrificing G.O.D. It remains an open question
+whether there exists a more practical AMPC protocol with the
+G.O.D. property.
+In this paper, we present RondoMPC, a practical AMPC
+protocol with G.O.D. with only one phase of consensus. To
+achieve this goal, we build a practical asynchronous and
+complete random double sharing (ACRDS) protocol. Our
+ACRDS protocol supports batching, so a batch of random
+double shares can be generated simultaneously. Furthermore,
+ACRDS supports efficient verification of aggregated secret
+shares, allowing the random double shares to be used for
+Beaver triple generation using only one phase of consensus.
+Our experimentation results show that RondoMPC is highly
+practical, achieving both higher throughput and lower latency
+for Beaver triple generation compared to existing protocols.</p></blockquote>
+
+
+</body>
+</html>

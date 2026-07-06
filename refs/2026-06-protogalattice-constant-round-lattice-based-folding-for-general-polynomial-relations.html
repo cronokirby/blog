@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-06) ProtogaLattice; Constant-Round Lattice-based Folding for General Polynomial Relations</title>
+<meta name="description" content="AbstractFolding schemes are gaining traction recently as they unlock practical instantiations of incrementally verifiable computation (IVC) and proof-carrying d">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-06-protogalattice-constant-round-lattice-based-folding-for-general-polynomial-relations.html">
+<meta property="og:title" content="(2026-06) ProtogaLattice; Constant-Round Lattice-based Folding for General Polynomial Relations">
+<meta property="og:description" content="AbstractFolding schemes are gaining traction recently as they unlock practical instantiations of incrementally verifiable computation (IVC) and proof-carrying d">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-06-protogalattice-constant-round-lattice-based-folding-for-general-polynomial-relations.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-06) ProtogaLattice; Constant-Round Lattice-based Folding for General Polynomial Relations">
+<meta name="twitter:description" content="AbstractFolding schemes are gaining traction recently as they unlock practical instantiations of incrementally verifiable computation (IVC) and proof-carrying d">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1317">(2026-06) ProtogaLattice; Constant-Round Lattice-based Folding for General Polynomial Relations</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[David Balbás]]</li>
+
+  <li>[[Anca Nitulescu]]</li>
+
+  <li>[[Maxime Plançon]]</li>
+
+</ul>
+
+
+<div class="published">2026-06-25</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Folding schemes are gaining traction recently as they unlock practical instantiations of incrementally verifiable computation (IVC) and proof-carrying data (PCD). In particular, there has been a growing interest in folding schemes for high-degree relations, as these can efficiently arithmetize complex computations. While the landscape is vast, all lattice-based constructions such as Latticefold+, (Super)Neo, and Cyclo heavily rely on the sumcheck protocol. Sumcheck gives efficient proving times, but the verifier circuits become very large, partially because of the many random oracle invocations required. These hinder the efficiency of IVC and PCD instantiations, as the prover must prove the execution of the verifier circuit at every iteration.</p>
+<p>We present ProtogaLattice, a new lattice-based folding scheme for general high-degree polynomial relations that drastically reduces the size of the verifier's circuits. We deviate from the sumcheck approach and instead take inspiration from Protostar [Bünz & Chen, Asiacrypt '23] and Protogalaxy [Eagen & Gabizon, '23], which fold witnesses using algebraic techniques in a constant number of rounds. Our contribution is threefold:
+(1) a novel technique to achieve PCD through Protogalaxy, which we find of interest also in the classical (i.e. pairing-based) setting,
+(2) a folding scheme that combines multiple instances of polynomial relations into accumulators, and
+(3) a bootstrapping protocol to reduce the norm of the witnesses underlying these accumulators. A full iteration of ProtogaLattice requires only four random oracle calls (not counting the overhead induced by the extra range proof used as a black-box).
+Our techniques open new directions towards building lattice-based proofs that support more expressive relations and that present smaller recursion overheads.</p></blockquote>
+
+
+</body>
+</html>
