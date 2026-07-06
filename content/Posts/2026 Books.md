@@ -24,8 +24,8 @@ created: 2026-01-07
 - [[(1954) Contempt]]
 - [[(1952) The Killer Inside Me]]
 - [[(2017) My Absolute Darling]]
-- [[Refs/(2014) On Such a Full Sea]]
-- [[Refs/(1932) The Pastures of Heaven]]
+- [[(2014) On Such a Full Sea]]
+- [[(1932) The Pastures of Heaven]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
