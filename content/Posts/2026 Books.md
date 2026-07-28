@@ -26,6 +26,8 @@ created: 2026-01-07
 - [[(2017) My Absolute Darling]]
 - [[(2014) On Such a Full Sea]]
 - [[(1932) The Pastures of Heaven]]
+- [[(1965) The Orchard Keeper]]
+- [[(1885) Bel-Ami]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
