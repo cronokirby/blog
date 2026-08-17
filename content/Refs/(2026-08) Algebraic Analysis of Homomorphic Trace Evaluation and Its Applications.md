@@ -1,0 +1,12 @@
+---
+published: "2026-08-04"
+link: "https://eprint.iacr.org/2026/1604"
+authors: ["[[Han Xia]]"]
+tags: ["cryptography", "paper"]
+---
+
+# Abstract
+
+> Field trace evaluation has emerged as a powerful tool in fully homomorphic encryption, with broad applications ranging from bootstrapping algorithms to privacy-preserving protocols. Recent advances have significantly reduced its noise growth by combining tower-based evaluation strategies with rescaling operations. However, existing analyses rely on uniform noise bounds that fail to capture the actual noise behavior across different coefficients, leading to substantial gaps between theoretical estimates and empirical observations.
+> 
+> In this work, we present a refined algebraic analysis of trace evaluation over power-of-two cyclotomics that uncovers structured cancellation effects among noise coefficients induced by subsequent linear operators, in particular the trace mappings of subextensions. We show that, except for the constant term, the variance of each output noise coefficient depends on the 2-adic valuation of its index, yielding bounds that improve upon prior uniform estimates by a factor of  both for non-constant coefficients and after a subsequent plaintext-ciphertext multiplication, where  is the ring degree. We further extend our analysis to two typical algorithmic applications of trace evaluation. For ciphertext packing, we derive a non-recursive formulation that admits a cleaner structure and slightly tighter noise estimates. For coefficient extraction, our coefficient-wise analysis improves upon prior uniform variance bounds by factors ranging from  to  for non-constant coefficients and by a factor of  after post-multiplication. Experimental results confirm that the observed noise variances follow the coefficient-wise pattern predicted by our analysis and demonstrate pronounced improvements over existing estimates, providing effective guidance for parameter selection and system configuration in practice.

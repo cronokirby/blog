@@ -28,7 +28,8 @@ created: 2026-01-07
 - [[(1932) The Pastures of Heaven]]
 - [[(1965) The Orchard Keeper]]
 - [[(1885) Bel-Ami]]
-- [[Refs/(1934) The Postman Always Rings Twice]]
+- [[(1934) The Postman Always Rings Twice]]
+- [[(1967) One Hundred Years of Solitude]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
