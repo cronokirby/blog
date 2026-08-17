@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Flip a Failure into a Success; Improved Bit Flipping Decoding for QC-MDPC Codes</title>
+<meta name="description" content="AbstractQuasi-Cyclic Moderate-Density Parity-Check (QC-MDPC) codes are a family of error correcting codes admitting parity-check matrices composed of sparse cir">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-flip-a-failure-into-a-success-improved-bit-flipping-decoding-for-qc-mdpc-codes.html">
+<meta property="og:title" content="(2026-08) Flip a Failure into a Success; Improved Bit Flipping Decoding for QC-MDPC Codes">
+<meta property="og:description" content="AbstractQuasi-Cyclic Moderate-Density Parity-Check (QC-MDPC) codes are a family of error correcting codes admitting parity-check matrices composed of sparse cir">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-flip-a-failure-into-a-success-improved-bit-flipping-decoding-for-qc-mdpc-codes.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Flip a Failure into a Success; Improved Bit Flipping Decoding for QC-MDPC Codes">
+<meta name="twitter:description" content="AbstractQuasi-Cyclic Moderate-Density Parity-Check (QC-MDPC) codes are a family of error correcting codes admitting parity-check matrices composed of sparse cir">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1616">(2026-08) Flip a Failure into a Success; Improved Bit Flipping Decoding for QC-MDPC Codes</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Paolo Santini]]</li>
+
+  <li>[[Davide De Zuane]]</li>
+
+  <li>[[Alessio Baldelli]]</li>
+
+  <li>[[Marco Baldi]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Quasi-Cyclic Moderate-Density Parity-Check (QC-MDPC) codes are a family of error correcting codes admitting parity-check matrices composed of sparse circulant blocks. QC-MDPC codes have been used for the design of BIKE, one of the finalists in the NIST competition for the standardization of post-quantum cryptography.  Decoding of QC-MDPC codes with cryptographically relevant parameters is intrinsically bound to fail, resulting in a decoding failure rate (DFR) that is nonzero. To achieve INDistinguishability under Adaptively Chosen Ciphertext Attacks (IND-CCA2), the DFR must not exceed <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>λ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-\lambda}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">λ</span></span></span></span></span></span></span></span></span></span></span></span></span>, with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></span> being the security parameter. QC-MDPC codes are customarily decoded with a Bit Flipping (BF) algorithm.  Especially at very low DFR values, error patterns having a large intersection with near-codewords (which are vectors corresponding to columns of the parity-check matrix, up to some shift) are the main cause of decoding failures.</p>
+<p>In this paper, we show how a BF decoder can be tweaked to exploit the knowledge about near-codewords. Since error vectors that cause decoding failures are likely making the decoder converge to the closest near-codeword (i.e., to the near-codeword with the largest amount of overlapping positions with the error vector), we exploit such a harmful but predictable behavior: we let the decoder recognize, and consequently correct, syndromes of near-codewords. This modification comes with a very mild computational overhead and can be applied to any BF decoder. As a concrete application, we focus on BIKE parameters for NIST security category 1. We show that a recently proposed BF variant called <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="sans-serif">BF</mtext><mtext>-</mtext><mtext mathvariant="sans-serif">Max</mtext></mrow><annotation encoding="application/x-tex">\textsf{BF}\text{-}\textsf{Max}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord textsf">BF</span></span><span class="mord text"><span class="mord">-</span></span><span class="mord text"><span class="mord textsf">Max</span></span></span></span></span></span> outperforms significantly the two decoders used by BIKE within the NIST competition, achieving a significantly lower DFR with a comparable computational complexity.</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Concurrently Secure Compact Blind Signatures from Module-SIS</title>
+<meta name="description" content="AbstractA blind signature scheme allows a user to interact with a signer to obtain a valid signature on a message, while ensuring that the signer cannot learn a">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-concurrently-secure-compact-blind-signatures-from-module-sis.html">
+<meta property="og:title" content="(2026-08) Concurrently Secure Compact Blind Signatures from Module-SIS">
+<meta property="og:description" content="AbstractA blind signature scheme allows a user to interact with a signer to obtain a valid signature on a message, while ensuring that the signer cannot learn a">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-concurrently-secure-compact-blind-signatures-from-module-sis.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Concurrently Secure Compact Blind Signatures from Module-SIS">
+<meta name="twitter:description" content="AbstractA blind signature scheme allows a user to interact with a signer to obtain a valid signature on a message, while ensuring that the signer cannot learn a">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1690">(2026-08) Concurrently Secure Compact Blind Signatures from Module-SIS</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Olivier Blazy]]</li>
+
+  <li>[[Lola-Baie Mallordy]]</li>
+
+  <li>[[Weiqiang Wen]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>A blind signature scheme allows a user to interact with a signer to obtain a valid signature on a message, while ensuring that the signer cannot learn any information on the message being signed, nor link a given couple message-signature to the specific interaction that produced it (blindness). In round-optimal (i.e., two-move) blind signature schemes, a user sends a request (typically a commitment) for a message, and the signer responds with a signature.  To achieve blindness, the resulting blind signature usually consists of a zero-knowledge proof of knowledge of a valid signature from the signer on a request. This reliance on zero-knowledge proofs has become the main bottleneck in reducing the blind signature size. In particular,  state-of-the-art  lattice-based blind signature schemes are instantiated based on  the zero-knowledge proof system from [Lyubashevsky et al., EUROCRYPT, 2022], which results in blind signatures of at least 22 KB.
+In this work, we carefully design a blind signature protocol following the classical lattice-based  Σ-protocol as in [Ducas et al., CRYPTO, 2013], so that the last component naturally forms a short preimage of the hash of the message, as a classical GPV signature. As a result, this removes the need for  zero-knowledge proofs in the blind signature. Eventually, this design allows us to obtain a significantly more compact blind signature of size 4.7 KB,  with concurrent security under the Module-SIS assumption. As a trade-off, our protocol may require more than one round with small probability, due to the rejection sampling in lattice-based  Σ-protocols. Under our proposed parameters, however, the expected number of rounds for honest users can be as small as 1.1, which is very close to optimal. To minimize the number of rounds, we require users to prove  that they failed to derive a blind signature in the previous round, before starting a new one. This technique yields a moderately looser bound on the expected number of rounds for malicious users, who will be forced to terminate in at most 2.6 rounds.</p></blockquote>
+
+
+</body>
+</html>

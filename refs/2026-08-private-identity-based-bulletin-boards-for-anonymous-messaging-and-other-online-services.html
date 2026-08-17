@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Private Identity-based Bulletin Boards for Anonymous Messaging and Other Online Services</title>
+<meta name="description" content="AbstractSecure and anonymous messaging has many compelling use-cases and is becoming increasingly popular. In this paper, we consider it in the context of delay">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-private-identity-based-bulletin-boards-for-anonymous-messaging-and-other-online-services.html">
+<meta property="og:title" content="(2026-08) Private Identity-based Bulletin Boards for Anonymous Messaging and Other Online Services">
+<meta property="og:description" content="AbstractSecure and anonymous messaging has many compelling use-cases and is becoming increasingly popular. In this paper, we consider it in the context of delay">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-private-identity-based-bulletin-boards-for-anonymous-messaging-and-other-online-services.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Private Identity-based Bulletin Boards for Anonymous Messaging and Other Online Services">
+<meta name="twitter:description" content="AbstractSecure and anonymous messaging has many compelling use-cases and is becoming increasingly popular. In this paper, we consider it in the context of delay">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1611">(2026-08) Private Identity-based Bulletin Boards for Anonymous Messaging and Other Online Services</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Karim Eldefrawy]]</li>
+
+  <li>[[Stanislaw Jarecki]]</li>
+
+  <li>[[Ben Terner]]</li>
+
+  <li>[[Gene Tsudik]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Secure and anonymous messaging has many compelling use-cases and is becoming increasingly
+popular. In this paper, we consider it in the context of
+delay-and-disruption-prone networks, which are characterized by
+handicapped network access, disrupted operation, censorship, and intermittent network outages.</p>
+<p>With such settings in mind, we define and design a Private Identity-Based Bulletin Board
+(PIB^3) scheme, which allows users to anonymously post and retrieve messages to and from a
+distributed database, and supports communication between users without pre-established
+setup or pre-exchanged keys. Anyone can encrypt a message for an identity and public epoch,
+such that only the party with the decryption key for that identity can identify, retrieve,
+and decrypt the message. Against one corrupted non-colluding PIB^3 server, the server learns
+neither the recipient identity nor the retrieved record indices beyond the leakage explicitly
+modeled by the scheme: the public epoch, the database size, and the number of retrievals made
+by the receiver. If retrieval-count privacy is required, retrievals can be padded to a fixed
+bound. The multi-server construction extends this guarantee to larger server sets, and gives
+coalition privacy whenever the underlying multi-server PIR scheme is private against the
+corresponding coalition.</p>
+<p>Contributions of this work are: (1) formally defining functionality and security requirements
+for PIB^3-s, (2) defining and constructing a Hierarchical Identity-based Encryption (HIBE) scheme
+with searchable ciphertexts, which serves as a building block for the proposed PIB^3 scheme and may be of independent interest,
+(3) designing an efficient PIB^3 scheme that can be realized with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n\geq 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></span> servers based on the
+HIBE scheme with searchable ciphertexts combined with additional primitives, and (4) implementing
+a functional PIB^3 prototype which demonstrates practicality of the entire concept and allows us
+to assess its performance empirically.</p></blockquote>
+
+
+</body>
+</html>

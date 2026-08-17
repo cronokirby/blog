@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Adaptively Secure Threshold Decryption from LWE with Polynomial Modulus</title>
+<meta name="description" content="AbstractThreshold Decyption (TD) enables a set of decryptors, each holding a secret key share, to collaboratively decrypt ciphertexts. Lots of TD schemes consid">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-adaptively-secure-threshold-decryption-from-lwe-with-polynomial-modulus.html">
+<meta property="og:title" content="(2026-08) Adaptively Secure Threshold Decryption from LWE with Polynomial Modulus">
+<meta property="og:description" content="AbstractThreshold Decyption (TD) enables a set of decryptors, each holding a secret key share, to collaboratively decrypt ciphertexts. Lots of TD schemes consid">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-adaptively-secure-threshold-decryption-from-lwe-with-polynomial-modulus.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Adaptively Secure Threshold Decryption from LWE with Polynomial Modulus">
+<meta name="twitter:description" content="AbstractThreshold Decyption (TD) enables a set of decryptors, each holding a secret key share, to collaboratively decrypt ciphertexts. Lots of TD schemes consid">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1627">(2026-08) Adaptively Secure Threshold Decryption from LWE with Polynomial Modulus</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Yuxin Zhang]]</li>
+
+  <li>[[Yunxiao Zhou]]</li>
+
+  <li>[[Shuai Han]]</li>
+
+  <li>[[Shengli Liu]]</li>
+
+  <li>[[Xinyi Huang]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-06</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Threshold Decyption (TD) enables a set of decryptors, each holding a secret key share, to collaboratively decrypt ciphertexts. Lots of TD schemes consider only CPA security under static corruptions, but a stronger and more reasonable security notion in practice is CCA security under adaptive corruptions, which enhances the ability of adversaries to obtain partial decryptions of chosen ciphertexts and adaptively corrupt decryptors during the protocol. There are many works on TD from lattices, seeking for post-quantum security. However, none of these TD schemes achieves both adaptive security (i.e., security under adaptive corruptions) and polynomially-bounded modulus in lattices. Given the fact that polynomial modulus provides more post-quantum confidence than super-poly modulus, Devevey et al. [PKC 2021] left constructing an adaptively secure TD with polynomial modulus from lattices as an open problem.</p>
+<p>In this paper, we resolve the above open problem by proposing three adaptively secure (t,N)-TD schemes based on the LWE assumption, all with polynomial modulus under appropriate settings.
+- TD0: an adaptively CPA-secure scheme in the asynchronous setting in the standard model, whose modulus is polynomial for small number of users N.
+- TD1: an adaptively CCA-secure scheme in the asynchronous setting in the standard model, whose modulus is polynomial for small N and bounded decryption queries.
+- TD2: an adaptively CCA-secure scheme in the synchronous setting in the random oracle (RO) model, whose modulus is polynomial for bounded decryption queries.</p>
+<p>The main technical challenge is to limit the leakage of secret key shares arising from decryption queries, while keeping the modulus a polynomial. To overcome this barrier, we develop a refined polynomial noise flooding technique based on a detailed min-entropy analysis of secret shares conditioned on linear matrix hints, leveraging recent advances on Matrix-Hint LWE. Based on our new technique, we build TD1 using the replicated secret sharing (RSS) scheme, hence supporting only small N. To enable larger N, we design TD2 using the Shamir secret sharing scheme, in which we further integrate our new technique with the zero-sum masking technique [Katsumata et al., CRYPTO 2024] to restrict the secret key leakage. To the best of our knowledge, our TD1 and TD2 are the first non-interactive lattice-based threshold decryption schemes achieving adaptive CCA security and polynomial modulus, simultaneously. Moreover, they achieve the strongest notion of adaptive CCA security among those compared in [Brzuska et al., PKC 2026]. We further establish robustness for both TD0 and TD1 via publicly verifiable partial decryptions, ensuring that the combination either outputs the correct plaintext or aborts.</p></blockquote>
+
+
+</body>
+</html>

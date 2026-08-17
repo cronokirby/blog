@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Efficient Large-Integer Arithmetic for FHE</title>
+<meta name="description" content="AbstractFully Homomorphic Encryption (FHE) has emerged as one of the key technologies for privacy-preserving computation, enabling arbitrary computation directl">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-efficient-large-integer-arithmetic-for-fhe.html">
+<meta property="og:title" content="(2026-08) Efficient Large-Integer Arithmetic for FHE">
+<meta property="og:description" content="AbstractFully Homomorphic Encryption (FHE) has emerged as one of the key technologies for privacy-preserving computation, enabling arbitrary computation directl">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-efficient-large-integer-arithmetic-for-fhe.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Efficient Large-Integer Arithmetic for FHE">
+<meta name="twitter:description" content="AbstractFully Homomorphic Encryption (FHE) has emerged as one of the key technologies for privacy-preserving computation, enabling arbitrary computation directl">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1608">(2026-08) Efficient Large-Integer Arithmetic for FHE</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Ahmad Al Badawi]]</li>
+
+  <li>[[Andreea Alexandru]]</li>
+
+  <li>[[Gurgen Arakelov]]</li>
+
+  <li>[[Charles Gouert]]</li>
+
+  <li>[[Sergey Gomenyuk]]</li>
+
+  <li>[[Valentina Kononova]]</li>
+
+  <li>[[Yarkın Doröz]]</li>
+
+  <li>[[Yuriy Polyakov]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-04</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Fully Homomorphic Encryption (FHE) has emerged as one of the key technologies for privacy-preserving computation, enabling arbitrary computation directly on encrypted data. Vectorized FHE schemes, such as Brakerski/Fan--Vercauteren (BFV), Brakerski--Gentry--Vaikuntanathan (BGV), and Cheon--Kim--Kim--Song (CKKS), are typically used in applications dealing with large datasets, for example, confidential database queries and private ML inference. These FHE schemes are based on the computational hardness of Ring Learning with Errors (RLWE) and share a common algebraic foundation: arithmetic over high-dimensional polynomial rings with coefficient moduli spanning hundreds or thousands of bits, far exceeding the native arithmetic capabilities of modern processors.</p>
+<p>This article surveys the evolution of large-integer arithmetic in RLWE-based FHE libraries, with a focus on the Residue Number System (RNS) techniques used in practically all modern implementations. We give a formal treatment of the two fundamental RNS building blocks — basis extension and scaling — that require information about the magnitude of a large value and are therefore incompatible with a purely residue-wise view of arithmetic. We contrast the two principal algorithmic approaches to these operations: the integer-only approach of Bajard, Eynard, Hasan, and Zucca (BEHZ), which tolerates approximation overflows and corrects them with auxiliary redundant moduli, and the floating-point approach of Halevi, Polyakov, and Shoup (HPS). We then show how these primitives compose into the higher-level RNS procedures used across all vectorized RLWE schemes and review how their adoption reshaped the architecture and performance of libraries such as HElib, SEAL, PALISADE/OpenFHE, HEAAN, and Lattigo. We give particular attention to the scaling error inherent in the original Full RNS variant of CKKS, and to the more recent techniques — reduced-error scaling, composite scaling, and grafting — that eliminate it or restore flexible, high-precision rescaling from within the residue representation.  We also cover GPU-accelerated implementations and close by discussing a renewed, and so far exploratory, interest in positional (non-RNS) representations, raising the question of how such approaches might compare with the Full RNS variants that dominate FHE implementations today.</p></blockquote>
+
+
+</body>
+</html>

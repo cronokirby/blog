@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Rate-Limiting Nullifiers for Gasless Sequencer Admission in Ethereum Layer-2 Rollups</title>
+<meta name="description" content="AbstractBlockchain networks rely on transaction fees for resource allocation and spam prevention. Ethereum's gas mechanism and its adoption by Layer-2 rollups s">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-rate-limiting-nullifiers-for-gasless-sequencer-admission-in-ethereum-layer-2-rollups.html">
+<meta property="og:title" content="(2026-08) Rate-Limiting Nullifiers for Gasless Sequencer Admission in Ethereum Layer-2 Rollups">
+<meta property="og:description" content="AbstractBlockchain networks rely on transaction fees for resource allocation and spam prevention. Ethereum's gas mechanism and its adoption by Layer-2 rollups s">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-rate-limiting-nullifiers-for-gasless-sequencer-admission-in-ethereum-layer-2-rollups.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Rate-Limiting Nullifiers for Gasless Sequencer Admission in Ethereum Layer-2 Rollups">
+<meta name="twitter:description" content="AbstractBlockchain networks rely on transaction fees for resource allocation and spam prevention. Ethereum's gas mechanism and its adoption by Layer-2 rollups s">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1666">(2026-08) Rate-Limiting Nullifiers for Gasless Sequencer Admission in Ethereum Layer-2 Rollups</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Uğur Şen]]</li>
+
+  <li>[[Sergei Tikhomirov]]</li>
+
+  <li>[[Sylvain Delhomme]]</li>
+
+  <li>[[Nadeem Bhati]]</li>
+
+  <li>[[Cyprien Grau]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-12</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Blockchain networks rely on transaction fees for resource allocation and spam prevention. Ethereum's gas mechanism and its adoption by Layer-2 rollups serve this dual purpose, but gas-based fee markets produce unintended consequences: ineffective spam deterrence at low fee levels, poor user experience, privacy leakage, and revenue instability for rollup operators.
+We present an idealized protocol architecture for gasless sequencer admission in Ethereum Layer-2 rollups based on Rate-Limiting Nullifiers (RLN) and a non-transferable reputation token (Karma). Users transact within a per-epoch gasless quota. Transactions beyond that quota use a gas-paid overflow path. RLN enforces the quota via zero-knowledge membership proofs, preserving pseudonymity for users within quota against on-chain observers while exposing violators through reputation slashing.
+We present the architecture and transaction flow, analyze spam-attack economics through a parameterized cost comparison on a flat per-identity quota model (labeled flat-<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span>, an analysis model for the spam stress test), and describe Status Network (SN), a deployed Ethereum L2 that implements this design.</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) MamaBearZKP; A Holistic Co-design of Prime Fields and Proving Stacks for High-Throughput ZKP on Modern CPUs</title>
+<meta name="description" content="AbstractSum-check and Fast Fourier Transforms (FFTs) dominate the computational cost of modern zero-knowledge proving systems, such as HyperPlonk (Eurocrypt 202">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-mamabearzkp-a-holistic-co-design-of-prime-fields-and-proving-stacks-for-high-throughput-zkp-on-modern-cpus.html">
+<meta property="og:title" content="(2026-08) MamaBearZKP; A Holistic Co-design of Prime Fields and Proving Stacks for High-Throughput ZKP on Modern CPUs">
+<meta property="og:description" content="AbstractSum-check and Fast Fourier Transforms (FFTs) dominate the computational cost of modern zero-knowledge proving systems, such as HyperPlonk (Eurocrypt 202">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-mamabearzkp-a-holistic-co-design-of-prime-fields-and-proving-stacks-for-high-throughput-zkp-on-modern-cpus.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) MamaBearZKP; A Holistic Co-design of Prime Fields and Proving Stacks for High-Throughput ZKP on Modern CPUs">
+<meta name="twitter:description" content="AbstractSum-check and Fast Fourier Transforms (FFTs) dominate the computational cost of modern zero-knowledge proving systems, such as HyperPlonk (Eurocrypt 202">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1698">(2026-08) MamaBearZKP; A Holistic Co-design of Prime Fields and Proving Stacks for High-Throughput ZKP on Modern CPUs</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Jipeng Zhang]]</li>
+
+  <li>[[Yanpei Guo]]</li>
+
+  <li>[[Tao Lu]]</li>
+
+  <li>[[Hao Cheng]]</li>
+
+  <li>[[Jiaheng Zhang]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-15</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Sum-check and Fast Fourier Transforms (FFTs) dominate the computational cost of modern zero-knowledge proving systems, such as HyperPlonk (Eurocrypt 2023) and FRI-based schemes like DeepFold (USENIX Security 2025). Despite numerous optimizations, existing efforts remain fragmented across algorithmic, protocol, and implementation layers, leaving significant CPU performance potential untapped.</p>
+<p>We present MamaBearZKP, a co-designed framework that bridges these layers to enable high-throughput ZK proving on modern CPUs. At its core, MamaBearZKP leverages MamaBear, a 49-bit prime field (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><msup><mn>2</mn><mn>49</mn></msup><mo>−</mo><msup><mn>2</mn><mn>34</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p = 2^{49} - 2^{34} + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.625em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.8974em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">49</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.8974em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">34</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>), and introduces a systematic vectorization framework specifically tailored for the AVX-512IFMA execution model. By treating field arithmetic, protocol structure, and low-level hardware primitives as a unified optimization target, MamaBearZKP achieves unprecedented efficiency.</p>
+<p>We instantiate our framework in a HyperPlonk-DeepFold prover and obtain single-thread speedups of up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>42</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">42\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord">2</span><span class="mord">×</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>33</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">33\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mord">3</span><span class="mord">×</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>15</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">15\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mord">5</span><span class="mord">×</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">21\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord">1</span><span class="mord">×</span></span></span></span></span>, and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">21\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">2</span><span class="mord">1</span><span class="mord">×</span></span></span></span></span> for ZeroCheck, ProductCheck, DeepFold Commit, DeepFold Open, and end-to-end proof generation, respectively, compared to a Goldilocks-based baseline on the same platform. With 8-thread execution, the corresponding speedups increase to as much as <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">64\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">6</span><span class="mord">4</span><span class="mord">×</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>47</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">47\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord">7</span><span class="mord">×</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>81</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">81\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">8</span><span class="mord">1</span><span class="mord">×</span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>45</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">45\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord">5</span><span class="mord">×</span></span></span></span></span>, and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>45</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">45\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">4</span><span class="mord">5</span><span class="mord">×</span></span></span></span></span>. Across our end-to-end evaluations, MamaBearZKP also achieves up to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">18\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mord">8</span><span class="mord">×</span></span></span></span></span> single-thread speedup over Plonky3, which already uses an AVX-512 BabyBear backend.
+Rather than resulting from isolated improvements, these gains arise from a synergistic cascading effect: the 49-bit field’s headroom enables efficient lazy reduction, which paves the way for high-performance fused fold-and-evaluate kernels. The efficiency of these kernels facilitates a unified stay-packed dataflow throughout the HyperPlonk and DeepFold stacks; it is precisely this end-to-end dataflow that materializes the hardware throughput of AVX-512IFMA into realized performance gains.</p></blockquote>
+
+
+</body>
+</html>

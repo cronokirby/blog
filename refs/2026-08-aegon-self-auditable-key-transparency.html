@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Aegon; Self-Auditable Key Transparency</title>
+<meta name="description" content="AbstractKey transparency enables a centralized encrypted messaging provider to publicly commit to the public keys it distributes, allowing clients to detect pot">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-aegon-self-auditable-key-transparency.html">
+<meta property="og:title" content="(2026-08) Aegon; Self-Auditable Key Transparency">
+<meta property="og:description" content="AbstractKey transparency enables a centralized encrypted messaging provider to publicly commit to the public keys it distributes, allowing clients to detect pot">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-aegon-self-auditable-key-transparency.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Aegon; Self-Auditable Key Transparency">
+<meta name="twitter:description" content="AbstractKey transparency enables a centralized encrypted messaging provider to publicly commit to the public keys it distributes, allowing clients to detect pot">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1681">(2026-08) Aegon; Self-Auditable Key Transparency</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Hossein Hafezi]]</li>
+
+  <li>[[Alireza Shirzad]]</li>
+
+  <li>[[Benedikt Bünz]]</li>
+
+  <li>[[Kevin Lewi]]</li>
+
+  <li>[[Dillon George]]</li>
+
+  <li>[[Joseph Bonneau]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-13</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Key transparency enables a centralized encrypted messaging provider to publicly commit to the public keys it distributes, allowing clients to detect potentially malicious keys.  Recent deployments by WhatsApp and iMessage demonstrate the promise of this approach, but they rely on third-party global auditors to detect misbehavior by the key server.  No existing system supports auditing efficiently enough to be done by lightweight end users while also providing scalability to billions of users and short epoch latency.</p>
+<p>We present <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span>, a key transparency scheme designed for global-scale encrypted messaging. Building on ideas from <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">I</mi><mi mathvariant="sans-serif">r</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi><mi mathvariant="sans-serif">D</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">c</mi><mi mathvariant="sans-serif">t</mi></mrow><annotation encoding="application/x-tex">\mathsf{IronDict}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">IronDict</span></span></span></span></span></span>, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span> avoids per-epoch work that scales with the full dictionary size: its server computation depends only on the number of updates in the current epoch, eliminating global invariance proofs and enabling epoch latency of under a minute (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>500</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">500\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.0833em;height:0.7278em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span> reduction compared to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">I</mi><mi mathvariant="sans-serif">r</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi><mi mathvariant="sans-serif">D</mi><mi mathvariant="sans-serif">i</mi><mi mathvariant="sans-serif">c</mi><mi mathvariant="sans-serif">t</mi></mrow><annotation encoding="application/x-tex">\mathsf{IronDict}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">IronDict</span></span></span></span></span></span>). <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span> further introduces a sharded dictionary design that reduces global parameters to shard-dependent sizes and enables horizontal scaling. To control long-term storage, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span> uses proof caching to safely discard historical dictionary snapshots, so storage grows only with retained history.</p>
+<p>We provide a production-grade Rust implementation of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span> and demonstrate practical scalability to a dictionary with <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></span> billion entries, comparing it against the public codebase of WhatsApp Key Transparency (<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">K</mi><mi mathvariant="sans-serif">D</mi></mrow><annotation encoding="application/x-tex">\mathsf{AKD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">AKD</span></span></span></span></span></span>). At the throughput of <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1,250</mn></mrow><annotation encoding="application/x-tex">1{,}250</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">2</span><span class="mord">5</span><span class="mord">0</span></span></span></span></span> updates per second, <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span> produces constant-size auditor proofs of under <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span></span> KB, verifiable in under <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>65</mn></mrow><annotation encoding="application/x-tex">65</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span><span class="mord">5</span></span></span></span></span> ms and independent of the number of updates per epoch or of the directory fill. At a fully-populated <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>32</mn></msup></mrow><annotation encoding="application/x-tex">2^{32}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span></span></span></span></span>-entry directory, this is roughly an <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>80,000</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">80{,}000\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.1944em;height:0.8389em;"></span><span class="mord">8</span><span class="mord">0</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span> reduction in audit proof size and a <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>370</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">370\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mord">7</span><span class="mord">0</span><span class="mord">×</span></span></span></span></span> reduction in verify time relative to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">K</mi><mi mathvariant="sans-serif">D</mi></mrow><annotation encoding="application/x-tex">\mathsf{AKD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">AKD</span></span></span></span></span></span>. All other server and client operations remain highly efficient and comparable to <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">K</mi><mi mathvariant="sans-serif">D</mi></mrow><annotation encoding="application/x-tex">\mathsf{AKD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord"><span class="mord mathsf">AKD</span></span></span></span></span></span>, while <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="sans-serif">A</mi><mi mathvariant="sans-serif">e</mi><mi mathvariant="sans-serif">g</mi><mi mathvariant="sans-serif">o</mi><mi mathvariant="sans-serif">n</mi></mrow><annotation encoding="application/x-tex">\mathsf{Aegon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathsf">Aegon</span></span></span></span></span></span> achieves stronger privacy guarantees.</p></blockquote>
+
+
+</body>
+</html>

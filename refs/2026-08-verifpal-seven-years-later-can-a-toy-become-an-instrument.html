@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Verifpal Seven Years Later; Can a Toy Become an Instrument</title>
+<meta name="description" content="AbstractVerifpal, introduced in 2019, is a symbolic protocol verifier that traded analytical generality for a modeling language a working engineer could read wi">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-verifpal-seven-years-later-can-a-toy-become-an-instrument.html">
+<meta property="og:title" content="(2026-08) Verifpal Seven Years Later; Can a Toy Become an Instrument">
+<meta property="og:description" content="AbstractVerifpal, introduced in 2019, is a symbolic protocol verifier that traded analytical generality for a modeling language a working engineer could read wi">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-verifpal-seven-years-later-can-a-toy-become-an-instrument.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Verifpal Seven Years Later; Can a Toy Become an Instrument">
+<meta name="twitter:description" content="AbstractVerifpal, introduced in 2019, is a symbolic protocol verifier that traded analytical generality for a modeling language a working engineer could read wi">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1654">(2026-08) Verifpal Seven Years Later; Can a Toy Become an Instrument</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Nadim Kobeissi]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-11</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Verifpal, introduced in 2019, is a symbolic protocol verifier that traded analytical generality for a modeling language a working engineer could read without training. Its own paper called the resulting soundness argument "incomplete, semi-formal, in-progress," and the fair conclusion at the time was that Verifpal was a teaching tool standing beside two research tools.</p>
+<p>The engine that paper described has since been replaced outright. Where the 2019 engine searched forward, enumerating combinations of wire values to mutate under four tuned parameters, the new engine is goal-based: it starts from the query it is trying to contradict, breaks that requirement into subgoals, and forces a binding whenever a subgoal can be discharged in only one way, with the search bounded by the protocol's own term structure. This paper gives the first formal account of the replacement: its semantics, equational theory, knowledge closure and goal-directed solving. Soundness does not depend on the solver: before an attack is reported, a small trusted region re-checks that the attacker controls every slot the attack touches and can derive every term it installs, then re-executes the protocol and re-tests the query, so a solver bug can cost a missed attack but cannot produce a false one.</p>
+<p>The language is also simpler and more capable: public-key cryptography no longer needs a special kind of value, key encapsulation mechanisms are expressible, and a primitive can be declared weak or forgeable at the call site. Every principal is now analyzed as several concurrent sessions holding their own fresh values, which brings attacks needing two instances of one role (such as Millen's necessarily-parallel <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mi>n</mi></msup><msup><mi>g</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">f^n g^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="margin-right:0.05em;top:-3.063em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span>) within reach. Attack traces are always reproducible and are written almost entirely in the modeler's own names, which greatly improves the usefulness and readability of Verifpal's findings.</p>
+<p>Verifpal still comes with limits: no observational equivalence, a fixed equational theory, and while parallel execution is now genuinely supported, it is over a bounded number of sessions rather than unbounded replication. Our answer to the title's question is that Verifpal has become a different instrument rather than a smaller one, worth using alongside its two peers rather than instead of them.</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Verifiable SelfMix</title>
+<meta name="description" content="AbstractAnonymous communication systems aim to hide which user sent which message. Existing designs span efficient mixnets that rely on at least one honest mix">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-verifiable-selfmix.html">
+<meta property="og:title" content="(2026-08) Verifiable SelfMix">
+<meta property="og:description" content="AbstractAnonymous communication systems aim to hide which user sent which message. Existing designs span efficient mixnets that rely on at least one honest mix">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-verifiable-selfmix.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Verifiable SelfMix">
+<meta name="twitter:description" content="AbstractAnonymous communication systems aim to hide which user sent which message. Existing designs span efficient mixnets that rely on at least one honest mix">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css" integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1617">(2026-08) Verifiable SelfMix</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Doron Zarchy]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-05</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Anonymous communication systems aim to hide which user sent which message.
+Existing designs span efficient mixnets that rely on at least one honest mix
+server and decentralized protocols such as Dining Cryptographers networks
+(DC-nets) or secure multi-party computation (MPC)-based shuffles, which
+typically require greater communication or interaction. We introduce
+\emph{verifiable self-mix} (VSM), an anonymity architecture for privately
+placing messages in a public bulletin-board table. VSM separates oblivious slot
+allocation from anonymous message placement: \emph{Unique Number Selection}
+(UNS) assigns each user a distinct hidden location, and \emph{Secure Mapping of
+Private Permutation} (SMPP) places each encrypted message at its assigned
+location without revealing the user-to-location mapping. Because each user
+learns their own final location, VSM provides unconditional individual
+verifiability after the table is decrypted. We define VSM and prove anonymity,
+integrity, and self-verifiability in a static malicious model. We instantiate
+UNS using either trusted hardware or multi-server plaintext-equivalence tests,
+and SMPP using ElGamal, Boneh--Goh--Nissim (BGN), and a theoretical fully
+homomorphic encryption (FHE) construction. For <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span> users and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span></span> slots, the vector based SMPP constructions require
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></span> ciphertext upload per user and <span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="vertical-align:-0.25em;height:1em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">nm</span><span class="mclose">)</span></span></span></span></span> public aggregation.
+We also present an FHE based variant that reduces the client upload to
+<span class="katex-wrapper"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>O</mi><mo>~</mo></mover><mo stretchy="false">(</mo><mo>\log</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\tilde O(\log m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1702em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9202em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span></span><span style="top:-3.6023em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">~</span></span></span></span></span></span></span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></span> for fixed size messages.
+These constructions offer different tradeoffs between trust, communication,
+and computation, while preserving the modular structure of VSM and its
+unconditional individual verifiability.</p></blockquote>
+
+
+</body>
+</html>

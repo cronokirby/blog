@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Pruning Merkle-Tree Consistent Accumulator</title>
+<meta name="description" content="AbstractAuthenticated data structures are widely used to compute compact digests of evolving collections of elements and to support efficient verification of el">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-pruning-merkle-tree-consistent-accumulator.html">
+<meta property="og:title" content="(2026-08) Pruning Merkle-Tree Consistent Accumulator">
+<meta property="og:description" content="AbstractAuthenticated data structures are widely used to compute compact digests of evolving collections of elements and to support efficient verification of el">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-pruning-merkle-tree-consistent-accumulator.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Pruning Merkle-Tree Consistent Accumulator">
+<meta name="twitter:description" content="AbstractAuthenticated data structures are widely used to compute compact digests of evolving collections of elements and to support efficient verification of el">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1685">(2026-08) Pruning Merkle-Tree Consistent Accumulator</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Anna Mendonca]]</li>
+
+  <li>[[Hudson Shi]]</li>
+
+  <li>[[Ivan Pryvalov]]</li>
+
+  <li>[[Amir Herzberg]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-14</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Authenticated data structures are widely used to compute compact
+digests of evolving collections of elements and to support efficient verification of element inclusion. However, the authenticated collection often should not grow forever: older elements may expire and no longer require verification. Many implemented append-only approaches, for example used in Certificate Transparency (CT), do not directly support this setting, since previously accumulated elements remain part of the authenticated state indefinitely. In this work, we introduce a pruning accumulator, a stateful accumulator that supports both incremental addition of new elements and pruning of an old prefix of previously accumulated elements. The resulting digest represents the unpruned sequence, while pruned elements are removed from the authenticated state. Unpruned elements continue to support proof-of-inclusion verification, proof
+updates, update verification, and consistency checks. This captures applications that require authenticated, incrementally maintained state over a moving window of elements.
+We present two constructions of Merkle-tree-based pruning accumulators, both with efficient accumulation, prefix pruning, proof generation, proof updating, and verification. The constructions preserve the standard Merkle-tree style of verification for active elements while reducing long-term storage requirements.
+We provide formal definitions, correctness and security analysis, an open-source implementation, and experimental evaluation demonstrating the performance benefits of pruning.</p></blockquote>
+
+
+</body>
+</html>

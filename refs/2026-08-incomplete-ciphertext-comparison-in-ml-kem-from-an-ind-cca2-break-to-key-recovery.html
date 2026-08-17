@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Incomplete Ciphertext Comparison in ML-KEM; From an IND-CCA2 Break to Key Recovery</title>
+<meta name="description" content="AbstractML-KEM is IND-CCA2 secure only because of one check inside decapsulation: the receiver re-encrypts the message it recovered and returns the true shared">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-incomplete-ciphertext-comparison-in-ml-kem-from-an-ind-cca2-break-to-key-recovery.html">
+<meta property="og:title" content="(2026-08) Incomplete Ciphertext Comparison in ML-KEM; From an IND-CCA2 Break to Key Recovery">
+<meta property="og:description" content="AbstractML-KEM is IND-CCA2 secure only because of one check inside decapsulation: the receiver re-encrypts the message it recovered and returns the true shared">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-incomplete-ciphertext-comparison-in-ml-kem-from-an-ind-cca2-break-to-key-recovery.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Incomplete Ciphertext Comparison in ML-KEM; From an IND-CCA2 Break to Key Recovery">
+<meta name="twitter:description" content="AbstractML-KEM is IND-CCA2 secure only because of one check inside decapsulation: the receiver re-encrypts the message it recovered and returns the true shared">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1682">(2026-08) Incomplete Ciphertext Comparison in ML-KEM; From an IND-CCA2 Break to Key Recovery</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Bhabani Sankar Das]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-13</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>ML-KEM is IND-CCA2 secure only because of one check inside decapsulation: the receiver re-encrypts the message it recovered and returns the true shared secret only if the result matches the received ciphertext exactly. This is the Fujisaki–Okamoto (FO) check. wolfSSL implemented it in hand-written SIMD assembly, and on two backends it compared fewer than all of the ciphertext bytes. The x86-64 AVX2 path compared 1536 of 1568 bytes; the ARM64 NEON path compared roughly half.</p>
+<p>These bugs were documented as a weakening of IND-CCA2 security, in that a tampered ciphertext can slip past the check. We show they are worse than that. The bytes the check skips carry the tail of the decryption noise, and that noise is an exact linear function of the secret key. An attacker who varies those unchecked bytes and watches the decapsulation output reads the noise off one coordinate at a time. Stacking the measurements gives an overdetermined linear system in the secret, which we solve by ordinary least squares with no lattice reduction.</p>
+<p>The measurement is a plaintext-checking oracle, the same primitive that key-mismatch attacks use. What is new is where it comes from. Reading it off the unchecked v-tail, rather than from chosen sparse-u ciphertexts, means it survives even when u is fully validated, as on AVX2, so the standard "validate all of u" hardening does not close it. The price is queries, 10⁵ to 10⁶ against a few thousand for key-mismatch, so the contribution is reach rather than efficiency.</p>
+<p>We recover most of the ML-KEM-1024 private key end-to-end against the shipped binaries on both backends: 98.0% of the 2048 secret coefficients at 400 ciphertexts on AVX2, and 98.5% at 600 on NEON, reaching the full key with more ciphertexts (the verified reference model recovers all 2048 at about 1300 ciphertexts). The cost appears to track the geometry of which bytes go unchecked more than their number: NEON leaves about 2.5× more coordinates unchecked than AVX2 yet needs more ciphertexts. We conclude that an incomplete FO comparison is a key-recovery vulnerability, and should be triaged as one.</p></blockquote>
+
+
+</body>
+</html>

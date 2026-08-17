@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Critical-Round Special Soundness for Multi-Round Proofs</title>
+<meta name="description" content="AbstractIn this work, we revisit multi-round public-coin proof systems by enabling the use of their simulators and extractors within other cryptographic protoco">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-critical-round-special-soundness-for-multi-round-proofs.html">
+<meta property="og:title" content="(2026-08) Critical-Round Special Soundness for Multi-Round Proofs">
+<meta property="og:description" content="AbstractIn this work, we revisit multi-round public-coin proof systems by enabling the use of their simulators and extractors within other cryptographic protoco">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-critical-round-special-soundness-for-multi-round-proofs.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Critical-Round Special Soundness for Multi-Round Proofs">
+<meta name="twitter:description" content="AbstractIn this work, we revisit multi-round public-coin proof systems by enabling the use of their simulators and extractors within other cryptographic protoco">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1679">(2026-08) Critical-Round Special Soundness for Multi-Round Proofs</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Masayuki Abe]]</li>
+
+  <li>[[David Balbás]]</li>
+
+  <li>[[Dung Bui]]</li>
+
+  <li>[[Miyako Ohkubo]]</li>
+
+  <li>[[Zehua Shang]]</li>
+
+  <li>[[Akira Takahashi]]</li>
+
+  <li>[[Mehdi Tibouchi]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-13</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>In this work, we revisit multi-round public-coin proof systems by enabling the use of their simulators and extractors within other cryptographic protocols. Although research on multi-round public-coin proofs has rapidly progressed, their simulators and extractors typically differ from the 3-move (e.g., Sigma protocols) setting in interface and behavior, and are rarely studied from this viewpoint.</p>
+<p>Prior work [Abe et al., Eurocrypt ’26] introduced the notion of critical-round zero-knowledge, showing that, for some classes of protocols, multi-round ZK simulators can be as useful in protocol constructions as the 3-move ones. In this paper, we focus on soundness and introduce critical-round special soundness, a property that enables multi-round witness extractors to be used in protocol design in a manner analogous to 3-move special soundness. We show that several existing multi-round public-coin proof systems satisfy this property and present three applications:</p>
+<ul><li>A witness sharing scheme that verifiably secret-shares an NP witness without interaction among recipients. It can be realized in a hash-based way by combining MPC-in-the-Head with secret sharing.</li><li>An offline trapdoor-extractable trapdoor commitment scheme where a trapdoor is extracted immediately upon a double opening. Offline trapdoor extractability was previously known from 3-move public-coin proofs, but no general construction from multi-round proofs was known; our approach closes this gap.</li><li>A parameter improvement for the multi-round Fischlin transform [Rotem–Tessaro, Crypto’25]. The improved parameter extends the design space of the multi-round Fischlin transform and reduces the prover’s complexity in practice.</li></ul>
+<p>Overall, our results clarify how multi-round public-coin proofs can support protocol design beyond their traditional role as stand-alone proof systems.</p></blockquote>
+
+
+</body>
+</html>

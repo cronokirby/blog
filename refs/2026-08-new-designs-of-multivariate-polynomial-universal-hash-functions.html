@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) New Designs of Multivariate-Polynomial Universal Hash Functions</title>
+<meta name="description" content="AbstractUniversal hash functions (UHFs) are basic building blocks in cryptography, making the topic of designing secure, fast UHFs of longstanding interest. Thi">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-new-designs-of-multivariate-polynomial-universal-hash-functions.html">
+<meta property="og:title" content="(2026-08) New Designs of Multivariate-Polynomial Universal Hash Functions">
+<meta property="og:description" content="AbstractUniversal hash functions (UHFs) are basic building blocks in cryptography, making the topic of designing secure, fast UHFs of longstanding interest. Thi">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-new-designs-of-multivariate-polynomial-universal-hash-functions.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) New Designs of Multivariate-Polynomial Universal Hash Functions">
+<meta name="twitter:description" content="AbstractUniversal hash functions (UHFs) are basic building blocks in cryptography, making the topic of designing secure, fast UHFs of longstanding interest. Thi">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1602">(2026-08) New Designs of Multivariate-Polynomial Universal Hash Functions</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Jean Paul Degabriele]]</li>
+
+  <li>[[Jan Gilcher]]</li>
+
+  <li>[[Jérôme Govinden]]</li>
+
+  <li>[[Kenneth G. Paterson]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-04</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Universal hash functions (UHFs) are basic building blocks in cryptography, making the topic of designing secure, fast UHFs of longstanding interest. This paper presents an exploration of the design space for multivariate UHFs, that is UHFs that involve the evaluation of a multivariate polynomial over a finite field. We focus on two-level designs, wherein a lower-level hash function produces intermediate values that are consumed by a higher-level one, and where both hash functions are based on either univariate or multivariate polynomials. This approach allows designs to benefit from the desirable features of both components and thereby strike new trade-offs between key size, security level, and amenability to optimization techniques. We extend the recent UHF code generation and benchmarking framework of Degabriele et al. (IEEE S&P 2024) to accommodate our multivariate designs (and also to support binary field arithmetic). We then use the framework to study the performance of a large collection of new two-level designs. This is done by first conducting a statistical factor analysis to determine which design features (and combinations of those features) most influence performance, and then using it to identify particular combinations of lower-level and higher-level hash functions offering particularly good performance/security trade-offs. We present new designs for both binary and prime fields, at two different security levels (corresponding to roughly 128 and 256 bits of security). Our best designs have performance that significantly outperforms state-of-the-art UHFs in the research literature and as deployed in mainstream cryptography libraries by up to 25%, resulting in 0.3 cycles/byte for 128-bit binary fields. We expect further gains from optimizations such as vectorization, as our benchmarks rely purely on auto-generated code from the extended framework, while state-of-the-art implementations typically use hand-optimized implementation strategies. We conclude with a brief inquiry into the performance implications of employing our best UHF design in the AEAD and Accordion mode designs currently under consideration for standardization by NIST.</p></blockquote>
+
+
+</body>
+</html>

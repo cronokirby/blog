@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) MAYO Lite; a Low-RAM Implementation of the MAYO Signature Scheme</title>
+<meta name="description" content="AbstractMAYO is a signature scheme based on the Unbalanced Oil and Vinegar (UOV) construction and a third round candidate in the NIST standardization process fo">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-mayo-lite-a-low-ram-implementation-of-the-mayo-signature-scheme.html">
+<meta property="og:title" content="(2026-08) MAYO Lite; a Low-RAM Implementation of the MAYO Signature Scheme">
+<meta property="og:description" content="AbstractMAYO is a signature scheme based on the Unbalanced Oil and Vinegar (UOV) construction and a third round candidate in the NIST standardization process fo">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-mayo-lite-a-low-ram-implementation-of-the-mayo-signature-scheme.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) MAYO Lite; a Low-RAM Implementation of the MAYO Signature Scheme">
+<meta name="twitter:description" content="AbstractMAYO is a signature scheme based on the Unbalanced Oil and Vinegar (UOV) construction and a third round candidate in the NIST standardization process fo">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1634">(2026-08) MAYO Lite; a Low-RAM Implementation of the MAYO Signature Scheme</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Sven Bauer]]</li>
+
+  <li>[[Fabrizio De Santis]]</li>
+
+  <li>[[Florian Wilde]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-07</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>MAYO is a signature scheme based on the Unbalanced Oil and Vinegar
+(UOV) construction and a third round candidate in the NIST standardization process
+for additional post-quantum signature schemes. We present a memory-optimized pure-
+C implementation of MAYO signature verification that reduces RAM consumption
+by 97–99% compared to the reference implementation provided by the PQM4 project
+[KPR+] at the cost of increasing runtime by 50–200% and while maintaining code
+size. This reduction finally enables verifying MAYO signatures on smart cards and
+small microcontrollers with only a few kilobytes of RAM. We achieve it through three
+coupled design choices: a) we expand the public key vector-by-vector on the fly rather
+than all at once at the start; b) we reorder the calculation of the matrix product SPS
+so that each vector of P is used exactly once, which avoids repeated expansions; and
+c) we add precomputed multiples of each P-vector directly onto the result instead of
+accumulating P-vectors before multiplication. We provide results using the PQM4
+framework for all parameter sets listed in the specification and supported by PQM4 on
+our platform, including three main parameter sets MAYO{1,2,3}. This enables direct
+comparison with other post-quantum digital signature schemes. Further parameter
+sets not supported by PQM4, including the fourth main parameter set MAYO5, are
+measured on our own framework, which supports key and signature generation on
+the host. Our results for non-standard MAYO parameter sets offer insights into
+the performance and scalability of the proposed approach that may inform ongoing
+standardization efforts.</p></blockquote>
+
+
+</body>
+</html>

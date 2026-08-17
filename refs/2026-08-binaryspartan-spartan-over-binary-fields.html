@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) BinarySpartan; Spartan over binary fields</title>
+<meta name="description" content="AbstractSpartan is a SNARK for R1CS that can be instantiated with any multi- linear polynomial commitment scheme. We instantiate Spartan over a binary field, us">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-binaryspartan-spartan-over-binary-fields.html">
+<meta property="og:title" content="(2026-08) BinarySpartan; Spartan over binary fields">
+<meta property="og:description" content="AbstractSpartan is a SNARK for R1CS that can be instantiated with any multi- linear polynomial commitment scheme. We instantiate Spartan over a binary field, us">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-binaryspartan-spartan-over-binary-fields.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) BinarySpartan; Spartan over binary fields">
+<meta name="twitter:description" content="AbstractSpartan is a SNARK for R1CS that can be instantiated with any multi- linear polynomial commitment scheme. We instantiate Spartan over a binary field, us">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1656">(2026-08) BinarySpartan; Spartan over binary fields</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Srinath Setty]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-11</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Spartan is a SNARK for R1CS that can be instantiated with any multi-
+linear polynomial commitment scheme. We instantiate Spartan over a binary field, using Ligerito as the commitment scheme along with the ring-switching technique of Diamond and Posen; we refer to the instantiation as BinarySpartan. It is transparent, so it requires no trusted setup, and it provides polylogarithmic-sized proofs. Its security rests on a hash function, so it is plausibly post-quantum. We apply only well-known optimizations to Spartan and sum-check: the SIMD R1CS of Phalanx; the next multilinear extension of SuperSpartan; sum-check optimizations from Gruen, from Dao and Thaler, and from Bagad, Dao, Domb, and Thaler; and the byte lookup tables used by Binius64 for evaluating bit-valued linear maps.</p>
+<p>Thus, BinarySpartan is not a new proof system but rather a natural instantiation of Spartan over binary fields; we implement and evaluate it end to end. On a MacBook Pro M4 Max (using only its 12 performance cores, and without GPU/Metal acceleration), BinarySpartan proves BLAKE3 at 410,000 hashes/second and SHA-256 at 219,000 hashes/second, including witness generation. These clear the 200,000 hashes/second rate proposed as sufficient for a post-quantum Ethereum transition, as well as the roughly 30,000–180,000 hashes/second a possible post-quantum Bitcoin transition would require. We also evaluate BinarySpartan on the Ethereum Foundation’s client-side proving benchmark, where it proves a single SHA-256 of a 2 KiB message in 6.2 ms, making it the fastest scheme in the benchmark suite.</p></blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cronokirby - (2026-08) Single-Server Verifiable PIR with Updates and Universally Composable Security</title>
+<meta name="description" content="AbstractPrivate information retrieval (PIR) is a fundamental cryptographic primitive that allows a client to retrieve an entry of a database from a server witho">
+<meta name="google-site-verification" content="L52nFdg1z0h1iXWgwFjYNRl14XgaybiiL_UbPpm6-Mc" />
+<link rel="canonical" href="https://cronokirby.com/refs/2026-08-single-server-verifiable-pir-with-updates-and-universally-composable-security.html">
+<meta property="og:title" content="(2026-08) Single-Server Verifiable PIR with Updates and Universally Composable Security">
+<meta property="og:description" content="AbstractPrivate information retrieval (PIR) is a fundamental cryptographic primitive that allows a client to retrieve an entry of a database from a server witho">
+<meta property="og:url" content="https://cronokirby.com/refs/2026-08-single-server-verifiable-pir-with-updates-and-universally-composable-security.html">
+<meta property="og:site_name" content="cronokirby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2026-08) Single-Server Verifiable PIR with Updates and Universally Composable Security">
+<meta name="twitter:description" content="AbstractPrivate information retrieval (PIR) is a fundamental cryptographic primitive that allows a client to retrieve an entry of a database from a server witho">
+
+<link rel="stylesheet" href="/static/index.css">
+<link rel="icon" href="/static/icon.png">
+<script src="/static/theme.js" defer></script>
+</head>
+<body>
+<header>
+<div class="icon-bar">
+  <a href="/">
+    <img src="/static/icon.png" class="avatar" alt="cronokirby" />
+  </a>
+  <button class="theme-toggle" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 -960 960 960" width="2em" fill="currentColor"><path d="M480-120q-133 0-226.5-92.5T160-436q0-66 25-122t69-100l226-222 226 222q44 44 69 100t25 122q0 131-93.5 223.5T480-120Zm0-80v-568L310-600q-35 33-52.5 74.5T240-436q0 97 70 166.5T480-200Z"/></svg>
+  </button>
+</div>
+<time datetime="1970-01-01">1970-01-01</time>
+
+<h1><a href="https://eprint.iacr.org/2026/1651">(2026-08) Single-Server Verifiable PIR with Updates and Universally Composable Security</a></h1>
+
+
+<ul class="authors">
+
+  <li>[[Julia Guskind]]</li>
+
+  <li>[[Ariel Hamlin]]</li>
+
+  <li>[[Ryan Little]]</li>
+
+  <li>[[Daniel S. Roche]]</li>
+
+  <li>[[Mayank Varia]]</li>
+
+</ul>
+
+
+<div class="published">2026-08-10</div>
+
+
+<ul class="tags">
+
+  <li class="tag">
+    <a href="/tag/cryptography/index.html">
+    #cryptography
+    </a>
+  </li>
+
+  <li class="tag">
+    <a href="/tag/paper/index.html">
+    #paper
+    </a>
+  </li>
+
+</ul>
+
+</header>
+
+<h1>Abstract</h1>
+<blockquote>
+<p>Private information retrieval (PIR) is a fundamental cryptographic primitive that allows a client to retrieve an entry of a database from a server without revealing which entry was retrieved. PIR security is traditionally defined with a distinguishing game that ensures the clients' access patterns are kept private from a semi-honest server. Verifiable PIR (VPIR) adds another game-based property that holds against a malicious server: the server is bound to a particular database and cannot cause a client to retrieve a database entry that is inconsistent with this database. Recent work by Alon and Beimel [ITC 2025] deviated from the traditional game-based PIR definitions and contributed a definition of standalone simulation-based security for multi-server PIR. Their techniques, however, do not readily extend to single-server VPIR and do not consider concurrent protocol composition when PIR is used as a building block within a larger application.</p>
+<p>In this work, we further the study of simulation-based VPIR security. We are the first to formalize a universally composable (UC) definition of VPIR in the single-server setting by giving an ideal VPIR functionality. We motivate the need for UC security by showing how game-based VPIR properties fail under sequential and concurrent protocol composition. We also demonstrate the generality of our UC VPIR functionality by providing two realizations based on a trivial PIR and VeriSimplePIR [de Castro and Lee, USENIX Security 2024].</p>
+<p>Additionally, we introduce a new kind of VPIR, called Updatable VPIR (UVPIR), which guarantees to clients that (1) database updates are authorized by permissioned clients and (2) responses to their queries are consistent with a specific version of the PIR database. We show that UVPIR can be constructed in a black-box manner on top of any VPIR protocol.</p></blockquote>
+
+
+</body>
+</html>
