@@ -1063,7 +1063,7 @@ If $A$ is broken, that's fine as long as $B$ is secure, and vice versa.
 This construction is called a _KEM combiner_, and it can combine two
 KEMs in this way, without having to inspect how the KEMs work internally
 at all.
-The paper [^[GHP18]] goes over this notion of combiners,
+The paper [^GHP18] goes over this notion of combiners,
 and presents a very elegant construction.
 
 To encapsulate, you call each of the individual
@@ -1574,7 +1574,7 @@ $\square$
 
 ## Constructing Split-Key PRFs
 
-In the KEM combiner paper [^[GHP18]], they present many
+In the KEM combiner paper [^GHP18], they present many
 examples of split-key PRFs.
 As an illustration, I'll choose one of the simplest ones, which
 can be proven secure even without random oracles.
@@ -1763,8 +1763,5 @@ security in key exchanges.
 
 # References
 
-[^[ABHKLR20]]
-[^[GHP18]]
-
-[^[ABHKLR20]]: [[ABHKLR20] Analysing the HPKE standard - Joël Alwen, Bruno Blanchet, Eduard Hauck, Eike Kiltz, Benjamin Lipp, Doreen Riepel](https://eprint.iacr.org/2020/1499)
-[^[GHP18]]: [[GHP18] KEM Combiners - Federico Giacon, Felix Heuer, Bertram Poettering](https://eprint.iacr.org/2018/024)
+[^ABHKLR20]: [[ABHKLR20] Analysing the HPKE standard - Joël Alwen, Bruno Blanchet, Eduard Hauck, Eike Kiltz, Benjamin Lipp, Doreen Riepel](https://eprint.iacr.org/2020/1499)
+[^GHP18]: [[GHP18] KEM Combiners - Federico Giacon, Felix Heuer, Bertram Poettering](https://eprint.iacr.org/2018/024)

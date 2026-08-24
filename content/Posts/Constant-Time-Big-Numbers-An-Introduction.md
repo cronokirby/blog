@@ -794,19 +794,8 @@ doesn't cover all the tricks you actually need.
 
 # References
 
-[^1]
-
-[^2]
-
-[^3]
-
-
-[^4]
-
-[^5]
-
-[^1]: [[1] Acıiçmez, Onur, Çetin Kaya Koç, and Jean-Pierre Seifert. \](https://doi.org/10.1007/11967668_15)
-[^2]: [[2] Page, D. \](https://eprint.iacr.org/2002/169.pdf)
+[^1]: [[1] Acıiçmez, Onur, Çetin Kaya Koç, and Jean-Pierre Seifert.](https://doi.org/10.1007/11967668_15)
+[^2]: [[2] Page, D.](https://eprint.iacr.org/2002/169.pdf)
 [^3]: [[3] math/big: support for constant-time arithmetic](https://github.com/golang/go/issues/20654)
 [^4]: [[4] Merget, Robert, Marcus Brinkmann, Nimrod Aviram, Juraj Somorovsky, and Johannes Mittmann. "Raccoon Attack: Finding and Exploiting Most-Significant-Bit-Oracles In", 2019](https://raccoon-attack.com/RacoonAttack.pdf)
 [^5]: [[5] BearSSL - Big Integer Design](https://www.bearssl.org/bigint.html)

@@ -121,7 +121,7 @@ The two main modes of message sending we have in cait-sith
 are sending a message to everybody, and sending a message privately.
 We'll model these forms of communication using an ideal functionality
 (which, in MPS, is just an asynchronous game).
-<div class="flex-initial">
+
 $$
 \boxed{
 \normalsize{
@@ -146,30 +146,22 @@ $$
 }
 }
 $$
-</div>
-<div>
-<p style="text-align: left">
+
 $m_{i \to j, w}$ means that every pair of parties $i \neq j$ has an empty message slot
 for every future waitpoint $w$, when $i$ wants to send a message to $j$.
-</p>
-<p style="text-align: left">
+
 The $\Rsh_i$ function lets $i$ send a bunch of messages to different
 parties in the set $P$ they provide.
-</p>
-<p style="text-align: left">
+
 $\Lsh_i$ is the counterpart, allowing us to receive messages.
 We request to receive from a set of parties $P$ at a given waitpoint, and then receive all those messages, once they're ready.
-</p>
-<p style="text-align: left">
+
 Any party can immediately stop the protocol at will, by aborting.
-</p>
-<p style="text-align: left">
+
 The adversary is also able to see which messages have been sent,
 but not their contents.
 The red color suggest that this function is for the adversary's
 eyes only.
-</p>
-</div>
 
 > [!note] **Note:**
 > $i, j$ come from the same bounded set, $[n]$, the number of parties.

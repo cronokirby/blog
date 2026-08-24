@@ -227,14 +227,8 @@ involved in proving something:
 >
 > ---
 >
-> <ul>
-> <li>
-> Divide it into different hemispheres, each of which is the graph of a function
-> </li>
-> <li>
-> Project the sphere onto a hyperplane of dimension $n$
-> </li>
-> </ul>
+> - Divide it into different hemispheres, each of which is the graph of a function
+> - Project the sphere onto a hyperplane of dimension $n$
 
 The idea here is to keep in mind different high-level strategies for proving some theorem.
 Having multiple strategies in mind helps reinforce both of them individually, which is a bonus.
@@ -297,11 +291,9 @@ A good example is recalling equivalent properties:
 >
 > ---
 >
-> <ul>
-> <li>$U = q^{-1}(q(U))$</li>
-> <li>$U$ is a union of fibers</li>
-> <li>For every $x \in U$, $q(x') = q(x) \implies x' \in U$</li>
-> </ul>
+> - $U = q^{-1}(q(U))$
+> - $U$ is a union of fibers
+> - For every $x \in U$, $q(x') = q(x) \implies x' \in U$
 
 I'd usually also have a proof for each of the implications involved in proving this,
 along with a definition card for "saturated set". By having this extra

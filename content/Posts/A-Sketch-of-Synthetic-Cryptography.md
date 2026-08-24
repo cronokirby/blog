@@ -562,7 +562,7 @@ about the message just by looking at the ciphertext.
 
 More formally, an encryption scheme is a randomized function:
 $$
-E : K \otimes M \xrightarrow{\$} \to C
+E : K \otimes M \xrightarrow{\$} C
 $$
 for a type of keys $K$, of messages $M$, and ciphertexts $C$,
 along with a deterministic function:
@@ -671,7 +671,7 @@ encryption queries.
 
 A deterministic process satisfies the following property:
 ![](../Images/82e885b2ff0adca40edfd588d3733a7162b92eb43b199a14280762ec03c64255.png)
-Note that for a randomized process, like $, this won't
+Note that for a randomized process, like $$\xrightarrow{\$}$$, this won't
 be the case.
 Generating a random value and then copying it
 is not the same as generating two random values.
