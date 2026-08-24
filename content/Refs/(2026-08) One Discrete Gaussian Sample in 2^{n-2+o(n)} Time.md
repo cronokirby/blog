@@ -1,4 +1,5 @@
 ---
+title: "(2026-08) One Discrete Gaussian Sample in 2^{n/2+o(n)} Time"
 published: "2026-08-04"
 link: "https://eprint.iacr.org/2026/1599"
 authors: ["[[Jiseung Kim]]"]
