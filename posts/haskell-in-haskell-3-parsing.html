@@ -175,7 +175,7 @@ of a programming language, at least at the level of syntax.</p>
   y = 2;
 } in x</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 For simplicity, we require a semicolon <em>after</em> each definition,
 instead of between them. This is slightly different than how we'll handle
 this in our real language, but is simpler for now.</p></blockquote>
@@ -320,7 +320,7 @@ These are expressions with the definitions coming <em>after</em> the body they'r
 until we see the <code>where</code> token. For the first 3 tokens,
 we have multiple options floating around.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 It's possible to rearrange how you decompose your parser to avoid unbounded ambiguity
 like this. For example, you could <em>always</em> parse an expression, and then change the meaning
 of what you've just seen based on whether or not you see a <code>where</code>. We won't be needing
@@ -464,7 +464,7 @@ that parsing failed.</p>
 exports for this module:</p>
 <pre><code>module Parser (AST(..), parser)</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Right now, we don't need to export the constructors of <code>AST</code> in order
 to make the stage. The stages we'll add in the next parts <em>will</em> be working
 with the details of the syntax tree, so we'll need to export
@@ -556,7 +556,7 @@ but instead creating a new module, in <code>src/Types.hs</code>, to hold fundame
 structures for working with types. We'll expand on this module in further parts,
 as we need to do more things with types.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 There's an argument to be made for never sharing things like this between different
 stages. It might be more maintainable to distinguish between the <em>syntax</em> of what
 constitutes a type, and the <em>semantics</em> of what a type really is. Essentially,
@@ -591,7 +591,7 @@ so we're going to also have <em>primitive</em> boolean and string types in
 our language, departing from Haskell slightly.
 So we have <code>String</code> and <code>Bool</code> as builtin types as well.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Our subset of Haskell would be expressive enough to define these in the language itself:</p>
 <pre><code>data Bool = True | False
 
@@ -700,7 +700,7 @@ next to the name:</p>
 <pre><code>data MyType a b = VariantA String | VariantB Int Int | VariantC a b</code></pre>
 <p>And that's about it for new data types.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Syntactically speaking, nothing is stopping us from using type variables that aren't
 even in scope, so something like <code>data Foo = Foo a b c</code> will parse just fine.</p>
 <p>Of course, this makes no sense <em>semantically</em>, and will be caught by later stages.</p></blockquote>
@@ -806,7 +806,7 @@ So <code>\x y -> x</code> becomes:</p>
 So <code>x</code> is a <code>ValName</code>, but something like <code>Nil</code> would rather be typed
 as <code>ConstructorName</code>.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Since we're using type synonyms here, there's actually no difference between <code>ValName</code>
 and <code>ConstructorName</code>. We could've used <code>newtype</code> instead, to make it impossible
 to confuse them. The problem is that there are situations, like <code>NameExpr</code>,
@@ -901,7 +901,7 @@ these are done here as well:</p>
 <pre><code>  | Cash
   | Compose</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 I have no idea how widespread calling the <code>$</code> operator "cash" is. I've always
 called it that since I first learned Haskell ~ 4 years ago. I've heard <code>f $ x</code>
 read as "f dollar x", but that doesn't roll off the tongue like "f cash x" does.</p></blockquote>
@@ -1063,7 +1063,7 @@ NameDefinition "f" [NamePattern "a"] (NameExpr "a")</code></pre>
 <p>We have one definition for the type annotation, and 2 more for each of the
 2 heads of the function.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Note that we don't even do any basic integrity checks for these heads,
 like making sure that they have the same number of patterns. This kind of thing is going
 to be handled in the simplifier.</p></blockquote>
@@ -1089,7 +1089,7 @@ types of expression for each of these:</p>
 variants. <code>let</code> has the definitions before the expression, and <code>where</code> has
 the definitions after the expression.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We could've chosen to parse <code>where</code> as a <code>let</code> expression, or vice-versa,
 but I like the clarity of representing the syntax <em>exactly</em>. As you might have guessed,
 our simplifier will remove this redundancy.</p></blockquote>
@@ -1430,7 +1430,7 @@ we went over in the previous diagram.</p>
 <p>the <code>-></code> function is still expecting the accumulator on its <em>right</em>,
 to make, <code>A -> B</code>.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Of course, we could have swapped the convention for <code>opsR</code>, making it accept
 the separator function in the same order in which it ends up using it, but
 this would make things needlessly complicated for the consumer of this function.</p></blockquote>
@@ -1455,7 +1455,7 @@ the ubiquituous <code>$</code>, of course.</p>
 <pre><code>    andExpr =
       opsR (BinExpr And <$ token AmpersandAmpersand) comparisonExpr</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Hopefully this whole precedence tower idea is starting to make a bit more sense
 as we put it into place.</p></blockquote>
 <p>Next we have comparisons, i.e. <code><, <=, >, >=, ==, /=</code>:</p>
@@ -1510,7 +1510,7 @@ appExpr = some factor |> fmap extract
 by itself just means <code>3</code>. If we see <code>f 3</code>, i.e. two or more items, then
 the first of those items is a function, and the rest are its arguments.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 The <code>some</code> function provided by <code>Alternative</code> parses one or more occurrences
 of a parser, so if it produces an empty list, that's not our fault,
 and something very fishy is going on.</p>
@@ -1667,7 +1667,7 @@ custom type, without any arguments. This allows us to have
 a type like <code>T</code> as an argument, giving us something like <code>Pair T T</code>,
 without needing to wrap <code>T</code> in parentheses.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 The reason we couldn't have moved this case inside of <code>singleType</code> is
 becase of <em>ambiguity</em>. If it were possible to parse something like <code>T</code>
 by going through <code>singleType</code>, then it would also be possible
@@ -1803,7 +1803,7 @@ name of the new custom type, and any type variables it might have.
 We have then have an <code>=</code> token, followed by its constructors. There
 must be one or more constructors, each of them separated by a <code>|</code> token.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 In theory Haskell does accept types with no constructors, so
 we could have done <code>sepBy</code> instead of <code>sepBy1</code> here, to allow things like:</p>
 <pre><code>data Void =</code></pre></blockquote>
@@ -1865,7 +1865,7 @@ x = 2</code></pre>
 of <code>x</code> pop up, first as a type annotation, and then once more, as the actual
 expression.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We get a minimal amount of pretty printing of our syntax
 tree "for free" thanks to the <code>pretty-simple</code> library. For now,
 even though it's a bit verbose, it allows us to see how we've

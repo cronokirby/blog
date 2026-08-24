@@ -72,7 +72,7 @@ this isn't a manageable solution. This is why we want to make a <em>project</em>
 which will allow us to easily combine multiple source files into a single program.</p>
 <h1>Haskell Tools</h1>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 If you're already familiar with setting up Haskell projects, and already have a development
 environment set up, feel free to skim over this section, or skip it entirely.</p></blockquote>
 <p>Haskell, unlike other languages, doesn't come with "out of the box" support for building projects;
@@ -98,7 +98,7 @@ canon" of Haskell anyway.</p>
 <a href=https://www.haskell.org/cabal/>Cabal</a>,
 and <a href=https://docs.haskellstack.org/en/stable/README/>Stack</a>.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 <a href=https://nixos.org/>Nix</a> is also a possibility for managing dependencies and doing builds,
 but goes far beyond the simple needs we have for this project.</p></blockquote>
 <p>The difference between Cabal and Stack is mainly historical. In practice, they're more
@@ -463,7 +463,7 @@ with <code>Ourlude</code> when we try to import it as well.</p>
 by default. Then we can manually import <code>Ourlude</code> in every file, and things
 will work out.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 You can also make it so that <code>Ourlude</code> gets imported by default in every file,
 but it's quite a bit simpler to just import it manually. The extra line of boilerplate
 in every file really doesn't amount to much. The explicitness makes the build
@@ -482,7 +482,7 @@ library
   default-extensions:  NoImplicitPrelude
   ...</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 While you're at it, you can also delete <code>Example.hs</code>, and then remove <code>Example</code>
 from <code>exposed-modules</code> in the library section. We won't be using it anymore.</p></blockquote>
 <p>Now, this breaks all of our code, because we assumed the Prelude was imported before.</p>

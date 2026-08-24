@@ -191,7 +191,7 @@ The less input remaining, the more the lexer consumed. By using <code><=</code> 
 parser on the left, we're biased towards the left in case the amount of input
 is equal. This enables <code>keywords <|> identifiers</code> to lex as expected.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 At a first glance, it might seem that <code><|></code> ends up running both lexers. But,
 because Haskell is <em>lazy</em>, the effective behavior is to run the first lexer,
 and then inspect the output to decide whether to run the second lexer.</p></blockquote>
@@ -269,7 +269,7 @@ lex input =
 ignoring the remaining input.</p>
 <h1>More efficient representations</h1>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 The main discussion about lexer combinators is complete now, and this is a section
 about some ideas towards improving performance. Feel free to skip to the ending
 if you'd like.</p></blockquote>

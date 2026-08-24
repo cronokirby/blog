@@ -115,6 +115,7 @@
 <url><loc>https://cronokirby.com/refs/2026-05-device-binding-for-anonymous-credentials-on-legacy-phones.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-efficient-pairing-based-batch-arguments-for-np-with-a-constant-size-proof.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-06-a-billion-hard-crystals-exploring-practical-aspects-of-arithmetic-masking-for-pqc-in-hardware.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-02-sok-on-cryptography-for-multi-cloud-storage.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-ssle-dag-a-high-throughput-proof-of-stake-consensus-protocol-combining-an-adaptive-dag-with-a-single-secret-leader-election.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-05-topology-hiding-computation-from-key-agreement-in-diameter-two-graphs.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-information-theoretic-sfe-and-pfe-with-reduced-communication.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -148,7 +149,6 @@
 <url><loc>https://cronokirby.com/refs/2026-06-design-and-performance-evaluation-of-post-quantum-authentication-for-embedded-systems-a-case-study-on-piv.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-additions-multiplications-and-the-interaction-in-between-optimizing-mpc-protocols-via-leveled-linear-secret-sharing.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-a-key-recovery-attack-on-talus-mpc-in-talus-v4.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/refs/2026-03-mathsfsma2-mathsfrt-secret-metadata-attribute-based-anonymous-rate-limited-tokens.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-rank-syndrome-decoding-estimator-an-asymptotic-and-concrete-analysis.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-public-key-encryption-from-high-corruption-constraint-satisfaction-problems.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-practical-post-quantum-secure-publicly-verifiable-secret-sharing-and-applications.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -165,7 +165,6 @@
 <url><loc>https://cronokirby.com/refs/2026-05-hybrid-poa-on-aztec-proof-of-asset-ownership-over-public-and-private-balances-via-hierarchical-proof-carrying-data.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-a-primer-on-dependency-in-polynomial-product-identify-exploit-and-trim.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-efficient-polynomial-evaluation-on-structured-space-over-finite-fields.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/refs/2026-02-mathsfsok-on-cryptography-for-multi-cloud-storage.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-06-towards-a-doubly-efficient-ippspace.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-on-the-resilience-order-of-weightwise-almost-perfectly-balanced-functions.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-gcvm-publicly-auditable-mpc-via-garbled-circuits-with-applications-to-private-evm-compatible-computation.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -191,6 +190,7 @@
 <url><loc>https://cronokirby.com/refs/2026-02-flipd-privacy-preserving-federated-learning-via-multi-party-computation-and-differential-privacy.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-ligesis-distribution-friendly-polynomial-commitment-based-on-error-correcting-code.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-round-optimal-byzantine-agreement-without-trusted-setup.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-03-sma2rt-secret-metadata-attribute-based-anonymous-rate-limited-tokens.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-round-optimal-threshold-blind-signatures-without-random-oracles.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-zero-knowledge-about-encryption-a-comparative-security-analysis-of-three-cloud-based-password-managers.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2022-septology.html</loc><lastmod>2025-08-22</lastmod></url>
@@ -332,7 +332,6 @@
 <url><loc>https://cronokirby.com/refs/2022-the-mexican-economy.html</loc><lastmod>2025-06-05</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-an-efficient-identity-based-blind-signature-scheme-from-sm9.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-ake-protocol-combining-pqc-and-qkd.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/refs/2026-02-mathsftalong-bandwidth-efficient-two-round-threshold-signatures-from-lattices.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-equivocal-broadcast-encryption-adaptively-secure-optimal-distributed-broadcast-encryption-from-lattices.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-towards-verifiable-ai-with-lightweight-cryptographic-proofs-of-inference.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-semigroup-action-problems-and-their-uses-in-post-quantum-cryptography.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -540,6 +539,7 @@
 <url><loc>https://cronokirby.com/refs/2026-04-open-problems-in-list-decoding-and-correlated-agreement.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-06-cryptanalysis-of-hiae.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2024-10-blaze.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-04-veloz-efficient-and-flexible-distribution-framework-for-code-based-polynomial-commitment-scheme.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-new-techniques-for-information-theoretic-asynchronous-mpc-with-abort.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-descent-into-broken-trust-uncovering-ml-dsa-subkeys-with-scarce-leakage-and-local-optimization.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-adaptive-input-secure-updatable-private-set-union.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -620,9 +620,9 @@
 <url><loc>https://cronokirby.com/refs/1980-so-long-see-you-tomorrow.html</loc><lastmod>2026-01-20</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-fully-dynamic-verifiable-secret-sharing-and-its-application-to-dpss.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-12-transparent-and-post-quantum-distributed-snark-with-linear-prover-time.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/refs/2026-03-mathsfgluelut-generalized-lookup-table-arguments-over-residue-rings-via-auxiliary-fields.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-at-compromise-security-the-case-for-alert-blindness.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-equadise-efficient-quantum-safe-adaptive-distributed-symmetric-key-encryption.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-02-spectra-interval-agnostic-vector-range-argument-for-unstructured-range-assertions.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-post-quantum-adaptor-signatures-with-strong-security-from-cryptographic-group-actions.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-11-on-reed-solomon-proximity-gaps-conjectures.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/1971-the-lathe-of-heaven.html</loc><lastmod>2025-06-30</lastmod></url>
@@ -694,7 +694,6 @@
 <url><loc>https://cronokirby.com/refs/2026-08-efficient-transaction-traceability-for-auditable-privacy-preserving-ledgers.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-privada-private-user-centric-data-aggregation.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-efficient-large-integer-arithmetic-for-fhe.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/refs/2026-02-mathsfspectra-interval-agnostic-vector-range-argument-for-unstructured-range-assertions.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-signature-placement-in-post-quantum-tls-certificate-hierarchies-an-experimental-study-of-ml-dsa-and-slh-dsa-in-tls-1.3-authentication.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-06-a-new-attack-to-rsa-with-small-private-exponent-and-partial-information.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-bittersweet-signatures-bringing-lwr-to-a-picnic-for-hardware-friendly-mpc-in-the-head.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -1015,7 +1014,6 @@
 <url><loc>https://cronokirby.com/refs/2026-04-boolean-arithmetic-over-mathbbf-2-from-group-commutators.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-concrete-estimation-of-correctness-and-ind-cpa-d-security-for-fhe-via-rare-event-simulation.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-a-quantum-safe-private-group-system-for-signal-from-key-re-randomizable-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/refs/2026-04-mathsfveloz-efficient-and-flexible-distribution-framework-for-code-based-polynomial-commitment-scheme.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/1974-les-armoires-vides.html</loc><lastmod>2026-05-23</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-toward-provable-security-in-anamorphic-extension-new-constructions-and-analysis.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-triangulating-meet-in-the-middle-attack.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -1200,6 +1198,7 @@
 <url><loc>https://cronokirby.com/refs/2026-01-functional-decomposition-of-multivariate-polynomials-revisit-and-new-improvements.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-05-a-formal-analysis-of-flex-and-flex2.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-tighter-bounds-for-the-oblivious-bit-fixing-inner-product-extractor-on-biased-seeds.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-03-gluelut-generalized-lookup-table-arguments-over-residue-rings-via-auxiliary-fields.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-linear-code-equivalence-via-plucker-coordinates.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-07-fast-final-exponentiation-on-bw-and-bls-curves-with-even-embedding-degrees-at-128-bits-security.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-rule-variant-restrictions-for-the-tamarin-prover.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -1211,6 +1210,7 @@
 <url><loc>https://cronokirby.com/refs/2026-06-balanced-additive-randomized-encodings-for-shuffle-differential-privacy.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-05-early-stopping-consensus-with-adaptive-bit-complexity.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-zeeperio-verifying-governmental-elections-with-ethereum.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-02-talong-bandwidth-efficient-two-round-threshold-signatures-from-lattices.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-05-diving-deep-into-uc.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-sumcheck-based-zksnarks-are-non-malleable.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-05-delving-deep-into-security-guarantees-against-integral-distinguishers-with-applications-to-present-twine-and-lblock.html</loc><lastmod>1970-01-01</lastmod></url>

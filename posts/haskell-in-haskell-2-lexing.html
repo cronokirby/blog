@@ -386,7 +386,7 @@ printing out a failure message, or proceeding with the <code>process</code> func
 Lexer Error:
 UnimplementedError</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Here we have to do a little Cabal-fu to correctly pass the arguments we want to our program. Everything
 after the <code>--</code> belongs to <em>our program</em>, everything before is read by <code>cabal</code>.</p></blockquote>
 <p>Oof, that was a mouthful, but now all of this boilerplate is out of our way for the rest of the compiler.
@@ -525,7 +525,7 @@ whatever character is at the front of our input was the problem</p>
 and either failing with a <code>LexerError</code>, or producing a value of type <code>a</code>, and the remaining
 string that we have yet to consume.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We could've defined <code>Lexer</code> to be a <em>type synonym</em>, rather than an entirely new type. The reason we want
 a newtype is the be able to easily define new instances of different typeclasses for the
 <code>Lexer</code> type.</p></blockquote>
@@ -571,7 +571,7 @@ a value with consuming any input whatsoever. <code><*></code> will allow us to c
 two lexers sequentially, using the function output by the first,
 and the value output by the second to produce a final result.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 A function equivalent
 in power would be:</p>
 <pre><code>both :: Lexer a -> Lexer b -> Lexer (a, b)</code></pre>
@@ -617,7 +617,7 @@ that is to say:</p>
 on the result of the other one. If both succeed, then we have to implement the longest match rule
 we talked about earlier. If this results in a tie, then we want to give priority to the left one.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Prioritizing the left lexer over the right lexer is a completely arbitrary choice,
 but a choice that needs to be made, and will result in fun bugs if you forget that it <em>was</em> made.</p></blockquote>
 <p>Let's implement the class:</p>
@@ -645,7 +645,7 @@ be exercising that option here.</p>
 <p>With that done, we now have all of the building blocks and combinators we need
 to make a real lexer for Haskell!</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 This implementation of Lexer Combinators is actually somewhat inefficient. There
 are ways to improve the performance without changing the interface completely,
 keeping the same core approach. I don't go over these here, for the sake of simplicity,
@@ -720,7 +720,7 @@ or <code>bazB334</code>.</p>
 <h2>A lexer for tokens</h2>
 <p>Now, we can write a <code>Lexer</code> that produces these tokens!</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We'll actually be writing a <code>Lexer (Token, String)</code>, which includes the parsed string, along
 with the token. We'll need this in a bit once we want to handle whitespace and layouts,
 but for now it's superfluous. I've decided to go ahead and do it this way so we
@@ -792,7 +792,7 @@ to do extra work to separate out this token in the parser.</p>
 <p>Once again, we're just mapping strings to labels. All of the code to do the lexing work
 is taken care of by the framework we set up before!</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 For parsing the operator <code>\</code>, we need to create an escaped slash inside of the string,
 hence <code>"\\"</code>.</p></blockquote>
 <p>Now let's move on to something a bit more interesting: literals:</p>
@@ -910,7 +910,7 @@ and should be ignored.</p>
 amounts of both vertical and horizontal whitespaces are simply completely ignored when
 lexing. You could remove all whitespace from your program and get the same result.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 Actually, whitespace <em>does</em> matter in C because of the preprocessor, but you get the idea.</p></blockquote>
 <p>In Haskell, on the other hand, whitespace <em>can be significant</em>, when it's used to create layouts
 where braces and semicolons should be inferred. This layout inference is the second aspect that we'll be
@@ -981,7 +981,7 @@ x = a
 <p>The <code>where</code> keyword make us ready to see this kind of whitespace
 sensitive layout of code. The other keywords like this (for our subset) include <code>let</code>, and <code>of</code>.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 This program might like odd, because it isn't a program! This is not syntactically valid
 Haskell, our parser will reject it. On the other hand, from a perspective of whitespace sensitivity,
 nothing fishy is going on, and it's not the lexer's job to decide that <code>2 + 3</code> is not a valid
@@ -1087,7 +1087,7 @@ as well as a list of tokens we're producing. After the fold is done, we discard 
 but keep the tokens we produced. We produce a new token by adding it the front of the list, so we
 want to <em>reverse</em> this order after we're finished.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We use <code>foldl'</code> here, the strict version of <code>foldl</code>, since this is better for memory consumption.</p></blockquote>
 <p>Before we define <code>go</code>, we need a little helper function <code>eat</code>:</p>
 <pre><code>eat :: PosState -> RawToken -> (PosState, Maybe (Positioned Token))</code></pre>
@@ -1115,7 +1115,7 @@ since we haven't seen a "real" token yet.</p>
 We then adjust the position information to now be in the middle of that line, and
 we move the column forward based on how long the string contents of that token were.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 This is the reason why we had to include the raw string of each token. We needed
 to be able to adjust the position information using the length of that token.</p></blockquote>
 <p>With that done, the implementation of <code>go</code> is straightforward:</p>
@@ -1198,7 +1198,7 @@ We'll have a <code>[Token]</code>, and then use <code>:</code> to add new items.
 traversed all of the positioned tokens, we can reverse this list, and return it,
 and this will become the final output for the lexer.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We have to reverse the list since we add new tokens by putting them at the front
 of the list, but the later we add a token, the later we want it to appear in the
 output as well.</p></blockquote>
@@ -1304,7 +1304,7 @@ yieldToken t = modify' (\s -> s {tokens = t : tokens s})</code></pre>
 <p>We modify the current state, producing a new state with the token
 at the front of our output buffer.</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We use <code>modify'</code>, the strict version of <code>modify</code>, since we have no
 use for laziness in our state. We're going to consume it completely,
 and so it's better to avoid creating needless thunks.</p></blockquote>
@@ -1318,7 +1318,7 @@ instead of <code>tokens</code>.</p>
 <pre><code>popLayout :: LayoutM ()
 popLayout = modify' (\s -> s {layouts = drop 1 (layouts s)})</code></pre>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 We use <code>drop 1</code>, instead of <code>tail</code>, since we want don't want to do anything
 if the stack of layouts is already empty.</p></blockquote>
 <p>We also want to be able to inspect the current layout:</p>
@@ -1626,7 +1626,7 @@ at the right spots:</p>
 You can have quite a bit of fun trying out different programs, and seeing
 what output your lexer produces!</p>
 <blockquote>
-<p>[!note] <strong>Note:</strong>
+<p><strong>Note:</strong>
 One rule of Haskell's layout algorithm that we've omitted says that
 if you encounter a parse error, and you have an implicit layout
 on the stack, then you should try inserting a <code>}</code>, and then resume parsing.</p>
