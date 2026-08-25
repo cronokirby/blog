@@ -747,7 +747,7 @@ tokens that continue the block to appear at the same indentation:</p>
   y = 4</code></pre>
 <p>We can also have an explicit indentation, via an explicit <code>{</code>:</p>
 <pre><code>let { x = 3</code></pre>
-<p>In this case, we won't try and and infer any indentation at all, it's up
+<p>In this case, we won't try and infer any indentation at all, it's up
 to the user to add the semicolons. We know that this block is closed once
 we see an explicit <code>}</code>.</p>
 <p>To keep track of what kind of layout we're currently in, we need
@@ -862,7 +862,7 @@ layouts implicitly like this, since an explicit layout is never considered
 as indented more than an implicit layout.</p>
 <p>Finally, if the top layout is the same as this layout, then we insert
 a semicolon, because there were other tokens that appeared in this same
-layout, and we need to seperate them by semicolons.</p>
+layout, and we need to separate them by semicolons.</p>
 <p>This final rule lets us insert semicolons whenever we observe newlines.</p>
 <h4>Handling }</h4>
 <p>If we encounter a <code>}</code>. This means that the user is trying to close an

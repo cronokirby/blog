@@ -87,7 +87,7 @@ where you can just do side effects, without really worrying about them.</p>
 and functions are more like <em>procedures</em>. You read them from top to bottom,
 each line being a statement that has some kind of effect on the state of the world.</p>
 <p>With this order well defined, it's easy to reason about the side effects in the program.
-The order in which side effects happen is the same as the order of of statements in our
+The order in which side effects happen is the same as the order of statements in our
 program.</p>
 <h2>Laziness</h2>
 <p>Haskell throws a wrench into this whole process, because it doesn't have a strict order
@@ -264,7 +264,7 @@ that looks like:</p>
   a -> f2 a</code></pre>
 <p>So we have to evaluate <code>$2</code>, printing out <code>2</code>, and then entering <code>f3</code>.
 <code>f3</code> has the side effect of printing out <code>3</code>.</p>
-<p>So, even though we create thunks for different actions, becuase they were all chained
+<p>So, even though we create thunks for different actions, because they were all chained
 together with <code>>>=</code>, the order of side effects in our program is well defined!</p>
 <h1>Lifting things up</h1>
 <p>Now, this is a very ad hoc approach to doing things, and relies on our knowledge of

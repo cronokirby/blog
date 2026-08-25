@@ -119,7 +119,7 @@ It's not uncommon for a single piece to actually contain all of the subtitles as
 <pre><code>ABCDEFGHIJXXXXXXXX XXXXX...</code></pre>
 <h2>What our algorithm needs to do</h2>
 <p>Now we get to the crux of this post: the algorithm for saving and retrieving pieces.</p>
-<p>We can break down what we do with pieces into 3 seperate tasks:</p>
+<p>We can break down what we do with pieces into 3 separate tasks:</p>
 <ul><li>Recomposing the pieces into the torrent's files</li><li>Saving pieces to disk</li><li>Reading pieces from disk</li></ul>
 <h3>Recomposing the pieces into the torrent's files</h3>
 <p>After we've downloaded all the pieces, we need to actually assemble the files
@@ -163,7 +163,7 @@ files the piece belongs to. What these files are named depends on the following:
 <ul><li>If the piece contains the first bytes of a file</li></ul>
 <pre><code>..xx xxAA AA..</code></pre>
 <p>Then we save the data for that file in <code>file.start</code>.</p>
-<p>Note that we could seperate
+<p>Note that we could separate
 this into 2 cases, but as we'll see later, not distinguishing these cases changes nothing in the end,
 and makes the algorithm simpler.</p>
 <ul><li>If the piece contains the last bytes of a file:</li></ul>

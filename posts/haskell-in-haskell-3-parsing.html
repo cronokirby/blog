@@ -460,7 +460,7 @@ parser _ = Left UnimplementedError</code></pre>
 <p>This function will take in the list of tokens produced by the lexer,
 and return either the parsed syntax tree, or an error, indicating
 that parsing failed.</p>
-<p>Finally, we can add the <code>AST</code> type and the <code>parser</code> function to the the
+<p>Finally, we can add the <code>AST</code> type and the <code>parser</code> function to the
 exports for this module:</p>
 <pre><code>module Parser (AST(..), parser)</code></pre>
 <blockquote>
@@ -1036,7 +1036,7 @@ instead of having to write:</p>
 <pre><code>id x = x</code></pre>
 <p>Of course, you can have multiple parameters as well:</p>
 <pre><code>f a b = a + b</code></pre>
-<p>So, our structure for name definitions will need to accomodate these named parameters.</p>
+<p>So, our structure for name definitions will need to accommodate these named parameters.</p>
 <p>Another bit of sugar is that you can <em>pattern match</em> inside of these definitions:</p>
 <pre><code>f 0 1 = 1
 f 0 _ = 2

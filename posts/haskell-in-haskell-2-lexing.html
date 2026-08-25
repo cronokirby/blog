@@ -1540,7 +1540,7 @@ z = 3
               closeFurtherLayouts
             _ -> return ()</code></pre>
 <p>The first thing we do is close every implicit layout that we're strictly
-below, for teh reasons we just went over. To close them we emit a <code>}</code>,
+below, for the reasons we just went over. To close them we emit a <code>}</code>,
 and then pop the layout off of the stack.</p>
 <p>Then we check whether or not there's a layout matching our indentation <em>exactly</em>,
 in which case we need to emit a semicolon.</p>
