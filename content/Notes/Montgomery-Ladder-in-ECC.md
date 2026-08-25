@@ -197,7 +197,7 @@ $$
 $$
 
 Unlike with doubling, we need to have calculated $P - Q$ prior.
-In practice, this constraint is easily accomodated.
+In practice, this constraint is easily accommodated.
 
 This formula requires:
 

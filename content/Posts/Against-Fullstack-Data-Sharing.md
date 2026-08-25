@@ -398,7 +398,7 @@ restrictions of both applications are very different.
 # Conclusion
 
 I think you should make sharing classes and logic between the backend and frontend of your application
-the exception, and not the the rule. The rule should be to share things by putting them into
+the exception, and not the rule. The rule should be to share things by putting them into
 your GraphQL representation. This representation acts both as a contract / source of truth between
 both sides, will letting them be sufficiently decoupled.
 

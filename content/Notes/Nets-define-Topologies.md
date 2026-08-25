@@ -404,7 +404,7 @@ a topology on $X$.
 
 First, note that we can equivalent define a topology in
 terms of its *closed sets*. We require that $\emptyset$
-and $X$ are closed, the the finite union of closed sets
+and $X$ are closed, the finite union of closed sets
 is closed, and finally, that the arbitrary union of closed sets
 is closed. We can go from a closed topology to an open topology
 by taking the complements of sets.

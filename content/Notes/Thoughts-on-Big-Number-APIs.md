@@ -24,7 +24,7 @@ of unsigned integers, usually $64$ or $32$ bits (called *limbs*)
 The API allows you to convert normal numbers into this general integer type,
 and to perform arithmetic operations without restrictions.
 
-A usual convention is the the representation of integers is *normalized*,
+A usual convention is the representation of integers is *normalized*,
 so that there aren't any redundant zeros stored above the most significant
 limb of our numbers. Just how the number $0034$ is normalized to $34$ instead.
 

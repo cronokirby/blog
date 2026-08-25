@@ -992,7 +992,7 @@ We can also have an explicit indentation, via an explicit `{`:
 let { x = 3
 ```
 
-In this case, we won't try and and infer any indentation at all, it's up
+In this case, we won't try and infer any indentation at all, it's up
 to the user to add the semicolons. We know that this block is closed once
 we see an explicit `}`.
 
@@ -1168,7 +1168,7 @@ as indented more than an implicit layout.
 
 Finally, if the top layout is the same as this layout, then we insert
 a semicolon, because there were other tokens that appeared in this same
-layout, and we need to seperate them by semicolons.
+layout, and we need to separate them by semicolons.
 
 This final rule lets us insert semicolons whenever we observe newlines.
 

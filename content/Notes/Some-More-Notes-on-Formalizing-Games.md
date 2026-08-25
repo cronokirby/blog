@@ -37,7 +37,7 @@ We can define an unwinnable game as one with trivial messages,
 where the advantage is a negligible function of $\lambda$.
 
 This has the nice property that the statement:
-$A \to 0$, is equivalent to saying the the game $A$ is secure.
+$A \to 0$, is equivalent to saying the game $A$ is secure.
 This lets us derive nice things categorically, such as:
 $A \to 0, B \to 0 \implies A + B \to 0$, which follows directly
 from the universal property of the coproduct!

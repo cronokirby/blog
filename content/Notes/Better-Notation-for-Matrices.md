@@ -14,7 +14,7 @@ Let $[l] := \{1, \ldots, l\}$.
 Given an $r \times c$ matrix $M$, let $M^i$ denote the ith column,
 with $i \in [c]$, and $M_j$ denote the jth row, with $j \in [r]$
 and $M^i_j$ denotes a single entry. This makes
-it alot easier to swap between transposes when doing calculations.
+it a lot easier to swap between transposes when doing calculations.
 For example, if $\Delta_i$ is a vector of bits, with $\cdot$ denoting
 multiplication, and $*$ denoting convolution, you can do:
 

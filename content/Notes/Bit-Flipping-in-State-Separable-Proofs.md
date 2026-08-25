@@ -96,7 +96,7 @@ $$
 > [!note] **Note:**
 > For full generality, you'd have a function which lets you
 > sample a random message of the same length as another message,
-> which lets you accomodate cases where the messages aren't
+> which lets you accommodate cases where the messages aren't
 > just simple bit-strings.
 
 Note that because the oracles are the same in both cases,

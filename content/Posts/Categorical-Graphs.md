@@ -86,7 +86,7 @@ and constructions we expect to exist, in order to define the **category of Graph
 ## Natural Transformations and Graph Homomorphisms
 
 There's already a notion of a *morphism* between Functors: the *natural transformation*. Recalling the definition, a natural transformation
-$F \Rarr G$ consists of of a morphism $\alpha_x : F x \to G x$ in the *target* category, for each object
+$F \Rarr G$ consists of a morphism $\alpha_x : F x \to G x$ in the *target* category, for each object
 in the *source* category. Furthermore, this morphism *commutes* with other morphisms originating in the source category:
 
 ![](../Images/297d62c723794111e2bc2d18528113dc702bd22ec052182f953b13048e7d6f35.png)

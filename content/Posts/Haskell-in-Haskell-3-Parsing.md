@@ -645,7 +645,7 @@ This function will take in the list of tokens produced by the lexer,
 and return either the parsed syntax tree, or an error, indicating
 that parsing failed.
 
-Finally, we can add the `AST` type and the `parser` function to the the
+Finally, we can add the `AST` type and the `parser` function to the
 exports for this module:
 
 ```haskell
@@ -1644,7 +1644,7 @@ Of course, you can have multiple parameters as well:
 f a b = a + b
 ```
 
-So, our structure for name definitions will need to accomodate these named parameters.
+So, our structure for name definitions will need to accommodate these named parameters.
 
 Another bit of sugar is that you can *pattern match* inside of these definitions:
 

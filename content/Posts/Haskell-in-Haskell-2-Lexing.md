@@ -2257,7 +2257,7 @@ Concretely, we have:
 ```
 
 The first thing we do is close every implicit layout that we're strictly
-below, for teh reasons we just went over. To close them we emit a `}`,
+below, for the reasons we just went over. To close them we emit a `}`,
 and then pop the layout off of the stack.
 
 Then we check whether or not there's a layout matching our indentation *exactly*,

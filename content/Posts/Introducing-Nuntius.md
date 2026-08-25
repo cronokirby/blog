@@ -164,7 +164,7 @@ you instead use three keys of theirs. I believe this is
 where the name comes from.
 
 To perform the exchange, you use your identity key, $IK_A$,
-as well as a a new ephemeral key $EK_A$. You use your friend's
+as well as a new ephemeral key $EK_A$. You use your friend's
 long term key $\text{IK}_B$, as well as a signed prekey
 $\text{SPK}_B$, and an ephemeral key $\text{OPK}_B$. 
 The last two keys are fetched from the server, and only the signed
@@ -418,7 +418,7 @@ func kdfRootKey(rk rootKey, dhOut exchangedSecret) (rootKey, chainKey, error) {
 ```
 
 An alternate choice, once again illustrating BLAKE3, would
-be to do a keyed hash of the the exchanged secret, using the root key,
+be to do a keyed hash of the exchanged secret, using the root key,
 and deriving two new keys with its KDF, each time using a different context.
 
 This was more of a colorful overview than a technical one. I'd

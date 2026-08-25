@@ -399,5 +399,5 @@ two categories are merely *adjoint*, and not equivalent nor isomorphic.
 
 That being said, the two categories are much more connected than the minimum strictly necessary for an adjunction, and are still
 tightly related. The differences are also only related to the empty group. With minor adjustment, global statements about
-the structure of $\bold{Grp}$ can be accomodated to $\bold{Gr}\emptyset\bold{up}$ with perhaps an exception being made
+the structure of $\bold{Grp}$ can be accommodated to $\bold{Gr}\emptyset\bold{up}$ with perhaps an exception being made
 for the empty group.

@@ -7,7 +7,7 @@ tags:
   - literature
   - book
 ---
-One thing that makes literature so compelling is that it lets us share the the imagination of an author. Through their writing, we can enter---at least for a short time---the worlds in their head.
+One thing that makes literature so compelling is that it lets us share the imagination of an author. Through their writing, we can enter---at least for a short time---the worlds in their head.
 
 In a way, our imagination is one of our most important senses as human beings. We use it not just for our own amusement, but also to understand other people. People tell us stories, and we use our imagination to make them vivid, and to feel what they're trying to share with us. Our imagination also helps us to empathize with others, to share a bit of their joy, or their sorrow, albeit imperfectly.
 

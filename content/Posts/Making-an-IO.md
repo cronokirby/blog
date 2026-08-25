@@ -59,7 +59,7 @@ and functions are more like *procedures*. You read them from top to bottom,
 each line being a statement that has some kind of effect on the state of the world.
 
 With this order well defined, it's easy to reason about the side effects in the program.
-The order in which side effects happen is the same as the order of of statements in our
+The order in which side effects happen is the same as the order of statements in our
 program.
 
 ## Laziness
@@ -344,7 +344,7 @@ case(io) $2 of
 So we have to evaluate `$2`, printing out `2`, and then entering `f3`.
 `f3` has the side effect of printing out `3`.
 
-So, even though we create thunks for different actions, becuase they were all chained
+So, even though we create thunks for different actions, because they were all chained
 together with `>>=`, the order of side effects in our program is well defined!
 
 # Lifting things up

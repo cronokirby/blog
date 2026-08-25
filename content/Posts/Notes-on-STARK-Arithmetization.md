@@ -140,7 +140,7 @@ The interplay between both kinds of constraints is what makes an AIR powerful.
 Having just one of the constraints would make an anemic constraint system.
 
 If you only had transition constraints, but no boundary constraints,
-then it would be very difficult to enforce that the the computation
+then it would be very difficult to enforce that the computation
 has a certain input or output.
 You'd be able to control the relation between adjacent points in time,
 but not specific values.

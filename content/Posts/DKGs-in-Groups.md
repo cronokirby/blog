@@ -137,7 +137,7 @@ There are two fundamental issues with the protocol so far, with regards
 to malicious security:
 
 1. A malicious party can choose their share $X_i$ after seeing all other $X_j$.
-2. A malicious party can choose thier $X_i$ without knowing its discrete logarithm.
+2. A malicious party can choose their $X_i$ without knowing its discrete logarithm.
 
 We can fix 2. by using a [Maurer proof](/posts/2022/08/the-paper-that-keeps-showing-up/), for the function:
 $$

@@ -122,7 +122,7 @@ Let $G_R$ denote the event that the Host *reveals* a Goat behind the door on the
 
 > [!note] **Note:**
 > This is not the same event as that of there simply *being* a Goat behind that door. The fact
->   the the host knows where things are, and can only open certain doors matters here.
+>   the host knows where things are, and can only open certain doors matters here.
 
 Now, denote by $C_M$ the event that the car turns out to be in the middle. In this case,
 switching to the other door would mean losing. Note that this corresponds exactly to state

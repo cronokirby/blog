@@ -105,7 +105,7 @@ ABCDEFGHIJXXXXXXXX XXXXX...
 ## What our algorithm needs to do
 Now we get to the crux of this post: the algorithm for saving and retrieving pieces.
 
-We can break down what we do with pieces into 3 seperate tasks:
+We can break down what we do with pieces into 3 separate tasks:
 
 - Recomposing the pieces into the torrent's files
 - Saving pieces to disk
@@ -178,7 +178,7 @@ xxAAAyy
 
 Then we save the data for that file in `file.start`.
 
-Note that we could seperate
+Note that we could separate
 this into 2 cases, but as we'll see later, not distinguishing these cases changes nothing in the end,
 and makes the algorithm simpler.
 
