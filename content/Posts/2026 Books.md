@@ -30,6 +30,7 @@ created: 2026-01-07
 - [[(1885) Bel-Ami]]
 - [[(1934) The Postman Always Rings Twice]]
 - [[(1967) One Hundred Years of Solitude]]
+- [[(2011) My Brilliant Friend]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
