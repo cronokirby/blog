@@ -31,6 +31,7 @@ created: 2026-01-07
 - [[(1934) The Postman Always Rings Twice]]
 - [[(1967) One Hundred Years of Solitude]]
 - [[(2011) My Brilliant Friend]]
+- [[(2012) The Story of a New Name]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
