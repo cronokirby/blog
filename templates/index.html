@@ -44,6 +44,13 @@
 {% endfor %}
 </ul>
 {% endif %}
+{% if collections %}
+<ul class="collections">
+{% for collection in collections %}
+  <li>{{ collection }}</li>
+{% endfor %}
+</ul>
+{% endif %}
 {% if published %}
 <div class="published">{{ published }}</div>
 {% endif %}
