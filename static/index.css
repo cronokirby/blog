@@ -254,21 +254,26 @@ a:hover {
 	color: var(--text-secondary);
 }
 
-.authors, .tags {
+.collections::before {
+  content: "In ";
+  color: var(--text-secondary);
+}
+
+.authors, .collections, .tags {
   list-style: none;   /* no bullets */
   margin: 0;
   padding: 0;
 }
 
-.authors li, .tags li {
+.authors li, .collections li, .tags li {
 	display: inline;
 }
 
-.authors li::after {
+.authors li::after, .collections li::after {
   content: ", ";       /* add comma after each item */
 }
 
-.authors li:last-child::after {
+.authors li:last-child::after, .collections li:last-child::after {
   content: "";        /* remove comma after the last one */
 }
 
