@@ -33,6 +33,7 @@ created: 2026-01-07
 - [[(2011) My Brilliant Friend]]
 - [[(2012) The Story of a New Name]]
 - [[(2013) Those Who Leave and Those Who Stay]]
+- [[(2014) The Story of the Lost Child]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
@@ -41,3 +42,6 @@ created: 2026-01-07
 - [[(2026) The Irrational Decision]]
 - [[(2004) Dark Age Ahead]]
 - [[Refs/(2026) The Proof in the Code|(2026) The Proof in the Code]]
+
+# Collections
+- [[Refs/(2026) Granta 176 - American Berserk|(2026) Granta 176 - American Berserk]]
