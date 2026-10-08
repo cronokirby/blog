@@ -30,7 +30,6 @@
 <url><loc>https://cronokirby.com/notes/anxiety-about-the-future.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/verilog.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/vhdl.html</loc><lastmod>1970-01-01</lastmod></url>
-<url><loc>https://cronokirby.com/notes/2012-the-story-of-a-new-name.html</loc><lastmod>2026-09-16</lastmod></url>
 <url><loc>https://cronokirby.com/notes/reading-lists.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/rsa-schnorr-signatures.html</loc><lastmod>2022-04-05</lastmod></url>
 <url><loc>https://cronokirby.com/notes/on-ram-in-structured-computation.html</loc><lastmod>2022-08-24</lastmod></url>
@@ -82,7 +81,6 @@
 <url><loc>https://cronokirby.com/notes/fpga-programming.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/on-doerner-et-als-modifications-to-extended-random-ot.html</loc><lastmod>2021-08-28</lastmod></url>
 <url><loc>https://cronokirby.com/notes/on-defining-the-one-more-discrete-logarithm-problem.html</loc><lastmod>2022-06-02</lastmod></url>
-<url><loc>https://cronokirby.com/notes/2013-those-who-leave-and-those-who-stay.html</loc><lastmod>2026-09-29</lastmod></url>
 <url><loc>https://cronokirby.com/notes/powers-of-tau-proofs.html</loc><lastmod>2022-09-07</lastmod></url>
 <url><loc>https://cronokirby.com/notes/systemd-user-units.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/notes/american-mortgage-market.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -151,6 +149,7 @@
 <url><loc>https://cronokirby.com/refs/2026-05-balanced-and-adaptively-secure-asynchronous-common-coin-and-byzantine-agreement-with-sub-quadratic-communication.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-05-uc4free-existing-threshold-signatures-are-uc-secure.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-rank-syndrome-decoding-estimator-an-asymptotic-and-concrete-analysis.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2012-the-story-of-a-new-name.html</loc><lastmod>2026-09-16</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-08-towards-building-efficient-scales-protocols.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/1971-the-lathe-of-heaven.html</loc><lastmod>2025-06-30</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2021-resourceful-program-synthesis-from-graded-linear-types.html</loc><lastmod>2026-01-02</lastmod></url>
@@ -585,6 +584,7 @@
 <url><loc>https://cronokirby.com/refs/2026-03-haechi-simple-commitment-based-keyless-in-person-verifiable-elections.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-echo-efficient-covertly-secure-three-party-computation-with-applications-to-private-machine-learning.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-investigating-the-wedge-map-on-snova.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-granta-176-american-berserk.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-pancake-a-snark-with-plonkish-constraints-almost-free-additions-no-permutation-check-and-a-linear-time-prover.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-chasing-rabbits-through-hypercubes-better-algorithms-for-higher-dimensional-2-isogeny-computations.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-2pc-memory-manipulating-programs-with-constant-overhead.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -982,6 +982,7 @@
 <url><loc>https://cronokirby.com/refs/2026-08-a-unifying-umbrella-for-circular-secure-cryptographic-primitives.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-simple-and-efficient-skl-ibe-with-classical-revocation-from-lwe.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-jindo-practical-lattice-based-polynomial-commitment-for-zero-knowledge-arguments.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2026-intercession.html</loc><lastmod>2026-10-08</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-04-secure-and-updatable-single-password-authentication.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-rokoko-lattice-based-succinct-arguments-a-committed-refinement.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-analysis-and-vulnerabilities-in-zklogin.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -1092,6 +1093,7 @@
 <url><loc>https://cronokirby.com/refs/2025-12-leakage-resilient-multi-party-computation-protecting-the-evaluator-in-circuits-garbling.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-actively-secure-two-party-function-secret-sharing-with-dynamic-cross-phase-verification.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-07-plasmafold.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2013-those-who-leave-and-those-who-stay.html</loc><lastmod>2026-09-29</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-06-zero-knowledge-proofs-of-generalized-regular-expression-matching-for-anonymized-email-verification.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2024-10-blaze.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-01-scalable-distributed-key-generation-for-blockchains.html</loc><lastmod>1970-01-01</lastmod></url>
@@ -1169,6 +1171,7 @@
 <url><loc>https://cronokirby.com/refs/2025-12-verifiable-aggregate-receipts-with-applications-to-user-engagement-auditing.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-a-modular-approach-to-succinct-arguments-for-qma.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-08-qlapoti-and-more-optimizing-isogeny-based-signatures.html</loc><lastmod>1970-01-01</lastmod></url>
+<url><loc>https://cronokirby.com/refs/2014-the-story-of-the-lost-child.html</loc><lastmod>2026-10-08</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-03-lookup-arguments-over-rings-and-applications-to-batch-verification-of-ram-programs.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2025-12-an-ideal-linear-secret-sharing-scheme-for-complete-t-partite-k-uniform-hypergraph-access-structures.html</loc><lastmod>1970-01-01</lastmod></url>
 <url><loc>https://cronokirby.com/refs/2026-02-bolt-faster-snarks-from-sketched-codes.html</loc><lastmod>1970-01-01</lastmod></url>
