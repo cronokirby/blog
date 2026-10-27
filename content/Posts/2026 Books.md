@@ -43,6 +43,6 @@ created: 2026-01-07
 - [[(2026) The Irrational Decision]]
 - [[(2004) Dark Age Ahead]]
 - [[Refs/(2026) The Proof in the Code|(2026) The Proof in the Code]]
-
+- [[(2026) The Frenchmen]]
 # Collections
 - [[Refs/(2026) Granta 176 - American Berserk|(2026) Granta 176 - American Berserk]]
