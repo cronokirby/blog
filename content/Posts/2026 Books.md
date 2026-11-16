@@ -36,6 +36,8 @@ created: 2026-01-07
 - [[(2014) The Story of the Lost Child]]
 - [[(1975) Julia]]
 - [[(2015) Soumission]]
+- [[(1962) Letting Go]]
+- [[(1953) Black Wings Has My Angel]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
