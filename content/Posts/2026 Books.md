@@ -38,6 +38,7 @@ created: 2026-01-07
 - [[(2015) Soumission]]
 - [[(1962) Letting Go]]
 - [[(1953) Black Wings Has My Angel]]
+- [[(1968) Outer Dark]]
 ## Short Fiction
 - [[(1972) The Breast]]
 
